@@ -18,7 +18,7 @@ public class yamlReader {
      */
     private Map<String, Object> yamlData;
     private String filePath;
-
+    private String randomValueFromCIOA_TC_09;
     public yamlReader() {
         this.filePath = ".\\src\\test\\java\\resources\\testData.yaml";
         this.yamlFileName = this.filePath;
@@ -719,6 +719,18 @@ public class yamlReader {
 
         }
     }
+
+
+
+        public void setRandomValueFromCIOA_TC_09(String randomValue) {
+            randomValueFromCIOA_TC_09 = randomValue;
+        }
+
+        public String getRandomValueFromCIOA_TC_09() {
+            return randomValueFromCIOA_TC_09;
+        }
+
+
     public String getAccessKey () {
         return (String) yamlData.get("AccessKey");
     }

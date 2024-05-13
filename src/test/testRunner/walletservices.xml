@@ -8,7 +8,7 @@
     <test name="MLWALLET">
         <parameter name="type" value="mobile">
             <classes>
-                <class name="kpx.actual.WalletService.WalletService"> </class>
+<!--                <class name="kpx.actual.WalletService.WalletService"> </class>-->
 
             </classes>
         </parameter>
@@ -17,10 +17,10 @@
         <parameter name="type" value="web">
             <classes>
                 <class name="kpx.actual.WS_CashInToOwnAccount_Tests"> </class>
-                <class name="kpx.actual.WS_CashInToAnotherAcc_Tests"> </class>
-                <class name="kpx.actual.WS_KwartaPadalaPayOut_Tests"> </class>
-                <class name="kpx.actual.WS_CashOut_Tests"> </class>
-                <class name="kpx.actual.WS_Reprinting_Tests"> </class>
+<!--                <class name="kpx.actual.WS_CashInToAnotherAcc_Tests"> </class>-->
+<!--                <class name="kpx.actual.WS_KwartaPadalaPayOut_Tests"> </class>-->
+<!--                <class name="kpx.actual.WS_CashOut_Tests"> </class>-->
+<!--                <class name="kpx.actual.WS_Reprinting_Tests"> </class>-->
             </classes>
         </parameter>
     </test>

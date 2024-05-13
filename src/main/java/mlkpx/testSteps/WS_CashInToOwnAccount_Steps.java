@@ -187,16 +187,15 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         type(wsCashInToOwnAccountPageObjects.tenderAmountField(), "Tender Amount Field", updatedTenderAmountText);
         updatedTenderAmountValues = Collections.singletonList(updatedTenderAmountText);
         reader.writeTenderAmountData(updatedTenderAmountValues);
+
+        reader.setRandomValueFromCIOA_TC_09(randomReferenceNum);
     }
 
     public void CIOA_TC_10()throws Exception {
         navigationWalletServices();
-        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", propertyReader.getproperty("referenceNumber"));
-        click(wsCashInToOwnAccountPageObjects.searchButton(), "Search Button");
-        type(wsCashInToOwnAccountPageObjects.tenderAmountField(), "Tender Amount Field", propertyReader.getproperty("tenderAmount"));
-        click(wsCashInToOwnAccountPageObjects.cancelButton(), "Cancel Button");
-        click(wsCashInToOwnAccountPageObjects.yesDoNotProcessButton(), "Yes Do Not Process Button");
-        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", propertyReader.getproperty("referenceNumber"));
+        String randomValueOFCIOA9 = reader.getRandomValueFromCIOA_TC_09(); // Store the random value here
+        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", randomValueOFCIOA9);
+//        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", propertyReader.getproperty("referenceNumber"));
         click(wsCashInToOwnAccountPageObjects.searchButton(), "Search Button");
         if(isVisible(wsCashInToOwnAccountPageObjects.transactionBeingProcessText(), getText(wsCashInToOwnAccountPageObjects.transactionBeingProcessText()))){
             ExtentReporter.logPass("CIOA_TC_10", "Successfully validate  again the cash in transaction if its being processed or not");
