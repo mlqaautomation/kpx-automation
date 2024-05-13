@@ -32,6 +32,24 @@ public class PayoutReprinting_Steps extends Base_Steps{
 
         }
     }
+    public void validateSuccessfulRemotePayoutReprinting()throws Exception{
+        click(payoutCancellationPageObjects.payoutRepPage(), "Payout Reprint");
+        if(isVisible(payoutCancellationPageObjects.payoutRepPage(), getText(payoutCancellationPageObjects.payoutRepPage()))){
+            LoggingUtils.info("Navigated the Payout Cancellation page");
+
+        }
+        String remotepayoutKPTN = reader.getSuccessRemotePayoutKPTN(); // Call the getPayoutKPTN function
+        type(payoutCancellationPageObjects.RepKTPN(), "KTPN Number",remotepayoutKPTN);
+        type(payoutCancellationPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testing");
+        click(payoutCancellationPageObjects.Reprint(), "Search Button");
+        if(isVisible(payoutCancellationPageObjects.ReprintPayoutReceipt(), getText(payoutCancellationPageObjects.ReprintPayoutReceipt()))){
+            LoggingUtils.info("Navigated the Payout Reprint Receipt page");
+            click(payoutCancellationPageObjects.PrintReceipt(), "Print Receipt");
+//            click(payoutPageObjects.PrintButton(), "Print");
+            LoggingUtils.info("Successful in printing payout receipt");
+
+        }
+    }
     public void validateInvalidKTPNPayoutReprinting()throws Exception{
         click(payoutCancellationPageObjects.payoutRepPage(), "Payout Reprint");
         if(isVisible(payoutCancellationPageObjects.payoutRepPage(), getText(payoutCancellationPageObjects.payoutRepPage()))){

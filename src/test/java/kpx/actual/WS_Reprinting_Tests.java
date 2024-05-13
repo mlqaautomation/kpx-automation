@@ -6,6 +6,9 @@ import utilities.ExtentReport.ExtentReporter;
 
 public class WS_Reprinting_Tests extends BaseTest {
     // WALLET SERVICES / RECEIPT REPRINTING / Cash In To Own Account
+
+
+
     @Test(description = "Logging in via gmail and kpx")
     public void loginGoogle() throws Exception {
         this.loginSteps.signInGoogle("teller");
@@ -14,42 +17,42 @@ public class WS_Reprinting_Tests extends BaseTest {
             ExtentReporter.logPass("loginGoogle","Login, Passed!!");
         }
     }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful WS-Reprint Cash In to Own Account Receipt Reprinting")
-//    public void WS_RR_TC_01()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsReprintingSteps.navigateWalletServicesPage();
-//            this.wsReprintingSteps.validateSuccessfulCashInOwnReprinting();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate WS-Reprint Cash In to Own Account Receipt Reprinting with Incomplete Invalid Reference Number")
-//    public void WS_RR_TC_02()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsReprintingSteps.navigateWalletServicesPage();
-//            this.wsReprintingSteps.validateCashInOwnInvalidRefNumReprinting();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate WS-Reprint Cash In to Own Account Receipt Reprinting with Empty Reference Number")
-//    public void WS_RR_TC_03()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsReprintingSteps.navigateWalletServicesPage();
-//            this.wsReprintingSteps.validateCashInOwnEmptyRefNumReprinting();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "To validate WS-Reprint Cash In to Own Account Receipt Reprinting with Complete Invalid Reference Number")
-//    public void WS_RR_TC_04()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsReprintingSteps.navigateWalletServicesPage();
-//            this.wsReprintingSteps.validateCashInOwnCompleteInvalidRefNumReprinting();
-//
-//        }
-//
-//    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful WS-Reprint Cash In to Own Account Receipt Reprinting")
+    public void WS_RR_TC_01()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsReprintingSteps.navigateWalletServicesPage();
+            this.wsReprintingSteps.validateSuccessfulCashInOwnReprinting();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate WS-Reprint Cash In to Own Account Receipt Reprinting with Incomplete Invalid Reference Number")
+    public void WS_RR_TC_02()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsReprintingSteps.navigateWalletServicesPage();
+            this.wsReprintingSteps.validateCashInOwnInvalidRefNumReprinting();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate WS-Reprint Cash In to Own Account Receipt Reprinting with Empty Reference Number")
+    public void WS_RR_TC_03()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsReprintingSteps.navigateWalletServicesPage();
+            this.wsReprintingSteps.validateCashInOwnEmptyRefNumReprinting();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "To validate WS-Reprint Cash In to Own Account Receipt Reprinting with Complete Invalid Reference Number")
+    public void WS_RR_TC_04()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsReprintingSteps.navigateWalletServicesPage();
+            this.wsReprintingSteps.validateCashInOwnCompleteInvalidRefNumReprinting();
+
+        }
+
+    }
 
 
     // WALLET SERVICES / RECEIPT REPRINTING / Cash In To Another Account
@@ -90,42 +93,42 @@ public class WS_Reprinting_Tests extends BaseTest {
 
     }
     // WALLET SERVICES / RECEIPT REPRINTING / Cash Out
-//    @Test(dependsOnMethods = "loginGoogle", priority = 9, description = "To validate successful WS-ReprintCash Out Receipt Reprinting")
-//    public void WS_RR_TC_09()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsReprintingSteps.navigateWalletServicesPage();
-//            this.wsReprintingSteps.validateSuccessfulCashOutReprinting();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "To validate WS-Reprint Cash Out Receipt Reprinting with Incomplete Invalid Reference Number")
-//    public void WS_RR_TC_10()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsReprintingSteps.navigateWalletServicesPage();
-//            this.wsReprintingSteps.validateCashOutInvalidRefNumReprinting();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 11, description = "To validate WS-Reprint Cash Out Receipt Reprinting with Empty Reference Number")
-//    public void WS_RR_TC_11()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsReprintingSteps.navigateWalletServicesPage();
-//            this.wsReprintingSteps.validateCashOutEmptyRefNumReprinting();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 12, description = "To validate WS-Reprint Cash Out Receipt Reprinting with Complete Invalid Reference Number")
-//    public void WS_RR_TC_12()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsReprintingSteps.navigateWalletServicesPage();
-//            this.wsReprintingSteps.validateCashOutCompleteInvalidRefNumReprinting();
-//
-//        }
-//
-//    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 9, description = "To validate successful WS-ReprintCash Out Receipt Reprinting")
+    public void WS_RR_TC_09()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsReprintingSteps.navigateWalletServicesPage();
+            this.wsReprintingSteps.validateSuccessfulCashOutReprinting();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "To validate WS-Reprint Cash Out Receipt Reprinting with Incomplete Invalid Reference Number")
+    public void WS_RR_TC_10()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsReprintingSteps.navigateWalletServicesPage();
+            this.wsReprintingSteps.validateCashOutInvalidRefNumReprinting();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 11, description = "To validate WS-Reprint Cash Out Receipt Reprinting with Empty Reference Number")
+    public void WS_RR_TC_11()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsReprintingSteps.navigateWalletServicesPage();
+            this.wsReprintingSteps.validateCashOutEmptyRefNumReprinting();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 12, description = "To validate WS-Reprint Cash Out Receipt Reprinting with Complete Invalid Reference Number")
+    public void WS_RR_TC_12()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsReprintingSteps.navigateWalletServicesPage();
+            this.wsReprintingSteps.validateCashOutCompleteInvalidRefNumReprinting();
+
+        }
+
+    }
 
     // WALLET SERVICES / RECEIPT REPRINTING / Kwarta Padala Payout Receipt
     @Test(dependsOnMethods = "loginGoogle", priority = 13, description = "To validate successful WS-Reprint Kwarta Padala Payout Receipt Reprinting")
@@ -133,6 +136,7 @@ public class WS_Reprinting_Tests extends BaseTest {
         if(this.homeSteps.isInHomePage()){
             this.wsReprintingSteps.navigateWalletServicesPage();
             this.wsReprintingSteps.validateSuccessfulKPPayoutReprinting();
+
 
         }
 

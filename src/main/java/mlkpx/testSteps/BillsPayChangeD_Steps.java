@@ -22,6 +22,9 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
+            waitSleep(3000);
+            reader.refreshTestData();
+            waitSleep(3000);
             String BillsPayKPTN = reader.getBillsPayKPTN();
             type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
@@ -53,6 +56,9 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
+            waitSleep(3000);
+            reader.refreshTestData();
+            waitSleep(3000);
             String RemoteBillsPayKPTN = reader.getRemoteBillsPayKPTN();
             type(billsPayPageObjects.RefNum(), "KTPN Number",RemoteBillsPayKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
@@ -62,11 +68,11 @@ public class BillsPayChangeD_Steps extends Base_Steps{
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.BranchCode()));
 
-            type(billsPayPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
+            type(billsPayPageObjects.BranchCode(), "Search Branch Code",  propertyReader.getproperty("BranchCode"));
             WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(13));
 
             waits.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.OperatorID()));
-            type(billsPayPageObjects.OperatorID(), "Search Operator ID", "2023639709");
+            type(billsPayPageObjects.OperatorID(), "Search Operator ID",  propertyReader.getproperty("OperatorID"));
             type(billsPayPageObjects.ReasonRemote(), "Reason", "Testing");
             //Payor Information
             billsPayPageObjects.ChangePayorLastName().clear();

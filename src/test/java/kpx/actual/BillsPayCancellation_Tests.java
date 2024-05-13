@@ -14,24 +14,24 @@ public class BillsPayCancellation_Tests extends BaseTest {
             ExtentReporter.logPass("loginGoogle","Login, Passed!!");
         }
     }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful Bills Pay Cancellation ")
-//    public void BPC_TC_01()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.billsPayCancellationSteps.navigatePayoutPage();
-//            this.billsPayCancellationSteps.validateSuccessfulBillsPayCancellation();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate remote successful Bills Pay Cancellation ")
-//    public void BPC_TC_02()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.billsPayCancellationSteps.navigatePayoutPage();
-//            this.billsPayCancellationSteps.validateSuccessfulRemoteBillsPayCancellation();
-//
-//        }
-//
-//    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful Bills Pay Cancellation ")
+    public void BPC_TC_01()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.billsPayCancellationSteps.navigatePayoutPage();
+            this.billsPayCancellationSteps.validateSuccessfulBillsPayCancellation();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate remote successful Bills Pay Cancellation ")
+    public void BPC_TC_02()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.billsPayCancellationSteps.navigatePayoutPage();
+            this.billsPayCancellationSteps.validateSuccessfulRemoteBillsPayCancellation();
+
+        }
+
+    }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate Empty Reference Bills Pay Cancellation ")
     public void BPC_TC_03()throws Exception{
         if(this.homeSteps.isInHomePage()){

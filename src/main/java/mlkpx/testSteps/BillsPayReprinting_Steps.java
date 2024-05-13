@@ -19,6 +19,9 @@ public class BillsPayReprinting_Steps extends Base_Steps{
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");
         }
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
         String BillsPayKPTN = reader.getBillsPayKPTN();
         type(billsPayPageObjects.RefNum(), "Reference Number",BillsPayKPTN);
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testings");
@@ -36,6 +39,9 @@ public class BillsPayReprinting_Steps extends Base_Steps{
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");
         }
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
         String RemoteBillsPayKPTN = reader.getRemoteBillsPayKPTN();
         type(billsPayPageObjects.RefNum(), "Reference Number",RemoteBillsPayKPTN);
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testings");

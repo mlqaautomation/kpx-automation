@@ -25,8 +25,11 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-//            String BillsPayKPTN = reader.getBillsPayKPTN(); // Call the getSendOutKPTN function
-//            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayKPTN);
+            waitSleep(3000);
+            reader.refreshTestData();
+            waitSleep(3000);
+            String BillsPayKPTN = reader.getBillsPayKPTN();
+            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -47,7 +50,11 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPUNBGCJMV");
+            waitSleep(3000);
+            reader.refreshTestData();
+            waitSleep(3000);
+            String BillsPayRemoteKPTN = reader.getRemoteBillsPayKPTN();
+            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayRemoteKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -56,11 +63,11 @@ public class BillsPayCancellation_Steps extends Base_Steps{
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.BranchCode()));
 
-            type(billsPayPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
+            type(billsPayPageObjects.BranchCode(), "Search Branch Code",  propertyReader.getproperty("BranchCode"));
             WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(13));
 
             waits.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.OperatorID()));
-            type(billsPayPageObjects.OperatorID(), "Search Operator ID", "2023639709");
+            type(billsPayPageObjects.OperatorID(), "Search Operator ID",  propertyReader.getproperty("OperatorID"));
             type(billsPayPageObjects.ReasonRemote(), "Reason", "Testing");
 
             type(billsPayPageObjects.IRNum(), "KTPN Number", "2111111113262");

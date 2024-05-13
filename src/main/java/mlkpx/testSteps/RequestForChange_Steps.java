@@ -12,9 +12,11 @@ public class RequestForChange_Steps extends Base_Steps{
 //        click(requestForChangePageObjects.idTypeDropDown(),"ID Type DropDown");
 //        click(requestForChangePageObjects.idTypeSelected(),"Selected ID Type ");
         click(requestForChangePageObjects.kptnField(),"RFC KPTN Field");
-//        String randomKPTN = reader.getRandomKPTN(); // Call the getRandomKPTN function
-//        type(requestForChangePageObjects.kptnField(), "KPTN Field", randomKPTN); // Use the random KPTN value
-        type(requestForChangePageObjects.kptnField(), "RFC KPTN Field ", propertyReader.getproperty("rfcKPTN"));
+        waitSleep(2000);
+        reader.refreshTestData();
+        waitSleep(3000);
+        String forChange = reader.getSendOutForChange();
+        type(requestForChangePageObjects.kptnField(), "RFC KPTN Field ", forChange);
         click(requestForChangePageObjects.searchButton(), "RFC Search Button");
         if(isVisible(requestForChangePageObjects.rfcText(), getText(requestForChangePageObjects.rfcText()))){
             ExtentReporter.logPass("RFC_TC_01", "Successfully Navigate for RFC Page");
@@ -22,12 +24,13 @@ public class RequestForChange_Steps extends Base_Steps{
             ExtentReporter.logFail("RFC_TC_01", "Fail to verify navigation");
             Assert.fail("Fail to verify navigation");
         }
+        clearField(requestForChangePageObjects.senderIDNumber());
+        type(requestForChangePageObjects.senderIDNumber(),"ID Number", "21103789");
         click(requestForChangePageObjects.senderProvinceChange(),"Sender Province Field");
         click(requestForChangePageObjects.senderNewProvince(),"Sender New Province");
-        click(requestForChangePageObjects.senderCityChange(),"Sender City Field");
-        click(requestForChangePageObjects.senderNewCity(),"Sender New City");
         clearField(requestForChangePageObjects.senderHouseField());
         type(requestForChangePageObjects.senderHouseField(),"Sender House Field", propertyReader.getproperty("senderhouse"));
+        type(requestForChangePageObjects.senderHouseNum(),"ID Number", "talamban09");
         scrollDown(100);
         clearField(requestForChangePageObjects.receiverLastNameField());
         type(requestForChangePageObjects.receiverLastNameField(),"Receiver Lastname Field", propertyReader.getproperty("receiverlastname"));
@@ -37,8 +40,7 @@ public class RequestForChange_Steps extends Base_Steps{
         type(requestForChangePageObjects.receiverMiddleNameField(),"Receiver Middlename Field", propertyReader.getproperty("receivermiddlename"));
         click(requestForChangePageObjects.receiverProvinceField(),"Receiver Province Field");
         click(requestForChangePageObjects.receiverNewProvince(),"Receiver New Province");
-        click(requestForChangePageObjects.receiverCityField(),"Receiver City Field");
-        click(requestForChangePageObjects.receiverNewCity(),"Receiver New City");
+
         clearField(requestForChangePageObjects.receiverHouseField());
         type(requestForChangePageObjects.receiverHouseField(),"Receiver House No", propertyReader.getproperty("receiverhouseno"));
         click(requestForChangePageObjects.receiverNoContactNo(),"Receiver Check No Contact Number");
@@ -47,8 +49,7 @@ public class RequestForChange_Steps extends Base_Steps{
         click(requestForChangePageObjects.initiatedBy(), "Initiated By");
         click(requestForChangePageObjects.initiatedByCustomer(),"Initiated By Customer");
         type(requestForChangePageObjects.reason(),"Reason for Change", propertyReader.getproperty("reasonforchange"));
-        click(requestForChangePageObjects.rfcSubmitButton(),"RFC Submit Button");
-        click(requestForChangePageObjects.noKeepTransactionButton(),"No Keep Transaction");
+        waitSleep(5000);
         click(requestForChangePageObjects.rfcSubmitButton(),"RFC Submit Button");
         waitSleep(3000);
         click(requestForChangePageObjects.yesChangeDetailsButton(),"Yes Change Details");

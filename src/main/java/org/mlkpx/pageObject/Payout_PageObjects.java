@@ -111,7 +111,8 @@ public class Payout_PageObjects {
         return getDriver().findElement(By.xpath("//*[text()='Proceed to Printing']"));
     }
     public WebElement cancelButtoninReceipt() {
-        return getDriver().findElement(By.cssSelector("//button[normalize-space()='Cancel']"));}
+        return getDriver().findElement(By.xpath("//button[normalize-space()='Cancel']"));
+    }
 
 
     public WebElement payoutKptn() {

@@ -17,7 +17,7 @@
 <!--                <class name="kpx.actual.SOReprinting_Tests"> </class>-->
 <!--                <class name="kpx.actual.ORReprinting_Tests"> </class>-->
 
-<!--                <class name="kpx.actual.Payout_Tests"> </class>-->
+                <class name="kpx.actual.Payout_Tests"> </class>
 <!--                <class name="kpx.actual.PayoutCancellation_Tests">  </class>-->
 <!--                <class name="kpx.actual.PayoutReprinting_Tests">  </class>-->
 <!--                <class name="kpx.actual.BillsPay_Tests">  </class>-->
