@@ -182,6 +182,7 @@ public class WS_Reprinting_Steps extends Base_Steps{
         if(isVisible(walletServicesPageObjects.KPPayoutPage(), getText(walletServicesPageObjects.KPPayoutPage()))){
             LoggingUtils.info("Navigated the Kwarta Padala Payout Receipt page");
         }
+
         String KPKPTN = reader.getKPReprintKPTN();
         type(walletServicesPageObjects.RefKTPN(), "Reference Number",KPKPTN);
         click(walletServicesPageObjects.Reprint(), "Search Button");

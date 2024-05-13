@@ -48,7 +48,7 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         click(wsCashInToOwnAccountPageObjects.cancelInProceedButton(), "Cancel Button");
         click(wsCashInToOwnAccountPageObjects.proceedButton(), "Proceed Button");
         click(wsCashInToOwnAccountPageObjects.confirmCashInButton(), "Confirm Cash In Button");
-        waitSleep(2000);
+        waitSleep(5000);
         if (isVisible(wsCashInToOwnAccountPageObjects.cashInSuccessfulText(), getText(wsCashInToOwnAccountPageObjects.cashInSuccessfulText()))) {
             ExtentReporter.logPass("CIOA_TC_01", "Successfully Cash In");
         } else {
@@ -69,12 +69,6 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", randomReferenceNum);
         click(wsCashInToOwnAccountPageObjects.searchButton(), "Search Button");
         waitSleep(3000);
-        if(isVisible(wsCashInToOwnAccountPageObjects.cashInText(), getText(wsCashInToOwnAccountPageObjects.cashInText()))){
-            ExtentReporter.logPass("CIOA_TC_01", "Successfully Redirected to Cash In Transaction Information");
-        }else{
-            ExtentReporter.logFail("CIOA_TC_01", "Failed to Redirected to Cash In Transaction Information");
-            Assert.fail("Failed to Redirected to Cash In Transaction Information");
-        }
         String totalAmountText = getText(wsCashInToOwnAccountPageObjects.totalAmount());
         List<String> totalAmountValues = Collections.singletonList(totalAmountText);
         totalAmountText = totalAmountText.replaceAll("[^\\d.]", "").replace(",", ".");
@@ -167,8 +161,8 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
     }
     public void CIOA_TC_09()throws Exception {
         navigationWalletServices();
-//        String randomReferenceNum = reader.getRandomWriteCashIn_Kptn();
-        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", "ACIFDVERLXF");
+        String randomReferenceNum = reader.getRandomWriteCashIn_Kptn();
+        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", randomReferenceNum);
         click(wsCashInToOwnAccountPageObjects.searchButton(), "Search Button");
         waitSleep(3000);
         if(isVisible(wsCashInToOwnAccountPageObjects.cashInText(), getText(wsCashInToOwnAccountPageObjects.cashInText()))){

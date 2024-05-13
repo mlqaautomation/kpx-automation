@@ -348,16 +348,16 @@ public class yamlReader {
             List<String> KPKptnList = (List<String>) yamlData.get("KPReprintKPTN");
 
             if (KPKptnList == null || KPKptnList.isEmpty()) {
-                System.out.println("No send out KPTN values available.");
+                System.out.println("No KP KPTN values available.");
                 return null;
             }
 
 
             int randomIndex = new Random().nextInt(KPKptnList.size());
-            String randomSendOutKptn = KPKptnList.get(randomIndex); //Randomly selected send out KPTN directly from the list
+            String randomKPKPTN = KPKptnList.get(randomIndex);
             KPKptnList.remove(randomIndex);
             saveYamlData();
-            return randomSendOutKptn;
+            return randomKPKPTN;
 
         } catch (Exception e) {
             e.printStackTrace();

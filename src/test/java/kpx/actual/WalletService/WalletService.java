@@ -29,6 +29,7 @@ public class WalletService extends BaseTest {
     public void kwartaPadala(){
         kwartaPadala.kwartaPadala();
     }
+
     @Test(dependsOnMethods="loginTest", priority = 3 ,description = "Test to get CashOut KPTN")
     public void cashOut(){
         cashOut.cashOut();
