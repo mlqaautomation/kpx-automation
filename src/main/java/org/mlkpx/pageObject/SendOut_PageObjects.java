@@ -69,7 +69,7 @@ public class SendOut_PageObjects {
         return getDriver().findElement(By.xpath("(//button[contains(text(), 'Select')])[1]"));
     }
     public WebElement mainOperator(){
-        return getDriver().findElement(By.xpath("//p/span[contains(text(), 'AMOC, ROSELYN SWRM TEST')]"));
+        return getDriver().findElement(By.xpath("//p/span[contains(text(), 'SIAROT JR, ENRIQUE ALFEREZ')]"));
     }
 //    public WebElement selectButton2Attempt(){
 //        return getDriver().findElement(By.cssSelector("[class=\"sc-iapWAC gRiCAy btn-sm btn btn-primary\"]"));

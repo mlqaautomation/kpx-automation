@@ -33,7 +33,7 @@ public class SendOut_Steps extends Base_Steps {
     public void DS_TC_02() throws Exception { // Test Case for Sendout Transaction Option Invalid Branch Code
         navigationFOrSendOutDomestic();
         click(sendOutPageObjects.yesRadioButton(), "Yes Button ");
-        waitSleep(3000);
+        waitSleep(5000);
         type(sendOutPageObjects.branchField(), "Branch Code Field", propertyReader.getproperty("invalidBranch_code"));
         waitSleep(2000); //hard wait for 2 seconds
         isVisible(sendOutPageObjects.branchNotFoundText(), "Branch not found text");

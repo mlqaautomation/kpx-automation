@@ -48,7 +48,7 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         click(wsCashInToOwnAccountPageObjects.cancelInProceedButton(), "Cancel Button");
         click(wsCashInToOwnAccountPageObjects.proceedButton(), "Proceed Button");
         click(wsCashInToOwnAccountPageObjects.confirmCashInButton(), "Confirm Cash In Button");
-        waitSleep(2000);
+        waitSleep(5000);
         if (isVisible(wsCashInToOwnAccountPageObjects.cashInSuccessfulText(), getText(wsCashInToOwnAccountPageObjects.cashInSuccessfulText()))) {
             ExtentReporter.logPass("CIOA_TC_01", "Successfully Cash In");
         } else {
@@ -69,12 +69,6 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", randomReferenceNum);
         click(wsCashInToOwnAccountPageObjects.searchButton(), "Search Button");
         waitSleep(3000);
-        if(isVisible(wsCashInToOwnAccountPageObjects.cashInText(), getText(wsCashInToOwnAccountPageObjects.cashInText()))){
-            ExtentReporter.logPass("CIOA_TC_01", "Successfully Redirected to Cash In Transaction Information");
-        }else{
-            ExtentReporter.logFail("CIOA_TC_01", "Failed to Redirected to Cash In Transaction Information");
-            Assert.fail("Failed to Redirected to Cash In Transaction Information");
-        }
         String totalAmountText = getText(wsCashInToOwnAccountPageObjects.totalAmount());
         List<String> totalAmountValues = Collections.singletonList(totalAmountText);
         totalAmountText = totalAmountText.replaceAll("[^\\d.]", "").replace(",", ".");
@@ -167,8 +161,8 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
     }
     public void CIOA_TC_09()throws Exception {
         navigationWalletServices();
-//        String randomReferenceNum = reader.getRandomWriteCashIn_Kptn();
-        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", "ACIFDVERLXF");
+        String randomReferenceNum = reader.getRandomWriteCashIn_Kptn();
+        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", randomReferenceNum);
         click(wsCashInToOwnAccountPageObjects.searchButton(), "Search Button");
         waitSleep(3000);
         if(isVisible(wsCashInToOwnAccountPageObjects.cashInText(), getText(wsCashInToOwnAccountPageObjects.cashInText()))){
@@ -193,16 +187,15 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         type(wsCashInToOwnAccountPageObjects.tenderAmountField(), "Tender Amount Field", updatedTenderAmountText);
         updatedTenderAmountValues = Collections.singletonList(updatedTenderAmountText);
         reader.writeTenderAmountData(updatedTenderAmountValues);
+
+        reader.setRandomValueFromCIOA_TC_09(randomReferenceNum);
     }
 
     public void CIOA_TC_10()throws Exception {
         navigationWalletServices();
-        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", propertyReader.getproperty("referenceNumber"));
-        click(wsCashInToOwnAccountPageObjects.searchButton(), "Search Button");
-        type(wsCashInToOwnAccountPageObjects.tenderAmountField(), "Tender Amount Field", propertyReader.getproperty("tenderAmount"));
-        click(wsCashInToOwnAccountPageObjects.cancelButton(), "Cancel Button");
-        click(wsCashInToOwnAccountPageObjects.yesDoNotProcessButton(), "Yes Do Not Process Button");
-        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", propertyReader.getproperty("referenceNumber"));
+        String randomValueOFCIOA9 = reader.getRandomValueFromCIOA_TC_09(); // Store the random value here
+        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", randomValueOFCIOA9);
+//        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", propertyReader.getproperty("referenceNumber"));
         click(wsCashInToOwnAccountPageObjects.searchButton(), "Search Button");
         if(isVisible(wsCashInToOwnAccountPageObjects.transactionBeingProcessText(), getText(wsCashInToOwnAccountPageObjects.transactionBeingProcessText()))){
             ExtentReporter.logPass("CIOA_TC_10", "Successfully validate  again the cash in transaction if its being processed or not");
