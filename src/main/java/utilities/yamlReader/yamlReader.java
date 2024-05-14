@@ -18,7 +18,7 @@ public class yamlReader {
      */
     private Map<String, Object> yamlData;
     private String filePath;
-
+    private String randomValueFromCIOA_TC_09;
     public yamlReader() {
         this.filePath = ".\\src\\test\\java\\resources\\testData.yaml";
         this.yamlFileName = this.filePath;
@@ -393,16 +393,16 @@ public class yamlReader {
             List<String> KPKptnList = (List<String>) yamlData.get("KPReprintKPTN");
 
             if (KPKptnList == null || KPKptnList.isEmpty()) {
-                System.out.println("No send out KPTN values available.");
+                System.out.println("No KP KPTN values available.");
                 return null;
             }
 
 
             int randomIndex = new Random().nextInt(KPKptnList.size());
-            String randomSendOutKptn = KPKptnList.get(randomIndex); //Randomly selected send out KPTN directly from the list
+            String randomKPKPTN = KPKptnList.get(randomIndex);
             KPKptnList.remove(randomIndex);
             saveYamlData();
-            return randomSendOutKptn;
+            return randomKPKPTN;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -783,6 +783,18 @@ public void writeKptnData(List<String> values) {
 
         }
     }
+
+
+
+        public void setRandomValueFromCIOA_TC_09(String randomValue) {
+            randomValueFromCIOA_TC_09 = randomValue;
+        }
+
+        public String getRandomValueFromCIOA_TC_09() {
+            return randomValueFromCIOA_TC_09;
+        }
+
+
     public String getAccessKey () {
         return (String) yamlData.get("AccessKey");
     }

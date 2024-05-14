@@ -16,7 +16,7 @@ public class WS_KwartaPadalaPayOut_PageObjects {
     }
     public WebElement searchButton(){return getDriver().findElement(By.cssSelector("[class=\"btn-sm mt-3 btn btn-primary\"]"));}
     public WebElement amountField(){return getDriver().findElement(By.cssSelector("[name=\"amount\"]"));}
-    public WebElement searchKYCButton(){return getDriver().findElement(By.cssSelector("[class=\"btn-sm btn btn-primary disabled\"]"));}
+    public WebElement searchKYCButton(){return getDriver().findElement(By.cssSelector("[class=\"btn-sm btn btn-primary\"]"));}
     public WebElement okButton(){return getDriver().findElement(By.cssSelector("[class=\"swal2-confirm swal2-styled\"]"));}
     public WebElement kptnIsRequiredText(){return getDriver().findElement(By.xpath("//*[text()=\"KPTN is required\"]"));}
     public WebElement emptyAmount(){return getDriver().findElement(By.xpath("//*[text()=\"Amount should be a number\"]"));}

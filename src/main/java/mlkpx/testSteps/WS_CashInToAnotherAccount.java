@@ -28,14 +28,14 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
 //            type(walletServicesPageObjects.WalletCardNum(), "ML Card Number", "");
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");
         }
-        waitSleep(2);
+        waitSleep(3000);
         type(walletServicesPageObjects.SearchLName(), "Last name field", "AMOC");
         type(walletServicesPageObjects.SearchFName(), "First name field", "ROSELYN");
         type(walletServicesPageObjects.SearchMName(), "Middle name field", "");
         click(walletServicesPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2);
+        waitSleep(3000);
         click(walletServicesPageObjects.ViewKYCCustomer(), "View KYC");
-        waitSleep(2);
+        waitSleep(3000);
         if (isVisible(walletServicesPageObjects.KYCPage(), getText(walletServicesPageObjects.KYCPage()))) {
             LoggingUtils.info("Navigated to View KYC");
             scrollDown(100);
@@ -81,11 +81,10 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(walletServicesPageObjects.BranchCode()));
 
-            type(walletServicesPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(12));
+            type(walletServicesPageObjects.BranchCode(), "Search Branch Code", "0617143912");
+            waitSleep(15000);
 
-            waits.until(ExpectedConditions.elementToBeClickable(walletServicesPageObjects.OperatorID()));
-            type(walletServicesPageObjects.OperatorID(), "Search Operator ID", "2023639709");
+            type(walletServicesPageObjects.OperatorID(), "Search Operator ID", "20248207");
             type(walletServicesPageObjects.ReasonRemote(), "Reason", "Testing");
 //            type(walletServicesPageObjects.WalletCardNum(), "ML Card Number", "");
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");
