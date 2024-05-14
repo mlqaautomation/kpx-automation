@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import utilities.ExtentReport.ExtentReporter;
 
 public class HappyPath_Tests extends BaseTest {
+
     @Test(description = "Logging in via gmail and kpx")
     public void loginGoogle() throws Exception {
         this.loginSteps.signInGoogle("teller");

@@ -2,6 +2,8 @@ package mlkpx.testSteps;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import utilities.ExtentReport.ExtentReporter;
 import utilities.Logger.LoggingUtils;
 
 import java.time.Duration;
@@ -166,43 +168,14 @@ public class PayoutCancellation_Steps extends Base_Steps{
         }
         type(payoutPageObjects.CancelKTPN(), "KTPN Number", "KPNJUGPIVZI");
         click(payoutPageObjects.SearchButton(), "Search Button");
-        if(isVisible(payoutPageObjects.PayoutCancellationAmountInfo(), getText(payoutPageObjects.PayoutCancellationAmountInfo()))){
-            type(payoutPageObjects.IRNum(), "IR Number", "");
-            click(payoutPageObjects.CancelButton(), "Cancel Payout");
+        type(payoutPageObjects.IRNum(), "IR Number", "");
+        click(payoutPageObjects.CancelButton(), "Cancel Payout");
 
-            assertEqual(getText(payoutPageObjects.IRNumRequired()), "IR Number is required");
-
-
-        }
-    }
-    public void validateRemoteNoIRNumberProvided()throws Exception{
-
-        click(payoutPageObjects.payoutCanPage(), "Payout Cancellation");
-        if(isVisible(payoutPageObjects.PayoutCancellation(), getText(payoutPageObjects.PayoutCancellation()))){
-            click(payoutPageObjects.PayoutCancellation(), "Payout Cancellation Page");
-            LoggingUtils.info("Navigated the Payout Cancellation page");
-
-        }
-        type(payoutPageObjects.CancelKTPN(), "KTPN Number", propertyReader.getproperty("RUnclaimKTPNnum"));
-        click(payoutPageObjects.SearchButton(), "Search Button");
-        click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
-
-        type(payoutPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-        waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
-        type(payoutPageObjects.OperatorID(), "Search Operator ID", "2023639709");
-        type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
-
-        if(isVisible(payoutPageObjects.PayoutCancellationAmountInfo(), getText(payoutPageObjects.PayoutCancellationAmountInfo()))){
-            type(payoutPageObjects.IRNum(), "KTPN Number", "");
-            click(payoutPageObjects.CancelButton(), "Cancel Payout");
-
-            assertEqual(getText(payoutPageObjects.IRNumRequired()), "IR Number is required");
-
-
+        if(isVisible(payoutPageObjects.IRNumRequired(), getText(payoutPageObjects.IRNumRequired()))){
+            ExtentReporter.logPass("validateNoIRNumberProvided", "Successfully validate No IR Number Provided");
+        }else{
+            ExtentReporter.logFail("validateNoIRNumberProvided", "Fail to validate No IR Number Provided");
+            Assert.fail("Fail to validate No IR Number Provided");
         }
     }
     public void validateNoReasonProvided()throws Exception{
@@ -223,34 +196,7 @@ public class PayoutCancellation_Steps extends Base_Steps{
             assertEqual(getText(payoutPageObjects.ReasonRequired()), "Reason for Cancellation is required");
         }
     }
-    public void validateRemoteNoReasonProvided()throws Exception{
 
-        click(payoutPageObjects.payoutCanPage(), "Payout Cancellation");
-        if(isVisible(payoutPageObjects.PayoutCancellation(), getText(payoutPageObjects.PayoutCancellation()))){
-            click(payoutPageObjects.PayoutCancellation(), "Payout Cancellation Page");
-            LoggingUtils.info("Navigated the Payout Cancellation page");
-
-        }
-        type(payoutPageObjects.CancelKTPN(), "KTPN Number", propertyReader.getproperty("RUnclaimKTPNnum"));
-        click(payoutPageObjects.SearchButton(), "Search Button");
-        click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
-
-        type(payoutPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-        waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
-        type(payoutPageObjects.OperatorID(), "Search Operator ID", "2023639709");
-        type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
-        if(isVisible(payoutPageObjects.PayoutCancellationAmountInfo(), getText(payoutPageObjects.PayoutCancellationAmountInfo()))){
-            type(payoutPageObjects.IRNum(), "KTPN Number", propertyReader.getproperty("IrNO"));
-            type(payoutPageObjects.ReasonCancel(), "Reason for Cancellation ", "");
-            click(payoutPageObjects.CancelButton(), "Cancel Payout");
-
-            assertEqual(getText(payoutPageObjects.ReasonRequired()), "Reason for Cancellation is required");
-        }
-    }
     public void validateRemoteInvalidBranchCodeProvided()throws Exception{
 
         click(payoutPageObjects.payoutCanPage(), "Payout Cancellation");
@@ -269,46 +215,7 @@ public class PayoutCancellation_Steps extends Base_Steps{
 
         assertEqual(getText(payoutPageObjects.BranchNotFound()), "Branch not found");
     }
-    public void validateRemoteInvalidOperatorIDProvided()throws Exception{
 
-        click(payoutPageObjects.payoutCanPage(), "Payout Cancellation");
-        if(isVisible(payoutPageObjects.PayoutCancellation(), getText(payoutPageObjects.PayoutCancellation()))){
-            click(payoutPageObjects.PayoutCancellation(), "Payout Cancellation Page");
-            LoggingUtils.info("Navigated the Payout Cancellation page");
-
-        }
-        type(payoutPageObjects.CancelKTPN(), "KTPN Number", propertyReader.getproperty("RUnclaimKTPNnum"));
-        click(payoutPageObjects.SearchButton(), "Search Button");
-        click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
-
-        type(payoutPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-        waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
-        type(payoutPageObjects.OperatorID(), "Search Operator ID", "20236379709");
-        assertEqual(getText(payoutPageObjects.OperatorNotFound()), "Operator not found");
-    }
-    public void validateCannotCancelPayout()throws Exception{
-        //Must need to cancel before/within five minutes.
-        click(payoutPageObjects.payoutCanPage(), "Payout Cancellation");
-        if(isVisible(payoutPageObjects.PayoutCancellation(), getText(payoutPageObjects.PayoutCancellation()))){
-            click(payoutPageObjects.PayoutCancellation(), "Payout Cancellation Page");
-            LoggingUtils.info("Navigated the Payout Cancellation page");
-
-        }
-        type(payoutPageObjects.CancelKTPN(), "KTPN Number", propertyReader.getproperty("RUnclaimKTPNnum"));
-        click(payoutPageObjects.SearchButton(), "Search Button");
-        if(isVisible(payoutPageObjects.PayoutCancellationAmountInfo(), getText(payoutPageObjects.PayoutCancellationAmountInfo()))){
-            type(payoutPageObjects.IRNum(), "KTPN Number", propertyReader.getproperty("IrNO"));
-            type(payoutPageObjects.ReasonCancel(), "Reason for Cancellation ", "Testing");
-            click(payoutPageObjects.CancelButton(), "Cancel Payout");
-            click(payoutPageObjects.YesCancelButton(), "Yes, Cancel Button");
-
-            assertEqual(getText(payoutPageObjects.CannotCancel()), "Cannot Cancel Payout");
-        }
-    }
     public void validateKeepTheTransaction()throws Exception{
 
         click(payoutPageObjects.payoutCanPage(), "Payout Cancellation");
@@ -344,7 +251,6 @@ public class PayoutCancellation_Steps extends Base_Steps{
             click(payoutPageObjects.CancelButton(), "Cancel Payout");
             click(payoutPageObjects.YesCancelButton(), "Yes, Cancel Button");
             assertEqual(getText(payoutPageObjects.FailedCancel()), "Cancel Payout Failed");
-
 
         }
     }

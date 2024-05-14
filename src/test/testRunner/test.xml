@@ -10,32 +10,26 @@
         <parameter name="type" value="web">
             <classes>
 <!--                <class name="kpx.actual.Kyc_Tests"> </class>-->
-<!--                <class name="kpx.actual.SendOut_Tests"> </class>-->
-<!--                <class name="kpx.actual.SendOutCancellation_Tests"> </class>-->
-<!--                <class name="kpx.actual.ReturnToSender_Tests"> </class>-->
-<!--                <class name="kpx.actual.RequestForChange_Tests"> </class>-->
-<!--                <class name="kpx.actual.SOReprinting_Tests"> </class>-->
-<!--                <class name="kpx.actual.ORReprinting_Tests"> </class>-->
-
+                <class name="kpx.actual.SendOut_Tests"> </class>
+                <class name="kpx.actual.RequestForChange_Tests"> </class>
+                <class name="kpx.actual.ReturnToSender_Tests"> </class>
+                <class name="kpx.actual.SendOutCancellation_Tests"> </class>
+                <class name="kpx.actual.SOReprinting_Tests"> </class>
+                <class name="kpx.actual.ORReprinting_Tests"> </class>
                 <class name="kpx.actual.Payout_Tests"> </class>
-<!--                <class name="kpx.actual.PayoutCancellation_Tests">  </class>-->
-<!--                <class name="kpx.actual.PayoutReprinting_Tests">  </class>-->
-<!--                <class name="kpx.actual.BillsPay_Tests">  </class>-->
-<!--                <class name="kpx.actual.BillsPayCancellation_Tests">  </class>-->
-<!--                <class name="kpx.actual.BillsPayChangeD_Tests">  </class>-->
-<!--                <class name="kpx.actual.BillsPayReprinting_Tests">  </class>-->
-
-<!--                <class name="kpx.actual.WS_CashInToOwnAccount_Tests"> </class>-->
-<!--                <class name="kpx.actual.WS_CashInToAnotherAcc_Tests"> </class>-->
-<!--                <class name="kpx.actual.WS_CashOut_Tests"> </class>-->
-<!--                <class name="kpx.actual.WS_KwartaPadalaPayOut_Tests"> </class>-->
-<!--                <class name="kpx.actual.WS_Reprinting_Tests"> </class>-->
-
-
-<!--                <class name="kpx.actual.WS_ShopSafe_Tests">  </class>-->
-
-
-
+                <class name="kpx.actual.PayoutCancellation_Tests">  </class>
+                <class name="kpx.actual.Payout_Tests"> </class>
+                <class name="kpx.actual.PayoutReprinting_Tests">  </class>
+                <class name="kpx.actual.BillsPay_Tests">  </class>
+                <class name="kpx.actual.BillsPayCancellation_Tests">  </class>
+                <class name="kpx.actual.BillsPayChangeD_Tests">  </class>
+                <class name="kpx.actual.BillsPayReprinting_Tests">  </class>
+                <class name="kpx.actual.WS_CashInToOwnAccount_Tests"> </class>
+                <class name="kpx.actual.WS_CashInToAnotherAcc_Tests"> </class>
+                <class name="kpx.actual.WS_CashOut_Tests"> </class>
+                <class name="kpx.actual.WS_KwartaPadalaPayOut_Tests"> </class>
+                <class name="kpx.actual.WS_Reprinting_Tests"> </class>
+                <class name="kpx.actual.WS_ShopSafe_Tests">  </class>
             </classes>
         </parameter>
     </test>

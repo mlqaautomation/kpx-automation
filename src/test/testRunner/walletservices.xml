@@ -13,11 +13,11 @@
             </classes>
         </parameter>
     </test>
-<!--        <test name="KPX-WALLET SERVICE">-->
-<!--            <parameter name="type" value="web">-->
-<!--                <classes>-->
-<!--                    <class name="kpx.actual.WS_CashInToOwnAccount_Tests"> </class>-->
-<!--                    </classes>-->
-<!--            </parameter>-->
-<!--        </test>-->
+        <test name="KPX-WALLET SERVICE">
+            <parameter name="type" value="web">
+                <classes>
+                    <class name="kpx.actual.WS_CashInToOwnAccount_Tests"> </class>
+                    </classes>
+            </parameter>
+        </test>
 </suite>

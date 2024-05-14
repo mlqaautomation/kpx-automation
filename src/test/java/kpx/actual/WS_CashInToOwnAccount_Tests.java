@@ -15,7 +15,7 @@ public class WS_CashInToOwnAccount_Tests extends BaseTest {
         }
     }
 
-    @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "Validate Cash In to Own Account Page")
+    @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "Validate Cash In to Own Account")
     public void CIOA_TC_01() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsCashInToOwnAccountSteps.CIOA_TC_01();

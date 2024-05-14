@@ -13,6 +13,7 @@ public class SendOut_Tests extends BaseTest {
             ExtentReporter.logPass("loginGoogle", "Login, Passed!!");
         }
     }
+
     @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Verify Navigation of SendOut Domestic")
     public void DSendout_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){

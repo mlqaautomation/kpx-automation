@@ -22,21 +22,21 @@ public class SendOutCancellation_Tests extends BaseTest {
         }
 
     }
-//    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Verify Cancel Sendout with Non-exisitng KPTN")
-//    public void SOC_TC_02()throws Exception{
-//        if(this.homeSteps.isInHomePage()) {
-//            this.sendOutCancellationSteps.SOC_TC_02();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle" , priority = 3, description = "Verify Cancel Sendout with already cancelled KPTN")
-//    public void SOC_TC_03()throws Exception{
-//        if(this.homeSteps.isInHomePage()) {
-//            this.sendOutCancellationSteps.SOC_TC_03();
-//
-//        }
-//
-//    }
+    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Verify Cancel Sendout with Non-exisitng KPTN")
+    public void SOC_TC_02()throws Exception{
+        if(this.homeSteps.isInHomePage()) {
+            this.sendOutCancellationSteps.SOC_TC_02();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle" , priority = 3, description = "Verify Cancel Sendout with already cancelled KPTN")
+    public void SOC_TC_03()throws Exception{
+        if(this.homeSteps.isInHomePage()) {
+            this.sendOutCancellationSteps.SOC_TC_03();
+
+        }
+
+    }
 
 }

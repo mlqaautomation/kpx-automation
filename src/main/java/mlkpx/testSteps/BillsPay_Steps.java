@@ -55,6 +55,7 @@ public class BillsPay_Steps extends Base_Steps{
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             waitSleep(5000);
         }
+      
         if(isVisible(billsPayPageObjects.billsPay_ConfiInfo(), getText(billsPayPageObjects.billsPay_ConfiInfo()))) {
             LoggingUtils.info("Bills Pay Confirmation");
             click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
@@ -86,19 +87,16 @@ public class BillsPay_Steps extends Base_Steps{
         type(billsPayPageObjects.BPLastName(), "BP Last Name", "AGUILARTEST");
         type(billsPayPageObjects.BPFirstName(), "BP First Name", "ANGELYTEST");
         type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "TESTING");
+        type(billsPayPageObjects.PayorLastName(), "Payor Last Name", "AGUILARTEST");
+        type(billsPayPageObjects.PayorFirstName(), "Payor First Name", "ANGELYTEST");
+        type(billsPayPageObjects.PayorMiddleName(), "Payor Middle Name", "TESTING");
+        type(billsPayPageObjects.PayorAddress(), "Payor Address", "Cebu City");
+        type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
+        type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
+        type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
+        click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
+        waitSleep(5000);
 
-        //Payor Information
-        if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
-            type(billsPayPageObjects.PayorLastName(), "Payor Last Name", "AGUILARTEST");
-            type(billsPayPageObjects.PayorFirstName(), "Payor First Name", "ANGELYTEST");
-            type(billsPayPageObjects.PayorMiddleName(), "Payor Middle Name", "TESTING");
-            type(billsPayPageObjects.PayorAddress(), "Payor Address", "Cebu City");
-            type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
-            type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
-            type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            waitSleep(5000);
-        }
         if(isVisible(billsPayPageObjects.billsPay_ConfiInfo(), getText(billsPayPageObjects.billsPay_ConfiInfo()))) {
             LoggingUtils.info("Bills Pay Confirmation");
             click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
@@ -183,7 +181,6 @@ public class BillsPay_Steps extends Base_Steps{
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.SelectPartners()), "Please select the partner that will receive the payment.");
         }
-
 
 
     }

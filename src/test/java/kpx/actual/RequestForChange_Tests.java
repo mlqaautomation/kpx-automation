@@ -22,16 +22,16 @@ public class RequestForChange_Tests extends BaseTest {
         }
     }
 
-//    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Invalid KPTN Code")
-//    public void invalidKPTN_RFC_TC_02()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.requestForChangeSteps.RFC_TC_02();
-//        }
-//    }
-//    @Test(dependsOnMethods = "loginGoogle" , priority = 3, description = "Cancelled KPTN Code")
-//    public void cancelledKPTN_RFC_TC_03()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.requestForChangeSteps.RFC_TC_03();
-//        }
-//    }
+    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Invalid KPTN Code")
+    public void invalidKPTN_RFC_TC_02()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.requestForChangeSteps.RFC_TC_02();
+        }
+    }
+    @Test(dependsOnMethods = "loginGoogle" , priority = 3, description = "Cancelled KPTN Code")
+    public void cancelledKPTN_RFC_TC_03()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.requestForChangeSteps.RFC_TC_03();
+        }
+    }
 }

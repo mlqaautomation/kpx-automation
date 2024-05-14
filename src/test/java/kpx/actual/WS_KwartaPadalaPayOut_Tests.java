@@ -82,7 +82,7 @@ public class WS_KwartaPadalaPayOut_Tests extends BaseTest {
         }
 
     }
-    @Test(dependsOnMethods = "loginGoogle", priority = 9, description = "Validate again the cash in transaction if its being processed or not")
+    @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "Validate again the cash in transaction if its being processed or not")
     public void KPP_TC_09() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsKwartaPadalaPayOutSteps.KPP_TC_09();
@@ -90,7 +90,7 @@ public class WS_KwartaPadalaPayOut_Tests extends BaseTest {
         }
 
     }
-    @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "Validate Cancel sendout transction")
+    @Test(dependsOnMethods = "loginGoogle", priority = 9, description = "Validate Cancel sendout transction")
     public void KPP_TC_10() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsKwartaPadalaPayOutSteps.KPP_TC_10();

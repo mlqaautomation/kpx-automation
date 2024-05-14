@@ -1,3 +1,4 @@
+
 package mlkpx.testSteps;
 
 import org.testng.Assert;
@@ -196,8 +197,8 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
         waitSleep(2000);
         click(sendOutPageObjects.viewButton(), "View Button ");
         waitSleep(5000);
-        scrollToElement(sendOutPageObjects.selectKYC());
         scrollDown(100);
+        scrollToElement(sendOutPageObjects.selectKYC());
         click(sendOutPageObjects.selectKYC(), "Select KYC Button");
     }
 }

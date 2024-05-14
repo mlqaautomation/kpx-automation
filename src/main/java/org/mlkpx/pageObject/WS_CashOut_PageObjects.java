@@ -19,8 +19,8 @@ public class WS_CashOut_PageObjects {
     public WebElement informationText(){return getDriver().findElement(By.cssSelector("[class=\"col-md-6 col-lg-7\"]"));}
     public WebElement proceedButtonToReceipt(){return getDriver().findElement(By.cssSelector("[class=\"swal2-confirm swal2-styled\"]"));}
     public WebElement cashOutSuccessfulText(){return getDriver().findElement(By.cssSelector("[class=\"sc-aXZVg FiXoI\"]"));}
-    public WebElement transactionReceipt(){return getDriver().findElement(By.cssSelector("[class=\"sc-dSCufp jiOWvc\"]"));}
-    public WebElement cancelButtonInReceipt(){return getDriver().findElement(By.cssSelector("[class=\"sc-hIUJlX exqbQW btn btn-secondary\"]"));}
+    public WebElement transactionReceipt(){return getDriver().findElement(By.cssSelector("[class=\"sc-fxwrCY irBnWG\"]"));}
+    public WebElement cancelButtonInReceipt(){return getDriver().findElement(By.cssSelector("[class=\"sc-jnOGJG blZoWd btn btn-secondary\"]"));}
     public WebElement invalidReferenceNum(){return getDriver().findElement(By.cssSelector("[class=\"sc-gEvEer lkAUft\"]"));}
     public WebElement okButton(){return getDriver().findElement(By.cssSelector("[class=\"swal2-confirm swal2-styled\"]"));}
     public WebElement claimedTransactionText(){return getDriver().findElement(By.cssSelector("[class=\"sc-gEvEer lkAUft\"]"));}
