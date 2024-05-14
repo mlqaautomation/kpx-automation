@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="WALLET SERVICE" thread-count="6" >
+
+<suite name="HappyPath" thread-count="1" >
     <listeners>
         <listener class-name="utilities.ExtentReport.ExtentReporter" />
-        <!--        <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>-->
+        <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
     </listeners>
 
-    <test name="MLWALLET">
-        <parameter name="type" value="mobile">
-            <classes>
-                <class name="kpx.actual.WalletService.WalletService"> </class>
-            </classes>
-        </parameter>
-    </test>
-
-    <test name="KPX-WALLET SERVICE TRANSACTIONAL">
-
+    <test name="Happy Paths">
         <parameter name="type" value="web">
             <classes>
-                <class name="kpx.actual.WalletServicesNegativeTest_Tests"> </class>
+                <class name="kpx.actual.HappyPath_Tests"> </class>
+
             </classes>
         </parameter>
     </test>

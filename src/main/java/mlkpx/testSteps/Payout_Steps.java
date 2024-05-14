@@ -57,12 +57,37 @@ public class Payout_Steps extends Base_Steps {
             LoggingUtils.info("Navigated to View KYC");
             scrollDown(100);
             waitSleep(3000);
-            scrollDown(100);
-        }
-        click(payoutPageObjects.SelectKYC(), "Select KYC");
-        if (payoutPageObjects.KtpnInfo().getText().contains("KPTN")) {
-            click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
-        }
+            reader.refreshTestData();
+            waitSleep(3000);
+            String sendoutKPTN = reader.getSendOutKPTN(); // Call the getSendOutKPTN function
+            type(payoutPageObjects.PayKTPN(), "KTPN", sendoutKPTN);
+            type(payoutPageObjects.PayAmount(), "Amount", "100");
+            click(payoutPageObjects.SearchButton(), "Search Button");
+            waitSleep(2);
+            click(payoutPageObjects.SearchKYC(), "Search KYC");
+            waitSleep(2);
+            payoutPageObjects.SearchLName().clear();
+            // todo
+            String[] randomName = reader.getRandomName();
+            type(payoutPageObjects.SearchLName(), "Last name field", randomName[1]);
+            payoutPageObjects.SearchFName().clear();
+            type(payoutPageObjects.SearchFName(), "First name field", randomName[0]);
+            payoutPageObjects.SearchMName().clear();
+            type(payoutPageObjects.SearchMName(), "Middle name field", "");
+            click(payoutPageObjects.SearchKYCAc(), "Search Button");
+            waitSleep(2);
+            click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
+            waitSleep(2);
+            if(isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))){
+                LoggingUtils.info("Navigated to View KYC");
+                scrollDown(100);
+                waitSleep(3000);
+                scrollDown(100);
+            }
+            click(payoutPageObjects.SelectKYC(), "Select KYC");
+            if (payoutPageObjects.KtpnInfo().getText().contains("KPTN")) {
+                click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
+            }
 
         click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
         if (payoutPageObjects.SuccessfulPay().getText().contains("Payout Successful")) {
@@ -70,8 +95,27 @@ public class Payout_Steps extends Base_Steps {
             List<String> payoutKPTNList = Collections.singletonList(sendoutKPTN);
             reader.writePayoutKptnData(payoutKPTNList);
 
-        }
-    }
+            if (payoutPageObjects.PayoutConfirm().isEnabled()) {
+//                try{
+                    click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
+                    if (payoutPageObjects.SuccessfulPay().getText().contains("Payout Successful")) {
+                        assertEqual(getText(payoutPageObjects.SuccessfulPay()), "Payout Successful");
+                        List<String> sendoutKPTNList = Collections.singletonList(sendoutKPTN);
+                        reader.writePayoutKptnData(sendoutKPTNList);
+                        waitSleep(2000);
+                        click(payoutPageObjects.proceedToPrinting(), "Proceed to Printing");
+                        waitSleep(2000);
+                        click(payoutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
+                    }
+
+
+//                }catch (Exception e){
+//                    LoggingUtils.info("Payout Unsuccessful");
+//                    List<String> payoutKPTNList = Collections.singletonList(sendoutKPTN);
+//                    reader.writeKptnData(payoutKPTNList);
+//                    waitSleep(2000);
+//                }
+
 
 
         public void validateSuccessfulRemoteDomesticPayout ()throws Exception {
@@ -82,14 +126,16 @@ public class Payout_Steps extends Base_Steps {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
             //todo
-            type(payoutPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
+            type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
             WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
 
             waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
-            type(payoutPageObjects.OperatorID(), "Search Operator ID", "2023639709");
+            type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
             type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
 
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
+            waitSleep(3000);
+            reader.refreshTestData();
             waitSleep(3000);
             String sendoutRemoteKPTN = reader.getRemoteKPTN(); // Call the getSendOutRemoteKPTN function
             type(payoutPageObjects.PayKTPN(), "KTPN Number", sendoutRemoteKPTN);
@@ -126,22 +172,18 @@ public class Payout_Steps extends Base_Steps {
 
 //                try{
 
-                click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
 
-                if (getText(payoutPageObjects.SuccessfulPay()).equals("Payout Successful")) {
-                    assertEqual(getText(payoutPageObjects.SuccessfulPay()), "Payout Successful");
-                    List<String> payoutremoteKPTNList = Collections.singletonList(sendoutRemoteKPTN);
-                    reader.writeRemotePayoutKptnData(payoutremoteKPTNList);
+                    if (getText(payoutPageObjects.SuccessfulPay()).equals("Payout Successful")) {
+                        assertEqual(getText(payoutPageObjects.SuccessfulPay()), "Payout Successful");
+                        List<String> payoutremoteKPTNList = Collections.singletonList(sendoutRemoteKPTN);
+                        reader.writeRemotePayoutKptnData(payoutremoteKPTNList);
+                        waitSleep(2000);
+                        click(payoutPageObjects.proceedToPrinting(), "Proceed to Printing");
+                        waitSleep(2000);
+                        click(payoutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
+                    }
 
-                }
 
-                click(payoutPageObjects.proceedToPrinting(), "Proceed to Printing");
-                waitSleep(2000);
-                click(payoutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
-            }
-
-//                    click(payoutPageObjects.proceedToPrinting(), "Proceed to Printing");
-//                    click(payoutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
 //                }catch (Exception e){
 //                    LoggingUtils.info("Payout Remote Unsuccessful");
 //                    List<String> kptnValues = Collections.singletonList(sendoutRemoteKPTN);

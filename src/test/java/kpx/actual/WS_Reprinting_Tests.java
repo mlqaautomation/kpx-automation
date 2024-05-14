@@ -6,6 +6,9 @@ import utilities.ExtentReport.ExtentReporter;
 
 public class WS_Reprinting_Tests extends BaseTest {
     // WALLET SERVICES / RECEIPT REPRINTING / Cash In To Own Account
+
+
+
     @Test(description = "Logging in via gmail and kpx")
     public void loginGoogle() throws Exception {
         this.loginSteps.signInGoogle("teller");
@@ -133,6 +136,7 @@ public class WS_Reprinting_Tests extends BaseTest {
         if(this.homeSteps.isInHomePage()){
             this.wsReprintingSteps.navigateWalletServicesPage();
             this.wsReprintingSteps.validateSuccessfulKPPayoutReprinting();
+
 
         }
 

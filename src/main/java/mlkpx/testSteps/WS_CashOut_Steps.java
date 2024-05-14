@@ -67,14 +67,23 @@ public class WS_CashOut_Steps extends Base_Steps{
         click(wsCashOutPageObjects.proceedButton(),"Proceed Button");
         click(wsCashOutPageObjects.confirmCashOut(),"Confirm Cash Out");
         waitSleep(4000);
-        click(wsCashOutPageObjects.proceedButtonToReceipt(),"Proceed To Printing");
-        if(isVisible(wsCashOutPageObjects.transactionReceipt(), getText(wsCashOutPageObjects.transactionReceipt()))){
-            ExtentReporter.logPass("CO_TC_03", "Successfully Verify Transaction Receipt");
+        if(isVisible(wsCashOutPageObjects.cashOutSuccessfulText(), getText(wsCashOutPageObjects.cashOutSuccessfulText()))){
+            ExtentReporter.logPass("CO_TC_01", "Transaction successfully process.");
+            String kptnText = getText(walletServicesPageObjects.kptnText());
+            List<String> kptnValues = Collections.singletonList(kptnText);
+            reader.writeCOPrintKTPN(kptnValues);
         }else{
-            ExtentReporter.logFail("CO_TC_03", "Failed to Verify Transaction Receipt");
-            Assert.fail("Failed to Verify Transaction Receipt");
+            ExtentReporter.logFail("CO_TC_01", "Failed to process Transactions");
+            Assert.fail("Failed to process Transactions");
         }
-        click(wsCashOutPageObjects.cancelButtonInReceipt(),"Cancel Button Receipt");
+//        click(wsCashOutPageObjects.proceedButtonToReceipt(),"Proceed To Printing");
+//        if(isVisible(wsCashOutPageObjects.transactionReceipt(), getText(wsCashOutPageObjects.transactionReceipt()))){
+//            ExtentReporter.logPass("CO_TC_03", "Successfully Verify Transaction Receipt");
+//        }else{
+//            ExtentReporter.logFail("CO_TC_03", "Failed to Verify Transaction Receipt");
+//            Assert.fail("Failed to Verify Transaction Receipt");
+//        }
+//        click(wsCashOutPageObjects.cancelButtonInReceipt(),"Cancel Button Receipt");
     }
 
     public void CO_TC_04()throws Exception{

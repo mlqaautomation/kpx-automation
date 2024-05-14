@@ -31,7 +31,9 @@ public class PayoutCancellation_Steps extends Base_Steps{
             LoggingUtils.info("Navigated the Payout Cancellation page");
 
         }
-        String payoutKPTN = reader.getSuccessPayoutKPTN(); // Call the getPayoutKPTN function
+        reader.refreshTestData();
+        waitSleep(3000);
+        String payoutKPTN = reader.getPayoutKPTN(); // Call the getPayoutKPTN function
         type(payoutPageObjects.CancelKTPN(), "KTPN Number",payoutKPTN);
         click(payoutPageObjects.SearchButton(), "Search Button");
         if(isVisible(payoutPageObjects.PayoutCancellationAmountInfo(), getText(payoutPageObjects.PayoutCancellationAmountInfo()))){
@@ -75,6 +77,8 @@ public class PayoutCancellation_Steps extends Base_Steps{
             LoggingUtils.info("Navigated the Payout Cancellation page");
 
         }
+        reader.refreshTestData();
+        waitSleep(3000);
         String remotePayoutKPTN = reader.getRemotePayoutKPTN(); // Call the getRemotePayoutKPTN function
         type(payoutPageObjects.CancelKTPN(), "KTPN Number", remotePayoutKPTN);
         click(payoutPageObjects.SearchButton(), "Search Button");

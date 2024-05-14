@@ -16,6 +16,10 @@ public class RequestForChange_PageObjects {
     public WebElement senderNewProvince(){ return getDriver().findElement(By.xpath("(//*[text()=\"ABRA\"])[1]")); }
     public WebElement senderCityChange(){ return getDriver().findElement(By.xpath("(//*[@class=\"css-19bqh2r\"])[2]")); }
     public WebElement senderNewCity(){ return getDriver().findElement(By.xpath("(//*[text()=\"BANGUED\"])[1]")); }
+    public WebElement senderIDNumber(){ return getDriver().findElement(By.xpath("//input[@placeholder='ID NUMBER']")); }
+    public WebElement senderHouseNum(){ return getDriver().findElement(By.xpath("//input[@placeholder='House No, Street / Baranggay / Sitio']")); }
+
+
     public WebElement searchButton(){
         return getDriver().findElement(By.cssSelector("[class=\"btn-sm btn btn-primary\"]"));
     }
@@ -58,7 +62,7 @@ public class RequestForChange_PageObjects {
         return getDriver().findElement(By.cssSelector("[name=\"reason\"]"));
     }
     public WebElement rfcSubmitButton(){
-        return getDriver().findElement(By.xpath("(//*[@class=\"btn-sm btn btn-primary\"])[2]"));
+        return getDriver().findElement(By.xpath("//button[normalize-space()='Submit Request']"));
     }
     public WebElement yesChangeDetailsButton(){
         return getDriver().findElement(By.cssSelector("[class=\"swal2-confirm swal2-styled\"]"));

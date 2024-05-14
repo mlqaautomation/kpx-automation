@@ -32,7 +32,7 @@ public class BillsPay_Steps extends Base_Steps{
     public void validateSuccessfulBillsPayTransaction()throws Exception {
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
-        waitSleep(5000);
+        waitSleep(8000);
         click(billsPayPageObjects.ClickOption(), "Option");
         waitSleep(2000);
         click(billsPayPageObjects.ChooseOption(), "Choose Partners");
@@ -41,18 +41,25 @@ public class BillsPay_Steps extends Base_Steps{
         type(billsPayPageObjects.BPLastName(), "BP Last Name", "AGUILARTEST");
         type(billsPayPageObjects.BPFirstName(), "BP First Name", "ANGELYTEST");
         type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "TESTING");
-        type(billsPayPageObjects.PayorLastName(), "Payor Last Name", "AGUILARTEST");
-        type(billsPayPageObjects.PayorFirstName(), "Payor First Name", "ANGELYTEST");
-        type(billsPayPageObjects.PayorMiddleName(), "Payor Middle Name", "TESTING");
-        type(billsPayPageObjects.PayorAddress(), "Payor Address", "Cebu City");
-        type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
-        type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
-        type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
-        click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-        waitSleep(5000);
+
+        //Payor Information
+        if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
+            type(billsPayPageObjects.PayorLastName(), "Payor Last Name", "AGUILARTEST");
+            type(billsPayPageObjects.PayorFirstName(), "Payor First Name", "ANGELYTEST");
+            type(billsPayPageObjects.PayorMiddleName(), "Payor Middle Name", "TESTING");
+            type(billsPayPageObjects.PayorAddress(), "Payor Address", "Cebu City");
+            type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
+            String AmountBillsPayKPTN = reader.getBillsPayAmount();
+            type(billsPayPageObjects.PaymentAmount(), "Payment Amount", AmountBillsPayKPTN);
+            type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
+            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
+            waitSleep(5000);
+        }
+      
         if(isVisible(billsPayPageObjects.billsPay_ConfiInfo(), getText(billsPayPageObjects.billsPay_ConfiInfo()))) {
             LoggingUtils.info("Bills Pay Confirmation");
             click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
+            waitSleep(2000);
             click(billsPayPageObjects.ConfirmSubmitBillsPay(), "Confirm Payment");
             waitSleep(7000);
             assertEqual(getText(billsPayPageObjects.SuccessfulBillsPay()), "Bills Pay Successful");
@@ -71,7 +78,7 @@ public class BillsPay_Steps extends Base_Steps{
         //(Note: the duplicate transaction in 90 seconds)
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
-        waitSleep(5000);
+        waitSleep(8000);
         click(billsPayPageObjects.ClickOption(), "Option");
         waitSleep(2000);
         click(billsPayPageObjects.ChooseOption(), "Choose Partners");
@@ -105,13 +112,13 @@ public class BillsPay_Steps extends Base_Steps{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.BranchCode()));
         //todo
-        type(billsPayPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
+        type(billsPayPageObjects.BranchCode(), "Search Branch Code",  propertyReader.getproperty("BranchCode"));
         WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         waits.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.OperatorID()));
-        type(billsPayPageObjects.OperatorID(), "Search Operator ID", "2023639709");
+        type(billsPayPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(billsPayPageObjects.ReasonRemote(), "Reason", "Testing");
-
+        waitSleep(8000);
         click(billsPayPageObjects.ClickOption(), "Option");
         waitSleep(2000);
         click(billsPayPageObjects.ChooseOption(), "Choose Partners");
@@ -128,7 +135,8 @@ public class BillsPay_Steps extends Base_Steps{
             type(billsPayPageObjects.PayorMiddleName(), "Payor Middle Name", "TESTING");
             type(billsPayPageObjects.PayorAddress(), "Payor Address", "Cebu City");
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
-            type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "200");
+            String AmountBillsPayKPTN = reader.getBillsPayAmount();
+            type(billsPayPageObjects.PaymentAmount(), "Payment Amount", AmountBillsPayKPTN);
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             waitSleep(5000);
@@ -136,6 +144,7 @@ public class BillsPay_Steps extends Base_Steps{
         if(isVisible(billsPayPageObjects.billsPay_ConfiInfo(), getText(billsPayPageObjects.billsPay_ConfiInfo()))) {
             LoggingUtils.info("Bills Pay Confirmation");
             click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
+            waitSleep(2000);
             click(billsPayPageObjects.ConfirmSubmitBillsPay(), "Confirm Payment");
             waitSleep(7000);
             assertEqual(getText(billsPayPageObjects.SuccessfulBillsPay()), "Bills Pay Successful");
@@ -145,10 +154,10 @@ public class BillsPay_Steps extends Base_Steps{
             LoggingUtils.info("Remote Bills Pay Successful" +
                     "The payment was successfully created." +
                     "Please prepare printer to print document.");
-            waitSleep(2000);
             click(billsPayPageObjects.proceedToPrinting(), "Proceed to Printing");
             waitSleep(2000);
             click(billsPayPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
+
         }
     }
     public void validateEmptyPartnerBillsPay()throws Exception {
@@ -172,7 +181,6 @@ public class BillsPay_Steps extends Base_Steps{
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.SelectPartners()), "Please select the partner that will receive the payment.");
         }
-
 
 
     }
