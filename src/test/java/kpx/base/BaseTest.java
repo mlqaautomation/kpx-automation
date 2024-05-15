@@ -64,9 +64,9 @@ public class BaseTest {
     @BeforeClass (alwaysRun = true)
     public void setUp(final String type){
         if(type.equals("mobile")){
-            AppiumDriverManager.setupServer();
-            AppiumDriverManager.startActivity();
-            initWallet();
+//            AppiumDriverManager.setupServer();
+//            AppiumDriverManager.startActivity();
+//            initWallet();
         }else if(type.equals("web")){
             final String browser ="chrome";
             initializeDriver(DriverType.valueOf(browser.toUpperCase()));
@@ -90,7 +90,9 @@ public class BaseTest {
             getDriver().get(System.getProperty("homeUrl"));
         }else if(type.equals("mobile")){
             LoggingUtils.info("Starting app...");
-//            AppiumDriverManager.startActivity();
+            AppiumDriverManager.setupServer();
+            AppiumDriverManager.startActivity();
+            initWallet();
             PageFactory.initElements(new AppiumFieldDecorator(AppiumDriverManager.getAndroidDriver(), Duration.ofSeconds(10)), this);
         }
     }
@@ -98,8 +100,8 @@ public class BaseTest {
     @Parameters("type")
     public void clean(final String type){
         if(type.equals("mobile")) {
-            LoggingUtils.info("Resetting app...");
-//            AppiumDriverManager.clearApp();
+//            LoggingUtils.info("Resetting app...");
+            AppiumDriverManager.stopServer();
         }
         LoggingUtils.info("------>>>Test Ended<<<-------");
     }
@@ -107,7 +109,7 @@ public class BaseTest {
     @Parameters("type")
     public void tearDown (final String type) {
         if(type.equals("mobile")){
-            AppiumDriverManager.stopServer();
+//            AppiumDriverManager.stopServer();
         }else if(type.equals("web")){
             closeWebBrowser();
         }else{

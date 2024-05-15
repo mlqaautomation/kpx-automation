@@ -2,42 +2,26 @@ package kpx.actual.WalletService;
 
 import kpx.base.BaseTest;
 import org.testng.annotations.Test;
-import utilities.ExtentReport.ExtentReporter;
-
-import static org.testng.Assert.assertTrue;
-import static utilities.Driver.AppiumDriverManager.APP_ID;
-import static utilities.Driver.AppiumDriverManager.getAndroidDriver;
 
 public class WalletService extends BaseTest {
-    @Test(description = "Test to verify app is installed")
-    public void isAppInstalledTest(){
-        assertTrue(getAndroidDriver().isAppInstalled(APP_ID));
-        ExtentReporter.logPass("isAppInstalledTest", "MLWALLET is installed");
-    }
-    @Test(dependsOnMethods="isAppInstalledTest" ,description = "Test to verify Login")
 
-    public void loginTest(){
-        loginWalletSteps.loginWallet();
-    }
-
-    @Test(dependsOnMethods="loginTest" ,description = "Test to get cash in KPTN")
+    @Test(priority = 1 ,description = "Test to get cash in KPTN")
     public void cashIn(){
+        loginWalletSteps.loginWallet();
         cashInSteps.cashIn();
     }
 
-    @Test(dependsOnMethods="loginTest", priority = 2 ,description = "Test to get KwartaPadala KPTN")
+    @Test(priority = 2 ,description = "Test to get KwartaPadala KPTN")
     public void kwartaPadala(){
+        loginWalletSteps.loginWallet();
         kwartaPadala.kwartaPadala();
     }
 
-    @Test(dependsOnMethods="loginTest", priority = 3 ,description = "Test to get CashOut KPTN")
+    @Test(priority = 3 ,description = "Test to get CashOut KPTN")
     public void cashOut(){
+        loginWalletSteps.loginWallet();
         cashOut.cashOut();
     }
 
-    // @Test(dependsOnMethods="loginTest", priority = 3 ,description = "Test to get KwartaPadala KPTN")
-    // public void kwartaPadala(){
-    //     kwartaPadala.kwartaPadala();
-    // }
 }
 
