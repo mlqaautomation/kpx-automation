@@ -2,10 +2,13 @@ package mlkpx.testSteps;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utilities.ExtentReport.ExtentReporter;
 import utilities.Logger.LoggingUtils;
 
+import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
 
@@ -21,6 +24,9 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
     }
     public void CIOA_TC_01()throws Exception {
         navigationWalletServices();
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
         String randomReferenceNum = reader.getRandomWriteCashIn_Kptn();
         type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", randomReferenceNum);
         click(wsCashInToOwnAccountPageObjects.searchButton(), "Search Button");
@@ -51,6 +57,9 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         waitSleep(5000);
         if (isVisible(wsCashInToOwnAccountPageObjects.cashInSuccessfulText(), getText(wsCashInToOwnAccountPageObjects.cashInSuccessfulText()))) {
             ExtentReporter.logPass("CIOA_TC_01", "Successfully Cash In");
+            String kptnText = getText(walletServicesPageObjects.kptnText());
+            List<String> kptnValues = Collections.singletonList(kptnText);
+            reader.writeCIOPrintKTPN(kptnValues);
         } else {
             ExtentReporter.logFail("CIOA_TC_01", "Failed to Cash In");
             Assert.fail("Failed to Cash In");
@@ -60,11 +69,21 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         click(wsCashInToOwnAccountPageObjects.cancelReceiptButton(), "Cancel Button");
 
     }
-    //    public void CIOA_TC_02()throws Exception{
-//        QRCODE
-//    }
-    public void CIOA_TC_03()throws Exception{
+    public void CIOA_TC_02()throws Exception {
         navigationWalletServices();
+        click(walletServicesPageObjects.RemoteTransaction(), "Remote Transaction");
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(walletServicesPageObjects.BranchCode()));
+
+        type(walletServicesPageObjects.BranchCode(), "Search Branch Code", "0617143912");
+        waitSleep(15000);
+
+        type(walletServicesPageObjects.OperatorID(), "Search Operator ID", "20248207");
+        type(walletServicesPageObjects.ReasonRemote(), "Reason", "Testing");
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
         String randomReferenceNum = reader.getRandomWriteCashIn_Kptn();
         type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", randomReferenceNum);
         click(wsCashInToOwnAccountPageObjects.searchButton(), "Search Button");
@@ -92,17 +111,22 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         click(wsCashInToOwnAccountPageObjects.cancelInProceedButton(), "Cancel Button");
         click(wsCashInToOwnAccountPageObjects.proceedButton(), "Proceed Button");
         click(wsCashInToOwnAccountPageObjects.confirmCashInButton(), "Confirm Cash In Button");
-        waitSleep(4000);
-        click(wsCashInToOwnAccountPageObjects.proceedToPrintingButton(), "Proceed To Printing Button");
-        if(isVisible(wsCashInToOwnAccountPageObjects.detailsReceipt(), getText(wsCashInToOwnAccountPageObjects.detailsReceipt()))){
-            ExtentReporter.logPass("CIOA_TC_03", "Successfully Cash In Verify Receipt");
-        }else{
-            ExtentReporter.logFail("CIOA_TC_03", "Failed to Cash In Verify Receipt");
-            Assert.fail("Failed to Cash In Verify Receipt");
+        waitSleep(5000);
+        if (isVisible(wsCashInToOwnAccountPageObjects.cashInSuccessfulText(), getText(wsCashInToOwnAccountPageObjects.cashInSuccessfulText()))) {
+            ExtentReporter.logPass("CIOA_TC_01", "Successfully Cash In");
+            String kptnText = getText(walletServicesPageObjects.kptnText());
+            List<String> kptnValues = Collections.singletonList(kptnText);
+            reader.writeCIOPrintKTPN(kptnValues);
+        } else {
+            ExtentReporter.logFail("CIOA_TC_01", "Failed to Cash In");
+            Assert.fail("Failed to Cash In");
         }
+        click(wsCashInToOwnAccountPageObjects.proceedToPrintingButton(), "Proceed To Printing Button");
+        waitSleep(3000);
         click(wsCashInToOwnAccountPageObjects.cancelReceiptButton(), "Cancel Button");
 
     }
+
 
     public void CIOA_TC_04()throws Exception{
         navigationWalletServices();

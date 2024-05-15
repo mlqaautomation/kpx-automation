@@ -5,6 +5,9 @@ import java.util.Collections;
 import org.testng.Assert;
 import utilities.ExtentReport.ExtentReporter;
 
+import java.util.Collections;
+import java.util.List;
+
 public class WS_CashOut_Steps extends Base_Steps{
 
     public void navigationWalletServices()throws Exception{
@@ -21,6 +24,9 @@ public class WS_CashOut_Steps extends Base_Steps{
     }
     public void CO_TC_01()throws Exception{
         navigationWalletServices();
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
         String randomReferenceNum = reader.getRandomCashOutReferenceNum();
         type(wsCashOutPageObjects.referenceNumField(), "Reference Number Field", randomReferenceNum);
         click(wsCashOutPageObjects.searchButton(),"Search Button");
@@ -31,7 +37,7 @@ public class WS_CashOut_Steps extends Base_Steps{
             Assert.fail("Failed to Review the Transactions");
         }
         click(wsCashOutPageObjects.cancelButton(),"Cancel Button");
-        click(wsCashOutPageObjects.noStayOnThisPageButton(),"No Stay On this Posistion");
+        click(wsCashOutPageObjects.noStayOnThisPageButton(),"No Stay On this Position");
         click(wsCashOutPageObjects.proceedButton(),"Proceed Button");
         click(wsCashOutPageObjects.cancelButtonInProceed(), "Cancel Button");
         click(wsCashOutPageObjects.proceedButton(),"Proceed Button");
@@ -39,6 +45,9 @@ public class WS_CashOut_Steps extends Base_Steps{
         waitSleep(4000);
         if(isVisible(wsCashOutPageObjects.cashOutSuccessfulText(), getText(wsCashOutPageObjects.cashOutSuccessfulText()))){
             ExtentReporter.logPass("CO_TC_01", "Transaction successfully process.");
+            String kptnText = getText(walletServicesPageObjects.kptnText());
+            List<String> kptnValues = Collections.singletonList(kptnText);
+            reader.writeCOPrintKTPN(kptnValues);
         }else{
             ExtentReporter.logFail("CO_TC_01", "Failed to process Transactions");
             Assert.fail("Failed to process Transactions");
@@ -138,7 +147,9 @@ public class WS_CashOut_Steps extends Base_Steps{
         waitSleep(3000);
         type(wsKwartaPadalaPayOutPageObjects.operatorIDField(), "Operator ID Field", propertyReader.getproperty("operatorID"));
         type(wsKwartaPadalaPayOutPageObjects.reasonField(), "Reason Field", propertyReader.getproperty("Reason"));
-
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
         String randomReferenceNum = reader.getRandomCashOutReferenceNum();
         type(wsCashOutPageObjects.referenceNumField(), "Reference Number Field", randomReferenceNum);
         click(wsCashOutPageObjects.searchButton(),"Search Button");

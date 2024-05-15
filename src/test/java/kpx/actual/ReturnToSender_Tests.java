@@ -19,6 +19,7 @@ public class ReturnToSender_Tests extends BaseTest {
     @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Verify Navigation of Return To Sender Page")
     public void RTS_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
+            this.sendOutSteps.DS_TC_08();
             this.returnToSenderSteps.RTS_TC_01();
         }
     }

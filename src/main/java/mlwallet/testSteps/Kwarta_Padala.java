@@ -21,7 +21,7 @@ public class Kwarta_Padala extends Base_Steps{
         mobileGeneralMethod.tap(mlWalletPageObjects.selectPayment_Wallet(), "Wallet Payment");
         mobileGeneralMethod.waitSleep(8000);
         mobileGeneralMethod.tap(mlWalletPageObjects.confirm_Btn(), "Confirm btn");
-        mobileGeneralMethod.waitSleep(10000);
+        mobileGeneralMethod.waitSleep(12000);
         mobileGeneralMethod.tap(mlWalletPageObjects.continue2_btn(), "OTP Continue");
         mobileGeneralMethod.waitSleep(12000);
         mobileGeneralMethod.verticalSwipe();

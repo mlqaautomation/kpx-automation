@@ -19,6 +19,7 @@ public class BillsPayReprinting_Tests extends BaseTest {
     public void BP_RP_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayReprintingSteps.navigatePayoutPage();
+            this.billsPaySteps.validateSuccessfulBillsPayTransaction();
             this.billsPayReprintingSteps.validateSuccessfulBillsPayReprinting();
 
         }
@@ -28,6 +29,7 @@ public class BillsPayReprinting_Tests extends BaseTest {
     public void BP_RP_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayReprintingSteps.navigatePayoutPage();
+            this.billsPaySteps.validateSuccessfulRemoteBillsPayTransaction();
             this.billsPayReprintingSteps.validateSuccessfulRemoteBillsPayReprinting();
 
         }

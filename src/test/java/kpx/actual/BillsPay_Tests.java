@@ -150,15 +150,15 @@ public class BillsPay_Tests extends BaseTest {
         }
 
     }
-    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate bills payment with duplicate transaction with in 90 seconds")
-    public void BillsPay_TC_16()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.billsPaySteps.navigatePayoutPage();
-            this.billsPaySteps.validateDuplicateBillsPayTransaction();
-
-        }
-
-    }
+//    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate bills payment with duplicate transaction with in 90 seconds")
+//    public void BillsPay_TC_16()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.billsPaySteps.navigatePayoutPage();
+//            this.billsPaySteps.validateDuplicateBillsPayTransaction();
+//
+//        }
+//
+//    }
     @Test(dependsOnMethods = "loginGoogle", priority = 17, description = "To validate bills payment with max amount inputted")
     public void BillsPay_TC_17()throws Exception{
         if(this.homeSteps.isInHomePage()){

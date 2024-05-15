@@ -78,17 +78,6 @@ public class BillsPayChangeD_Steps extends Base_Steps{
             //Payor Information
 
             scrollDown(100);
-            billsPayPageObjects.PayorLastName().clear();
-            type(billsPayPageObjects.PayorLastName(), "Payor Last Name", "TEST TEST");
-            billsPayPageObjects.PayorFirstName().clear();
-            type(billsPayPageObjects.PayorFirstName(), "Payor First Name", "TEST TEST");
-            billsPayPageObjects.PayorMiddleName().clear();
-            type(billsPayPageObjects.PayorMiddleName(), "Payor Middle Name", "TESTING TEST");
-            billsPayPageObjects.PayorAddress().clear();
-            type(billsPayPageObjects.PayorAddress(), "Payor Address", "BOHOL TEST");
-            billsPayPageObjects.PayorContact().clear();
-            type(billsPayPageObjects.PayorContact(), "Payor Contact", "09077629345");
-
             billsPayPageObjects.ChangePayorLastName().clear();
             type(billsPayPageObjects.ChangePayorLastName(), "Payor Last Name", "TEST TEST");
             billsPayPageObjects.ChangePayorFirstName().clear();
@@ -215,7 +204,7 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPHFXQPWMF");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation()))){
@@ -223,11 +212,11 @@ public class BillsPayChangeD_Steps extends Base_Steps{
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.BranchCode()));
 
-            type(billsPayPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
+            type(billsPayPageObjects.BranchCode(), "Search Branch Code",  propertyReader.getproperty("BranchCode"));
             WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(13));
 
             waits.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.OperatorID()));
-            type(billsPayPageObjects.OperatorID(), "Search Operator ID", "2023639709");
+            type(billsPayPageObjects.OperatorID(), "Search Operator ID",  propertyReader.getproperty("OperatorID"));
             type(billsPayPageObjects.ReasonRemote(), "Reason", "Testing");
             //Payor Information
             billsPayPageObjects.ChangePayorLastName().clear();

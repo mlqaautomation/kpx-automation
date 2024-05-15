@@ -18,6 +18,7 @@ public class SendOutCancellation_Tests extends BaseTest {
     @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Verify Navigation of SendOut Cancellation and Cancellation of Transaction")
     public void navigatingSendOutCancellationPage()throws Exception{
         if(this.homeSteps.isInHomePage()) {
+            this.sendOutSteps.DS_TC_08();
             this.sendOutCancellationSteps.SOC_TC_01();
         }
     }

@@ -293,7 +293,7 @@ public class BillsPay_PageObjects {
     }
 
     public WebElement InvalidIRNum() {
-        return getDriver().findElement(By.xpath("//*[text()='Please enter valid IR No.']"));
+        return getDriver().findElement(By.xpath("//*[text()='Please enter a valid IR No.']"));
     }
 
         public WebElement InvalidIR () {

@@ -48,6 +48,9 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
         waitSleep(4000);
         type(wsKwartaPadalaPayOutPageObjects.operatorIDField(),"OPerator ID Field", propertyReader.getproperty("operatorID"));
         type(wsKwartaPadalaPayOutPageObjects.reasonField(),"Reason Field", propertyReader.getproperty("Reason"));
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
         String randomKPPKPTN = reader.getRandomKPPReferenceNum();
         type(wsKwartaPadalaPayOutPageObjects.referenceNumField(), "KPP KPTN Field", randomKPPKPTN);
         type(wsKwartaPadalaPayOutPageObjects.amountField(), "Amount Field", propertyReader.getproperty("validamount"));
@@ -137,6 +140,9 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
 
     public void KPP_TC_08() throws Exception {
         navigationWalletServicesToKwartaPadalaPayout();
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
         String randomKPPKPTN = reader.getRandomKPPReferenceNum();
         type(wsKwartaPadalaPayOutPageObjects.referenceNumField(), "KPP KPTN Field", randomKPPKPTN);
         type(wsKwartaPadalaPayOutPageObjects.amountField(), "Amount Field", propertyReader.getproperty("validamount"));

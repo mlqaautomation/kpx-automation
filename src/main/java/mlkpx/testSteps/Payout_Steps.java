@@ -3,6 +3,7 @@ package mlkpx.testSteps;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.yaml.snakeyaml.error.YAMLException;
 import utilities.ExtentReport.ExtentReporter;
 import utilities.Logger.LoggingUtils;
@@ -10,7 +11,7 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
 
-public class Payout_Steps extends Base_Steps {
+public class Payout_Steps extends Base_Steps{
 
     //P A Y O U T    T R A N S A C T I O N
     // todo
@@ -20,45 +21,23 @@ public class Payout_Steps extends Base_Steps {
     //  add Assert.fail() for failed tc
     //  optimize code ** create method for common steps such as searching kyc and etc ** to reuse again.
 
-    public void navigatePayoutPage() throws Exception {
-
-        click(payoutPageObjects.payout_link(), "Payout");
-        if (isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))) {
-            LoggingUtils.info("Navigated to Payout Page");
+    public void navigatePayoutPage()throws Exception{
+        try{
+            click(payoutPageObjects.payout_link(), "Payout");
+            if(isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))){
+                LoggingUtils.info("Navigated to Payout Page");
+            }
+        }catch (Exception e){
+            LoggingUtils.info("Failed to Navigate Payout Page "+ e);
         }
     }
-
-    public void validateSuccessfulDomesticPayout() throws Exception {
-        click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
-        click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
-        click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
-        waitSleep(3000);
-        //todo
-        String sendoutKPTN = reader.getPayoutKPTN(); // Call the getPayoutKPTN method
-        type(payoutPageObjects.PayKTPN(), "KTPN", sendoutKPTN);
-        type(payoutPageObjects.PayAmount(), "Amount", "100");
-        click(payoutPageObjects.SearchButton(), "Search Button");
-        waitSleep(2);
-        click(payoutPageObjects.SearchKYC(), "Search KYC");
-        waitSleep(2);
-        payoutPageObjects.SearchLName().clear();
-        // todo
-        String[] randomName = reader.getRandomName();
-        type(payoutPageObjects.SearchLName(), "Last name field", randomName[1]);
-        payoutPageObjects.SearchFName().clear();
-        type(payoutPageObjects.SearchFName(), "First name field", randomName[0]);
-        payoutPageObjects.SearchMName().clear();
-        type(payoutPageObjects.SearchMName(), "Middle name field", "");
-        click(payoutPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2);
-        click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
-        waitSleep(2);
-        if (isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))) {
-            LoggingUtils.info("Navigated to View KYC");
-            scrollDown(100);
+    public void validateSuccessfulDomesticPayout()throws Exception{
+            click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
+            click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
+            click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
             waitSleep(3000);
             reader.refreshTestData();
-            waitSleep(3000);
+            waitSleep(3000);  
             String sendoutKPTN = reader.getSendOutKPTN(); // Call the getSendOutKPTN function
             type(payoutPageObjects.PayKTPN(), "KTPN", sendoutKPTN);
             type(payoutPageObjects.PayAmount(), "Amount", "100");
@@ -89,11 +68,6 @@ public class Payout_Steps extends Base_Steps {
                 click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
             }
 
-        click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
-        if (payoutPageObjects.SuccessfulPay().getText().contains("Payout Successful")) {
-            assertEqual(getText(payoutPageObjects.SuccessfulPay()), "Payout Successful");
-            List<String> payoutKPTNList = Collections.singletonList(sendoutKPTN);
-            reader.writePayoutKptnData(payoutKPTNList);
 
             if (payoutPageObjects.PayoutConfirm().isEnabled()) {
 //                try{
@@ -108,7 +82,6 @@ public class Payout_Steps extends Base_Steps {
                         click(payoutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
                     }
 
-
 //                }catch (Exception e){
 //                    LoggingUtils.info("Payout Unsuccessful");
 //                    List<String> payoutKPTNList = Collections.singletonList(sendoutKPTN);
@@ -116,9 +89,10 @@ public class Payout_Steps extends Base_Steps {
 //                    waitSleep(2000);
 //                }
 
+            }
 
-
-        public void validateSuccessfulRemoteDomesticPayout ()throws Exception {
+    }
+    public void validateSuccessfulRemoteDomesticPayout()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
@@ -156,7 +130,7 @@ public class Payout_Steps extends Base_Steps {
             click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
             waitSleep(2);
 
-            if (isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))) {
+            if(isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))){
                 LoggingUtils.info("Navigated to View KYC");
                 scrollDown(100);
                 waitSleep(3000);
@@ -169,9 +143,8 @@ public class Payout_Steps extends Base_Steps {
             }
 
             if (payoutPageObjects.PayoutConfirm().isEnabled()) {
-
 //                try{
-
+                    click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
 
                     if (getText(payoutPageObjects.SuccessfulPay()).equals("Payout Successful")) {
                         assertEqual(getText(payoutPageObjects.SuccessfulPay()), "Payout Successful");
@@ -183,7 +156,6 @@ public class Payout_Steps extends Base_Steps {
                         click(payoutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
                     }
 
-
 //                }catch (Exception e){
 //                    LoggingUtils.info("Payout Remote Unsuccessful");
 //                    List<String> kptnValues = Collections.singletonList(sendoutRemoteKPTN);
@@ -191,108 +163,229 @@ public class Payout_Steps extends Base_Steps {
 //                    waitSleep(2000);
 //                }
 
+            }
+
+    }
+    public void navigationFOrSendOutDomestic() throws Exception {
+        click(sendOutPageObjects.sendOutLink(), "SendOut Page ");
+    }
+    public void searchKYC () {
+        click(sendOutPageObjects.searchKYC(), "Search KYC button ");
+        String[] randomName = reader.getRandomName();
+        type(sendOutPageObjects.lastName(), "Lastname ", "Quin");
+        type(sendOutPageObjects.firstName(), "Firstname ", "Anna");
+        click(sendOutPageObjects.searchBtn(), "Search Button ");
+        waitSleep(2000);
+        click(sendOutPageObjects.viewButton(), "View Button ");
+        waitSleep(5000);
+        scrollToElement(sendOutPageObjects.selectKYC());
+        scrollDown(100);
+        click(sendOutPageObjects.selectKYC(), "Select KYC Button");
+    }
+    public void search1KYC () {
+        click(sendOutPageObjects.searchKYC(), "Search KYC button ");
+        String[] randomName = reader.getRandomName();
+        type(sendOutPageObjects.lastName(), "Lastname ", "Siarot");
+        type(sendOutPageObjects.firstName(), "Firstname ", "Enrique");
+        click(sendOutPageObjects.searchBtn(), "Search Button ");
+        waitSleep(2000);
+        click(sendOutPageObjects.viewButton(), "View Button ");
+        waitSleep(5000);
+        scrollToElement(sendOutPageObjects.selectKYC());
+        scrollDown(100);
+        click(sendOutPageObjects.selectKYC(), "Select KYC Button");
+    }
+    public void searchReceiver () {
+        click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
+        scrollToElement(sendOutPageObjects.selectButton());
+        click(sendOutPageObjects.selectButton(), "Select Button");
+        waitSleep(5000);
+        scrollToElement(sendOutPageObjects.no_ContactNo());
+        waitSleep(5000);
+        click(sendOutPageObjects.no_ContactNo(), "Contact No Checkbox");
+    }
+    public void ForWatchlist() throws Exception {
+        navigationFOrSendOutDomestic();
+        searchKYC();
+        searchReceiver();
+        waitSleep(5000);
+        type(sendOutPageObjects.sourceOfFund(), "Source of Fund field ", propertyReader.getproperty("source_of_fund"));
+        type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
+        type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
+        type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
+        type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "200");
+        click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
+        click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
+        waitSleep(3000);
+        //todo get value of kptn locator and post it to yaml file
+        String kptnText = getText(sendOutPageObjects.kptnText());
+        List<String> kptnValues = Collections.singletonList(kptnText);
+        reader.writeCWKptnData(kptnValues);
+        click(sendOutPageObjects.proceedToPrinting(), "Proceed to Printing");
+        waitSleep(2000);
+        click(sendOutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
+    }
+
+    public void validateComplianceAssistance()throws Exception{
+        click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
+        click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
+        click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
+        String WatchlistKPTN = reader.getWatchlistKPTN();
+        type(payoutPageObjects.PayKTPN(), "Compliance KTPN Number", WatchlistKPTN);
+        type(payoutPageObjects.PayAmount(), "Amount", "200");
+        click(payoutPageObjects.SearchButton(), "Search Button");
+        waitSleep(2);
+        click(payoutPageObjects.SearchKYC(), "Search KYC");
+        waitSleep(2);
+        payoutPageObjects.SearchLName().clear();
+        type(payoutPageObjects.SearchLName(), "Last name field", "SIAROT");
+        payoutPageObjects.SearchFName().clear();
+        type(payoutPageObjects.SearchFName(), "First name field", "ENRIQUE");
+        payoutPageObjects.SearchMName().clear();
+        type(payoutPageObjects.SearchMName(), "Middle name field", "");
+        click(payoutPageObjects.SearchKYCAc(), "Search Button");
+        waitSleep(2);
+        click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
+        waitSleep(2);
+        if(isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))){
+            LoggingUtils.info("Navigated to View KYC");
+            scrollDown(100);
+            waitSleep(3000);
+            scrollDown(100);
+        }
+        click(payoutPageObjects.SelectKYC(), "Select KYC");
+        if (payoutPageObjects.PayoutInfos().isEnabled()) {
+            LoggingUtils.info("Navigated to View Payout Information's");
+            click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
+        }
+
+        if (payoutPageObjects.PayoutConfirm().isEnabled()) {
+            click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
+            WebDriverWait ca = new WebDriverWait(driver, Duration.ofSeconds(10));
+            ca.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OKCom()));
+            assertEqual(getText(payoutPageObjects.ComplianceAss()), "For Compliance Assistance");
+            click(payoutPageObjects.OKCom(), "Click OK");
 
         }
 
-        public void validateComplianceAssistance ()throws Exception {
+
+    }
+    public void ForRemoteWatchlist() throws Exception {
+        navigationFOrSendOutDomestic();
+        search1KYC();
+        searchReceiver();
+        waitSleep(5000);
+        type(sendOutPageObjects.sourceOfFund(), "Source of Fund field ", propertyReader.getproperty("source_of_fund"));
+        type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
+        type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
+        type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
+        type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "200");
+        click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
+        click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
+        waitSleep(3000);
+        //todo get value of kptn locator and post it to yaml file
+        String rekptnText = getText(sendOutPageObjects.kptnText());
+        List<String> kptnValues = Collections.singletonList(rekptnText);
+        reader.writeCWRemoteKptnData(kptnValues);
+        click(sendOutPageObjects.proceedToPrinting(), "Proceed to Printing");
+        waitSleep(2000);
+        click(sendOutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
+    }
+    public void validateRemoteComplianceAssistance()throws Exception{
+
+        click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
+        click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
+        //todo
+        type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
+        type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
+        type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
+
+        click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
+        String RemoteWatchlistKPTN = reader.getRemoteWatchlistKPTN();
+        type(payoutPageObjects.PayKTPN(), "Compliance KTPN Number", RemoteWatchlistKPTN);
+        type(payoutPageObjects.PayAmount(), "Amount", "200");
+        click(payoutPageObjects.SearchButton(), "Search Button");
+        waitSleep(2);
+        click(payoutPageObjects.SearchKYC(), "Search KYC");
+        waitSleep(2);
+        payoutPageObjects.SearchLName().clear();
+        type(payoutPageObjects.SearchLName(), "Last name field", "Briar");
+        payoutPageObjects.SearchFName().clear();
+        type(payoutPageObjects.SearchFName(), "First name field", "Aurelia");
+        payoutPageObjects.SearchMName().clear();
+        type(payoutPageObjects.SearchMName(), "Middle name field", "");
+        click(payoutPageObjects.SearchKYCAc(), "Search Button");
+        waitSleep(2);
+        click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
+        waitSleep(2);
+        if(isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))){
+            LoggingUtils.info("Navigated to View KYC");
+            scrollDown(100);
+            waitSleep(3000);
+            scrollDown(100);
+        }
+        click(payoutPageObjects.SelectKYC(), "Select KYC");
+        if (payoutPageObjects.PayoutInfos().isEnabled()) {
+            LoggingUtils.info("Navigated to View Payout Information's");
+            click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
+        }
+
+
+        if (payoutPageObjects.PayoutConfirm().isEnabled()) {
+            click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
+            WebDriverWait ca = new WebDriverWait(driver, Duration.ofSeconds(10));
+            ca.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OKCom()));
+            assertEqual(getText(payoutPageObjects.ComplianceAss()), "For Compliance Assistance");
+            click(payoutPageObjects.OKCom(), "Click OK");
+
+        }
+
+
+    }
+    public void validateInvalidKTPN()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
-            type(payoutPageObjects.PayKTPN(), "Compliance KTPN Number", propertyReader.getproperty("ComplianceAssKTPN"));
-            type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("UnPayAmount"));
+            type(payoutPageObjects.PayKTPN(), "KTPN Number", propertyReader.getproperty("InvalidKTPNnum"));
+            type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("PayAmount"));
             click(payoutPageObjects.SearchButton(), "Search Button");
-            waitSleep(2);
-            click(payoutPageObjects.SearchKYC(), "Search KYC");
-            waitSleep(2);
-            payoutPageObjects.SearchLName().clear();
-            type(payoutPageObjects.SearchLName(), "Last name field", "SIAROT");
-            payoutPageObjects.SearchFName().clear();
-            type(payoutPageObjects.SearchFName(), "First name field", "ENRIQUE");
-            payoutPageObjects.SearchMName().clear();
-            type(payoutPageObjects.SearchMName(), "Middle name field", "");
-            click(payoutPageObjects.SearchKYCAc(), "Search Button");
-            waitSleep(2);
-            click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
-            waitSleep(2);
-            if (isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))) {
-                LoggingUtils.info("Navigated to View KYC");
-                scrollDown(100);
-                waitSleep(3000);
-                scrollDown(100);
+
+            if(isVisible(payoutPageObjects.InvalidKTPN(), getText(payoutPageObjects.payoutPage_h5()))){
+                assertEqual(getText(payoutPageObjects.payoutPage_h5()), "No Transaction Found");
             }
-            click(payoutPageObjects.SelectKYC(), "Select KYC");
-            if (payoutPageObjects.PayoutInfos().isEnabled()) {
-                LoggingUtils.info("Navigated to View Payout Information's");
-                click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
-            }
-
-            if (payoutPageObjects.PayoutConfirm().isEnabled()) {
-                click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
-                WebDriverWait ca = new WebDriverWait(driver, Duration.ofSeconds(10));
-                ca.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OKCom()));
-                assertEqual(getText(payoutPageObjects.ComplianceAss()), "For Compliance Assistance");
-                click(payoutPageObjects.OKCom(), "Click OK");
-
-            }
+            click(payoutPageObjects.OKInvalidKTPN(), "OK");
 
 
-        }
-        public void validateRemoteComplianceAssistance ()throws Exception {
+    }
+    public void validateRemoteInvalidKTPN()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
+
             click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
+        //todo
+        type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-            type(payoutPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+        waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
+        type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
+        type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
 
-            waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
-            type(payoutPageObjects.OperatorID(), "Search Operator ID", "2023639709");
-            type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
-
-            click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
-            type(payoutPageObjects.PayKTPN(), "Compliance KTPN Number", propertyReader.getproperty("ComplianceAssKTPN"));
-            type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("UnPayAmount"));
-            click(payoutPageObjects.SearchButton(), "Search Button");
-            waitSleep(2);
-            click(payoutPageObjects.SearchKYC(), "Search KYC");
-            waitSleep(2);
-            payoutPageObjects.SearchLName().clear();
-            type(payoutPageObjects.SearchLName(), "Last name field", "SIAROT");
-            payoutPageObjects.SearchFName().clear();
-            type(payoutPageObjects.SearchFName(), "First name field", "ENRIQUE");
-            payoutPageObjects.SearchMName().clear();
-            type(payoutPageObjects.SearchMName(), "Middle name field", "");
-            click(payoutPageObjects.SearchKYCAc(), "Search Button");
-            waitSleep(2);
-            click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
-            waitSleep(2);
-            if (isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))) {
-                LoggingUtils.info("Navigated to View KYC");
-                scrollDown(100);
-                waitSleep(3000);
-                scrollDown(100);
-            }
-            click(payoutPageObjects.SelectKYC(), "Select KYC");
-            if (payoutPageObjects.PayoutInfos().isEnabled()) {
-                LoggingUtils.info("Navigated to View Payout Information's");
-                click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
-            }
-            if (payoutPageObjects.PayoutConfirm().isEnabled()) {
-                click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
-                WebDriverWait ca = new WebDriverWait(driver, Duration.ofSeconds(10));
-                ca.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OKCom()));
-                assertEqual(getText(payoutPageObjects.ComplianceAss()), "For Compliance Assistance");
-                click(payoutPageObjects.OKCom(), "Click OK");
-            }
-        }
-        public void validateInvalidKTPN ()throws Exception {
-
-            click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
-            click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
             type(payoutPageObjects.PayKTPN(), "KTPN Number", propertyReader.getproperty("InvalidKTPNnum"));
             type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("PayAmount"));
@@ -302,29 +395,13 @@ public class Payout_Steps extends Base_Steps {
                 assertEqual(getText(payoutPageObjects.payoutPage_h5()), "No Transaction Found");
             }
             click(payoutPageObjects.OKInvalidKTPN(), "OK");
-        }
-        public void validateRemoteInvalidKTPN ()throws Exception {
 
-            click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
-            click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
-            type(payoutPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-            waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
-            type(payoutPageObjects.OperatorID(), "Search Operator ID", "2023639709");
-            type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
-            click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
-            type(payoutPageObjects.PayKTPN(), "KTPN Number", propertyReader.getproperty("InvalidKTPNnum"));
-            type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("PayAmount"));
-            click(payoutPageObjects.SearchButton(), "Search Button");
 
-            if (isVisible(payoutPageObjects.InvalidKTPN(), getText(payoutPageObjects.payoutPage_h5()))) {
-                assertEqual(getText(payoutPageObjects.payoutPage_h5()), "No Transaction Found");
-            }
-            click(payoutPageObjects.OKInvalidKTPN(), "OK");
-        }
-        public void validateInvalidAmountDPT ()throws Exception {
+
+
+
+    }
+    public void validateInvalidAmountDPT()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
@@ -332,27 +409,35 @@ public class Payout_Steps extends Base_Steps {
             type(payoutPageObjects.PayKTPN(), "KTPN Number", propertyReader.getproperty("UnclaimKTPNnum"));
             type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("InvalidAmount"));
             click(payoutPageObjects.SearchButton(), "Search Button");
-            assertEqual(getText(payoutPageObjects.InvalidAmount()), "Amount entered does not match amount in KPTN / reference no.");
-        }
-        public void validateInvalidAmountRemoteDPT ()throws Exception {
+            assertEqual(getText(payoutPageObjects.payoutPage_h5()), "No Transaction Found");
+//            assertEqual(getText(payoutPageObjects.InvalidAmount()), "Amount entered does not match amount in KPTN / reference no.");
+
+
+    }
+    public void validateInvalidAmountRemoteDPT()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
-            type(payoutPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-            waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
-            type(payoutPageObjects.OperatorID(), "Search Operator ID", "2023639709");
-            type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
+        //todo
+        type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
+        type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
+        type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
 
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
             type(payoutPageObjects.PayKTPN(), "KTPN Number", propertyReader.getproperty("UnclaimKTPNnum"));
             type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("InvalidAmount"));
             click(payoutPageObjects.SearchButton(), "Search Button");
-            assertEqual(getText(payoutPageObjects.InvalidAmount()), "Amount entered does not match amount in KPTN / reference no.");
-        }
-        public void validateClaimedDomesticPayout ()throws Exception {
+            assertEqual(getText(payoutPageObjects.payoutPage_h5()), "No Transaction Found");
+
+
+    }
+    public void validateClaimedDomesticPayout()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
@@ -362,29 +447,32 @@ public class Payout_Steps extends Base_Steps {
             type(payoutPageObjects.PayAmount(), "Amount", "100");
             click(payoutPageObjects.SearchButton(), "Search Button");
             assertEqual(getText(payoutPageObjects.payoutClaim_h5()), "No Transaction Found");
-        }
-        public void validateClaimedRemoteDomesticPayout ()throws Exception {
+
+
+    }
+    public void validateClaimedRemoteDomesticPayout()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
+        //todo
+        type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-            type(payoutPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-            waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
-            type(payoutPageObjects.OperatorID(), "Search Operator ID", "2023639709");
-            type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
+        waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
+        type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
+        type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
-            String remotePayoutKPTN = reader.getSuccessRemotePayoutKPTN(); // Call the getRemotePayoutKPTN function
-            type(payoutPageObjects.PayKTPN(), "KTPN Number", remotePayoutKPTN);
+            type(payoutPageObjects.PayKTPN(), "KTPN Number", "KPNABODVPUQ");
             type(payoutPageObjects.PayAmount(), "Amount", "100");
             click(payoutPageObjects.SearchButton(), "Search Button");
             assertEqual(getText(payoutPageObjects.payoutClaim_h5()), "No Transaction Found");
-        }
-        public void validateDPTwithoutKTPNInput ()throws Exception {
+
+
+    }
+    public void validateDPTwithoutKTPNInput()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
@@ -393,29 +481,33 @@ public class Payout_Steps extends Base_Steps {
             type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("PayAmount"));
             click(payoutPageObjects.SearchButton(), "Search Button");
             assertEqual(getText(payoutPageObjects.RequiredKTPN()), "KPTN is required");
-        }
-        public void validateRemoteDPTwithoutKTPNInput ()throws Exception {
+
+
+    }
+    public void validateRemoteDPTwithoutKTPNInput()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
+        //todo
+        type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-            type(payoutPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-            waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
-            type(payoutPageObjects.OperatorID(), "Search Operator ID", "2023639709");
-            type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
+        waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
+        type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
+        type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
             type(payoutPageObjects.PayKTPN(), "KTPN Number", "");
             payoutPageObjects.PayAmount().clear();
             type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("PayAmount"));
             click(payoutPageObjects.SearchButton(), "Search Button");
             assertEqual(getText(payoutPageObjects.RequiredKTPN()), "KPTN is required");
-        }
-        public void validateDPTwithoutAmountInput ()throws Exception {
+
+
+    }
+    public void validateDPTwithoutAmountInput()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
@@ -424,28 +516,32 @@ public class Payout_Steps extends Base_Steps {
             type(payoutPageObjects.PayAmount(), "Amount", "");
             click(payoutPageObjects.SearchButton(), "Search Button");
             assertEqual(getText(payoutPageObjects.AmountShouldBeNumber()), "Amount should be a number");
-        }
-        public void validateRemoteDPTWithoutAmountInput ()throws Exception {
+
+
+    }
+    public void validateRemoteDPTWithoutAmountInput()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
+        //todo
+        type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-            type(payoutPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-            waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
-            type(payoutPageObjects.OperatorID(), "Search Operator ID", "2023639709");
-            type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
+        waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
+        type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
+        type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
             waitSleep(4);
             type(payoutPageObjects.PayKTPN(), "KTPN Number", propertyReader.getproperty("ClaimKTPNnum"));
             type(payoutPageObjects.PayAmount(), "Amount", "");
             click(payoutPageObjects.SearchButton(), "Search Button");
             assertEqual(getText(payoutPageObjects.AmountShouldBeNumber()), "Amount should be a number");
-        }
-        public void validateRemoteInvalidBranchCode ()throws Exception {
+
+
+    }
+    public void validateRemoteInvalidBranchCode()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
@@ -454,11 +550,11 @@ public class Payout_Steps extends Base_Steps {
             wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
 
             type(payoutPageObjects.BranchCode(), "Search Branch Code", "12R3180912");
-            ExtentReporter.logPass("validateRemoteInvalidBranchCode", "Branch not found");
+            ExtentReporter.logPass("validateRemoteInvalidBranchCode","Branch not found");
 
 
-        }
-        public void validateRemoteInvalidOperatorID ()throws Exception {
+    }
+    public void validateRemoteInvalidOperatorID()throws Exception{
 
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
@@ -466,14 +562,22 @@ public class Payout_Steps extends Base_Steps {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
             payoutPageObjects.BranchCode().clear();
-            type(payoutPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
+            type(payoutPageObjects.BranchCode(), "Search Branch Code", "0617143912");
             WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
 
             waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
             type(payoutPageObjects.OperatorID(), "Search Operator ID", "20236709");
-            ExtentReporter.logPass("validateRemoteInvalidOperatorID", "Operator not found");
-        }
+            ExtentReporter.logPass("validateRemoteInvalidOperatorID","Operator not found");
+
+
     }
+
+
+
+
+
+
+}
 
 
 

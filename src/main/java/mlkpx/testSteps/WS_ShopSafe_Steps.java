@@ -5,7 +5,7 @@ import utilities.ExtentReport.ExtentReporter;
 
 public class WS_ShopSafe_Steps extends Base_Steps{
 
-//-------------------Positive Test
+    //-------------------Positive Test
     public void To_Validate_Shop_Safe_Page_WS_SS_01()throws Exception{
         click(wsShopSafePageObjects.walletServicesLink(), "Wallet Services Page ");
         click(wsShopSafePageObjects.shopsafeText(), "Shop Safe button");
@@ -336,7 +336,7 @@ public class WS_ShopSafe_Steps extends Base_Steps{
         }
     }
 
-//-----------------Negative  Test
+    //-----------------Negative  Test
     public void To_Validate_Empty_Reference_Number_WS_RR_01()throws Exception{
         click(wsShopSafePageObjects.walletServicesLink(), "Wallet Services Page ");
         click(wsShopSafePageObjects.shopsafeText(), "Shop Safe Button");

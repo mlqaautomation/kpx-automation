@@ -9,7 +9,7 @@
     <test name="SENDOUT Input">
         <parameter name="type" value="web">
             <classes>
-                <!--                <class name="kpx.actual.Kyc_Tests"> </class>-->
+<!--                <class name="kpx.actual.Kyc_Tests"> </class>-->
                 <class name="kpx.actual.SendOut_Tests"> </class>
                 <class name="kpx.actual.RequestForChange_Tests"> </class>
                 <class name="kpx.actual.ReturnToSender_Tests"> </class>
