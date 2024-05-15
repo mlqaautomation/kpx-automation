@@ -114,7 +114,6 @@ public class Payout_PageObjects {
         return getDriver().findElement(By.xpath("//button[normalize-space()='Cancel']"));
     }
 
-
     public WebElement payoutKptn() {
         return getDriver().findElement(By.xpath("(//p[@class='sc-iowXnY cjiyKT'])[4]"));
     }

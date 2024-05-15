@@ -48,6 +48,7 @@ public class SendOut_Steps extends Base_Steps {
     public void DS_TC_02_1() throws Exception { // Test Case for Sendout Transaction Option
         navigationFOrSendOutDomestic();
         click(sendOutPageObjects.yesRadioButton(), "Yes Button ");
+
         waitSleep(5000);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
@@ -58,7 +59,6 @@ public class SendOut_Steps extends Base_Steps {
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
-
         click(sendOutPageObjects.searchKYC(), "Search KYC button ");
         type(sendOutPageObjects.lastName(), "Lastname ", propertyReader.getproperty("Lastname"));
         type(sendOutPageObjects.firstName(), "Firstname ", propertyReader.getproperty("Firstname"));

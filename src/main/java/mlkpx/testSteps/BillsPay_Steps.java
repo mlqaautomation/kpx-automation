@@ -55,6 +55,7 @@ public class BillsPay_Steps extends Base_Steps{
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             waitSleep(5000);
         }
+
         if(isVisible(billsPayPageObjects.billsPay_ConfiInfo(), getText(billsPayPageObjects.billsPay_ConfiInfo()))) {
             LoggingUtils.info("Bills Pay Confirmation");
             click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
@@ -183,7 +184,6 @@ public class BillsPay_Steps extends Base_Steps{
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.SelectPartners()), "Please select the partner that will receive the payment.");
         }
-
 
 
     }

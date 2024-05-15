@@ -37,7 +37,7 @@ public class Payout_Steps extends Base_Steps{
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
             waitSleep(3000);
             reader.refreshTestData();
-            waitSleep(3000);
+            waitSleep(3000);  
             String sendoutKPTN = reader.getSendOutKPTN(); // Call the getSendOutKPTN function
             type(payoutPageObjects.PayKTPN(), "KTPN", sendoutKPTN);
             type(payoutPageObjects.PayAmount(), "Amount", "100");
@@ -81,7 +81,6 @@ public class Payout_Steps extends Base_Steps{
                         waitSleep(2000);
                         click(payoutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
                     }
-
 
 //                }catch (Exception e){
 //                    LoggingUtils.info("Payout Unsuccessful");

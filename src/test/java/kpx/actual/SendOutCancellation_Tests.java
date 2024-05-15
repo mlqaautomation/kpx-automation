@@ -21,7 +21,6 @@ public class SendOutCancellation_Tests extends BaseTest {
             this.sendOutSteps.DS_TC_08();
             this.sendOutCancellationSteps.SOC_TC_01();
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Verify Cancel Sendout with Non-exisitng KPTN")
     public void SOC_TC_02()throws Exception{
@@ -37,7 +36,5 @@ public class SendOutCancellation_Tests extends BaseTest {
             this.sendOutCancellationSteps.SOC_TC_03();
 
         }
-
     }
-
 }

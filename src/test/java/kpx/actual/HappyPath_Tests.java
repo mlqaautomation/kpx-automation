@@ -35,6 +35,7 @@ public class HappyPath_Tests extends BaseTest {
         }
 
     }
+
     @Test(dependsOnMethods = "loginGoogle" , priority = 4, description = "Verify Navigation of SendOut remote Cancellation and Cancellation of Transaction")
     public void DSendOutRemoteCancellation()throws Exception{
         if(this.homeSteps.isInHomePage()) {
@@ -45,6 +46,7 @@ public class HappyPath_Tests extends BaseTest {
     }
 
    // SENDOUT REQUEST FOR CHANGE
+
     @Test(dependsOnMethods = "loginGoogle" , priority = 5, description = "Verify Navigation of Request for Change Page and can Request for Change")
     public void SendoutRequestForChange_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
@@ -53,6 +55,7 @@ public class HappyPath_Tests extends BaseTest {
         }
     }
     //SENDOUT RETURN TO SENDER
+
     @Test(dependsOnMethods = "loginGoogle" , priority = 6, description = "Verify Navigation of Return To Sender Page")
     public void SendoutReturnToSender_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
@@ -88,6 +91,7 @@ public class HappyPath_Tests extends BaseTest {
 
         }
     }
+
     @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "Successful remote domestic payout transaction")
     public void Payout_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
@@ -169,6 +173,7 @@ public class HappyPath_Tests extends BaseTest {
         }
 
     }
+
     @Test(dependsOnMethods = "loginGoogle", priority = 18, description = "To validate remote successful Bills Pay Cancellation ")
     public void BPCancellation_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
@@ -180,6 +185,7 @@ public class HappyPath_Tests extends BaseTest {
 
     }
     //BILLS PAY CHANGE DETAILS
+
     @Test(dependsOnMethods = "loginGoogle", priority = 19, description = "To validate successful BillsPay Change Details")
     public void BP_ChangeDetails_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
@@ -189,6 +195,7 @@ public class HappyPath_Tests extends BaseTest {
         }
 
     }
+
     @Test(dependsOnMethods = "loginGoogle", priority = 20, description = "To validate successful remote BillsPay Change Details")
     public void BP_ChangeDetails_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
@@ -199,6 +206,7 @@ public class HappyPath_Tests extends BaseTest {
         }
     }
     //BILLS PAY REPRINTING
+
     @Test(dependsOnMethods = "loginGoogle", priority = 21, description = "To validate BillsPay Successful Payment Reprint")
     public void BP_Reprinting_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
@@ -209,6 +217,7 @@ public class HappyPath_Tests extends BaseTest {
         }
 
     }
+
     @Test(dependsOnMethods = "loginGoogle", priority = 22, description = "To validate BillsPay Successful Remote Payment Reprint")
     public void BP_Reprinting_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){

@@ -22,7 +22,6 @@ public class Payout_Tests extends BaseTest{
             this.payoutSteps.navigatePayoutPage();
             this.payoutSteps.validateSuccessfulDomesticPayout();
 
-
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "Successful remote domestic payout transaction")

@@ -29,10 +29,15 @@ public class WalletService extends BaseTest {
     public void kwartaPadala(){
         kwartaPadala.kwartaPadala();
     }
+
     @Test(dependsOnMethods="loginTest", priority = 3 ,description = "Test to get CashOut KPTN")
     public void cashOut(){
         cashOut.cashOut();
     }
 
+    // @Test(dependsOnMethods="loginTest", priority = 3 ,description = "Test to get KwartaPadala KPTN")
+    // public void kwartaPadala(){
+    //     kwartaPadala.kwartaPadala();
+    // }
 }
 

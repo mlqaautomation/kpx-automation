@@ -44,7 +44,7 @@ public class WS_CashInToOwnAccount_Tests extends BaseTest {
         }
 
     }
-    @Test(dependsOnMethods = "loginGoogle" , priority = 3, description = "Validate invalid mobile number")
+    @Test(dependsOnMethods = "loginGoogle" , priority = 4, description = "Validate invalid mobile number")
     public void CIOA_TC_05()throws Exception{
         if(this.homeSteps.isInHomePage()) {
             this.wsCashInToOwnAccountSteps.CIOA_TC_05();
@@ -76,6 +76,7 @@ public class WS_CashInToOwnAccount_Tests extends BaseTest {
         }
 
     }
+
     @Test(dependsOnMethods = "loginGoogle" , priority = 7, description = "Validate the tender amount is less than the total amount")
     public void CIOA_TC_09()throws Exception{
         if(this.homeSteps.isInHomePage()) {
@@ -84,6 +85,7 @@ public class WS_CashInToOwnAccount_Tests extends BaseTest {
         }
 
     }
+
     @Test(dependsOnMethods = "loginGoogle" , priority = 8, description = "Validate again the cash in transaction if its being proccessed or not")
     public void CIOA_TC_10()throws Exception{
         if(this.homeSteps.isInHomePage()) {

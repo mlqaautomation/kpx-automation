@@ -43,6 +43,15 @@ public class PayoutReprinting_Tests extends BaseTest {
     public void Payout_TC_Reprinting_03()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.payoutReprintingSteps.navigatePayoutPage();
+            this.payoutReprintingSteps.validateSuccessfulRemotePayoutReprinting();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate payout reprinting with invalid KPTN transaction")
+    public void Payout_TC_Reprinting_03()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.payoutReprintingSteps.navigatePayoutPage();
             this.payoutReprintingSteps.validateInvalidKTPNPayoutReprinting();
 
         }

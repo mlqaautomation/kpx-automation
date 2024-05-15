@@ -96,7 +96,6 @@ public class yamlReader {
     public String getSendOutKPTN() {
         try {
             List<String> sendOutKptnList = (List<String>) yamlData.get("sendOutKPTN");
-
             if (sendOutKptnList == null || sendOutKptnList.isEmpty()) {
                 System.out.println("No send out KPTN values available.");
                 return null;
@@ -131,6 +130,7 @@ public class yamlReader {
             return null;
         }
     }
+  
     public String getSendOutForChange() {
         try {
             List<String> sendOutKptnList = (List<String>) yamlData.get("sendOutKPTN");
@@ -175,6 +175,7 @@ public class yamlReader {
                 return null;
             }
 
+
             String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
             BillsPayKptnList.remove(BillsPayKptnList.size() - 1);
             saveYamlData();
@@ -193,7 +194,6 @@ public class yamlReader {
                 System.out.println("No Remote BillsPay KPTN values available.");
                 return null;
             }
-
             String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
             RemoteBillsPayKptnList.remove(RemoteBillsPayKptnList.size() - 1);
             saveYamlData();
@@ -228,7 +228,6 @@ public class yamlReader {
     public String getPayoutKPTN() {
         try {
             List<String> payoutkptnList = (List<String>) yamlData.get("payoutKPTN");
-
             if (payoutkptnList == null || payoutkptnList.isEmpty()) {
                 System.out.println("No payoutKPTN values available.");
                 return null;
@@ -472,7 +471,6 @@ public class yamlReader {
                 return null;
             }
 
-
             int lastIndex = KPKptnList.size() - 1;
             String randomSendOutKptn = KPKptnList.get(lastIndex);
             return randomSendOutKptn;
@@ -492,6 +490,7 @@ public class yamlReader {
             e.printStackTrace();
         }
     }
+
     //    public void writeKptnData(List<String> values) {
 //        try {
 //            Yaml yaml = new Yaml();
