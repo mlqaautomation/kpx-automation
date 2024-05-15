@@ -5,12 +5,13 @@ import utilities.Logger.LoggingUtils;
 
 public class Login extends Base_Steps {
     public void loginWallet(){
-        mobileGeneralMethod.waitSleep(5000);
-        mobileGeneralMethod.type(mlWalletPageObjects.mobileNum_editText(), "Mobile Field", "9999999998");
+        mobileGeneralMethod.waitSleep(10000);
+        mobileGeneralMethod.type(mlWalletPageObjects.mobileNum_editText(), "Mobile Field", "9999999995");
         mobileGeneralMethod.tap(mlWalletPageObjects.login_btn(),"Login Button");
         mobileGeneralMethod.waitSleep(10000);
         enterOTP();
         enterPin();
+        mobileGeneralMethod.waitSleep(3000);
         if((mlWalletPageObjects.usableBalance_Text().isDisplayed())){
             ExtentReporter.logPass("loginWallet", "Successfully Logged in");
             LoggingUtils.info("You are now Logged in");

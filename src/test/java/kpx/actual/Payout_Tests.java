@@ -138,6 +138,7 @@ public class Payout_Tests extends BaseTest{
     @Test(dependsOnMethods = "loginGoogle", priority = 14, description = "Domestic payout transaction for compliance assistance")
     public void Payout_TC_15()throws Exception{
         if(this.homeSteps.isInHomePage()){
+            this.payoutSteps.ForWatchlist();
             this.payoutSteps.navigatePayoutPage();
             this.payoutSteps.validateComplianceAssistance();
 
@@ -147,6 +148,7 @@ public class Payout_Tests extends BaseTest{
     @Test(dependsOnMethods = "loginGoogle", priority = 15, description = "Remote domestic payout transaction for compliance assistance")
     public void Payout_TC_16()throws Exception{
         if(this.homeSteps.isInHomePage()){
+            this.payoutSteps.ForRemoteWatchlist();
             this.payoutSteps.navigatePayoutPage();
             this.payoutSteps.validateRemoteComplianceAssistance();
 

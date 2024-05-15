@@ -7,12 +7,12 @@
     </listeners>
 
     <test name="BILLSPAY Input">
-        <parameter name="browser" value="chrome">
+        <parameter name="type" value="web">
             <classes>
-                                <class name="kpx.actual.BillsPay_Tests">  </class>
-                                <class name="kpx.actual.BillsPayCancellation_Tests">  </class>
-                                <class name="kpx.actual.BillsPayChangeD_Tests">  </class>
-                                <class name="kpx.actual.BillsPayReprinting_Tests">  </class>
+                <class name="kpx.actual.BillsPay_Tests">  </class>
+                <class name="kpx.actual.BillsPayCancellation_Tests">  </class>
+                <class name="kpx.actual.BillsPayChangeD_Tests">  </class>
+                <class name="kpx.actual.BillsPayReprinting_Tests">  </class>
             </classes>
         </parameter>
     </test>

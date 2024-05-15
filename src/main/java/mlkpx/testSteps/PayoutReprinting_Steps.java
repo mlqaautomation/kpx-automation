@@ -20,7 +20,10 @@ public class PayoutReprinting_Steps extends Base_Steps{
             LoggingUtils.info("Navigated the Payout Cancellation page");
 
         }
-        String payoutKPTN = reader.getSuccessPayoutKPTN(); // Call the getPayoutKPTN function
+        waitSleep(2000);
+        reader.refreshTestData();
+        waitSleep(3000);
+        String payoutKPTN = reader.getSuccessPayoutKPTN();
         type(payoutCancellationPageObjects.RepKTPN(), "KTPN Number",payoutKPTN);
         type(payoutCancellationPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testing");
         click(payoutCancellationPageObjects.Reprint(), "Search Button");
@@ -38,7 +41,10 @@ public class PayoutReprinting_Steps extends Base_Steps{
             LoggingUtils.info("Navigated the Payout Cancellation page");
 
         }
-        String remotepayoutKPTN = reader.getSuccessRemotePayoutKPTN(); // Call the getPayoutKPTN function
+        waitSleep(2000);
+        reader.refreshTestData();
+        waitSleep(3000);
+        String remotepayoutKPTN = reader.getSuccessRemotePayoutKPTN();
         type(payoutCancellationPageObjects.RepKTPN(), "KTPN Number",remotepayoutKPTN);
         type(payoutCancellationPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testing");
         click(payoutCancellationPageObjects.Reprint(), "Search Button");

@@ -34,7 +34,7 @@ public class SendOut_Steps extends Base_Steps {
     public void DS_TC_02() throws Exception { // Test Case for Sendout Transaction Option Invalid Branch Code
         navigationFOrSendOutDomestic();
         click(sendOutPageObjects.yesRadioButton(), "Yes Button ");
-        waitSleep(3000);
+        waitSleep(5000);
         type(sendOutPageObjects.branchField(), "Branch Code Field", propertyReader.getproperty("invalidBranch_code"));
         waitSleep(2000); //hard wait for 2 seconds
         isVisible(sendOutPageObjects.branchNotFoundText(), "Branch not found text");
@@ -48,7 +48,7 @@ public class SendOut_Steps extends Base_Steps {
     public void DS_TC_02_1() throws Exception { // Test Case for Sendout Transaction Option
         navigationFOrSendOutDomestic();
         click(sendOutPageObjects.yesRadioButton(), "Yes Button ");
-        waitSleep(3000);
+        waitSleep(5000);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
@@ -160,6 +160,7 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.r_FirstName(), "R_Firstname ", propertyReader.getproperty("MFirst_name"));
         type(sendOutPageObjects.r_MiddleName(), "R_Firstname ", propertyReader.getproperty("MFirst_name"));
         type(sendOutPageObjects.principalAmount(),"Principal Amount", propertyReader.getproperty("principalAmount"));
+        waitSleep(2000);
         click(sendOutPageObjects.submitSendOut(),"Submit Sendout Button");
         if(isVisible(sendOutPageObjects.receiversMaximumLettersDangerText(), getText(sendOutPageObjects.receiversMaximumLettersDangerText()))){
             ExtentReporter.logPass("DS_TC_04_1", "Successfully Verify Add Receiver New Negative Test");
@@ -397,7 +398,7 @@ public class SendOut_Steps extends Base_Steps {
             type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
             type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
             type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
-            type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
+            type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "200");
             waitSleep(3000);
             click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
             click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");

@@ -1,3 +1,4 @@
+
 package mlkpx.testSteps;
 
 import utilities.Logger.LoggingUtils;
@@ -20,7 +21,11 @@ public class WS_Reprinting_Steps extends Base_Steps{
         if(isVisible(walletServicesPageObjects.CashInOwnPage(), getText(walletServicesPageObjects.CashInOwnPage()))){
             LoggingUtils.info("Navigated the Cash In to Own Account Receipt page");
         }
-        type(walletServicesPageObjects.RefKTPN(), "Reference Number","ACIWICTZLCH");
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
+        String CIOReferenceNum = reader.getCIOKptn();
+        type(walletServicesPageObjects.RefKTPN(), "Reference Number",CIOReferenceNum);
         click(walletServicesPageObjects.Reprint(), "Search Button");
         if(isVisible(walletServicesPageObjects.ReprintCashInOwnReceipt(), getText(walletServicesPageObjects.ReprintCashInOwnReceipt()))){
             LoggingUtils.info("Navigated the Cash In to Own Account Receipt page");
@@ -74,6 +79,9 @@ public class WS_Reprinting_Steps extends Base_Steps{
         if(isVisible(walletServicesPageObjects.BranchCashInPage(), getText(walletServicesPageObjects.BranchCashInPage()))){
             LoggingUtils.info("Navigated the Cash In to Another Account Receipt page");
         }
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
         String CIAKPTN = reader.getCIAReprintKPTN();
         type(walletServicesPageObjects.RefKTPN(), "Reference Number",CIAKPTN);
         click(walletServicesPageObjects.Reprint(), "Search Button");
@@ -128,7 +136,11 @@ public class WS_Reprinting_Steps extends Base_Steps{
         if(isVisible(walletServicesPageObjects.CashOutPage(), getText(walletServicesPageObjects.CashOutPage()))){
             LoggingUtils.info("Navigated the Cash Out Receipt page");
         }
-        type(walletServicesPageObjects.RefKTPN(), "Reference Number","ACONEOMWVSL");
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
+        String CashoutReferenceNum = reader.getCashoutKptn();
+        type(walletServicesPageObjects.RefKTPN(), "Reference Number",CashoutReferenceNum);
         click(walletServicesPageObjects.Reprint(), "Search Button");
         if(isVisible(walletServicesPageObjects.ReprintCashOutReceipt(), getText(walletServicesPageObjects.ReprintCashOutReceipt()))){
             LoggingUtils.info("Navigated the Cash Out Receipt page");
@@ -181,6 +193,9 @@ public class WS_Reprinting_Steps extends Base_Steps{
         if(isVisible(walletServicesPageObjects.KPPayoutPage(), getText(walletServicesPageObjects.KPPayoutPage()))){
             LoggingUtils.info("Navigated the Kwarta Padala Payout Receipt page");
         }
+        waitSleep(3000);
+        reader.refreshTestData();
+        waitSleep(3000);
         String KPKPTN = reader.getKPReprintKPTN();
         type(walletServicesPageObjects.RefKTPN(), "Reference Number",KPKPTN);
         click(walletServicesPageObjects.Reprint(), "Search Button");

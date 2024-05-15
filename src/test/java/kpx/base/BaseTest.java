@@ -1,8 +1,6 @@
 package kpx.base;
 
 
-import kpx.actual.SendOutTransactional_Tests;
-
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 import mlkpx.testSteps.*;

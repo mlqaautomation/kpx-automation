@@ -23,13 +23,13 @@ public class ORReprinting_Tests extends BaseTest {
         }
 
     }
-//    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = " Validate OR Reprinting with Non-Existing KPTN")
-//    public void nonExistingKPTNOR_TC_02()throws Exception{
-//        if(this.homeSteps.isInHomePage()) {
-//            this.orReprintingSteps.OR_TC_02();
-//
-//        }
-//
-//    }
+    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = " Validate OR Reprinting with Non-Existing KPTN")
+    public void nonExistingKPTNOR_TC_02()throws Exception{
+        if(this.homeSteps.isInHomePage()) {
+            this.orReprintingSteps.OR_TC_02();
+
+        }
+
+    }
 
 }

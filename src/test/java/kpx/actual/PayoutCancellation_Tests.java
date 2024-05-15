@@ -19,7 +19,9 @@ public class PayoutCancellation_Tests extends BaseTest {
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "Validate successful payout cancellation")
     public void Payout_TC_Cancellation_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
-            this.payoutCancellationSteps.navigatePayoutPage();
+            this.sendOutSteps.DS_TC_08();
+            this.payoutSteps.navigatePayoutPage();
+            this.payoutSteps.validateSuccessfulDomesticPayout();
             this.payoutCancellationSteps.validateSuccessfulPayoutCancellation();
 
         }
@@ -28,7 +30,9 @@ public class PayoutCancellation_Tests extends BaseTest {
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "Validate remote successful payout cancellation")
     public void Payout_TC_Cancellation_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
-            this.payoutCancellationSteps.navigatePayoutPage();
+            this.sendOutSteps.DS_TC_02_1();
+            this.payoutSteps.navigatePayoutPage();
+            this.payoutSteps.validateSuccessfulRemoteDomesticPayout();
             this.payoutCancellationSteps.validateRemoteSuccessfulPayoutCancellation();
 
         }
@@ -70,15 +74,7 @@ public class PayoutCancellation_Tests extends BaseTest {
         }
 
     }
-    //    @Test(dependsOnMethods = "loginGoogle", priority = 7, description = "To validate remote payout cancellation with no IR number provided")
-//    public void Payout_TC_Cancellation_07()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.payoutCancellationSteps.navigatePayoutPage();
-//            this.payoutCancellationSteps.validateRemoteNoIRNumberProvided();
-//
-//        }
-//
-//    }
+
     @Test(dependsOnMethods = "loginGoogle", priority = 8, description = "To validate payout cancellation with no Reason provided")
     public void Payout_TC_Cancellation_08()throws Exception{
         if(this.homeSteps.isInHomePage()){
@@ -88,33 +84,9 @@ public class PayoutCancellation_Tests extends BaseTest {
         }
 
     }
-    //    @Test(dependsOnMethods = "loginGoogle", priority = 9, description = "To validate remote payout cancellation with no Reason provided")
-//    public void Payout_TC_Cancellation_09()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.payoutCancellationSteps.navigatePayoutPage();
-//            this.payoutCancellationSteps.validateRemoteNoReasonProvided();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "To validate remote payout cancellation with Invalid Branch Code")
-//    public void Payout_TC_Cancellation_10()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.payoutCancellationSteps.navigatePayoutPage();
-//            this.payoutCancellationSteps.validateRemoteInvalidBranchCodeProvided();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 11, description = "To validate remote payout cancellation with Invalid Operator ID")
-//    public void Payout_TC_Cancellation_11()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.payoutCancellationSteps.navigatePayoutPage();
-//            this.payoutCancellationSteps.validateRemoteInvalidOperatorIDProvided();
-//
-//        }
-//
-//    }
+
+
+
     @Test(dependsOnMethods = "loginGoogle", priority = 12, description = "To validate Keep the transaction In cancellation process")
     public void Payout_TC_Cancellation_12()throws Exception{
         if(this.homeSteps.isInHomePage()){

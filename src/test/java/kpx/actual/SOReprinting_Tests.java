@@ -22,13 +22,13 @@ public class SOReprinting_Tests extends BaseTest {
         }
 
     }
-//    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = " Validate SO Reprinting with Non-Existing KPTN")
-//    public void nonExistingKPTNSOR_TC_02()throws Exception{
-//        if(this.homeSteps.isInHomePage()) {
-//            this.soReprintingSteps.SOR_TC_02();
-//
-//        }
-//
-//    }
+    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = " Validate SO Reprinting with Non-Existing KPTN")
+    public void nonExistingKPTNSOR_TC_02()throws Exception{
+        if(this.homeSteps.isInHomePage()) {
+            this.soReprintingSteps.SOR_TC_02();
+
+        }
+
+    }
 
 }

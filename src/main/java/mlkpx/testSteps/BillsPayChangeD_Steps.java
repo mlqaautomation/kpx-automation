@@ -31,6 +31,7 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         }
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))){
             //Payor Information
+            scrollToElement(billsPayPageObjects.ChangePayorLastName());
             billsPayPageObjects.ChangePayorLastName().clear();
             type(billsPayPageObjects.ChangePayorLastName(), "Payor Last Name", "TESTSs");
             billsPayPageObjects.ChangePayorFirstName().clear();
@@ -75,6 +76,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
             type(billsPayPageObjects.OperatorID(), "Search Operator ID",  propertyReader.getproperty("OperatorID"));
             type(billsPayPageObjects.ReasonRemote(), "Reason", "Testing");
             //Payor Information
+
+            scrollDown(100);
             billsPayPageObjects.ChangePayorLastName().clear();
             type(billsPayPageObjects.ChangePayorLastName(), "Payor Last Name", "TEST TEST");
             billsPayPageObjects.ChangePayorFirstName().clear();
@@ -85,6 +88,7 @@ public class BillsPayChangeD_Steps extends Base_Steps{
             type(billsPayPageObjects.ChangePayorAddress(), "Payor Address", "BOHOL TEST");
             billsPayPageObjects.ChangePayorContact().clear();
             type(billsPayPageObjects.ChangePayorContact(), "Payor Contact", "09077629345");
+
             type(billsPayPageObjects.IRNum(), "IR Number", "2122214441262");
             type(billsPayPageObjects.ReasonChange(), "Reason for Change ", "TestingTest");
             click(billsPayPageObjects.InitiatedBy(), "Initiated By");
@@ -200,7 +204,7 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPHFXQPWMF");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation()))){
@@ -208,11 +212,11 @@ public class BillsPayChangeD_Steps extends Base_Steps{
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.BranchCode()));
 
-            type(billsPayPageObjects.BranchCode(), "Search Branch Code", "12R33A180912");
+            type(billsPayPageObjects.BranchCode(), "Search Branch Code",  propertyReader.getproperty("BranchCode"));
             WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(13));
 
             waits.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.OperatorID()));
-            type(billsPayPageObjects.OperatorID(), "Search Operator ID", "2023639709");
+            type(billsPayPageObjects.OperatorID(), "Search Operator ID",  propertyReader.getproperty("OperatorID"));
             type(billsPayPageObjects.ReasonRemote(), "Reason", "Testing");
             //Payor Information
             billsPayPageObjects.ChangePayorLastName().clear();

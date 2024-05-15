@@ -11,6 +11,8 @@ target/
 *.iws
 *.iml
 *.ipr
+*.json
+*.log
 
 ### Eclipse ###
 .apt_generated
@@ -37,12 +39,19 @@ build/
 ### Mac OS ###
 .DS_Store
 
+### General ###
 Reports/
 Screenshots/
 src/test/java/resources/testData.yaml
 src/test/java/resources/testData.properties
 /testData.yaml
 *.yml
-
 .idea
 .vscode
+.node_modules/
+*.log
+*.json
+.idea/
+target/
+
+

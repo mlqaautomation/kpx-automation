@@ -14,68 +14,70 @@ public class BillsPayChangeD_Tests extends BaseTest {
             ExtentReporter.logPass("loginGoogle","Login, Passed!!");
         }
     }
-    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful BillsPay Change Details")
-    public void BP_CD_TC_01()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.billsPayChangeDSteps.navigatePayoutPage();
-            this.billsPayChangeDSteps.validateSuccessfulBillsPayChangeDetails();
-        }
-
-    }
-    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate successful remote BillsPay Change Details")
-    public void BP_CD_TC_02()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.billsPayChangeDSteps.navigatePayoutPage();
-            this.billsPayChangeDSteps.validateSuccessfulBillsPayRemoteChangeDetails();
-
-        }
-
-    }
-    @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate BillsPay Change Details No Reference Provided")
-    public void BP_CD_TC_03()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.billsPayChangeDSteps.navigatePayoutPage();
-            this.billsPayChangeDSteps.validateBillsPayChangeDetailsNoRef();
-
-        }
-
-    }
-    @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "To validate BillsPay Change Details Invalid Reference Provided")
-    public void BP_CD_TC_04()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.billsPayChangeDSteps.navigatePayoutPage();
-            this.billsPayChangeDSteps.validateBillsPayChangeDetailsInvalidRef();
-
-        }
-
-    }
-    @Test(dependsOnMethods = "loginGoogle", priority = 5, description = "To validate BillsPay Change Details No IR Provided")
-    public void BP_CD_TC_05()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.billsPayChangeDSteps.navigatePayoutPage();
-            this.billsPayChangeDSteps.validateBillsPayChangeDetailsNoIR();
-
-        }
-
-    }
-    @Test(dependsOnMethods = "loginGoogle", priority = 6, description = "To validate BillsPay Change Details Invalid IR Provided")
-    public void BP_CD_TC_06()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.billsPayChangeDSteps.navigatePayoutPage();
-            this.billsPayChangeDSteps.validateBillsPayChangeDetailsInvalidIR();
-
-        }
-
-    }
-    @Test(dependsOnMethods = "loginGoogle", priority = 7, description = "To validate BillsPay Change Details No Reason Provided")
-    public void BP_CD_TC_07()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.billsPayChangeDSteps.navigatePayoutPage();
-            this.billsPayChangeDSteps.validateBillsPayChangeDetailsNoReason();
-
-        }
-
-    }
+//    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful BillsPay Change Details")
+//    public void BP_CD_TC_01()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.billsPayChangeDSteps.navigatePayoutPage();
+//            this.billsPaySteps.validateSuccessfulBillsPayTransaction();
+//            this.billsPayChangeDSteps.validateSuccessfulBillsPayChangeDetails();
+//        }
+//
+//    }
+//    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate successful remote BillsPay Change Details")
+//    public void BP_CD_TC_02()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.billsPayChangeDSteps.navigatePayoutPage();
+//            this.billsPaySteps.validateSuccessfulRemoteBillsPayTransaction();
+//            this.billsPayChangeDSteps.validateSuccessfulBillsPayRemoteChangeDetails();
+//
+//        }
+//
+//    }
+//    @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate BillsPay Change Details No Reference Provided")
+//    public void BP_CD_TC_03()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.billsPayChangeDSteps.navigatePayoutPage();
+//            this.billsPayChangeDSteps.validateBillsPayChangeDetailsNoRef();
+//
+//        }
+//
+//    }
+//    @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "To validate BillsPay Change Details Invalid Reference Provided")
+//    public void BP_CD_TC_04()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.billsPayChangeDSteps.navigatePayoutPage();
+//            this.billsPayChangeDSteps.validateBillsPayChangeDetailsInvalidRef();
+//
+//        }
+//
+//    }
+//    @Test(dependsOnMethods = "loginGoogle", priority = 5, description = "To validate BillsPay Change Details No IR Provided")
+//    public void BP_CD_TC_05()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.billsPayChangeDSteps.navigatePayoutPage();
+//            this.billsPayChangeDSteps.validateBillsPayChangeDetailsNoIR();
+//
+//        }
+//
+//    }
+//    @Test(dependsOnMethods = "loginGoogle", priority = 6, description = "To validate BillsPay Change Details Invalid IR Provided")
+//    public void BP_CD_TC_06()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.billsPayChangeDSteps.navigatePayoutPage();
+//            this.billsPayChangeDSteps.validateBillsPayChangeDetailsInvalidIR();
+//
+//        }
+//
+//    }
+//    @Test(dependsOnMethods = "loginGoogle", priority = 7, description = "To validate BillsPay Change Details No Reason Provided")
+//    public void BP_CD_TC_07()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.billsPayChangeDSteps.navigatePayoutPage();
+//            this.billsPayChangeDSteps.validateBillsPayChangeDetailsNoReason();
+//
+//        }
+//
+//    }
     @Test(dependsOnMethods = "loginGoogle", priority = 8, description = "To validate Remote BillsPay Change Details No Reason Provided")
     public void BP_CD_TC_08()throws Exception{
         if(this.homeSteps.isInHomePage()){

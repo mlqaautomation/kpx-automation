@@ -7,12 +7,11 @@
     </listeners>
 
     <test name="PAYOUT Input">
-        <parameter name="browser" value="chrome">
+        <parameter name="type" value="web">
             <classes>
                 <class name="kpx.actual.Payout_Tests"> </class>
                 <class name="kpx.actual.PayoutCancellation_Tests">  </class>
                 <class name="kpx.actual.PayoutReprinting_Tests">  </class>
-
             </classes>
         </parameter>
     </test>

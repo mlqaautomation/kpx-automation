@@ -29,6 +29,7 @@ public class PayoutCancellation_Steps extends Base_Steps{
             LoggingUtils.info("Navigated the Payout Cancellation page");
 
         }
+        waitSleep(2000);
         reader.refreshTestData();
         waitSleep(3000);
         String payoutKPTN = reader.getPayoutKPTN(); // Call the getPayoutKPTN function

@@ -13,11 +13,15 @@
             </classes>
         </parameter>
     </test>
-<!--        <test name="KPX-WALLET SERVICE">-->
-<!--            <parameter name="type" value="web">-->
-<!--                <classes>-->
-<!--                    <class name="kpx.actual.WS_CashInToOwnAccount_Tests"> </class>-->
-<!--                    </classes>-->
-<!--            </parameter>-->
-<!--        </test>-->
+        <test name="KPX-WALLET SERVICE">
+            <parameter name="type" value="web">
+                <classes>
+                    <class name="kpx.actual.WS_CashInToOwnAccount_Tests"> </class>
+                    <class name="kpx.actual.WS_CashInToAnotherAcc_Tests"> </class>
+                    <class name="kpx.actual.WS_KwartaPadalaPayOut_Tests"> </class>
+                    <class name="kpx.actual.WS_CashOut_Tests"> </class>
+                    <class name="kpx.actual.WS_Reprinting_Tests"> </class>
+                    </classes>
+            </parameter>
+        </test>
 </suite>

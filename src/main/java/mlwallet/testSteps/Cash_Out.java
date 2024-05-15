@@ -15,7 +15,7 @@ public class Cash_Out extends Base_Steps{
         mobileGeneralMethod.tap(mlWalletPageObjects.ContinueToCashOut(), "Continue btn");
         mobileGeneralMethod.waitSleep(20000);
         mobileGeneralMethod.tap(mlWalletPageObjects.continue2_btn(), "OTP Continue");
-        mobileGeneralMethod.waitSleep(10000);
+        mobileGeneralMethod.waitSleep(15000);
         mobileGeneralMethod.isVisible(mlWalletPageObjects.CashOut_KPTN(), mlWalletPageObjects.CashOut_KPTN().getText());
 
         String kptnText = (mlWalletPageObjects.CashOut_KPTN().getText());

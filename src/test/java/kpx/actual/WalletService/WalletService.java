@@ -15,26 +15,24 @@ public class WalletService extends BaseTest {
         ExtentReporter.logPass("isAppInstalledTest", "MLWALLET is installed");
     }
     @Test(dependsOnMethods="isAppInstalledTest" ,description = "Test to verify Login")
+
     public void loginTest(){
         loginWalletSteps.loginWallet();
     }
-    @Test(dependsOnMethods="loginTest" ,priority = 1, description = "Test to get cash in KPTN")
+
+    @Test(dependsOnMethods="loginTest" ,description = "Test to get cash in KPTN")
     public void cashIn(){
         cashInSteps.cashIn();
     }
 
-    @Test(dependsOnMethods="loginTest", priority = 2 ,description = "Test to get CashOut KPTN")
-    public void cashOut(){
-        cashOut.cashOut();
-    }
-
-    @Test(dependsOnMethods="loginTest", priority = 3 ,description = "Test to get KwartaPadala KPTN")
+    @Test(dependsOnMethods="loginTest", priority = 2 ,description = "Test to get KwartaPadala KPTN")
     public void kwartaPadala(){
         kwartaPadala.kwartaPadala();
     }
-
-
-
+    @Test(dependsOnMethods="loginTest", priority = 3 ,description = "Test to get CashOut KPTN")
+    public void cashOut(){
+        cashOut.cashOut();
+    }
 
 }
 

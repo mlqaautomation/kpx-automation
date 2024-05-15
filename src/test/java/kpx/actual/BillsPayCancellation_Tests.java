@@ -18,6 +18,7 @@ public class BillsPayCancellation_Tests extends BaseTest {
     public void BPC_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
+            this.billsPaySteps.validateSuccessfulBillsPayTransaction();
             this.billsPayCancellationSteps.validateSuccessfulBillsPayCancellation();
 
         }
@@ -27,6 +28,7 @@ public class BillsPayCancellation_Tests extends BaseTest {
     public void BPC_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
+            this.billsPaySteps.validateSuccessfulRemoteBillsPayTransaction();
             this.billsPayCancellationSteps.validateSuccessfulRemoteBillsPayCancellation();
 
         }
