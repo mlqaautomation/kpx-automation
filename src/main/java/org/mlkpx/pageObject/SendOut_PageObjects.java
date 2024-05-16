@@ -59,7 +59,7 @@ public class SendOut_PageObjects {
         return getDriver().findElement(By.cssSelector("[name=\"senderOtherInformation.contactNumber\"]"));
     }
 
-    public WebElement searchReceivers() { return getDriver().findElement(By.xpath("//*[text()='Search Receivers']"));
+    public WebElement searchReceivers() { return getDriver().findElement(By.cssSelector("[class='btn-sm btn btn-primary']"));
     }
 
     public WebElement name_Text(int i) {
