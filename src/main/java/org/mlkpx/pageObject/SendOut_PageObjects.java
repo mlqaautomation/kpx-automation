@@ -52,8 +52,9 @@ public class SendOut_PageObjects {
     }
 
     public WebElement selectKYC() {
-        return getDriver().findElement(By.xpath("(//button[normalize-space()='Select KYC'][1])"));
+        return getDriver().findElement(By.cssSelector("[class='btn btn-primary btn-sm']"));
     }
+    //[class='btn btn-primary btn-sm']
     public WebElement contactNumber() {
         return getDriver().findElement(By.cssSelector("[name=\"senderOtherInformation.contactNumber\"]"));
     }

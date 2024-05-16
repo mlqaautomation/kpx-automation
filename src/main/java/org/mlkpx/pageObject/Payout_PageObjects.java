@@ -135,7 +135,7 @@ public class Payout_PageObjects {
     }
     public WebElement ActiveStat(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Active Status')]"));
     }
-    public WebElement SelectKYC(){return getDriver().findElement(By.xpath("(//button[normalize-space()='Select KYC'])[1]"));
+    public WebElement SelectKYC(){return getDriver().findElement(By.cssSelector("[class='btn btn-primary btn-sm']"));
     }
     public WebElement SelectKYCs(){return getDriver().findElement(By.xpath("(//button[normalize-space()='Back'])[1]"));
     }
