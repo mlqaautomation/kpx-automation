@@ -16,8 +16,6 @@
                 <class name="kpx.actual.SendOutCancellation_Tests"> </class>
                 <class name="kpx.actual.SOReprinting_Tests"> </class>
                 <class name="kpx.actual.ORReprinting_Tests"> </class>
-
-
             </classes>
         </parameter>
     </test>
