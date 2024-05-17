@@ -50,7 +50,7 @@ public class DriverManager {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-browser-side-navigation");
         options.addArguments("--disable-gpu");
-        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--window-size=1440,900");
         options.addArguments("--ignore-certificate-errors");
         options.addArguments("--disable-notifications");
         options.addArguments("--incognito");
