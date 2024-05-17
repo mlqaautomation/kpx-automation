@@ -149,7 +149,7 @@ public class BillsPay_Steps extends Base_Steps{
             click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
             waitSleep(2000);
             click(billsPayPageObjects.ConfirmSubmitBillsPay(), "Confirm Payment");
-            waitSleep(7000);
+            waitSleep(10000);
             assertEqual(getText(billsPayPageObjects.SuccessfulBillsPay()), "Bills Pay Successful");
             String kptnText = getText(billsPayPageObjects.kptnText());
             List<String> kptnValues = Collections.singletonList(kptnText);

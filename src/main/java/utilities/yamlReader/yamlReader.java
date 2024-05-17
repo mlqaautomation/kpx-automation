@@ -207,19 +207,8 @@ public class yamlReader {
 
     public String getBillsPayAmount() {
         try {
-            List<Integer> amountList = (List<Integer>) yamlData.get("BillsPayAmount");
-
-            if (amountList == null || amountList.isEmpty()) {
-                System.out.println("No Amount values available.");
-                return null;
-            }
-
-            int randomIndex = new Random().nextInt(amountList.size());
-            Integer randomAmount = amountList.get(randomIndex);
-            amountList.remove(randomIndex);
-            saveYamlData();
-            return randomAmount.toString();
-
+            int randomAmount = new Random().nextInt(951) + 50;
+            return String.valueOf(randomAmount);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
