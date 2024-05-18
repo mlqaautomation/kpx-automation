@@ -82,7 +82,7 @@ public class SendOut_Steps extends Base_Steps {
         waitSleep(5000);
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
-        waitSleep(3000);
+        waitSleep(5000);
         //todo get value of kptn locator and post it to yaml file
         String  kptnText = getText(sendOutPageObjects.kptnText());
         List<String> kptnValues = Collections.singletonList(kptnText);
@@ -275,6 +275,8 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
         type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
         type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
+        waitSleep(2000);
+        scrollToElement(sendOutPageObjects.submitSendOut());
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
         waitSleep(3000);

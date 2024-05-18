@@ -41,6 +41,8 @@ public class Payout_Steps extends Base_Steps{
             String sendoutKPTN = reader.getSendOutKPTN(); // Call the getSendOutKPTN function
             type(payoutPageObjects.PayKTPN(), "KTPN", sendoutKPTN);
             type(payoutPageObjects.PayAmount(), "Amount", "100");
+            waitSleep(2000);
+            scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
             waitSleep(2);
             click(payoutPageObjects.SearchKYC(), "Search KYC");
@@ -114,6 +116,8 @@ public class Payout_Steps extends Base_Steps{
             String sendoutRemoteKPTN = reader.getRemoteKPTN(); // Call the getSendOutRemoteKPTN function
             type(payoutPageObjects.PayKTPN(), "KTPN Number", sendoutRemoteKPTN);
             type(payoutPageObjects.PayAmount(), "Amount", "100");
+            waitSleep(2000);
+            scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
             waitSleep(2);
             click(payoutPageObjects.SearchKYC(), "Search KYC");
