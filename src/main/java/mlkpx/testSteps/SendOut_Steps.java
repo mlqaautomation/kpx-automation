@@ -155,6 +155,7 @@ public class SendOut_Steps extends Base_Steps {
         navigationFOrSendOutDomestic();
         searchKYC();
         click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
+        waitSleep(3000);
         click(sendOutPageObjects.addNewReceivers(), "Add new Receiver ");
         type(sendOutPageObjects.r_LastName(), "R_Lastname ", propertyReader.getproperty("MLast_name"));
         type(sendOutPageObjects.r_FirstName(), "R_Firstname ", propertyReader.getproperty("MFirst_name"));
@@ -162,6 +163,7 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.principalAmount(),"Principal Amount", propertyReader.getproperty("principalAmount"));
         waitSleep(4000);
         click(sendOutPageObjects.submitSendOut(),"Submit Sendout Button");
+        waitSleep(3000);
         if(isVisible(sendOutPageObjects.receiversMaximumLettersDangerText(), getText(sendOutPageObjects.receiversMaximumLettersDangerText()))){
             ExtentReporter.logPass("DS_TC_04_1", "Successfully Verify Add Receiver New Negative Test");
         }else{
@@ -174,6 +176,7 @@ public class SendOut_Steps extends Base_Steps {
         navigationFOrSendOutDomestic();
         searchKYC();
         click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
+        waitSleep(3000);
         scrollDown(100);
         LoggingUtils.info(getText(sendOutPageObjects.name_Text(1)));
         String selectedReceiverName = getText(sendOutPageObjects.name_Text(1));
@@ -231,6 +234,7 @@ public class SendOut_Steps extends Base_Steps {
         assertEqual(getValue(sendOutPageObjects.messageToReceiver()), propertyReader.getproperty("messagetoreceiver"));
         scrollToElement(sendOutPageObjects.principalAmount());
         type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("principal_amount_empty"));
+        waitSleep(3000);
         click(sendOutPageObjects.chargeText(), "Charge Text");
         if (isVisible(sendOutPageObjects.emptyValueText(), getText((sendOutPageObjects.emptyValueText())))) {
             ExtentReporter.logPass("Empty Value", "Valid Amount is required");
@@ -275,6 +279,7 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
         type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
         type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
+        waitSleep(3000);
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
         waitSleep(3000);
@@ -329,6 +334,7 @@ public class SendOut_Steps extends Base_Steps {
             type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
             type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
             type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
+            waitSleep(3000);
             click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
             click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
             waitSleep(5000);
@@ -355,6 +361,7 @@ public class SendOut_Steps extends Base_Steps {
             scrollToElement(sendOutPageObjects.selectKYC());
             scrollDown(100);
             click(sendOutPageObjects.selectKYC(), "Select KYC Button");
+            waitSleep(3000);
             click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
             waitSleep(5000);
             scrollToElement(sendOutPageObjects.selectButton());
@@ -480,6 +487,7 @@ public class SendOut_Steps extends Base_Steps {
 
         public void addReceiver () {
             click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
+            waitSleep(3000);
             click(sendOutPageObjects.addNewReceivers(), "Add new Receiver ");
             type(sendOutPageObjects.r_LastName(), "R_Lastname ", propertyReader.getproperty("Receivers_LName"));
             type(sendOutPageObjects.r_FirstName(), "R_Firstname ", propertyReader.getproperty("Receivers_FName"));
