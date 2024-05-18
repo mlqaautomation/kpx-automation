@@ -27,6 +27,7 @@ public class Payout_Tests extends BaseTest{
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "Successful remote domestic payout transaction")
     public void Payout_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
+            this.sendOutSteps.DS_TC_02_1();
             this.payoutSteps.navigatePayoutPage();
             this.payoutSteps.validateSuccessfulRemoteDomesticPayout();
         }
