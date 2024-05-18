@@ -54,7 +54,7 @@ public class SendOut_Steps extends Base_Steps {
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(13));
 
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
@@ -160,7 +160,7 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.r_FirstName(), "R_Firstname ", propertyReader.getproperty("MFirst_name"));
         type(sendOutPageObjects.r_MiddleName(), "R_Firstname ", propertyReader.getproperty("MFirst_name"));
         type(sendOutPageObjects.principalAmount(),"Principal Amount", propertyReader.getproperty("principalAmount"));
-        waitSleep(2000);
+        waitSleep(4000);
         click(sendOutPageObjects.submitSendOut(),"Submit Sendout Button");
         if(isVisible(sendOutPageObjects.receiversMaximumLettersDangerText(), getText(sendOutPageObjects.receiversMaximumLettersDangerText()))){
             ExtentReporter.logPass("DS_TC_04_1", "Successfully Verify Add Receiver New Negative Test");
@@ -331,7 +331,7 @@ public class SendOut_Steps extends Base_Steps {
             type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
             click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
             click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
-            waitSleep(4000);
+            waitSleep(5000);
             if (isVisible(sendOutPageObjects.complianceText(), getText(sendOutPageObjects.complianceText()))) {
                 ExtentReporter.logPass("DS_TC_11", "Successfully validate kyc from the Watch List");
             } else {
@@ -373,9 +373,8 @@ public class SendOut_Steps extends Base_Steps {
             click(sendOutPageObjects.proceedToPrinting(), "Proceed to Printing");
             waitSleep(2000);
             click(sendOutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
-            waitSleep(10000);
+            waitSleep(5000);
 
-            navigationFOrSendOutDomestic();
             click(sendOutPageObjects.searchKYC(), "Search KYC button ");
             type(sendOutPageObjects.lastName(), "Lastname Field", propertyReader.getproperty("theSameTransactionLastName"));
             type(sendOutPageObjects.firstName(), "Firstname Field", propertyReader.getproperty("theSameTransactionFirstName"));
@@ -398,7 +397,7 @@ public class SendOut_Steps extends Base_Steps {
             type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
             type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
             type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
-            type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "200");
+            type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
             waitSleep(3000);
             click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
             click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");

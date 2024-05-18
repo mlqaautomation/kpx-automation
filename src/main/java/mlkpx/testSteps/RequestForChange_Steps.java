@@ -51,7 +51,7 @@ public class RequestForChange_Steps extends Base_Steps{
         type(requestForChangePageObjects.reason(),"Reason for Change", propertyReader.getproperty("reasonforchange"));
         waitSleep(5000);
         click(requestForChangePageObjects.rfcSubmitButton(),"RFC Submit Button");
-        waitSleep(3000);
+        waitSleep(5000);
         click(requestForChangePageObjects.yesChangeDetailsButton(),"Yes Change Details");
         waitSleep(3000);
         if(isVisible(requestForChangePageObjects.detailsChangeText(), getText(requestForChangePageObjects.detailsChangeText()))){
