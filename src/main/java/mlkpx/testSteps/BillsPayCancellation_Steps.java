@@ -37,6 +37,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
             type(billsPayPageObjects.IRNum(), "KTPN Number", "2111111111262");
             type(billsPayPageObjects.ReasonCancel(), "Reason for Cancellation ", "Testing");
             click(billsPayPageObjects.InitiatedBy(), "Initiated By");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.CancelPayment());
             click(billsPayPageObjects.CancelPayment(), "Cancel Payment");
             click(billsPayPageObjects.YesCancelPayment(), "Yes, Cancel Payment");
             LoggingUtils.info("Bills Pay Cancelled" +
@@ -73,6 +75,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
             type(billsPayPageObjects.IRNum(), "KTPN Number", "2111111113262");
             type(billsPayPageObjects.ReasonCancel(), "Reason for Cancellation ", "Testing");
             click(billsPayPageObjects.InitiatedBy(), "Initiated By");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.CancelPayment());
             click(billsPayPageObjects.CancelPayment(), "Cancel Payment");
             click(billsPayPageObjects.YesCancelPayment(), "Yes, Cancel Payment");
             LoggingUtils.info("Bills Pay Cancelled" +
@@ -124,6 +128,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
 
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))){
             type(billsPayPageObjects.IRNum(), "KTPN Number", "343453453453");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.CancelPayment());
             click(billsPayPageObjects.CancelPayment(), "Cancel Payment");
             assertEqual(getText(billsPayPageObjects.InvalidIR()), "Please enter valid IR No.");
         }
@@ -139,6 +145,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))){
             type(billsPayPageObjects.IRNum(), "KTPN Number", "2111111111262");
             type(billsPayPageObjects.ReasonCancel(), "Reason for Cancellation ", "");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.CancelPayment());
             click(billsPayPageObjects.CancelPayment(), "Cancel Payment");
             assertEqual(getText(billsPayPageObjects.NoReason()), "Reason for Cancellation is required");
 
@@ -155,6 +163,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
 
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))){
             type(billsPayPageObjects.IRNum(), "IR Number", "");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.CancelPayment());
             click(billsPayPageObjects.CancelPayment(), "Cancel Payment");
             assertEqual(getText(billsPayPageObjects.NoIRNum()), "IR Number is required");
         }
@@ -171,6 +181,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
             type(billsPayPageObjects.IRNum(), "KTPN Number", "2111111111262");
             type(billsPayPageObjects.ReasonCancel(), "Reason for Cancellation ", "Testing");
             click(billsPayPageObjects.NoInitiatedBy(), "Initiated By");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.CancelPayment());
             click(billsPayPageObjects.CancelPayment(), "Cancel Payment");
             LoggingUtils.info("Please select an item in the list display and you can't proceed to cancellations");
 
@@ -188,6 +200,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
             type(billsPayPageObjects.IRNum(), "KTPN Number", "2111111111262");
             type(billsPayPageObjects.ReasonCancel(), "Reason for Cancellation ", "Testing");
             click(billsPayPageObjects.InitiatedBy(), "Initiated By");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.KeepTransaction());
             click(billsPayPageObjects.KeepTransaction(), "Keep Transaction");
             click(billsPayPageObjects.YesKeepTransaction(), "Yes, Keep Transaction");
             LoggingUtils.info("You will return to Bills Pay Cancellation" +
@@ -207,6 +221,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
             type(billsPayPageObjects.IRNum(), "KTPN Number", "2111111111262");
             type(billsPayPageObjects.ReasonCancel(), "Reason for Cancellation ", "Testing");
             click(billsPayPageObjects.InitiatedBy(), "Initiated By");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.CancelPayment());
             click(billsPayPageObjects.CancelPayment(), "Cancel Payment");
             click(billsPayPageObjects.NoCancelPayment(), "No, Keep Transaction");
             LoggingUtils.info("You will stay in the Bills Pay Cancellation" +
