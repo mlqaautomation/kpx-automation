@@ -505,6 +505,7 @@ public class SendOut_Steps extends Base_Steps {
             waitSleep(3000);
         }
         public void searchReceiver () {
+            scrollToElement(sendOutPageObjects.searchReceivers());
             click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
             scrollToElement(sendOutPageObjects.selectButton());
             click(sendOutPageObjects.selectButton(), "Select Button");

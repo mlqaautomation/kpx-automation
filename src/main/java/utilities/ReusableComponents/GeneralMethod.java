@@ -357,7 +357,15 @@ public class GeneralMethod extends ExtentReporter{
         String numericPart = total.replaceAll("[^0-9.]", ""); // Extract numeric part by removing non-numeric characters
         return Double.parseDouble(numericPart);
     }
-
+    public void navigateBack(){
+        try{
+            driver.navigate().back();
+            LoggingUtils.info("Navigating back");
+            ExtentReporter.logInfo("Navigating Back" , "Previous Page");
+        }catch (Exception e){
+            throw new AssertionError("Cannot get value for element" + e.getMessage());
+        }
+    }
 }
 
 

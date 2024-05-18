@@ -53,7 +53,7 @@ public class BillsPay_Steps extends Base_Steps{
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", AmountBillsPayKPTN);
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            waitSleep(5000);
+            waitSleep(8000);
         }
 
         if(isVisible(billsPayPageObjects.billsPay_ConfiInfo(), getText(billsPayPageObjects.billsPay_ConfiInfo()))) {
@@ -149,7 +149,7 @@ public class BillsPay_Steps extends Base_Steps{
             click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
             waitSleep(2000);
             click(billsPayPageObjects.ConfirmSubmitBillsPay(), "Confirm Payment");
-            waitSleep(7000);
+            waitSleep(10000);
             assertEqual(getText(billsPayPageObjects.SuccessfulBillsPay()), "Bills Pay Successful");
             String kptnText = getText(billsPayPageObjects.kptnText());
             List<String> kptnValues = Collections.singletonList(kptnText);
@@ -209,6 +209,8 @@ public class BillsPay_Steps extends Base_Steps{
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyAccount()), "Account number is a required field");
         }
@@ -220,6 +222,8 @@ public class BillsPay_Steps extends Base_Steps{
         type(billsPayPageObjects.BPLastName(), "BP Last Name", "");
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyLastname()), "Account last name is a required field");
         }
@@ -233,6 +237,8 @@ public class BillsPay_Steps extends Base_Steps{
 
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyFirstname()), "Account first name is a required field");
         }
@@ -245,6 +251,8 @@ public class BillsPay_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorLastName(), "Payor Last Name", "");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyLPayor()), "Payor last name is a required field");
         }
@@ -258,6 +266,8 @@ public class BillsPay_Steps extends Base_Steps{
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
 //            type(billsPayPageObjects.PayorLastName(), "Payor Last Name", "AGUILARTEST");
             type(billsPayPageObjects.PayorFirstName(), "Payor First Name", "");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyFPayor()), "Payor first name is a required field");
         }
@@ -269,6 +279,8 @@ public class BillsPay_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorAddress(), "Payor Address", "");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyAddress()), "Payor address is a required field");
         }
@@ -281,6 +293,8 @@ public class BillsPay_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyContact()), "Payor contact number is a required field");
         }
@@ -396,7 +410,8 @@ public class BillsPay_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "08635129781");
-
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.InvalidContact()), "Must start with 639|09|9 followed by 9 digits.");
             LoggingUtils.info("Must start with 639|09|9 followed by 9 digits.");
