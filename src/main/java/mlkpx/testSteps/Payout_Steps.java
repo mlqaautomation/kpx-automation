@@ -67,6 +67,8 @@ public class Payout_Steps extends Base_Steps{
             }
             click(payoutPageObjects.SelectKYC(), "Select KYC");
             if (payoutPageObjects.KtpnInfo().getText().contains("KPTN")) {
+                waitSleep(2000);
+                scrollToElement(payoutPageObjects.ClaimAmount());
                 click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
             }
 
@@ -142,7 +144,8 @@ public class Payout_Steps extends Base_Steps{
             }
             click(payoutPageObjects.SelectKYC(), "Select KYC");
             if (payoutPageObjects.KtpnInfo().getText().contains("KPTN")) {
-
+                waitSleep(2000);
+                scrollToElement(payoutPageObjects.ClaimAmount());
                 click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
             }
 
@@ -200,6 +203,8 @@ public class Payout_Steps extends Base_Steps{
         click(sendOutPageObjects.selectKYC(), "Select KYC Button");
     }
     public void searchReceiver () {
+        waitSleep(2000);
+        scrollToElement(sendOutPageObjects.searchReceivers());
         click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
         scrollToElement(sendOutPageObjects.selectButton());
         click(sendOutPageObjects.selectButton(), "Select Button");
@@ -263,6 +268,8 @@ public class Payout_Steps extends Base_Steps{
         click(payoutPageObjects.SelectKYC(), "Select KYC");
         if (payoutPageObjects.PayoutInfos().isEnabled()) {
             LoggingUtils.info("Navigated to View Payout Information's");
+            waitSleep(2000);
+            scrollToElement(payoutPageObjects.ClaimAmount());
             click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
         }
 
@@ -343,6 +350,8 @@ public class Payout_Steps extends Base_Steps{
         click(payoutPageObjects.SelectKYC(), "Select KYC");
         if (payoutPageObjects.PayoutInfos().isEnabled()) {
             LoggingUtils.info("Navigated to View Payout Information's");
+            waitSleep(2000);
+            scrollToElement(payoutPageObjects.ClaimAmount());
             click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
         }
 
@@ -393,6 +402,8 @@ public class Payout_Steps extends Base_Steps{
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
             type(payoutPageObjects.PayKTPN(), "KTPN Number", propertyReader.getproperty("InvalidKTPNnum"));
             type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("PayAmount"));
+            waitSleep(2000);
+            scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
 
             if (isVisible(payoutPageObjects.InvalidKTPN(), getText(payoutPageObjects.payoutPage_h5()))) {
@@ -436,6 +447,8 @@ public class Payout_Steps extends Base_Steps{
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
             type(payoutPageObjects.PayKTPN(), "KTPN Number", propertyReader.getproperty("UnclaimKTPNnum"));
             type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("InvalidAmount"));
+            waitSleep(2000);
+            scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
             assertEqual(getText(payoutPageObjects.payoutPage_h5()), "No Transaction Found");
 
@@ -471,6 +484,8 @@ public class Payout_Steps extends Base_Steps{
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
             type(payoutPageObjects.PayKTPN(), "KTPN Number", "KPNABODVPUQ");
             type(payoutPageObjects.PayAmount(), "Amount", "100");
+            waitSleep(2000);
+            scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
             assertEqual(getText(payoutPageObjects.payoutClaim_h5()), "No Transaction Found");
 
@@ -506,6 +521,8 @@ public class Payout_Steps extends Base_Steps{
             type(payoutPageObjects.PayKTPN(), "KTPN Number", "");
             payoutPageObjects.PayAmount().clear();
             type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("PayAmount"));
+            waitSleep(2000);
+            scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
             assertEqual(getText(payoutPageObjects.RequiredKTPN()), "KPTN is required");
 
@@ -540,6 +557,8 @@ public class Payout_Steps extends Base_Steps{
             waitSleep(4);
             type(payoutPageObjects.PayKTPN(), "KTPN Number", propertyReader.getproperty("ClaimKTPNnum"));
             type(payoutPageObjects.PayAmount(), "Amount", "");
+            waitSleep(2000);
+            scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
             assertEqual(getText(payoutPageObjects.AmountShouldBeNumber()), "Amount should be a number");
 
