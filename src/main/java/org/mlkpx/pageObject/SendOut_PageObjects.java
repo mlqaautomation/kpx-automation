@@ -153,8 +153,9 @@ public class SendOut_PageObjects {
         return getDriver().findElement(By.cssSelector("[id=\"moneyInput\"]"));
     }
 
-    public WebElement submitSendOut() {
-        return getDriver().findElement(By.xpath("//*[text()=\"Submit Sendout\"]"));
+
+    public WebElement submitSendOut(){
+        return getDriver().findElement(By.xpath("//button[normalize-space()='Submit Sendout']"));
     }
 
     public WebElement display0Text() {
