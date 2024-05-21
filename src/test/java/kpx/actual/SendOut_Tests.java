@@ -44,7 +44,7 @@ public class SendOut_Tests extends BaseTest {
             this.sendOutSteps.DS_TC_03();
         }
     }
-  
+
     @Test(dependsOnMethods = "loginGoogle" , priority = 4, description = "Verify Search KYC (Sender) Negative Test")
     public void DSendout_TC_03_1()throws Exception{
         if(this.homeSteps.isInHomePage()){
@@ -121,7 +121,7 @@ public class SendOut_Tests extends BaseTest {
             this.sendOutSteps.DS_TC_11();
         }
     }
-  
+
     @Test(dependsOnMethods = "loginGoogle", priority = 14, description = "To Validate The Same Transaction")
     public void DSendout_TC_12() throws Exception {
         if (this.homeSteps.isInHomePage()) {
