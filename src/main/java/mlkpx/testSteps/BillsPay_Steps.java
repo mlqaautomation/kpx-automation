@@ -30,6 +30,8 @@ public class BillsPay_Steps extends Base_Steps{
 
     //B I L L S  P A Y    S E N D O U T
     public void validateSuccessfulBillsPayTransaction()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
         waitSleep(8000);
@@ -52,8 +54,10 @@ public class BillsPay_Steps extends Base_Steps{
             String AmountBillsPayKPTN = reader.getBillsPayAmount();
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", AmountBillsPayKPTN);
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            waitSleep(8000);
+            waitSleep(10000);
         }
 
         if(isVisible(billsPayPageObjects.billsPay_ConfiInfo(), getText(billsPayPageObjects.billsPay_ConfiInfo()))) {
@@ -61,7 +65,7 @@ public class BillsPay_Steps extends Base_Steps{
             click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
             waitSleep(2000);
             click(billsPayPageObjects.ConfirmSubmitBillsPay(), "Confirm Payment");
-            waitSleep(7000);
+            waitSleep(10000);
             assertEqual(getText(billsPayPageObjects.SuccessfulBillsPay()), "Bills Pay Successful");
             String kptnText = getText(billsPayPageObjects.kptnText());
             List<String> kptnValues = Collections.singletonList(kptnText);
@@ -76,6 +80,8 @@ public class BillsPay_Steps extends Base_Steps{
     }
     public void validateDuplicateBillsPayTransaction()throws Exception {
         //(Note: the duplicate transaction in 90 seconds)
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
         waitSleep(8000);
@@ -97,6 +103,8 @@ public class BillsPay_Steps extends Base_Steps{
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             waitSleep(5000);
         }
@@ -110,6 +118,8 @@ public class BillsPay_Steps extends Base_Steps{
         }
     }
     public void validateSuccessfulRemoteBillsPayTransaction()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.RemoteTransaction(), "Remote Transaction");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -141,8 +151,10 @@ public class BillsPay_Steps extends Base_Steps{
             String AmountBillsPayKPTN = reader.getBillsPayAmount();
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", AmountBillsPayKPTN);
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            waitSleep(5000);
+            waitSleep(10000);
         }
         if(isVisible(billsPayPageObjects.billsPay_ConfiInfo(), getText(billsPayPageObjects.billsPay_ConfiInfo()))) {
             LoggingUtils.info("Bills Pay Confirmation");
@@ -164,6 +176,8 @@ public class BillsPay_Steps extends Base_Steps{
         }
     }
     public void validateEmptyPartnerBillsPay()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
 
@@ -181,6 +195,8 @@ public class BillsPay_Steps extends Base_Steps{
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.SelectPartners()), "Please select the partner that will receive the payment.");
         }
@@ -188,6 +204,8 @@ public class BillsPay_Steps extends Base_Steps{
 
     }
     public void validateEmptyAccountNumBillsPay()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
         waitSleep(5000);
@@ -217,6 +235,8 @@ public class BillsPay_Steps extends Base_Steps{
 
     }
     public void validateEmptyLastnameBillsPay()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
         type(billsPayPageObjects.BPLastName(), "BP Last Name", "");
@@ -230,6 +250,8 @@ public class BillsPay_Steps extends Base_Steps{
 
     }
     public void validateEmptyFirstnameBillsPay()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
         type(billsPayPageObjects.BPFirstName(), "BP First Name", "");
@@ -245,6 +267,8 @@ public class BillsPay_Steps extends Base_Steps{
 
     }
     public void validateEmptyLastnamePayor()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
 
@@ -259,6 +283,8 @@ public class BillsPay_Steps extends Base_Steps{
 
     }
     public void validateEmptyFirstnamePayor()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
 
@@ -273,6 +299,8 @@ public class BillsPay_Steps extends Base_Steps{
         }
     }
     public void validateEmptyAddressPayor()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
 
@@ -287,6 +315,8 @@ public class BillsPay_Steps extends Base_Steps{
 
     }
     public void validateEmptyContactPayor()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
 
@@ -301,6 +331,8 @@ public class BillsPay_Steps extends Base_Steps{
 
     }
     public void validateInvalidAmount()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
 
@@ -316,6 +348,8 @@ public class BillsPay_Steps extends Base_Steps{
 
     }
     public void validateInvalidAccountNumTransaction()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
         waitSleep(5000);
@@ -337,6 +371,8 @@ public class BillsPay_Steps extends Base_Steps{
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             waitSleep(5000);
             assertEqual(getText(billsPayPageObjects.InvalidAccountNum()), "Incorrect Payment Details");
@@ -345,6 +381,8 @@ public class BillsPay_Steps extends Base_Steps{
         }
     }
     public void validateInvalidFourNumTransaction()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
         waitSleep(5000);
@@ -366,6 +404,8 @@ public class BillsPay_Steps extends Base_Steps{
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             waitSleep(5000);
             assertEqual(getText(billsPayPageObjects.InvalidAccountNum()), "Incorrect Payment Details");
@@ -375,6 +415,8 @@ public class BillsPay_Steps extends Base_Steps{
 
     }
     public void validateBelow20AmountTransaction()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
         waitSleep(5000);
@@ -404,6 +446,8 @@ public class BillsPay_Steps extends Base_Steps{
 
     }
     public void validateInvalidContactBillsPay()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
 
@@ -419,6 +463,8 @@ public class BillsPay_Steps extends Base_Steps{
 
     }
     public void validateMaxAmountTransaction()throws Exception {
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPSendout());
         click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
         click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
         waitSleep(5000);

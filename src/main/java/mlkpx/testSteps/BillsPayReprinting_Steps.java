@@ -15,6 +15,8 @@ public class BillsPayReprinting_Steps extends Base_Steps{
     }
     //B I L L S  P A Y    R E P R I N T I N G
     public void validateSuccessfulBillsPayReprinting()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");
@@ -35,6 +37,8 @@ public class BillsPayReprinting_Steps extends Base_Steps{
         }
     }
     public void validateSuccessfulRemoteBillsPayReprinting()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");
@@ -55,6 +59,8 @@ public class BillsPayReprinting_Steps extends Base_Steps{
         }
     }
     public void validateInvalidKTPNBillsPayReprinting()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");
@@ -66,6 +72,8 @@ public class BillsPayReprinting_Steps extends Base_Steps{
 
     }
     public void validateEmptyRefBillsPayReprinting()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");
@@ -76,6 +84,8 @@ public class BillsPayReprinting_Steps extends Base_Steps{
 
     }
     public void validateEmptyReasonBillsPayReprinting()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");
@@ -87,6 +97,8 @@ public class BillsPayReprinting_Steps extends Base_Steps{
 
     }
     public void validateOnlyLettersBillsPayReprinting()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");

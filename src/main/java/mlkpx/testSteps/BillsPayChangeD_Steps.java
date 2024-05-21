@@ -19,6 +19,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
     }
     //B I L L S  P A Y    C H A N G E  D E T A I L S
     public void validateSuccessfulBillsPayChangeDetails()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
@@ -54,6 +56,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         }
     }
     public void validateSuccessfulBillsPayRemoteChangeDetails()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
@@ -101,6 +105,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         }
     }
     public void validateBillsPayChangeDetailsNoRef()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
@@ -111,6 +117,7 @@ public class BillsPayChangeD_Steps extends Base_Steps{
     }
     public void validateBillsPayChangeDetailsInvalidRef()throws Exception{
         waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
@@ -123,6 +130,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         }
     }
     public void validateBillsPayChangeDetailsNoIR()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
@@ -149,6 +158,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         }
     }
     public void validateBillsPayChangeDetailsInvalidIR()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
@@ -174,6 +185,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         }
     }
     public void validateBillsPayChangeDetailsNoReason()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
@@ -201,6 +214,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         }
     }
     public void validateBillsPayRemoteChangeDetailsNoReason()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
@@ -238,6 +253,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         }
     }
     public void validateBillsPayChangeDetailsNoInitiated()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
@@ -265,6 +282,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         }
     }
     public void validateKeepTransactionBillsPayChangeDetails()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
@@ -294,6 +313,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         }
     }
     public void validateStayPageBillsPayChangeDetails()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
@@ -323,6 +344,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         }
     }
     public void validateStayPageBillsPayNoChangeDetails()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
@@ -354,6 +377,7 @@ public class BillsPayChangeD_Steps extends Base_Steps{
     }
     public void validateStayPageBillsPayOnlyLetters()throws Exception{
         waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
