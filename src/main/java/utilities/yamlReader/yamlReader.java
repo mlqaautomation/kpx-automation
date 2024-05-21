@@ -91,6 +91,13 @@ public class yamlReader {
         String lastName = (String) kycData.get("lastName");
         return new String[]{firstName, lastName};
     }
+//    public String[] getRandomNameAddNewReciever() {
+//        Map<String, Object> randomSender = getRandomSenderData();
+//        Map<String, Object> kycData = (Map<String, Object>) randomSender.get("kyc");
+//        String firstName = (String) kycData.get("firstName");
+//        String lastName = (String) kycData.get("lastName");
+//        return new String[]{firstName, lastName};
+//    }
 
 
     public String getSendOutKPTN() {
