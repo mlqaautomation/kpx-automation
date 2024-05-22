@@ -16,7 +16,7 @@ public class WS_CashOut_Tests extends BaseTest {
     }
 
     @Test(dependsOnMethods = "loginGoogle", priority = 5, description = "Validate Cash Out")
-    public void CO_TC_01() throws Exception {
+    public void CashOut_TC_01() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsCashOutSteps.CO_TC_01();
 
@@ -24,7 +24,7 @@ public class WS_CashOut_Tests extends BaseTest {
 
     }
 //    @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "Validate Cash Out using scan QR Code")
-//    public void CO_TC_02() throws Exception {
+//    public void CashOut_TC_02() throws Exception {
 //        if (this.homeSteps.isInHomePage()) {
 //            this.wsCashOutSteps.CO_TC_02();
 //
@@ -33,7 +33,7 @@ public class WS_CashOut_Tests extends BaseTest {
 //    }
 
     @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "Validate verify transaction receipt")
-    public void CO_TC_03() throws Exception {
+    public void CashOut_TC_03() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsCashOutSteps.CO_TC_03();
 
@@ -41,7 +41,7 @@ public class WS_CashOut_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "Validate invalid reference no")
-    public void CO_TC_04() throws Exception {
+    public void CashOut_TC_04() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsCashOutSteps.CO_TC_04();
 
@@ -49,7 +49,7 @@ public class WS_CashOut_Tests extends BaseTest {
 
     }
 //    @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "Validate QR Code")
-//    public void CO_TC_05() throws Exception {
+//    public void CashOut_TC_05() throws Exception {
 //        if (this.homeSteps.isInHomePage()) {
 //            this.wsCashOutSteps.CO_TC_05();
 //
@@ -57,7 +57,7 @@ public class WS_CashOut_Tests extends BaseTest {
 //
 //    }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "Validate claimed reference")
-    public void CO_TC_06() throws Exception {
+    public void CashOut_TC_06() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsCashOutSteps.CO_TC_06();
 
@@ -65,7 +65,7 @@ public class WS_CashOut_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "Validate Cash Out with No Reference Number")
-    public void CO_TC_07() throws Exception {
+    public void CashOut_TC_07() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsCashOutSteps.CO_TC_07();
 
@@ -74,7 +74,7 @@ public class WS_CashOut_Tests extends BaseTest {
     }
 
     @Test(dependsOnMethods = "loginGoogle", priority = 6, description = "Validate verify remote Cash Out")
-    public void CO_TC_08() throws Exception {
+    public void CashOut_TC_08() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsCashOutSteps.CO_TC_08();
 

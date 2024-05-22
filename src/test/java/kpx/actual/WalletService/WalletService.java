@@ -9,6 +9,7 @@ public class WalletService extends BaseTest {
     public void cashIn(){
         loginWalletSteps.loginWallet();
         cashInSteps.cashIn();
+
     }
 
     @Test(priority = 2 ,description = "Test to get KwartaPadala KPTN")
