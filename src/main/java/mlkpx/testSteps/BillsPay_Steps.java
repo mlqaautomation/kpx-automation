@@ -438,6 +438,8 @@ public class BillsPay_Steps extends Base_Steps{
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "19");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             waitSleep(5000);
             assertEqual(getText(billsPayPageObjects.InvalidAccountNum()), "Incorrect Payment Details");
@@ -486,6 +488,8 @@ public class BillsPay_Steps extends Base_Steps{
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "500000");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             waitSleep(5000);
             assertEqual(getText(billsPayPageObjects.InvalidAccountNum()), "Incorrect Payment Details");
