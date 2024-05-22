@@ -51,8 +51,8 @@ public class SendOut_PageObjects {
         return getDriver().findElement(By.xpath("//button[@class=\"mr-3 btn btn-outline-primary btn-sm\" and text()=\"View\"]"));
     }
 
-    public WebElement selectKYC() {
-        return getDriver().findElement(By.cssSelector("[class='btn btn-primary btn-sm']"));
+
+    public WebElement selectKYC(){return getDriver().findElement(By.xpath("//button[normalize-space()='Select KYC']"));
     }
     //[class='btn btn-primary btn-sm']
     public WebElement contactNumber() {
