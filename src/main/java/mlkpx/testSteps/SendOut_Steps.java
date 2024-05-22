@@ -67,8 +67,9 @@ public class SendOut_Steps extends Base_Steps {
         waitSleep(2000);
         click(sendOutPageObjects.viewButton(), "View Button ");
         waitSleep(5000);
-        scrollToElement(sendOutPageObjects.selectKYC());
         scrollDown(100);
+        scrollToElement(sendOutPageObjects.selectKYC());
+        waitSleep(3000);
         click(sendOutPageObjects.selectKYC(), "Select KYC Button");
         waitSleep(5000);
         scrollDown(100);
