@@ -45,7 +45,7 @@ public class SendOut_Steps extends Base_Steps {
             Assert.fail("Fail to Verify SendOut Transaction Option Valid Branch Code");
         }
     }
-    public void DS_TC_02_1() throws Exception { // Test Case for Sendout Transaction Option
+    public void  DS_TC_02_1() throws Exception { // Test Case for Sendout Transaction Option
         navigationFOrSendOutDomestic();
         click(sendOutPageObjects.yesRadioButton(), "Yes Button ");
 
@@ -161,6 +161,7 @@ public class SendOut_Steps extends Base_Steps {
         searchKYC();
         click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
         waitSleep(5000);
+        scrollDown(50);
         click(sendOutPageObjects.addNewReceivers(), "Add new Receiver ");
         type(sendOutPageObjects.r_LastName(), "R_Lastname ", propertyReader.getproperty("MLast_name"));
         type(sendOutPageObjects.r_FirstName(), "R_Firstname ", propertyReader.getproperty("MFirst_name"));
@@ -182,7 +183,7 @@ public class SendOut_Steps extends Base_Steps {
         searchKYC();
         click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
         waitSleep(5000);
-        scrollToElement(sendOutPageObjects.selectButton());
+//        scrollToElement(sendOutPageObjects.selectButton());
         scrollDown(100);
         LoggingUtils.info(getText(sendOutPageObjects.name_Text(1)));
         String selectedReceiverName = getText(sendOutPageObjects.name_Text(1));
@@ -241,6 +242,7 @@ public class SendOut_Steps extends Base_Steps {
         scrollToElement(sendOutPageObjects.principalAmount());
         type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("principal_amount_empty"));
         waitSleep(3000);
+        scrollDown(50);
         click(sendOutPageObjects.chargeText(), "Charge Text");
         if (isVisible(sendOutPageObjects.emptyValueText(), getText((sendOutPageObjects.emptyValueText())))) {
             ExtentReporter.logPass("Empty Value", "Valid Amount is required");
@@ -340,7 +342,7 @@ public class SendOut_Steps extends Base_Steps {
         public void DS_TC_11 ()throws Exception {
             navigationFOrSendOutDomestic();
             searchWatchListKYC();
-            searchReceiver();
+            addReceiver();
             waitSleep(2000);
             type(sendOutPageObjects.sourceOfFund(), "Source of Fund field ", propertyReader.getproperty("source_of_fund"));
             type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
@@ -379,6 +381,7 @@ public class SendOut_Steps extends Base_Steps {
             click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
             waitSleep(5000);
             scrollToElement(sendOutPageObjects.selectButton());
+            scrollDown(50);
             click(sendOutPageObjects.selectButton(), "Select Button");
             scrollToElement(sendOutPageObjects.no_ContactNo());
             click(sendOutPageObjects.no_ContactNo(), "Contact No Checkbox");
@@ -411,6 +414,7 @@ public class SendOut_Steps extends Base_Steps {
             click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
             waitSleep(5000);
             scrollToElement(sendOutPageObjects.selectButton());
+            scrollDown(50);
             click(sendOutPageObjects.selectButton(), "Select Button");
             scrollToElement(sendOutPageObjects.no_ContactNo());
             click(sendOutPageObjects.no_ContactNo(), "Contact No Checkbox");
@@ -517,6 +521,7 @@ public class SendOut_Steps extends Base_Steps {
         public void addReceiver () {
             click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
             waitSleep(5000);
+            scrollDown(50);
             click(sendOutPageObjects.addNewReceivers(), "Add new Receiver ");
             waitSleep(2000);
             type(sendOutPageObjects.r_LastName(), "R_Lastname ", propertyReader.getproperty("Receivers_LName"));
@@ -546,6 +551,7 @@ public class SendOut_Steps extends Base_Steps {
             scrollToElement(sendOutPageObjects.searchReceivers());
             click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
             waitSleep(5000);
+            scrollDown(50);
             click(sendOutPageObjects.selectButton(), "Select Button");
             waitSleep(5000);
             scrollToElement(sendOutPageObjects.no_ContactNo());
