@@ -229,86 +229,86 @@ public class HappyPath_Tests extends BaseTest {
     }
 
 //  //  WALLET SERVICES CASH IN TO OWN ACCOUNT
-//
-//    @Test(dependsOnMethods = "loginGoogle", priority = 23, description = "Validate Cash In to Own Account Page")
-//    public void CashInToOwnAcc_TC_01() throws Exception {
-//        if (this.homeSteps.isInHomePage()) {
-//            this.wsCashInToOwnAccountSteps.CIOA_TC_01();
-//        }
-//    }
-//
-//    //WALLET SERVICES CASH IN ANOTHER ACCOUNT
-//
-//    @Test(dependsOnMethods = "loginGoogle", priority = 24, description = "To validate successful Cash In to another Account")
-//    public void CashInAnotherAcc_TC_01()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsCashInToAnotherAccount.navigateWalletServicesPage();
-//            this.wsCashInToAnotherAccount.ValidateSuccessCashInToAnotherAccount();
-//
-//        }
-//
-//    }
-//
-//   // WALLET SERVICES CASH OUT
-//    @Test(dependsOnMethods = "loginGoogle", priority = 26, description = "Validate Cash Out")
-//    public void CashOut_TC_01() throws Exception {
-//        if (this.homeSteps.isInHomePage()) {
-//            this.wsCashOutSteps.CO_TC_01();
-//
-//        }
-//
-//    }
-//
-//
-//
-//   // WALLET SERVICES KWARTA PADALA
-//    @Test(dependsOnMethods = "loginGoogle", priority = 28, description = "Validate To validate successful Wallet Services Kwarta Padala Payout")
-//    public void KPP_TC_01() throws Exception {
-//        if (this.homeSteps.isInHomePage()) {
-//            this.wsKwartaPadalaPayOutSteps.KPP_TC_01();
-//
-//        }
-//
-//    }
-//
-//
-//    //WALLET SERVICES REPRINTING
-//
-//    @Test(dependsOnMethods = "loginGoogle", priority = 30, description = "To validate successful WS-Reprint Cash In to Own Account Receipt Reprinting")
-//    public void WS_RR_TC_01()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsReprintingSteps.navigateWalletServicesPage();
-//            this.wsReprintingSteps.validateSuccessfulCashInOwnReprinting();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 31, description = "To validate successful WS-Reprint Cash In to Another Account Receipt Reprinting")
-//    public void WS_RR_TC_05()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsReprintingSteps.navigateWalletServicesPage();
-//            this.wsReprintingSteps.validateSuccessfulCashInAnotherAccReprinting();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 32, description = "To validate successful WS-ReprintCash Out Receipt Reprinting")
-//    public void WS_RR_TC_09()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsReprintingSteps.navigateWalletServicesPage();
-//            this.wsReprintingSteps.validateSuccessfulCashOutReprinting();
-//
-//        }
-//
-//    }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 33, description = "To validate successful WS-Reprint Kwarta Padala Payout Receipt Reprinting")
-//    public void WS_RR_TC_13()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.wsReprintingSteps.navigateWalletServicesPage();
-//            this.wsReprintingSteps.validateSuccessfulKPPayoutReprinting();
-//
-//        }
-//
-//    }
+
+    @Test(dependsOnMethods = "loginGoogle", priority = 23, description = "Validate Cash In to Own Account Page")
+    public void CashInToOwnAcc_TC_01() throws Exception {
+        if (this.homeSteps.isInHomePage()) {
+            this.wsCashInToOwnAccountSteps.CIOA_TC_01();
+        }
+    }
+
+    //WALLET SERVICES CASH IN ANOTHER ACCOUNT
+
+    @Test(dependsOnMethods = "loginGoogle", priority = 24, description = "To validate successful Cash In to another Account")
+    public void CashInAnotherAcc_TC_01()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsCashInToAnotherAccount.navigateWalletServicesPage();
+            this.wsCashInToAnotherAccount.ValidateSuccessCashInToAnotherAccount();
+
+        }
+
+    }
+
+   // WALLET SERVICES CASH OUT
+    @Test(dependsOnMethods = "loginGoogle", priority = 26, description = "Validate Cash Out")
+    public void CashOut_TC_01() throws Exception {
+        if (this.homeSteps.isInHomePage()) {
+            this.wsCashOutSteps.CO_TC_01();
+
+        }
+
+    }
+
+
+
+   // WALLET SERVICES KWARTA PADALA
+    @Test(dependsOnMethods = "loginGoogle", priority = 28, description = "Validate To validate successful Wallet Services Kwarta Padala Payout")
+    public void KPP_TC_01() throws Exception {
+        if (this.homeSteps.isInHomePage()) {
+            this.wsKwartaPadalaPayOutSteps.KPP_TC_01();
+
+        }
+
+    }
+
+
+    //WALLET SERVICES REPRINTING
+
+    @Test(dependsOnMethods = "loginGoogle", priority = 30, description = "To validate successful WS-Reprint Cash In to Own Account Receipt Reprinting")
+    public void WS_RR_TC_01()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsReprintingSteps.navigateWalletServicesPage();
+            this.wsReprintingSteps.validateSuccessfulCashInOwnReprinting();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 31, description = "To validate successful WS-Reprint Cash In to Another Account Receipt Reprinting")
+    public void WS_RR_TC_05()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsReprintingSteps.navigateWalletServicesPage();
+            this.wsReprintingSteps.validateSuccessfulCashInAnotherAccReprinting();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 32, description = "To validate successful WS-ReprintCash Out Receipt Reprinting")
+    public void WS_RR_TC_09()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsReprintingSteps.navigateWalletServicesPage();
+            this.wsReprintingSteps.validateSuccessfulCashOutReprinting();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 33, description = "To validate successful WS-Reprint Kwarta Padala Payout Receipt Reprinting")
+    public void WS_RR_TC_13()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.wsReprintingSteps.navigateWalletServicesPage();
+            this.wsReprintingSteps.validateSuccessfulKPPayoutReprinting();
+
+        }
+
+    }
 
 }
