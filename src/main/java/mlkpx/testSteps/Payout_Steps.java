@@ -67,6 +67,8 @@ public class Payout_Steps extends Base_Steps{
 
             if (payoutPageObjects.PayoutConfirm().isEnabled()) {
 //                try{
+                    waitSleep(2000);
+                    scrollToElement(payoutPageObjects.ConfirmPayout());
                     click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
                     if (payoutPageObjects.SuccessfulPay().getText().contains("Payout Successful")) {
                         assertEqual(getText(payoutPageObjects.SuccessfulPay()), "Payout Successful");
@@ -136,6 +138,8 @@ public class Payout_Steps extends Base_Steps{
 
             if (payoutPageObjects.PayoutConfirm().isEnabled()) {
 //                try{
+                waitSleep(2000);
+                scrollToElement(payoutPageObjects.ConfirmPayout());
                     click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
 
                     if (getText(payoutPageObjects.SuccessfulPay()).equals("Payout Successful")) {
