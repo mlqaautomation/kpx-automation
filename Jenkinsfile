@@ -18,10 +18,9 @@ pipeline {
                 script {
                     def buildParallelMap = [:]
 
-                    // HappyPath test
                     buildParallelMap.put('Billspay', {
                         echo "Approval needed to run HappyPath tests"
-                        input message: 'Do you want to proceed with running billspay tests?', submitter: 'user'
+                        input message: 'Do you want to proceed with running bills pay tests?', submitter: 'user'
                         try {
                             echo "Running Billspay test scripts"
                             bat "mvn clean test -DfileName=\"billspay.xml\""
@@ -30,9 +29,9 @@ pipeline {
                             return
                         }finally{
                             def currentDate = new Date().format('MM-dd-yyyy')
-                            def suiteName = "LUKAT"
-//                             archiveArtifacts artifacts: "Reports/${currentDate}/${suiteName}_HappyPath.html", fingerprint: true
-//                             junit skipPublishingChecks: true, testResults: 'target/surefire-reports/junitreports/*.xml'
+                            def suiteName = "BILLSPAY"
+                            archiveArtifacts artifacts: "Reports/${currentDate}/${suiteName}.html", fingerprint: true
+                            junit skipPublishingChecks: true, testResults: 'target/surefire-reports/junitreports/*.xml'
                         }
                     })
 
@@ -47,9 +46,9 @@ pipeline {
                             return
                         }finally{
                             def currentDate = new Date().format('MM-dd-yyyy')
-                            def suiteName = "LUKAT"
-//                             archiveArtifacts artifacts: "Reports/${currentDate}/${suiteName}_Transactional.html", fingerprint: true
-//                             junit skipPublishingChecks: true, testResults: 'target/surefire-reports/junitreports/*.xml'
+                            def suiteName = "PAYOUT"
+                            archiveArtifacts artifacts: "Reports/${currentDate}/${suiteName}.html", fingerprint: true
+                            junit skipPublishingChecks: true, testResults: 'target/surefire-reports/junitreports/*.xml'
                         }
                     })
 
@@ -64,25 +63,26 @@ pipeline {
                             return
                         }finally{
                             def currentDate = new Date().format('MM-dd-yyyy')
-                            def suiteName = "LUKAT"
-//                             archiveArtifacts artifacts: "Reports/${currentDate}/${suiteName}_Transactional.html", fingerprint: true
-//                             junit skipPublishingChecks: true, testResults: 'target/surefire-reports/junitreports/*.xml'
+                            def suiteName = "WALLET SERVICE"
+                            archiveArtifacts artifacts: "Reports/${currentDate}/${suiteName}.html", fingerprint: true
+                            junit skipPublishingChecks: true, testResults: 'target/surefire-reports/junitreports/*.xml'
                         }
                     })
 
-                    // Negative test
                     buildParallelMap.put('sendout Tests', {
                         echo "Approval needed to run Negative tests"
-                        input message: 'Do you want to proceed with running sendout tests?', submitter: 'user'
+                        input message: 'Do you want to proceed with running send out tests?', submitter: 'user'
                         try {
                             echo "Running negative path test scripts"
-                            bat "mvn clean test -DfileName=\"billspay.xml\""
+                            bat "mvn clean test -DfileName=\"sendout.xml\""
                         } catch (err) {
                             echo 'Negative stage aborted'
                             return
                         }finally{
                             def currentDate = new Date().format('MM-dd-yyyy')
-                            def suiteName = "LUKAT"
+                            def suiteName = "SENDOUT"
+                            archiveArtifacts artifacts: "Reports/${currentDate}/${suiteName}.html", fingerprint: true
+                            junit skipPublishingChecks: true, testResults: 'target/surefire-reports/junitreports/*.xml'
                         }
                     })
 
