@@ -49,8 +49,6 @@ public class BaseTest {
     protected WS_Reprinting_Steps wsReprintingSteps;
     protected WS_ShopSafe_Steps wsShopSafeSteps;
 
-    protected SendOutTransactional_Steps sendOutTransactionalSteps;
-    protected SendOutNegativeTest_Steps sendOutNegativeTestSteps;
 
     protected Login loginWalletSteps;
     protected Cash_In cashInSteps;
@@ -139,9 +137,6 @@ public class BaseTest {
         this.wsKwartaPadalaPayOutSteps = new WS_KwartaPadalaPayOut_Steps();
         this.wsReprintingSteps = new WS_Reprinting_Steps();
         this.wsShopSafeSteps = new WS_ShopSafe_Steps();
-
-        this.sendOutTransactionalSteps = new SendOutTransactional_Steps();
-        this.sendOutNegativeTestSteps = new SendOutNegativeTest_Steps();
 
 
     }
