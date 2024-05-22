@@ -77,7 +77,7 @@ public class SendOut_PageObjects {
 //    }
 
     public WebElement addNewReceivers() {
-        return getDriver().findElement(By.xpath("//*[text()='Add New Receiver']"));
+        return getDriver().findElement(By.xpath("//div[contains(@class,'d-flex justify-content-between align-items-center mt-4')]/button[contains(@class,'btn-sm btn btn-link')]"));
     }
 
     public WebElement r_LastName() {

@@ -6,7 +6,7 @@ import utilities.Logger.LoggingUtils;
 public class Login extends Base_Steps {
     public void loginWallet(){
         mobileGeneralMethod.waitSleep(10000);
-        mobileGeneralMethod.type(mlWalletPageObjects.mobileNum_editText(), "Mobile Field", "9999999994");
+        mobileGeneralMethod.type(mlWalletPageObjects.mobileNum_editText(), "Mobile Field", "9999999996");
         mobileGeneralMethod.tap(mlWalletPageObjects.login_btn(),"Login Button");
         mobileGeneralMethod.waitSleep(10000);
         enterOTP();

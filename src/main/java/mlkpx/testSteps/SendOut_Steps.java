@@ -161,8 +161,7 @@ public class SendOut_Steps extends Base_Steps {
         waitSleep(5000);
         scrollToElement(sendOutPageObjects.searchReceivers());
         click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
-        waitSleep(5000);
-
+        waitSleep(2000);
         click(sendOutPageObjects.addNewReceivers(), "Add new Receiver ");
         type(sendOutPageObjects.r_LastName(), "R_Lastname ", propertyReader.getproperty("MLast_name"));
         type(sendOutPageObjects.r_FirstName(), "R_Firstname ", propertyReader.getproperty("MFirst_name"));
@@ -530,8 +529,7 @@ public class SendOut_Steps extends Base_Steps {
         public void addReceiver () {
             scrollToElement(sendOutPageObjects.searchReceivers());
             click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
-            waitSleep(5000);
-
+            waitSleep(2000);
             click(sendOutPageObjects.addNewReceivers(), "Add new Receiver ");
             waitSleep(2000);
             type(sendOutPageObjects.r_LastName(), "R_Lastname ", propertyReader.getproperty("Receivers_LName"));

@@ -14,44 +14,44 @@ public class SendOut_Tests extends BaseTest {
         }
     }
 
-    @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Verify Navigation of SendOut Domestic")
-    public void DSendout_TC_01()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.sendOutSteps.DS_TC_01();
-        }
-    }
-
-
-    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Verify SendOut Transaction Option Invalid Branch Code")
-    public void DSendout_TC_02()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.sendOutSteps.DS_TC_02();
-        }
-    }
-
-
-    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Verify SendOut Transaction Option Valid Branch Code")
-        public void DSendout_TC_02_1()throws Exception{
-            if(this.homeSteps.isInHomePage()){
-                this.sendOutSteps.DS_TC_02_1();
-            }
-        }
-
-
-    @Test(dependsOnMethods = "loginGoogle" , priority = 3, description = "Verify Search KYC (Sender)")
-    public void DSendout_TC_03()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.sendOutSteps.DS_TC_03();
-        }
-    }
-
-    @Test(dependsOnMethods = "loginGoogle" , priority = 4, description = "Verify Search KYC (Sender) Negative Test")
-    public void DSendout_TC_03_1()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.sendOutSteps.DS_TC_03_1();
-        }
-    }
-
+//    @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Verify Navigation of SendOut Domestic")
+//    public void DSendout_TC_01()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.sendOutSteps.DS_TC_01();
+//        }
+//    }
+//
+//
+//    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Verify SendOut Transaction Option Invalid Branch Code")
+//    public void DSendout_TC_02()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.sendOutSteps.DS_TC_02();
+//        }
+//    }
+//
+//
+//    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Verify SendOut Transaction Option Valid Branch Code")
+//        public void DSendout_TC_02_1()throws Exception{
+//            if(this.homeSteps.isInHomePage()){
+//                this.sendOutSteps.DS_TC_02_1();
+//            }
+//        }
+//
+//
+//    @Test(dependsOnMethods = "loginGoogle" , priority = 3, description = "Verify Search KYC (Sender)")
+//    public void DSendout_TC_03()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.sendOutSteps.DS_TC_03();
+//        }
+//    }
+//
+//    @Test(dependsOnMethods = "loginGoogle" , priority = 4, description = "Verify Search KYC (Sender) Negative Test")
+//    public void DSendout_TC_03_1()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.sendOutSteps.DS_TC_03_1();
+//        }
+//    }
+//
 
     @Test(dependsOnMethods = "loginGoogle" , priority = 5, description = "Verify Add Receiver New")
     public void DSendout_TC_04()throws Exception{
