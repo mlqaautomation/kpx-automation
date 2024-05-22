@@ -6,6 +6,8 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import utilities.Logger.LoggingUtils;
 import utilities.ApkPath.Apk;
+
+import java.io.File;
 import java.util.Map;
 public class AppiumDriverManager {
     //todo *
@@ -15,9 +17,13 @@ public class AppiumDriverManager {
     protected static AndroidDriver driver;
     public static final String APP_ID = "com.mlhuillier.mlwallet";
     public static final String APP_Activity = "MainActivity";
+    private static final String nodePath = "C:\\Program Files\\nodejs\\node.exe";
+    private static final String appiumPath = "C:\\Users\\MONC20248261\\AppData\\Roaming\\npm\\node_modules\\appium";
 
     public static void setupServer(){
         service = new AppiumServiceBuilder()
+                .usingDriverExecutable(new File(nodePath))
+                .withAppiumJS(new File(appiumPath))
                 .withIPAddress(IP_Address)
                 .usingPort(PORT)
                 .build();
@@ -28,7 +34,7 @@ public class AppiumDriverManager {
                 .setApp(Apk.API_DEMOS_APK.toString())
                 .autoGrantPermissions()
                 .setAutomationName("uiautomator2")
-                .setNoReset(false).headless()
+                .setNoReset(false)
                 .eventTimings();
         driver = new AndroidDriver(service.getUrl(), options);
     }

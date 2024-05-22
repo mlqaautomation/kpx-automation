@@ -22,6 +22,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
     }
     public void validateSuccessfulBillsPayCancellation()throws Exception{
         //Must need to cancel before/within five minutes.
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPCancellation());
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
@@ -49,6 +51,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
     }
     public void validateSuccessfulRemoteBillsPayCancellation()throws Exception{
         //Must need to cancel before/within five minutes.
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPCancellation());
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
@@ -84,6 +88,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         }
     }
     public void validateEmptyRefBillsPayCancellation()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPCancellation());
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
@@ -93,6 +99,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         }
     }
     public void validateInvalidRefBillsPayCancellation()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPCancellation());
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
@@ -106,6 +114,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         }
     }
     public void validateCancelledBillsPayRefNum()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPCancellation());
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
@@ -119,6 +129,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         }
     }
     public void validateCancelledBillsPayInvalidIRNumber()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPCancellation());
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
@@ -135,6 +147,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         }
     }
     public void validateCancelledBillsPayNoReason()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPCancellation());
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
@@ -154,6 +168,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         }
     }
     public void validateCancelledBillsPayNoIRNumber()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPCancellation());
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
@@ -170,6 +186,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         }
     }
     public void validateCancelledBillsPayNoInitiatedBy()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPCancellation());
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
@@ -189,6 +207,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         }
     }
     public void validateCancelledBillsPayKeepTransaction()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPCancellation());
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
@@ -210,6 +230,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         }
     }
     public void validateCancelledBillsPayStayInPage()throws Exception{
+        waitSleep(2000);
+        scrollToElement(billsPayPageObjects.BPCancellation());
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");

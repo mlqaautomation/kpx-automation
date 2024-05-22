@@ -60,8 +60,9 @@ public class SendOut_Steps extends Base_Steps {
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
         click(sendOutPageObjects.searchKYC(), "Search KYC button ");
-        type(sendOutPageObjects.lastName(), "Lastname ", propertyReader.getproperty("Lastname"));
-        type(sendOutPageObjects.firstName(), "Firstname ", propertyReader.getproperty("Firstname"));
+        String[] randomName = reader.getRandomName();
+        type(sendOutPageObjects.lastName(), "Lastname ", randomName[1]);
+        type(sendOutPageObjects.firstName(), "Firstname ", randomName[0]);
         click(sendOutPageObjects.searchBtn(), "Search Button ");
         waitSleep(2000);
         click(sendOutPageObjects.viewButton(), "View Button ");
