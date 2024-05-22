@@ -44,21 +44,13 @@ public class Payout_Steps extends Base_Steps{
             waitSleep(2000);
             scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
-            waitSleep(2);
+            waitSleep(2000);
             click(payoutPageObjects.SearchKYC(), "Search KYC");
-            waitSleep(2);
-            payoutPageObjects.SearchLName().clear();
-            // todo
-            String[] randomName = reader.getRandomName();
-            type(payoutPageObjects.SearchLName(), "Last name field", randomName[1]);
-            payoutPageObjects.SearchFName().clear();
-            type(payoutPageObjects.SearchFName(), "First name field", randomName[0]);
-            payoutPageObjects.SearchMName().clear();
-            type(payoutPageObjects.SearchMName(), "Middle name field", "");
+            waitSleep(2000);
             click(payoutPageObjects.SearchKYCAc(), "Search Button");
-            waitSleep(2);
+            waitSleep(2000);
             click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
-            waitSleep(2);
+            waitSleep(2000);
             if(isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))){
                 LoggingUtils.info("Navigated to View KYC");
                 scrollDown(100);
@@ -121,20 +113,13 @@ public class Payout_Steps extends Base_Steps{
             waitSleep(2000);
             scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
-            waitSleep(2);
+            waitSleep(2000);
             click(payoutPageObjects.SearchKYC(), "Search KYC");
-            waitSleep(2);
-            payoutPageObjects.SearchLName().clear();
-            String[] randomName = reader.getRandomName();
-            type(payoutPageObjects.SearchLName(), "Last name field", randomName[1]);
-            payoutPageObjects.SearchFName().clear();
-            type(payoutPageObjects.SearchFName(), "First name field", randomName[0]);
-            payoutPageObjects.SearchMName().clear();
-            type(payoutPageObjects.SearchMName(), "Middle name field", "");
+            waitSleep(2000);
             click(payoutPageObjects.SearchKYCAc(), "Search Button");
-            waitSleep(2);
+            waitSleep(2000);
             click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
-            waitSleep(2);
+            waitSleep(2000);
 
             if(isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))){
                 LoggingUtils.info("Navigated to View KYC");
@@ -192,8 +177,8 @@ public class Payout_Steps extends Base_Steps{
     public void search1KYC () {
         click(sendOutPageObjects.searchKYC(), "Search KYC button ");
         String[] randomName = reader.getRandomName();
-        type(sendOutPageObjects.lastName(), "Lastname ", "Siarot");
-        type(sendOutPageObjects.firstName(), "Firstname ", "Enrique");
+        type(sendOutPageObjects.lastName(), "Lastname ", "Briar");
+        type(sendOutPageObjects.firstName(), "Firstname ", "Aurelia");
         click(sendOutPageObjects.searchBtn(), "Search Button ");
         waitSleep(2000);
         click(sendOutPageObjects.viewButton(), "View Button ");
@@ -246,19 +231,13 @@ public class Payout_Steps extends Base_Steps{
         type(payoutPageObjects.PayKTPN(), "Compliance KTPN Number", WatchlistKPTN);
         type(payoutPageObjects.PayAmount(), "Amount", "200");
         click(payoutPageObjects.SearchButton(), "Search Button");
-        waitSleep(2);
+        waitSleep(2000);
         click(payoutPageObjects.SearchKYC(), "Search KYC");
-        waitSleep(2);
-        payoutPageObjects.SearchLName().clear();
-        type(payoutPageObjects.SearchLName(), "Last name field", "SIAROT");
-        payoutPageObjects.SearchFName().clear();
-        type(payoutPageObjects.SearchFName(), "First name field", "ENRIQUE");
-        payoutPageObjects.SearchMName().clear();
-        type(payoutPageObjects.SearchMName(), "Middle name field", "");
+        waitSleep(2000);
         click(payoutPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2);
+        waitSleep(2000);
         click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
-        waitSleep(2);
+        waitSleep(2000);
         if(isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))){
             LoggingUtils.info("Navigated to View KYC");
             scrollDown(100);
@@ -328,19 +307,13 @@ public class Payout_Steps extends Base_Steps{
         type(payoutPageObjects.PayKTPN(), "Compliance KTPN Number", RemoteWatchlistKPTN);
         type(payoutPageObjects.PayAmount(), "Amount", "200");
         click(payoutPageObjects.SearchButton(), "Search Button");
-        waitSleep(2);
+        waitSleep(2000);
         click(payoutPageObjects.SearchKYC(), "Search KYC");
-        waitSleep(2);
-        payoutPageObjects.SearchLName().clear();
-        type(payoutPageObjects.SearchLName(), "Last name field", "Briar");
-        payoutPageObjects.SearchFName().clear();
-        type(payoutPageObjects.SearchFName(), "First name field", "Aurelia");
-        payoutPageObjects.SearchMName().clear();
-        type(payoutPageObjects.SearchMName(), "Middle name field", "");
+        waitSleep(2000);
         click(payoutPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2);
+        waitSleep(2000);
         click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
-        waitSleep(2);
+        waitSleep(2000);
         if(isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))){
             LoggingUtils.info("Navigated to View KYC");
             scrollDown(100);
