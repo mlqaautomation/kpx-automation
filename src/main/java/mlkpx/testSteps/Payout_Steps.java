@@ -57,6 +57,8 @@ public class Payout_Steps extends Base_Steps{
                 waitSleep(3000);
                 scrollDown(100);
             }
+            waitSleep(2000);
+            scrollToElement(payoutPageObjects.SelectKYC());
             click(payoutPageObjects.SelectKYC(), "Select KYC");
             if (payoutPageObjects.KtpnInfo().getText().contains("KPTN")) {
                 waitSleep(2000);
@@ -129,6 +131,8 @@ public class Payout_Steps extends Base_Steps{
                 waitSleep(3000);
                 scrollDown(100);
             }
+            waitSleep(2000);
+            scrollToElement(payoutPageObjects.SelectKYC());
             click(payoutPageObjects.SelectKYC(), "Select KYC");
             if (payoutPageObjects.KtpnInfo().getText().contains("KPTN")) {
                 waitSleep(2000);
