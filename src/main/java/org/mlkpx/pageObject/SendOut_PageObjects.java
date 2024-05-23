@@ -52,7 +52,7 @@ public class SendOut_PageObjects {
     }
 
 
-    public WebElement selectKYC(){return getDriver().findElement(By.xpath("//div[@class='container']/div[@class='justify-content-end mt-5 row']/button[contains(., 'Select KYC')]"));
+    public WebElement selectKYC(){return getDriver().findElement(By.xpath("//button[contains(., 'Select KYC')]"));
     }
     //[class='btn btn-primary btn-sm']
     public WebElement contactNumber() {
