@@ -247,15 +247,24 @@ public class GeneralMethod extends ExtentReporter{
         }
 
     }
+//    public void scrollToElement(WebElement element) {
+//        try{
+//            js = (JavascriptExecutor) getWebDriver();
+//            js.executeScript("arguments[0].scrollIntoView(true);", element);
+//            LoggingUtils.info("Scrolling into element: "+ element);
+//        }catch (Exception e){
+//            LoggingUtils.info("Error "+ e);
+//        }
+//
+//    }
     public void scrollToElement(WebElement element) {
-        try{
-            js = (JavascriptExecutor) getWebDriver();
-            js.executeScript("arguments[0].scrollIntoView(true);", element);
-            LoggingUtils.info("Scrolling into element: "+ element);
-        }catch (Exception e){
-            LoggingUtils.info("Error "+ e);
+        try {
+            JavascriptExecutor jsExecutor = (JavascriptExecutor) getWebDriver();
+            jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+            LoggingUtils.info("Scrolling into element: " + element);
+        } catch (Exception e) {
+            LoggingUtils.info("Error while scrolling to element: " + e);
         }
-
     }
     public List<WebElement> staleException_Click(WebElement locator) {
         List<WebElement> outcome = null;
