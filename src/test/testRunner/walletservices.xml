@@ -5,14 +5,14 @@
         <listener class-name="utilities.ExtentReport.ExtentReporter" />
 <!--       <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>-->
     </listeners>
-<!--    <test name="MLWALLET">-->
-<!--        <parameter name="type" value="mobile">-->
-<!--            <classes>-->
-<!--               <class name="kpx.actual.WalletService.WalletService"> </class>-->
+    <test name="MLWALLET">
+        <parameter name="type" value="mobile">
+            <classes>
+               <class name="kpx.actual.WalletService.WalletService"> </class>
 
-<!--            </classes>-->
-<!--        </parameter>-->
-<!--    </test>-->
+            </classes>
+        </parameter>
+    </test>
         <test name="KPX-WALLET SERVICE">
             <parameter name="type" value="web">
                 <classes>
