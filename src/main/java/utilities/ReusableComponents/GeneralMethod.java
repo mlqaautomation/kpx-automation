@@ -348,6 +348,15 @@ public class GeneralMethod extends ExtentReporter{
             return false;
         }
     }
+
+    public boolean isUnchecked(WebElement locator) {
+        try {
+            return !locator.isSelected();
+        } catch (Exception e) {
+            LoggingUtils.error("" + e);
+            return false;
+        }
+    }
     public String getValue(WebElement locator) {
         String val = null;
         try {
