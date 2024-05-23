@@ -109,10 +109,13 @@ public class SendOut_Steps extends Base_Steps {
         navigationFOrSendOutDomestic();
         searchKYC();
         waitSleep(2000);
-        if (isChecked(sendOutPageObjects.smsCheckbox())) {
-            LoggingUtils.info("Checkbox is checked!");
-        } else {
+//        click(sendOutPageObjects.contactNumber(),"Contact No.");
+//        String contactNumber = getText(sendOutPageObjects.senderContactNo());
+//        type(sendOutPageObjects.contactNumber(),"Contact No.", contactNumber);
+        if (isUnchecked(sendOutPageObjects.smsCheckbox())) {
             LoggingUtils.info("Checkbox is not checked!");
+        } else {
+            LoggingUtils.info("Checkbox is checked!");
             ExtentReporter.logFail("DS_TC_03", "Failed to Validate Search Kyc in SendOut Domestic");
             Assert.fail("Failed to Validate Search Kyc in SendOut Domestic");
         }

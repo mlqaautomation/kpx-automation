@@ -214,6 +214,7 @@ public class SendOut_PageObjects {
         return getDriver().findElement(By.cssSelector("[class='sc-epALIP bYifLU']"));
     }
 
+
     public WebElement theSameTransactionText(){
         return getDriver().findElement(By.cssSelector("[class=\"sc-gEvEer lkAUft\"]"));
     }
@@ -231,6 +232,9 @@ public class SendOut_PageObjects {
         return getDriver().findElement(By.xpath("//input[@value='1']"));
     }
     public WebElement BranchCode(){return getDriver().findElement(By.xpath("//input[@name='branchCode']"));
+    }
+
+    public WebElement senderContactNo(){return getDriver().findElement(By.xpath("(//*[@class=\"sc-ERObt sc-dNsVcS jennmh jrGRvL\"])[10]"));
     }
     public WebElement OperatorID(){return getDriver().findElement(By.xpath("//input[@placeholder='Operator ID']"));
     }

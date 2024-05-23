@@ -22,6 +22,7 @@ public class Kyc_Tests extends BaseTest {
             ExtentReporter.logPass("KYC_TC_02", "Registered KYC records will display");
         }
     }
+
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "Negative Testing for KYC Search")
     public void KYC_TC_03() throws Exception {
         if (this.homeSteps.isInHomePage()) {
