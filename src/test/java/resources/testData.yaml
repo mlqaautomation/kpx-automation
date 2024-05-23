@@ -5,14 +5,17 @@ Roles:
   kpx_username: MONC20248261, kpx_password: '@lb3rtM111000'}
 AccessKey: 5ks4 eadn w5ku gucv dfcc sr4g qtxo d7m6
 Senders:
-- kyc: {firstName: Albert, lastName: Monceda}
-- kyc: {firstName: Enrique, lastName: Siarot}
-- kyc: {firstName: Jovanie, lastName: Dasian}
+  - kyc: {firstName: ALBE, lastName: MONCE}
+  - kyc: {firstName: Edrian, lastName: Siarot}
+  - kyc: {firstName: Cath, lastName: Alferez}
+  - kyc: {firstName: Ekinggg, lastName: Kingggg}
 Receivers:
+
 - kyc: {firstName: Roselyn, lastName: Amoc}
 - kyc: {firstName: Albert, lastName: Monceda}
 
 sendOutKPTN: [KPNQUIUQTHX]
+
 remoteSendoutKPTN: [KPNDKQZEDEO, KPNLYBTFNJR, KPNQTNTFVKO, KPNBMQACMCJ, KPNQWVWXRHR,
   KPNUHMQZTBY, KPNABUNNJOA, KPNBUWORXNJ, KPNCESPHTBG, KPNJGETBVAM, KPNRLIIXNZW, KPNPULCJENB,
   KPNOEUXXZYW, KPNXKSLIMSF, KPNMWJGGRAZ, KPNCALYRPMF, KPNXCXHCIUB, KPNAKOIDPRD]

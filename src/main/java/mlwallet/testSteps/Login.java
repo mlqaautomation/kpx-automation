@@ -21,6 +21,7 @@ public class Login extends Base_Steps {
             throw new AssertionError("Failed to logged in");
         }
     }
+
     public void enterOTP(){
         LoggingUtils.info("Entering OTP........");
         for (int i=0; i < 6; i++){
