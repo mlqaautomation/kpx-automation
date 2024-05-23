@@ -22,6 +22,7 @@ public class WalletService extends BaseTest {
     public void cashOut(){
         loginWalletSteps.loginWallet();
         cashOut.cashOut();
+
     }
 
 }

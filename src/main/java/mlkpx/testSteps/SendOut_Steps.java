@@ -27,7 +27,7 @@ public class SendOut_Steps extends Base_Steps {
             LoggingUtils.info("Successfully Navigate for SendOut Domestic Page ");
         } else {
             ExtentReporter.logFail("DS_TC_01", "Failed to Validate SendOut Domestic Page Navigation");
-            LoggingUtils.info("Failed to Validate SendOut Domestic Page Navigation ");
+            Assert.fail("Failed to Validate SendOut Domestic Page Navigation");
         }
     }
 
@@ -113,9 +113,11 @@ public class SendOut_Steps extends Base_Steps {
         } else {
             LoggingUtils.info("Checkbox is not checked!");
             ExtentReporter.logFail("DS_TC_03", "Failed to Validate Search Kyc in SendOut Domestic");
+            Assert.fail("Failed to Validate Search Kyc in SendOut Domestic");
         }
         ExtentReporter.logPass("DS_TC_03", "Successfully Validated Search Kyc in SendOut Domestic");
     }
+
     public void DS_TC_03_1() throws Exception {
         navigationFOrSendOutDomestic();
         click(sendOutPageObjects.searchKYC(), "Search KYC button ");
