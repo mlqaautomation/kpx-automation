@@ -5,23 +5,19 @@ Roles:
   kpx_username: MONC20248261, kpx_password: '@lb3rtM111000'}
 AccessKey: 5ks4 eadn w5ku gucv dfcc sr4g qtxo d7m6
 Senders:
-  - kyc: {firstName: ALBE, lastName: MONCE}
-  - kyc: {firstName: Edrian, lastName: Siarot}
-  - kyc: {firstName: Cath, lastName: Alferez}
-  - kyc: {firstName: Ekinggg, lastName: Kingggg}
+- kyc: {firstName: ALBE, lastName: MONCE}
+- kyc: {firstName: Edrian, lastName: Siarot}
+- kyc: {firstName: Cath, lastName: Alferez}
+- kyc: {firstName: Ekinggg, lastName: Kingggg}
 Receivers:
-
 - kyc: {firstName: Roselyn, lastName: Amoc}
 - kyc: {firstName: Albert, lastName: Monceda}
-
-sendOutKPTN: [KPNQUIUQTHX]
-
+sendOutKPTN: []
 remoteSendoutKPTN: [KPNDKQZEDEO, KPNLYBTFNJR, KPNQTNTFVKO, KPNBMQACMCJ, KPNQWVWXRHR,
   KPNUHMQZTBY, KPNABUNNJOA, KPNBUWORXNJ, KPNCESPHTBG, KPNJGETBVAM, KPNRLIIXNZW, KPNPULCJENB,
   KPNOEUXXZYW, KPNXKSLIMSF, KPNMWJGGRAZ, KPNCALYRPMF, KPNXCXHCIUB, KPNAKOIDPRD]
-payoutKPTN: [KPNSOZTWWVV, KPNTVUWKQNO, KPNGZDCMVSD]
+payoutKPTN: [KPNSOZTWWVV, KPNTVUWKQNO, KPNGZDCMVSD, KPNSLYSTDPX]
 remotePayoutKPTN: [KPNKWOQJTMS]
-
 billsPayKTPN: [KBPCCQHNUUZ, KBPHEHOVTKJ, KBPZYRBBMEU, KBPYZPZSESG, KBPTPDAPQST, KBPBKAAOCRB,
   KBPKDNADROG, KBPLBJGNXHF, KBPNMSHTYXL, KBPHPJZQKWR]
 remoteBillsPayKTPN: [KBPASUMLSBZ, KBPROHOALOW, KBPQIUUARFL, KBPNIHMKLZP, KBPTOYQDCTF,
