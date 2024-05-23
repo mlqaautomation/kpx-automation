@@ -5,6 +5,8 @@ import utilities.Logger.LoggingUtils;
 public class BillsPayReprinting_Steps extends Base_Steps{
     public void navigatePayoutPage()throws Exception{
         try{
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.billsPay_link());
             click(billsPayPageObjects.billsPay_link(), "Bills Pay");
             if(isVisible(billsPayPageObjects.billsPay_h2(), getText(billsPayPageObjects.billsPay_h2()))){
                 LoggingUtils.info("Navigated to Bills Pay Page");

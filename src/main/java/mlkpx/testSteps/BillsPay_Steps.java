@@ -57,9 +57,9 @@ public class BillsPay_Steps extends Base_Steps{
             waitSleep(2000);
             scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            waitSleep(10000);
+            waitSleep(15000);
         }
-
+        waitSleep(5000);
         if(isVisible(billsPayPageObjects.billsPay_ConfiInfo(), getText(billsPayPageObjects.billsPay_ConfiInfo()))) {
             LoggingUtils.info("Bills Pay Confirmation");
             click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
@@ -111,6 +111,8 @@ public class BillsPay_Steps extends Base_Steps{
         if(isVisible(billsPayPageObjects.billsPay_ConfiInfo(), getText(billsPayPageObjects.billsPay_ConfiInfo()))) {
             LoggingUtils.info("Bills Pay Confirmation");
             click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
+            waitSleep(2000);
+            scrollToElement(billsPayPageObjects.ConfirmSubmitBillsPay());
             click(billsPayPageObjects.ConfirmSubmitBillsPay(), "Confirm Payment");
             waitSleep(5000);
             assertEqual(getText(billsPayPageObjects.DuplicateBillsPay()), "Duplicate Bills Payment");
@@ -154,14 +156,16 @@ public class BillsPay_Steps extends Base_Steps{
             waitSleep(2000);
             scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            waitSleep(10000);
+            waitSleep(15000);
         }
+        waitSleep(15000);
         if(isVisible(billsPayPageObjects.billsPay_ConfiInfo(), getText(billsPayPageObjects.billsPay_ConfiInfo()))) {
             LoggingUtils.info("Bills Pay Confirmation");
             click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
             waitSleep(2000);
+            scrollToElement(billsPayPageObjects.ConfirmSubmitBillsPay());
             click(billsPayPageObjects.ConfirmSubmitBillsPay(), "Confirm Payment");
-            waitSleep(10000);
+            waitSleep(15000);
             assertEqual(getText(billsPayPageObjects.SuccessfulBillsPay()), "Bills Pay Successful");
             String kptnText = getText(billsPayPageObjects.kptnText());
             List<String> kptnValues = Collections.singletonList(kptnText);
