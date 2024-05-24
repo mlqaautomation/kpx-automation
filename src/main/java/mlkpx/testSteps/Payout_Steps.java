@@ -35,20 +35,20 @@ public class Payout_Steps extends Base_Steps{
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
-            waitSleep(3000);
+            waitUntilLoadingGone(10000);
             reader.refreshTestData();
             waitSleep(3000);  
             String sendoutKPTN = reader.getSendOutKPTN(); // Call the getSendOutKPTN function
             type(payoutPageObjects.PayKTPN(), "KTPN", sendoutKPTN);
             type(payoutPageObjects.PayAmount(), "Amount", "100");
-            waitSleep(2000);
+            waitUntilLoadingGone(10000);
             scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
-            waitSleep(2000);
+            waitUntilLoadingGone(10000);
             click(payoutPageObjects.SearchKYC(), "Search KYC");
-            waitSleep(2000);
+            waitUntilLoadingGone(10000);
             click(payoutPageObjects.SearchKYCAc(), "Search Button");
-            waitSleep(2000);
+            waitUntilLoadingGone(10000);
             click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
             waitSleep(2000);
             if(isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))){
@@ -76,9 +76,9 @@ public class Payout_Steps extends Base_Steps{
                         assertEqual(getText(payoutPageObjects.SuccessfulPay()), "Payout Successful");
                         List<String> sendoutKPTNList = Collections.singletonList(sendoutKPTN);
                         reader.writePayoutKptnData(sendoutKPTNList);
-                        waitSleep(2000);
+                        waitUntilLoadingGone(10000);
                         click(payoutPageObjects.proceedToPrinting(), "Proceed to Printing");
-                        waitSleep(2000);
+                        waitUntilLoadingGone(10000);
                         click(payoutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
                     }
 
@@ -108,20 +108,20 @@ public class Payout_Steps extends Base_Steps{
             type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
 
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
-            waitSleep(3000);
+            waitUntilLoadingGone(10000);
             reader.refreshTestData();
             waitSleep(3000);
             String sendoutRemoteKPTN = reader.getRemoteKPTN(); // Call the getSendOutRemoteKPTN function
             type(payoutPageObjects.PayKTPN(), "KTPN Number", sendoutRemoteKPTN);
             type(payoutPageObjects.PayAmount(), "Amount", "100");
-            waitSleep(2000);
+            waitUntilLoadingGone(10000);
             scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
-            waitSleep(2000);
+            waitUntilLoadingGone(10000);
             click(payoutPageObjects.SearchKYC(), "Search KYC");
-            waitSleep(2000);
+            waitUntilLoadingGone(10000);
             click(payoutPageObjects.SearchKYCAc(), "Search Button");
-            waitSleep(2000);
+            waitUntilLoadingGone(10000);
             click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
             waitSleep(2000);
 
@@ -150,9 +150,9 @@ public class Payout_Steps extends Base_Steps{
                         assertEqual(getText(payoutPageObjects.SuccessfulPay()), "Payout Successful");
                         List<String> payoutremoteKPTNList = Collections.singletonList(sendoutRemoteKPTN);
                         reader.writeRemotePayoutKptnData(payoutremoteKPTNList);
-                        waitSleep(2000);
+                        waitUntilLoadingGone(10000);
                         click(payoutPageObjects.proceedToPrinting(), "Proceed to Printing");
-                        waitSleep(2000);
+                        waitUntilLoadingGone(10000);
                         click(payoutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
                     }
 
@@ -175,7 +175,7 @@ public class Payout_Steps extends Base_Steps{
         type(sendOutPageObjects.lastName(), "Lastname ", "Quin");
         type(sendOutPageObjects.firstName(), "Firstname ", "Anna");
         click(sendOutPageObjects.searchBtn(), "Search Button ");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(sendOutPageObjects.viewButton(), "View Button ");
         waitSleep(5000);
         scrollToElement(sendOutPageObjects.selectKYC());
@@ -188,7 +188,7 @@ public class Payout_Steps extends Base_Steps{
         type(sendOutPageObjects.lastName(), "Lastname ", "Briar");
         type(sendOutPageObjects.firstName(), "Firstname ", "Aurelia");
         click(sendOutPageObjects.searchBtn(), "Search Button ");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(sendOutPageObjects.viewButton(), "View Button ");
         waitSleep(5000);
         scrollToElement(sendOutPageObjects.selectKYC());
@@ -196,12 +196,12 @@ public class Payout_Steps extends Base_Steps{
         click(sendOutPageObjects.selectKYC(), "Select KYC Button");
     }
     public void searchReceiver () {
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         scrollToElement(sendOutPageObjects.searchReceivers());
         click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
         scrollToElement(sendOutPageObjects.selectButton());
         click(sendOutPageObjects.selectButton(), "Select Button");
-        waitSleep(5000);
+        waitUntilLoadingGone(10000);
         scrollToElement(sendOutPageObjects.no_ContactNo());
         waitSleep(5000);
         click(sendOutPageObjects.no_ContactNo(), "Contact No Checkbox");
@@ -210,7 +210,7 @@ public class Payout_Steps extends Base_Steps{
         navigationFOrSendOutDomestic();
         searchKYC();
         searchReceiver();
-        waitSleep(5000);
+        waitUntilLoadingGone(10000);
         type(sendOutPageObjects.sourceOfFund(), "Source of Fund field ", propertyReader.getproperty("source_of_fund"));
         type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
@@ -232,18 +232,18 @@ public class Payout_Steps extends Base_Steps{
         click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
         click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
         click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
         waitSleep(3000);
         String WatchlistKPTN = reader.getWatchlistKPTN();
         type(payoutPageObjects.PayKTPN(), "Compliance KTPN Number", WatchlistKPTN);
         type(payoutPageObjects.PayAmount(), "Amount", "200");
         click(payoutPageObjects.SearchButton(), "Search Button");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(payoutPageObjects.SearchKYC(), "Search KYC");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(payoutPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
         waitSleep(2000);
         if(isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))){
@@ -275,7 +275,7 @@ public class Payout_Steps extends Base_Steps{
         navigationFOrSendOutDomestic();
         search1KYC();
         searchReceiver();
-        waitSleep(5000);
+        waitUntilLoadingGone(10000);
         type(sendOutPageObjects.sourceOfFund(), "Source of Fund field ", propertyReader.getproperty("source_of_fund"));
         type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
@@ -289,7 +289,7 @@ public class Payout_Steps extends Base_Steps{
         List<String> kptnValues = Collections.singletonList(rekptnText);
         reader.writeCWRemoteKptnData(kptnValues);
         click(sendOutPageObjects.proceedToPrinting(), "Proceed to Printing");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(sendOutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
     }
     public void validateRemoteComplianceAssistance()throws Exception{
@@ -308,18 +308,18 @@ public class Payout_Steps extends Base_Steps{
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
 
         click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
         waitSleep(3000);
         String RemoteWatchlistKPTN = reader.getRemoteWatchlistKPTN();
         type(payoutPageObjects.PayKTPN(), "Compliance KTPN Number", RemoteWatchlistKPTN);
         type(payoutPageObjects.PayAmount(), "Amount", "200");
         click(payoutPageObjects.SearchButton(), "Search Button");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(payoutPageObjects.SearchKYC(), "Search KYC");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(payoutPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
         waitSleep(2000);
         if(isVisible(payoutPageObjects.payoutPage_h2(), getText(payoutPageObjects.payoutPage_h2()))){
@@ -380,17 +380,17 @@ public class Payout_Steps extends Base_Steps{
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
 
-            click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
-            type(payoutPageObjects.PayKTPN(), "KTPN Number", propertyReader.getproperty("InvalidKTPNnum"));
-            type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("PayAmount"));
-            waitSleep(2000);
-            scrollToElement(payoutPageObjects.SearchButton());
-            click(payoutPageObjects.SearchButton(), "Search Button");
+        click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
+        type(payoutPageObjects.PayKTPN(), "KTPN Number", propertyReader.getproperty("InvalidKTPNnum"));
+        type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("PayAmount"));
+        waitUntilLoadingGone(10000);
+        scrollToElement(payoutPageObjects.SearchButton());
+        click(payoutPageObjects.SearchButton(), "Search Button");
 
-            if (isVisible(payoutPageObjects.InvalidKTPN(), getText(payoutPageObjects.payoutPage_h5()))) {
-                assertEqual(getText(payoutPageObjects.payoutPage_h5()), "No Transaction Found");
-            }
-            click(payoutPageObjects.OKInvalidKTPN(), "OK");
+        if (isVisible(payoutPageObjects.InvalidKTPN(), getText(payoutPageObjects.payoutPage_h5()))) {
+            assertEqual(getText(payoutPageObjects.payoutPage_h5()), "No Transaction Found");
+        }
+        click(payoutPageObjects.OKInvalidKTPN(), "OK");
 
 
 
@@ -428,7 +428,7 @@ public class Payout_Steps extends Base_Steps{
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
             type(payoutPageObjects.PayKTPN(), "KTPN Number", propertyReader.getproperty("UnclaimKTPNnum"));
             type(payoutPageObjects.PayAmount(), "Amount", propertyReader.getproperty("InvalidAmount"));
-            waitSleep(2000);
+            waitUntilLoadingGone(10000);
             scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
             assertEqual(getText(payoutPageObjects.payoutPage_h5()), "No Transaction Found");
@@ -465,7 +465,7 @@ public class Payout_Steps extends Base_Steps{
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
             type(payoutPageObjects.PayKTPN(), "KTPN Number", "KPNABODVPUQ");
             type(payoutPageObjects.PayAmount(), "Amount", "100");
-            waitSleep(2000);
+            waitUntilLoadingGone(10000);
             scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
             assertEqual(getText(payoutPageObjects.payoutClaim_h5()), "No Transaction Found");
