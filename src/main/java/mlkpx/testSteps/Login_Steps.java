@@ -10,11 +10,11 @@ public class Login_Steps extends Base_Steps {
         try{
             click(googlePageObjects.googleContainer(), "Google Sign in Container");
             switchToNextTab();
-            waitSleep(4000);
+            waitUntilLoadingGone(10000);
             typeEnter(googlePageObjects.emailField(), "Email Field", reader.getEmailByRole(role));
             typeEnter(googlePageObjects.passwordField(), "Password Field", reader.getPasswordByRole(role));
-            click(googlePageObjects.anotherWayButton(), "Another way");
-            click(googlePageObjects.selectGoogleAuthenticator(), "Google Auth Option");
+//            click(googlePageObjects.anotherWayButton(), "Another way");
+//            click(googlePageObjects.selectGoogleAuthenticator(), "Google Auth Option");
             typeEnter(googlePageObjects.codeField(), "Auth Key Field", TOTPGenerator.getTwoFactorCode());
             switchToPreviousTab();
         }catch (Exception e){

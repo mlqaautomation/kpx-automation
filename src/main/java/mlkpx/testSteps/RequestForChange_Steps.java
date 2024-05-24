@@ -12,7 +12,7 @@ public class RequestForChange_Steps extends Base_Steps{
 //        click(requestForChangePageObjects.idTypeDropDown(),"ID Type DropDown");
 //        click(requestForChangePageObjects.idTypeSelected(),"Selected ID Type ");
         click(requestForChangePageObjects.kptnField(),"RFC KPTN Field");
-        waitSleep(2000);
+        waitSleep(3000);
         reader.refreshTestData();
         waitSleep(3000);
         String forChange = reader.getSendOutForChange();
@@ -49,9 +49,9 @@ public class RequestForChange_Steps extends Base_Steps{
         click(requestForChangePageObjects.initiatedBy(), "Initiated By");
         click(requestForChangePageObjects.initiatedByCustomer(),"Initiated By Customer");
         type(requestForChangePageObjects.reason(),"Reason for Change", propertyReader.getproperty("reasonforchange"));
-        waitSleep(5000);
+        waitSleep(3000);
         click(requestForChangePageObjects.rfcSubmitButton(),"RFC Submit Button");
-        waitSleep(5000);
+        waitSleep(7000);
         click(requestForChangePageObjects.yesChangeDetailsButton(),"Yes Change Details");
         waitSleep(3000);
         if(isVisible(requestForChangePageObjects.detailsChangeText(), getText(requestForChangePageObjects.detailsChangeText()))){
@@ -67,7 +67,7 @@ public class RequestForChange_Steps extends Base_Steps{
         click(sendOutPageObjects.sendOutLink(), "SendOut Page ");
         click(requestForChangePageObjects.rfcLink(), "Request for Change Link");
         click(requestForChangePageObjects.domesticRFClink(), "Domestic RFC Link");
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         click(requestForChangePageObjects.kptnField(), "RFC KPTN Field");
         type(requestForChangePageObjects.kptnField(), "RFC KPTN Field ", propertyReader.getproperty("invalidkptnfield"));
         click(requestForChangePageObjects.searchButton(), "RFC Search Button");
@@ -82,7 +82,7 @@ public class RequestForChange_Steps extends Base_Steps{
         click(sendOutPageObjects.sendOutLink(), "SendOut Page ");
         click(requestForChangePageObjects.rfcLink(), "Request for Change Link");
         click(requestForChangePageObjects.domesticRFClink(), "Domestic RFC Link");
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         click(requestForChangePageObjects.kptnField(), "RFC KPTN Field");
         type(requestForChangePageObjects.kptnField(), "RFC KPTN Field ", propertyReader.getproperty("cancelledkptn"));
         click(requestForChangePageObjects.searchButton(), "RFC Search Button");

@@ -9,9 +9,9 @@ public class ReturnToSender_Steps extends Base_Steps{
     public void RTS_TC_01()throws Exception{
         click(sendOutPageObjects.sendOutLink(), "SendOut Page ");
         click(returnToSenderPageObjects.rtsNavlink(),"Return to Sender Nav Link");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         String randomKPTN = reader.getSendOutKPTN();
         type(sendOutCancellationPageObjects.kptnField(), "KPTN Field", randomKPTN);
         click(returnToSenderPageObjects.searchButton(), "RTS Search Button");

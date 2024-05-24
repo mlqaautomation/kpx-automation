@@ -47,13 +47,13 @@ public class SendOutCancellation_Steps extends Base_Steps{
         if(isVisible(sendOutCancellationPageObjects.cancelSendOutText(), getText(sendOutCancellationPageObjects.cancelSendOutText()))){
             LoggingUtils.info("Successfully Navigate for SendOut Cancellation Page ");
         }
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         String  sendoutKPTN = reader.getSendOutKPTN(); // Call the getSendOutKPTN function
         type(sendOutCancellationPageObjects.kptnField(), "KPTN Field", sendoutKPTN); // Use the random KPTN value
         click(sendOutCancellationPageObjects.searchButton(),"Search button");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(sendOutCancellationPageObjects.irNumberField(),"IR Number Field");
         type(sendOutCancellationPageObjects.irNumberField(),"IR Number Field", propertyReader.getproperty("iRNumber"));
         click(sendOutCancellationPageObjects.initiatedByOption(),"Initiated By Option");
@@ -89,7 +89,7 @@ public class SendOutCancellation_Steps extends Base_Steps{
         type(sendOutPageObjects.lastName(), "Lastname ", propertyReader.getproperty("Lastname"));
         type(sendOutPageObjects.firstName(), "Firstname ", propertyReader.getproperty("Firstname"));
         click(sendOutPageObjects.searchBtn(), "Search Button ");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(sendOutPageObjects.viewButton(), "View Button ");
         waitSleep(5000);
         scrollToElement(sendOutPageObjects.selectKYC());
@@ -98,14 +98,14 @@ public class SendOutCancellation_Steps extends Base_Steps{
         waitSleep(5000);
         scrollDown(100);
         searchReceiver();
-        waitSleep(5000);
+        waitUntilLoadingGone(10000);
         scrollToElement(sendOutPageObjects.sourceOfFund());
         type(sendOutPageObjects.sourceOfFund(), "Source of Fund field ", propertyReader.getproperty("source_of_fund"));
         type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
         type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
         type(sendOutPageObjects.principalAmount(), "Principal Amount field ","300");
-        waitSleep(5000);
+        waitUntilLoadingGone(10000);
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
         waitSleep(3000);
@@ -136,13 +136,13 @@ public class SendOutCancellation_Steps extends Base_Steps{
         if(isVisible(sendOutCancellationPageObjects.cancelSendOutText(), getText(sendOutCancellationPageObjects.cancelSendOutText()))){
             LoggingUtils.info("Successfully Navigate for SendOut Cancellation Page ");
         }
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
         waitSleep(3000);
         String remotesendoutKPTN = reader.getSendOutRemoteKPTN();
         type(sendOutCancellationPageObjects.kptnField(), "KPTN Field", remotesendoutKPTN); // Use the random KPTN value
         click(sendOutCancellationPageObjects.searchButton(),"Search button");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(sendOutCancellationPageObjects.irNumberField(),"IR Number Field");
         type(sendOutCancellationPageObjects.irNumberField(),"IR Number Field", propertyReader.getproperty("iRNumber"));
         click(sendOutCancellationPageObjects.initiatedByOption(),"Initiated By Option");
@@ -216,7 +216,7 @@ public class SendOutCancellation_Steps extends Base_Steps{
         type(sendOutPageObjects.lastName(), "Lastname ", randomName[1]);
         type(sendOutPageObjects.firstName(), "Firstname ", randomName[0]);
         click(sendOutPageObjects.searchBtn(), "Search Button ");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(sendOutPageObjects.viewButton(), "View Button ");
         waitSleep(5000);
         scrollToElement(sendOutPageObjects.selectKYC());

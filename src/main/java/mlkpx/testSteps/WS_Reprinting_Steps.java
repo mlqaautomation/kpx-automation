@@ -21,7 +21,7 @@ public class WS_Reprinting_Steps extends Base_Steps{
         if(isVisible(walletServicesPageObjects.CashInOwnPage(), getText(walletServicesPageObjects.CashInOwnPage()))){
             LoggingUtils.info("Navigated the Cash In to Own Account Receipt page");
         }
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
         waitSleep(3000);
         String CIOReferenceNum = reader.getCIOKptn();
@@ -79,7 +79,7 @@ public class WS_Reprinting_Steps extends Base_Steps{
         if(isVisible(walletServicesPageObjects.BranchCashInPage(), getText(walletServicesPageObjects.BranchCashInPage()))){
             LoggingUtils.info("Navigated the Cash In to Another Account Receipt page");
         }
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
         waitSleep(3000);
         String CIAKPTN = reader.getCIAReprintKPTN();
@@ -136,7 +136,7 @@ public class WS_Reprinting_Steps extends Base_Steps{
         if(isVisible(walletServicesPageObjects.CashOutPage(), getText(walletServicesPageObjects.CashOutPage()))){
             LoggingUtils.info("Navigated the Cash Out Receipt page");
         }
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
         waitSleep(3000);
         String CashoutReferenceNum = reader.getCashoutKptn();
@@ -193,7 +193,7 @@ public class WS_Reprinting_Steps extends Base_Steps{
         if(isVisible(walletServicesPageObjects.KPPayoutPage(), getText(walletServicesPageObjects.KPPayoutPage()))){
             LoggingUtils.info("Navigated the Kwarta Padala Payout Receipt page");
         }
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
         waitSleep(3000);
         String KPKPTN = reader.getKPReprintKPTN();

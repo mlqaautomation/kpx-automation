@@ -20,6 +20,7 @@ public class GeneralMethod extends ExtentReporter{
     private final WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     public final yamlReader reader = new yamlReader();
     private JavascriptExecutor js;
+    private boolean loadingInProgress = false;
     
     public void click(WebElement locator, String elementName){
         try {
@@ -148,6 +149,7 @@ public class GeneralMethod extends ExtentReporter{
         }
     }
 
+
     public void switchToNextTab() {
         String currentWindowHandle = getDriver().getWindowHandle();
         Set<String> windowHandles = getDriver().getWindowHandles();
@@ -228,6 +230,37 @@ public class GeneralMethod extends ExtentReporter{
         }
 
     }
+    public void waitUntilLoadingGone(int maxWaitTimeMs) {
+        long startTime = System.currentTimeMillis();
+        boolean isLoading = true;
+
+        while (isLoading) {
+            if (System.currentTimeMillis() - startTime > maxWaitTimeMs) {
+                LoggingUtils.info("Reached maximum wait time of " + maxWaitTimeMs + " ms. Continuing...");
+                break;
+            }
+
+            try {
+                // Check the loading condition here
+                isLoading = isThereAnyLoadingInProgress();
+
+                if (isLoading) {
+                    Thread.sleep(100);
+                }
+            } catch (Exception e) {
+                LoggingUtils.error("Error while waiting for loading to finish: " + e.getMessage());
+                break;
+            }
+        }
+
+        LoggingUtils.info("Finished waiting for loading to be gone.");
+    }
+
+    private boolean isThereAnyLoadingInProgress() {
+        // Implement your own logic to check the loading condition
+        // For example, you might have a variable that tracks the loading state
+        return loadingInProgress;
+    }
 
     public  void scrollToTopOfPageWEB() {
         try{
@@ -266,6 +299,8 @@ public class GeneralMethod extends ExtentReporter{
             LoggingUtils.info("Error while scrolling to element: " + e);
         }
     }
+
+
     public List<WebElement> staleException_Click(WebElement locator) {
         List<WebElement> outcome = null;
         int repeat = 0;
