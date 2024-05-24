@@ -55,6 +55,9 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
         type(wsKwartaPadalaPayOutPageObjects.referenceNumField(), "KPP KPTN Field", randomKPPKPTN);
         type(wsKwartaPadalaPayOutPageObjects.amountField(), "Amount Field", propertyReader.getproperty("validamount"));
         click(wsKwartaPadalaPayOutPageObjects.searchButton(), "Search Button");
+        waitSleep(5000);
+        scrollDown(100);
+        scrollToElement(wsKwartaPadalaPayOutPageObjects.searchKYCButton());
         click(wsKwartaPadalaPayOutPageObjects.searchKYCButton(), "Search KYC Button");
         searchKYC();
         click(wsKwartaPadalaPayOutPageObjects.claimAmountButton(),"Claim Amount Button");
