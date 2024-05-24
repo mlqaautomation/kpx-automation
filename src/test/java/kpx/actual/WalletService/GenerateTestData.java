@@ -34,19 +34,24 @@ public class GenerateTestData extends BaseTest{
         generateTestData.loginWalletTestData1();
         kwartaPadala.kwartaPadala2();
     }
+    @Test(priority = 6 ,description = "Third Test to get KwartaPadala KPTN")
+    public void kwartaPadala2(){
+        generateTestData.loginWalletTestData1();
+        kwartaPadala.kwartaPadala2();
+    }
 
-    @Test(priority = 6 ,description = "First Test to get CashOut KPTN")
+    @Test(priority = 7 ,description = "First Test to get CashOut KPTN")
     public void cashOut(){
         generateTestData.loginWalletTestData1();
         cashOut.cashOut();
 
     }
-    @Test(priority = 7 ,description = "Second Test to get CashOut KPTN")
+    @Test(priority = 8 ,description = "Second Test to get CashOut KPTN")
     public void cashOut2(){
         generateTestData.loginWalletTestData1();
         cashOut.cashOut2();
     }
-    @Test(priority = 8 ,description = "Third Test to get CashOut KPTN")
+    @Test(priority = 9 ,description = "Third Test to get CashOut KPTN")
     public void cashOut3(){
         generateTestData.loginWalletTestData1();
         cashOut.cashOut3();

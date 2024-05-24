@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="WALLET SERVICE" thread-count="6" >
+<suite name="Test Data" thread-count="6" >
     <listeners>
         <listener class-name="utilities.ExtentReport.ExtentReporter" />
                <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
