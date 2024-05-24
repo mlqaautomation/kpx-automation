@@ -24,7 +24,7 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
     public void KPP_TC_01() throws Exception {
         KPP_TC_08();
         click(wsKwartaPadalaPayOutPageObjects.claimAmountButton(),"Claim Amount Button");
-        waitSleep(5000);
+        waitUntilLoadingGone(10000);
         click(wsKwartaPadalaPayOutPageObjects.confirmPayoutButton(),"Confirm Payout Button");
         waitSleep(5000);
         if (isVisible(wsKwartaPadalaPayOutPageObjects.payoutSuccessfulText(), getText(wsKwartaPadalaPayOutPageObjects.payoutSuccessfulText()))) {
@@ -48,7 +48,7 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
         waitSleep(4000);
         type(wsKwartaPadalaPayOutPageObjects.operatorIDField(),"OPerator ID Field", propertyReader.getproperty("operatorID"));
         type(wsKwartaPadalaPayOutPageObjects.reasonField(),"Reason Field", propertyReader.getproperty("Reason"));
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
         waitSleep(3000);
         String randomKPPKPTN = reader.getRandomKPPReferenceNum();
@@ -69,8 +69,6 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
             ExtentReporter.logFail("KPP_TC_02", "Failed to validate successful remote Wallet Services Kwarta Padala Payout");
             Assert.fail("Failed to validate successful remote Wallet Services Kwarta Padala Payout");
         }
-//        click(wsKwartaPadalaPayOutPageObjects.proceedToPrintingButton(),"Proceed TO printing Button");
-//        click(wsKwartaPadalaPayOutPageObjects.cancelButtonReceipt(),"Cancel Button In Receipt");
     }
 
     public void KPP_TC_03() throws Exception {
@@ -140,14 +138,12 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
 
     public void KPP_TC_08() throws Exception {
         navigationWalletServicesToKwartaPadalaPayout();
-        waitSleep(3000);
-//        reader.refreshTestData();
-//        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         String randomKPPKPTN = reader.getRandomKPPReferenceNum();
         type(wsKwartaPadalaPayOutPageObjects.referenceNumField(), "KPP KPTN Field", randomKPPKPTN);
         type(wsKwartaPadalaPayOutPageObjects.amountField(), "Amount Field", propertyReader.getproperty("validamount"));
         click(wsKwartaPadalaPayOutPageObjects.searchButton(), "Search Button");
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         click(wsKwartaPadalaPayOutPageObjects.searchKYCButton(), "Search KYC Button");
         if (isVisible(wsKwartaPadalaPayOutPageObjects.searchKYCText(), getText(wsKwartaPadalaPayOutPageObjects.searchKYCText()))) {
             ExtentReporter.logPass("KPP_TC_08", "Successfully Navigate KYC Search Page");
@@ -205,7 +201,7 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
         type(sendOutPageObjects.lastName(), "Lastname ", randomName[1]);
         type(sendOutPageObjects.firstName(), "Firstname ", randomName[0]);
         click(sendOutPageObjects.searchBtn(), "Search Button ");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(sendOutPageObjects.viewButton(), "View Button ");
         waitSleep(5000);
         scrollDown(100);

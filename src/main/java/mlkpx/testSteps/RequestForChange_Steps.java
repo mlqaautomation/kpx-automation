@@ -12,9 +12,9 @@ public class RequestForChange_Steps extends Base_Steps{
 //        click(requestForChangePageObjects.idTypeDropDown(),"ID Type DropDown");
 //        click(requestForChangePageObjects.idTypeSelected(),"Selected ID Type ");
         click(requestForChangePageObjects.kptnField(),"RFC KPTN Field");
-        waitUntilLoadingGone(10000);
+        waitSleep(3000);
         reader.refreshTestData();
-        waitUntilLoadingGone(10000);
+        waitSleep(3000);
         String forChange = reader.getSendOutForChange();
         type(requestForChangePageObjects.kptnField(), "RFC KPTN Field ", forChange);
         click(requestForChangePageObjects.searchButton(), "RFC Search Button");
@@ -49,9 +49,9 @@ public class RequestForChange_Steps extends Base_Steps{
         click(requestForChangePageObjects.initiatedBy(), "Initiated By");
         click(requestForChangePageObjects.initiatedByCustomer(),"Initiated By Customer");
         type(requestForChangePageObjects.reason(),"Reason for Change", propertyReader.getproperty("reasonforchange"));
-        waitUntilLoadingGone(10000);
+        waitSleep(3000);
         click(requestForChangePageObjects.rfcSubmitButton(),"RFC Submit Button");
-        waitUntilLoadingGone(10000);
+        waitSleep(7000);
         click(requestForChangePageObjects.yesChangeDetailsButton(),"Yes Change Details");
         waitSleep(3000);
         if(isVisible(requestForChangePageObjects.detailsChangeText(), getText(requestForChangePageObjects.detailsChangeText()))){

@@ -162,7 +162,7 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.principalAmount(),"Principal Amount", propertyReader.getproperty("principalAmount"));
         waitSleep(4000);
         click(sendOutPageObjects.submitSendOut(),"Submit Sendout Button");
-        waitUntilLoadingGone(10000);
+        waitSleep(3000);
         if(isVisible(sendOutPageObjects.receiversMaximumLettersDangerText(), getText(sendOutPageObjects.receiversMaximumLettersDangerText()))){
             ExtentReporter.logPass("DS_TC_04_1", "Successfully Verify Add Receiver New Negative Test");
         }else{
@@ -236,7 +236,7 @@ public class SendOut_Steps extends Base_Steps {
         assertEqual(getValue(sendOutPageObjects.messageToReceiver()), propertyReader.getproperty("messagetoreceiver"));
         scrollToElement(sendOutPageObjects.principalAmount());
         type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("principal_amount_empty"));
-        waitSleep(3000);
+        waitSleep(5000);
         scrollDown(50);
         click(sendOutPageObjects.chargeText(), "Charge Text");
         if (isVisible(sendOutPageObjects.emptyValueText(), getText((sendOutPageObjects.emptyValueText())))) {

@@ -28,12 +28,12 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
 //            type(walletServicesPageObjects.WalletCardNum(), "ML Card Number", "");
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");
         }
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         type(walletServicesPageObjects.SearchLName(), "Last name field", "AMOC");
         type(walletServicesPageObjects.SearchFName(), "First name field", "ROSELYN");
         type(walletServicesPageObjects.SearchMName(), "Middle name field", "");
         click(walletServicesPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         click(walletServicesPageObjects.ViewKYCCustomer(), "View KYC");
         waitSleep(3000);
         if (isVisible(walletServicesPageObjects.KYCPage(), getText(walletServicesPageObjects.KYCPage()))) {
@@ -138,14 +138,14 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
 //            type(walletServicesPageObjects.WalletCardNum(), "ML Card Number", "");
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");
         }
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         type(walletServicesPageObjects.SearchLName(), "Last name field", "AMOC");
         type(walletServicesPageObjects.SearchFName(), "First name field", "ROSELYN");
         type(walletServicesPageObjects.SearchMName(), "Middle name field", "");
         click(walletServicesPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         click(walletServicesPageObjects.ViewKYCCustomer(), "View KYC");
-        waitSleep(2);
+        waitSleep(3000);
         if (isVisible(walletServicesPageObjects.KYCPage(), getText(walletServicesPageObjects.KYCPage()))) {
             LoggingUtils.info("Navigated to View KYC");
             scrollDown(100);
@@ -170,14 +170,14 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
 //            type(walletServicesPageObjects.WalletCardNum(), "ML Card Number", "");
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");
         }
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         type(walletServicesPageObjects.SearchLName(), "Last name field", "AMOC");
         type(walletServicesPageObjects.SearchFName(), "First name field", "ROSELYN");
         type(walletServicesPageObjects.SearchMName(), "Middle name field", "");
         click(walletServicesPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         click(walletServicesPageObjects.ViewKYCCustomer(), "View KYC");
-        waitSleep(2);
+        waitSleep(3000);
         if (isVisible(walletServicesPageObjects.KYCPage(), getText(walletServicesPageObjects.KYCPage()))) {
             LoggingUtils.info("Navigated to View KYC");
             scrollDown(100);
@@ -200,14 +200,14 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
 //            type(walletServicesPageObjects.WalletCardNum(), "ML Card Number", "");
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");
         }
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         type(walletServicesPageObjects.SearchLName(), "Last name field", "AMOC");
         type(walletServicesPageObjects.SearchFName(), "First name field", "ROSELYN");
         type(walletServicesPageObjects.SearchMName(), "Middle name field", "");
         click(walletServicesPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         click(walletServicesPageObjects.ViewKYCCustomer(), "View KYC");
-        waitSleep(2);
+        waitSleep(3000);
         if (isVisible(walletServicesPageObjects.KYCPage(), getText(walletServicesPageObjects.KYCPage()))) {
             LoggingUtils.info("Navigated to View KYC");
             scrollDown(100);
@@ -231,14 +231,14 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
 //            type(walletServicesPageObjects.WalletCardNum(), "ML Card Number", "");
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");
         }
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         type(walletServicesPageObjects.SearchLName(), "Last name field", "AMOC");
         type(walletServicesPageObjects.SearchFName(), "First name field", "ROSELYN");
         type(walletServicesPageObjects.SearchMName(), "Middle name field", "");
         click(walletServicesPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         click(walletServicesPageObjects.ViewKYCCustomer(), "View KYC");
-        waitSleep(2);
+        waitSleep(3000);
         if (isVisible(walletServicesPageObjects.KYCPage(), getText(walletServicesPageObjects.KYCPage()))) {
             LoggingUtils.info("Navigated to View KYC");
             scrollDown(100);
@@ -263,14 +263,14 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
 //            type(walletServicesPageObjects.WalletCardNum(), "ML Card Number", "");
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");
         }
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         type(walletServicesPageObjects.SearchLName(), "Last name field", "AMOC");
         type(walletServicesPageObjects.SearchFName(), "First name field", "ROSELYN");
         type(walletServicesPageObjects.SearchMName(), "Middle name field", "");
         click(walletServicesPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         click(walletServicesPageObjects.ViewKYCCustomer(), "View KYC");
-        waitSleep(2);
+        waitSleep(3000);
         if (isVisible(walletServicesPageObjects.KYCPage(), getText(walletServicesPageObjects.KYCPage()))) {
             LoggingUtils.info("Navigated to View KYC");
             scrollDown(100);
@@ -301,14 +301,14 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
 //            type(walletServicesPageObjects.WalletCardNum(), "ML Card Number", "");
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");
         }
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         type(walletServicesPageObjects.SearchLName(), "Last name field", "AMOC");
         type(walletServicesPageObjects.SearchFName(), "First name field", "ROSELYN");
         type(walletServicesPageObjects.SearchMName(), "Middle name field", "");
         click(walletServicesPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         click(walletServicesPageObjects.ViewKYCCustomer(), "View KYC");
-        waitSleep(2);
+        waitSleep(3000);
         if (isVisible(walletServicesPageObjects.KYCPage(), getText(walletServicesPageObjects.KYCPage()))) {
             LoggingUtils.info("Navigated to View KYC");
             scrollDown(100);
@@ -342,14 +342,14 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
 //            type(walletServicesPageObjects.WalletCardNum(), "ML Card Number", "");
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");
         }
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         type(walletServicesPageObjects.SearchLName(), "Last name field", "AMOC");
         type(walletServicesPageObjects.SearchFName(), "First name field", "ROSELYN");
         type(walletServicesPageObjects.SearchMName(), "Middle name field", "");
         click(walletServicesPageObjects.SearchKYCAc(), "Search Button");
-        waitSleep(2);
+        waitUntilLoadingGone(10000);
         click(walletServicesPageObjects.ViewKYCCustomer(), "View KYC");
-        waitSleep(2);
+        waitSleep(3000);
         if (isVisible(walletServicesPageObjects.KYCPage(), getText(walletServicesPageObjects.KYCPage()))) {
             LoggingUtils.info("Navigated to View KYC");
             scrollDown(100);

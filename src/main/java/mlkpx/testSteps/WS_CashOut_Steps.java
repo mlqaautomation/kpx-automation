@@ -24,7 +24,7 @@ public class WS_CashOut_Steps extends Base_Steps{
     }
     public void CO_TC_01()throws Exception{
         navigationWalletServices();
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
         waitSleep(3000);
         String randomReferenceNum = reader.getRandomCashOutReferenceNum();
@@ -147,7 +147,7 @@ public class WS_CashOut_Steps extends Base_Steps{
         waitSleep(3000);
         type(wsKwartaPadalaPayOutPageObjects.operatorIDField(), "Operator ID Field", propertyReader.getproperty("operatorID"));
         type(wsKwartaPadalaPayOutPageObjects.reasonField(), "Reason Field", propertyReader.getproperty("Reason"));
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
         waitSleep(3000);
         String randomReferenceNum = reader.getRandomCashOutReferenceNum();

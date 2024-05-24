@@ -142,7 +142,7 @@ public class SendOutCancellation_Steps extends Base_Steps{
         String remotesendoutKPTN = reader.getSendOutRemoteKPTN();
         type(sendOutCancellationPageObjects.kptnField(), "KPTN Field", remotesendoutKPTN); // Use the random KPTN value
         click(sendOutCancellationPageObjects.searchButton(),"Search button");
-        waitSleep(2000);
+        waitUntilLoadingGone(10000);
         click(sendOutCancellationPageObjects.irNumberField(),"IR Number Field");
         type(sendOutCancellationPageObjects.irNumberField(),"IR Number Field", propertyReader.getproperty("iRNumber"));
         click(sendOutCancellationPageObjects.initiatedByOption(),"Initiated By Option");

@@ -24,7 +24,7 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
     }
     public void CIOA_TC_01()throws Exception {
         navigationWalletServices();
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
         waitSleep(3000);
         String randomReferenceNum = reader.getRandomWriteCashIn_Kptn();
@@ -65,7 +65,7 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
             Assert.fail("Failed to Cash In");
         }
         click(wsCashInToOwnAccountPageObjects.proceedToPrintingButton(), "Proceed To Printing Button");
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         click(wsCashInToOwnAccountPageObjects.cancelReceiptButton(), "Cancel Button");
 
     }
@@ -81,7 +81,7 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
 
         type(walletServicesPageObjects.OperatorID(), "Search Operator ID", "20248207");
         type(walletServicesPageObjects.ReasonRemote(), "Reason", "Testing");
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         reader.refreshTestData();
         waitSleep(3000);
         String randomReferenceNum = reader.getRandomWriteCashIn_Kptn();
@@ -122,7 +122,7 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
             Assert.fail("Failed to Cash In");
         }
         click(wsCashInToOwnAccountPageObjects.proceedToPrintingButton(), "Proceed To Printing Button");
-        waitSleep(3000);
+        waitUntilLoadingGone(10000);
         click(wsCashInToOwnAccountPageObjects.cancelReceiptButton(), "Cancel Button");
 
     }
