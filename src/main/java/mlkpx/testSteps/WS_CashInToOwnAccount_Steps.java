@@ -1,5 +1,6 @@
 package mlkpx.testSteps;
 
+import mlwallet.testSteps.GenerateTestData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,6 +14,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class WS_CashInToOwnAccount_Steps extends Base_Steps{
+
+
     public void navigationWalletServices()throws Exception{
         click(wsCashInToOwnAccountPageObjects.walletServicesLink(), "Wallet Services Page ");
         if(isVisible(wsCashInToOwnAccountPageObjects.walletServicesText(), getText(wsCashInToOwnAccountPageObjects.walletServicesText()))){

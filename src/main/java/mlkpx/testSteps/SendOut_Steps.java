@@ -65,14 +65,15 @@ public class SendOut_Steps extends Base_Steps {
         waitUntilLoadingGone(10000);
         click(sendOutPageObjects.viewButton(), "View Button ");
         waitSleep(3000);
-        scrollToBottomOfPageWEB();
+//        scrollToBottomOfPageWEB();
         scrollDown(100);
         scrollToElement(sendOutPageObjects.selectKYC());
+        scrollToBottomOfPageWEB();
         click(sendOutPageObjects.selectKYC(), "Select KYC Button");
         waitUntilLoadingGone(10000);
         scrollDown(100);
         searchReceiver();
-        waitUntilLoadingGone(10000);
+        waitSleep(5000);
         scrollToElement(sendOutPageObjects.sourceOfFund());
         type(sendOutPageObjects.sourceOfFund(), "Source of Fund field ", propertyReader.getproperty("source_of_fund"));
         type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
@@ -159,6 +160,7 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.r_LastName(), "R_Lastname ", propertyReader.getproperty("MLast_name"));
         type(sendOutPageObjects.r_FirstName(), "R_Firstname ", propertyReader.getproperty("MFirst_name"));
         type(sendOutPageObjects.r_MiddleName(), "R_Firstname ", propertyReader.getproperty("MFirst_name"));
+        waitSleep(3000);
         type(sendOutPageObjects.principalAmount(),"Principal Amount", propertyReader.getproperty("principalAmount"));
         waitSleep(5000);
         click(sendOutPageObjects.submitSendOut(),"Submit Sendout Button");
@@ -259,9 +261,9 @@ public class SendOut_Steps extends Base_Steps {
         clearField(sendOutPageObjects.principalAmount());
 
         type(sendOutPageObjects.principalAmount(), "Valid Principal Amount field ", propertyReader.getproperty("lastAmount"));
-        waitSleep(3000);
+        waitSleep(5000);
         assertEqual(getText(sendOutPageObjects.chargeAmount()), propertyReader.getproperty("maxCharge"));
-        waitSleep(3000);
+        waitSleep(5000);
 
         if (isTotalCorrect()) {
             ExtentReporter.logPass("Total Computation", "is Correct");
@@ -342,7 +344,7 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
         type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
         type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
-        waitSleep(3000);
+        waitSleep(5000);
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
         waitUntilLoadingGone(10000);
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
@@ -385,7 +387,7 @@ public class SendOut_Steps extends Base_Steps {
             type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
             type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
             type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
-            waitSleep(3000);
+            waitSleep(5000);
             click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
             waitSleep(3000);
             click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
@@ -420,7 +422,7 @@ public class SendOut_Steps extends Base_Steps {
             type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
             type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
             type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
-            waitSleep(3000);
+            waitSleep(5000);
             click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
             waitUntilLoadingGone(10000);
             click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");

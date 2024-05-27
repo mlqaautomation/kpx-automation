@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Cash_In extends Base_Steps {
+
     public void cashIn(){
         mobileGeneralMethod.waitSleep(5000);
         mobileGeneralMethod.tap(mlWalletPageObjects.cashIn_icon(), "Cash In Icon");
@@ -30,4 +31,9 @@ public class Cash_In extends Base_Steps {
         }
         return val;
     }
+
+
+
+
+
 }
