@@ -8,10 +8,10 @@ import static utilities.Driver.DriverManager.getDriver;
 public class Login_PageObjects{
 
     public WebElement userNameField(){
-        return getDriver().findElement(By.name("username"));
+        return getDriver().findElement(By.cssSelector("[placeholder=\"Username\"]"));
     }
     public WebElement passwordField(){
-        return getDriver().findElement(By.name("password"));
+        return getDriver().findElement(By.cssSelector("[placeholder=\"PASSWORD\"]"));
     }
 
     public WebElement invalidCredText(){
