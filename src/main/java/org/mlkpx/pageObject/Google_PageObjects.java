@@ -9,6 +9,9 @@ public class Google_PageObjects {
     public WebElement googleContainer (){
         return getDriver().findElement(By.cssSelector("[role='button']"));
     }
+    public WebElement signInWithKPX (){
+        return getDriver().findElement(By.cssSelector("[class=\"sc-dExYaf cxscCH btn btn-primary btn-large\"]"));
+    }
 
     public WebElement emailField(){
         return getDriver().findElement(By.cssSelector("[id='identifierId']"));
