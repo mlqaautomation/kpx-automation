@@ -6,16 +6,23 @@
         <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
     </listeners>
 
-    <test name="SENDOUT Input">
+<!--    <test name="SENDOUT Input">-->
+<!--        <parameter name="type" value="web">-->
+<!--            <classes>-->
+<!--&lt;!&ndash;                <class name="kpx.actual.Kyc_Tests"> </class>&ndash;&gt;-->
+<!--                <class name="kpx.actual.SendOut_Tests"> </class>-->
+<!--                <class name="kpx.actual.RequestForChange_Tests"> </class>-->
+<!--                <class name="kpx.actual.ReturnToSender_Tests"> </class>-->
+<!--                <class name="kpx.actual.SendOutCancellation_Tests"> </class>-->
+<!--                <class name="kpx.actual.SOReprinting_Tests"> </class>-->
+<!--                <class name="kpx.actual.ORReprinting_Tests"> </class>-->
+<!--            </classes>-->
+<!--        </parameter>-->
+<!--    </test>-->
+    <test name="Sendout Transaction (Partners)">
         <parameter name="type" value="web">
             <classes>
-<!--                <class name="kpx.actual.Kyc_Tests"> </class>-->
-                <class name="kpx.actual.SendOut_Tests"> </class>
-                <class name="kpx.actual.RequestForChange_Tests"> </class>
-                <class name="kpx.actual.ReturnToSender_Tests"> </class>
-                <class name="kpx.actual.SendOutCancellation_Tests"> </class>
-                <class name="kpx.actual.SOReprinting_Tests"> </class>
-                <class name="kpx.actual.ORReprinting_Tests"> </class>
+                <class name="kpx.actual.Sendout_Partners_Tests"> </class>
             </classes>
         </parameter>
     </test>

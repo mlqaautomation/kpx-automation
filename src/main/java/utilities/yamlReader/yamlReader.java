@@ -118,6 +118,24 @@ public class yamlReader {
             return null;
         }
     }
+    public String getSendOutReferenceNum() {
+        try {
+            List<String> sendOutReferenceList = (List<String>) yamlData.get("sendoutReferenceNum");
+            if (sendOutReferenceList == null || sendOutReferenceList.isEmpty()) {
+                System.out.println("No Sendout Reference values available.");
+                return null;
+            }
+
+            String selectedSendOutReference = sendOutReferenceList.get(sendOutReferenceList.size() - 1); // Select the last stored send out KPTN
+            sendOutReferenceList.remove(sendOutReferenceList.size() - 1); // Remove the selected send out KPTN from the list
+            saveYamlData();
+            return selectedSendOutReference;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
     public String getSendOutRemoteKPTN() {
         try {
             List<String> sendOutKptnList = (List<String>) yamlData.get("remoteSendoutKPTN");
@@ -215,6 +233,15 @@ public class yamlReader {
     public String getBillsPayAmount() {
         try {
             int randomAmount = new Random().nextInt(951) + 50;
+            return String.valueOf(randomAmount);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getPartnerSendoutAmount() {
+        try {
+            int randomAmount = new Random().nextInt(2000) + 1000;
             return String.valueOf(randomAmount);
         } catch (Exception e) {
             e.printStackTrace();
@@ -557,6 +584,27 @@ public class yamlReader {
             e.printStackTrace();
         }
     }
+    public void writeReferenceNumData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("sendoutReferenceNum")) {
+                List<String> existingValues = (List<String>) yamlData.get("sendoutReferenceNum");
+                existingValues.addAll(values);
+            } else {
+                yamlData.put("sendoutReferenceNum", values);
+            }
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void writeRemoteKptnData(List<String> values) {
         try {
             Yaml yaml = new Yaml();
@@ -568,6 +616,27 @@ public class yamlReader {
                 existingValues.addAll(values);
             } else {
                 yamlData.put("remoteSendoutKPTN", values);
+            }
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writePayoutReferenceData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("payoutReference")) {
+                List<String> existingValues = (List<String>) yamlData.get("payoutReference");
+                existingValues.addAll(values);
+            } else {
+                yamlData.put("payoutReference", values);
             }
 
             FileWriter writer = new FileWriter(yamlFileName);
@@ -599,6 +668,7 @@ public class yamlReader {
             e.printStackTrace();
         }
     }
+
     public void writeRemotePayoutKptnData(List<String> values) {
         try {
             Yaml yaml = new Yaml();

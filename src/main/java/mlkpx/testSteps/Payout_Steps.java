@@ -13,14 +13,6 @@ import java.util.List;
 
 public class Payout_Steps extends Base_Steps{
 
-    //P A Y O U T    T R A N S A C T I O N
-    // todo
-    //  use method in yamlReader to retrieve random KPTN
-    //  use method in yamlReader to retrieve random KYC
-    //  parameterize test data for branch code
-    //  add Assert.fail() for failed tc
-    //  optimize code ** create method for common steps such as searching kyc and etc ** to reuse again.
-
     public void navigatePayoutPage()throws Exception{
         try{
             click(payoutPageObjects.payout_link(), "Payout");

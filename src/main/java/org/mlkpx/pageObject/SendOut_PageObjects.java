@@ -10,6 +10,63 @@ public class SendOut_PageObjects {
     public WebElement sendOutLink() {
         return getDriver().findElement(By.xpath("//*[text()='Sendout']"));
     }
+    public WebElement PartnerTransaction(){
+        return getDriver().findElement(By.xpath("//a[@href='#']"));
+    }
+    public WebElement PartnerSendout(){
+        return getDriver().findElement(By.xpath("//a[@href='/sendout/partner']"));
+    }
+    public WebElement SelectPartner(){
+        return getDriver().findElement(By.xpath("//option[@label='WESTERN UNION']"));
+    }
+    public WebElement SelectCountry(){
+        return getDriver().findElement(By.xpath("//option[@value='187']"));
+    }
+    public WebElement OkCountry(){
+        return getDriver().findElement(By.xpath("//button[normalize-space()='OK']"));
+    }
+    public WebElement SelectNationality(){
+        return getDriver().findElement(By.xpath("//option[@value='FILIPINO']"));
+    }
+    public WebElement selectBdate(){
+        return getDriver().findElement(By.xpath("//input[@placeholder='Birth Date']"));
+    }
+    public WebElement selectIDIssuedate(){
+        return getDriver().findElement(By.xpath("//input[@name='senderIdIssueDate']"));
+    }
+    public WebElement selectSex(){
+        return getDriver().findElement(By.xpath("//option[@value='male']"));
+    }
+    public WebElement typeContactNum(){
+        return getDriver().findElement(By.xpath("//input[@name='beneficiary.contactNumber']"));
+    }
+    public WebElement selectProvince(){
+        return getDriver().findElement(By.xpath("//option[@value='CA']"));
+    }
+    public WebElement selectPurpose(){
+        return getDriver().findElement(By.xpath("//option[@label='FAMILY SUPPORT/LIVING EXPENSES']"));
+    }
+    public WebElement selectRelationship(){
+        return getDriver().findElement(By.xpath("//option[@label='FAMILY']"));
+    }
+    public WebElement selectSourceofFund(){
+        return getDriver().findElement(By.xpath("//option[@label='SALARY/PAY/WAGE/COMMISSION']"));
+    }
+    public WebElement selectDeliveryOption(){
+        return getDriver().findElement(By.xpath("//option[@label='10 Minute Service']"));
+    }
+    public WebElement inputPrincipalAmount(){
+        return getDriver().findElement(By.xpath("//input[@name='principalAmount']"));
+    }
+    public WebElement clickSubmitButton(){
+        return getDriver().findElement(By.xpath("//button[normalize-space()='Submit Sendout']"));
+    }
+    public WebElement searchReceivers(){
+        return getDriver().findElement(By.xpath("//button[normalize-space()='Search Receivers']"));
+    }
+    public WebElement referenceNumber(){
+        return getDriver().findElement(By.xpath("//p[@data-testid='sendoutKPTN']"));
+    }
 
     public WebElement sendOutTransaction() {return getDriver().findElement(By.xpath("//*[@class='dropdown-toggle nav-link' and text()='Sendout Transactions']\n"));
     }
@@ -59,8 +116,8 @@ public class SendOut_PageObjects {
         return getDriver().findElement(By.cssSelector("[name=\"senderOtherInformation.contactNumber\"]"));
     }
 
-    public WebElement searchReceivers() { return getDriver().findElement(By.cssSelector("[class='btn-sm btn btn-primary']"));
-    }
+//    public WebElement searchReceivers() { return getDriver().findElement(By.cssSelector("[class='btn-sm btn btn-primary']"));
+//    }
 
     public WebElement name_Text(int i) {
         return getDriver().findElement(By.xpath("(//*[contains(text(), 'Name:')]/following-sibling::span)["+i+"]"));

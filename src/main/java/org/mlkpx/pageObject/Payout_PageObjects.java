@@ -46,10 +46,10 @@ public class Payout_PageObjects {
     public WebElement NoTransactionFound(){
         return getDriver().findElement(By.xpath("//h5[contains(text(),'No Transaction Found')]"));
     }
-
-
-
-
+    public WebElement PurposeOfTransaction(){return getDriver().findElement(By.xpath("//option[@value='FAMILY SUPPORT/LIVING EXPENSES']"));
+    }
+    public WebElement RelationToSender(){return getDriver().findElement(By.xpath("//option[@value='FAMILY']"));
+    }
     public WebElement UnremoteTransaction(){
         return getDriver().findElement(By.xpath("//input[@value='0']"));
     }
@@ -59,9 +59,22 @@ public class Payout_PageObjects {
     public WebElement DomesticTransaction(){
         return getDriver().findElement(By.xpath("//input[@value='ML']"));
     }
+    public WebElement PartnerTransaction(){
+        return getDriver().findElement(By.xpath("//input[@value='PARTNER']"));
+    }
     public WebElement PayKTPN(){
         return getDriver().findElement(By.xpath("//input[@name='kptn']"));
     }
+    public WebElement InputReference(){
+        return getDriver().findElement(By.xpath("//input[@name='referenceNumber']"));
+    }
+    public WebElement ClickOption () {
+        return getDriver().findElement(By.cssSelector("[width='20']"));
+    }
+    public WebElement ChooseOption () {
+        return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div//div[78]"));
+    }
+
     public WebElement CancelKTPN(){
         return getDriver().findElement(By.xpath("//input[@name='kptn']"));
     }
@@ -119,6 +132,7 @@ public class Payout_PageObjects {
     }
 
     public WebElement KtpnInfo(){return getDriver().findElement(By.xpath("//p[contains(text(),'KPTN')]"));}
+    public WebElement SendoutInfo(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Sendout Transaction Information')]"));}
     public WebElement SearchKYC(){return getDriver().findElement(By.xpath("//button[normalize-space()='Search KYC']"));
     }
     public WebElement SearchLName(){return getDriver().findElement(By.xpath("//input[@name='lastName']"));

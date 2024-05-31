@@ -57,6 +57,8 @@ public class BaseTest {
     protected GenerateTestData generateTestData;
 
 
+    protected Sendout_Partners_Steps sendoutPartnersSteps;
+    protected Payout_Partners_Steps payoutPartnersSteps;
     @Parameters("type")
     @BeforeClass (alwaysRun = true)
     public void setUp(final String type){
@@ -137,7 +139,8 @@ public class BaseTest {
         this.wsReprintingSteps = new WS_Reprinting_Steps();
         this.wsShopSafeSteps = new WS_ShopSafe_Steps();
 
-
+        this.sendoutPartnersSteps = new Sendout_Partners_Steps();
+        this.payoutPartnersSteps = new Payout_Partners_Steps();
 
     }
     public void initWallet(){
