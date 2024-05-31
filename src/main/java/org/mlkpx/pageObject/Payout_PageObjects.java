@@ -72,7 +72,10 @@ public class Payout_PageObjects {
         return getDriver().findElement(By.cssSelector("[width='20']"));
     }
     public WebElement ChooseOption () {
-        return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div//div[78]"));
+        return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div//div[4]"));
+    }
+    public WebElement WrongchooseOption () {
+        return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div//div[10]"));
     }
 
     public WebElement CancelKTPN(){
@@ -169,6 +172,10 @@ public class Payout_PageObjects {
     }
     public WebElement InvalidKTPN(){return getDriver().findElement(By.xpath("//h5[contains(text(),'No Transaction Found')]"));
     }
+    public WebElement InvalidRef(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Error')]"));
+    }
+    public WebElement EmptyPurpose(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Something Went Wrong')]"));
+    }
     public WebElement OKInvalidKTPN(){return getDriver().findElement(By.xpath("//button[normalize-space()='OK']"));
     }
     public WebElement InvalidAmount(){return getDriver().findElement(By.cssSelector("[class='w-100 alert alert-secondary show']"));
@@ -195,7 +202,9 @@ public class Payout_PageObjects {
     public WebElement ReasonRequired(){return getDriver().findElement(By.xpath("//small[contains(text(),'Reason for Cancellation is required')]"));
     }
 
-    public WebElement ReReasonRequired(){return getDriver().findElement(By.xpath("//small[contains(text(),'Reason is required')]"));
+    public WebElement RefRequired(){return getDriver().findElement(By.xpath("//small[contains(text(),'Reference number is required.')]"));
+    }
+    public WebElement PartnerRequired(){return getDriver().findElement(By.xpath("//span[contains(text(),'Please select a partner')]"));
     }
     public WebElement CannotCancel(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Cannot Cancel Payout')]"));
     }

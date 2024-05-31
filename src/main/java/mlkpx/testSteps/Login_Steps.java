@@ -8,7 +8,7 @@ public class Login_Steps extends Base_Steps {
 
     public void signInGoogle(String role)throws NoSuchElementException {
         try{
-//            click(googlePageObjects.signInWithKPX(),"Sign in With KPX");
+            click(googlePageObjects.signInWithKPX(),"Sign in With KPX");
             click(googlePageObjects.googleContainer(), "Google Sign in Container");
             switchToNextTab();
             waitUntilLoadingGone(10000);
