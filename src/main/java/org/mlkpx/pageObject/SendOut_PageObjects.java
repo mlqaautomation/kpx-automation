@@ -170,6 +170,7 @@ public class SendOut_PageObjects {
     public WebElement chargeText() {
         return getDriver().findElement(By.xpath("//*[text()=\"Charge\"]"));
     }
+
     public WebElement confirmSendOutButton() {
         return getDriver().findElement(By.xpath("//*[text()='Confirm Sendout']"));
     }
@@ -189,6 +190,7 @@ public class SendOut_PageObjects {
     public WebElement cancelButton() { return getDriver().findElement(By.xpath("//*[text()='Cancel']"));}
     public WebElement cancelButtoninReceipt() {
         return getDriver().findElement(By.cssSelector("[class=\"sc-jnOGJG blZoWd btn btn-secondary\"]"));}
+
     public WebElement cancelButtoninConfirmation() { return getDriver().findElement(By.xpath("//button[@class='swal2-cancel swal2-styled' and @style='display: inline-block; background-color: rgb(170, 170, 170);' and text()='Cancel']"));}
     public WebElement provinceDanger() {
         return getDriver().findElement(By.xpath("//*[text()='Cancel']"));
