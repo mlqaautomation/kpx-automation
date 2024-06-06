@@ -14,7 +14,7 @@ public class ORReprintingPartner_Steps extends Base_Steps{
         }
 //        String randomKPTN = reader.getRandomKPTN(); // Call the getRandomKPTN function
 //        type(orReprintingPageObjects.kptnButtonInReprint(), "KPTN Field", randomKPTN); // Use the random KPTN value
-        type(orReprintingPageObjects.kptnButtonInReprint(), "KPTN ORReprint field ", propertyReader.getproperty("kptnValidCodeforORSO"));
+        type(orReprintingPageObjects.kptnButtonInReprint(), "KPTN ORReprint field ", propertyReader.getproperty("kptnValidCodeforORSOPartnerMoneygram"));
         type(orReprintingPageObjects.reasonORReprint(), "Reason ORReprint field ", propertyReader.getproperty("reason_ORandSOReprint"));
         click(orReprintingPageObjects.reprintButton(), "Reprint Button");
         if(isVisible(orReprintingPageObjects.printSendoutORReceiptText(), getText(orReprintingPageObjects.printSendoutORReceiptText()))){
@@ -25,7 +25,26 @@ public class ORReprintingPartner_Steps extends Base_Steps{
         }
     }
 
-    public void OR_TC_02()throws Exception{
+ public void OR_TC_02()throws Exception{
+        click(sendOutPageObjects.sendOutLink(), "SendOut Page ");
+        click(orReprintingPageObjects.orReprintingLink(), "OR Reprinting Page ");
+        if(isVisible(orReprintingPageObjects.orReprintText(), getText(orReprintingPageObjects.orReprintText()))){
+            LoggingUtils.info("Successfully Navigate for SendOut Reprint Page ");
+        }
+//        String randomKPTN = reader.getRandomKPTN(); // Call the getRandomKPTN function
+//        type(orReprintingPageObjects.kptnButtonInReprint(), "KPTN Field", randomKPTN); // Use the random KPTN value
+        type(orReprintingPageObjects.kptnButtonInReprint(), "KPTN ORReprint field ", propertyReader.getproperty("kptnValidCodeforORSOPartnerWesternUnion"));
+        type(orReprintingPageObjects.reasonORReprint(), "Reason ORReprint field ", propertyReader.getproperty("reason_ORandSOReprint"));
+        click(orReprintingPageObjects.reprintButton(), "Reprint Button");
+        if(isVisible(orReprintingPageObjects.printSendoutORReceiptText(), getText(orReprintingPageObjects.printSendoutORReceiptText()))){
+            ExtentReporter.logPass("OR_TC_01", "Successfully Validate OR Reprinting");
+        }else{
+            ExtentReporter.logFail("OR_TC_01", "Fail to Validate OR Reprinting");
+            Assert.fail("Fail to Validate OR Reprinting");
+        }
+    }
+
+    public void OR_TC_03()throws Exception{
         click(sendOutPageObjects.sendOutLink(), "SendOut Page ");
         click(orReprintingPageObjects.orReprintingLink(), "OR Reprinting  Page ");
         if(isVisible(orReprintingPageObjects.orReprintText(), getText(orReprintingPageObjects.orReprintText()))){

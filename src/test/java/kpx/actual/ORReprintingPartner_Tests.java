@@ -14,18 +14,26 @@ public class ORReprintingPartner_Tests extends BaseTest {
         }
     }
 
-    @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Validate OR Reprinting")
-    public void navigatingORReprintingPage()throws Exception{
+    @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Validate OR Reprinting Moneygram")
+    public void validateORReprintingMoneygram()throws Exception{
         if(this.homeSteps.isInHomePage()) {
             this.orReprintingPartnerSteps.OR_TC_01();
 
         }
 
     }
-    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = " Validate OR Reprinting with Non-Existing KPTN")
-    public void nonExistingKPTNOR_TC_02()throws Exception{
+    @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Validate OR Reprinting Western Union")
+    public void validateORReprintingWesternUnion()throws Exception{
         if(this.homeSteps.isInHomePage()) {
             this.orReprintingPartnerSteps.OR_TC_02();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle" , priority = 3, description = " Validate OR Reprinting with Non-Existing KPTN")
+    public void nonExistingKPTNOR_TC_02()throws Exception{
+        if(this.homeSteps.isInHomePage()) {
+            this.orReprintingPartnerSteps.OR_TC_03();
 
         }
 

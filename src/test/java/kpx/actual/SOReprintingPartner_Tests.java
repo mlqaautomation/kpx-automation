@@ -14,18 +14,26 @@ public class SOReprintingPartner_Tests extends BaseTest {
         }
     }
 
-    @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Validate SO Reprinting")
-    public void navigatingSOReprintingPageandPrintingValidKPTN()throws Exception{
+    @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Validate SO Reprinting Moneygram")
+    public void validateSOReprintingMoneygram()throws Exception{
         if(this.homeSteps.isInHomePage()) {
             this.soReprintingPartnerSteps.SOR_TC_01();
 
         }
 
     }
-    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = " Validate SO Reprinting with Non-Existing KPTN")
-    public void nonExistingKPTNSOR_TC_02()throws Exception{
+    @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Validate SO Reprinting Western Union")
+    public void validateSOReprintingWesternUnion()throws Exception{
         if(this.homeSteps.isInHomePage()) {
             this.soReprintingPartnerSteps.SOR_TC_02();
+
+        }
+
+    }
+    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = " Validate SO Reprinting with Non-Existing KPTN")
+    public void nonExistingKPTNSOR_TC_03()throws Exception{
+        if(this.homeSteps.isInHomePage()) {
+            this.soReprintingPartnerSteps.SOR_TC_03();
 
         }
 
