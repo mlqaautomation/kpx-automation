@@ -120,8 +120,7 @@ public class SendOut_Steps extends Base_Steps {
 
     public void DS_TC_04() throws Exception {
         navigationFOrSendOutDomestic();
-//        searchKYC();
-        searchKYCAddNewReceiver();
+        searchKYC();
         waitUntilLoadingGone(10000);
         addReceiver();
         scrollToElement(sendOutPageObjects.sourceOfFund());
@@ -385,7 +384,9 @@ public class SendOut_Steps extends Base_Steps {
             waitUntilLoadingGone(10000);
             type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
             type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
+            waitSleep(3000);
             type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
+            waitSleep(3000);
             type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
             waitSleep(5000);
             click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");

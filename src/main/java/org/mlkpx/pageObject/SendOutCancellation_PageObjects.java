@@ -32,6 +32,7 @@ public class SendOutCancellation_PageObjects {
     public WebElement irNumberField(){
         return getDriver().findElement(By.cssSelector("[name=\"IRNumber\"]"));
     }
+
     public WebElement yesKeepTransactionButton(){
         return getDriver().findElement(By.cssSelector("[class=\"swal2-cancel swal2-styled\"]"));
     }

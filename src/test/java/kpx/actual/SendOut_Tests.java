@@ -15,7 +15,7 @@ public class SendOut_Tests extends BaseTest {
     }
 
     @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Verify Navigation of SendOut Domestic")
-    public void DSendout_TC_01()throws Exception{
+    public void navigationForSendOutDomestic()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.sendOutSteps.DS_TC_01();
         }
@@ -23,7 +23,7 @@ public class SendOut_Tests extends BaseTest {
 
 
     @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Verify SendOut Transaction Option Invalid Branch Code")
-    public void DSendout_TC_02()throws Exception{
+    public void sendOutTransactionOptionInvalidBranchCode()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.sendOutSteps.DS_TC_02();
         }
@@ -31,7 +31,7 @@ public class SendOut_Tests extends BaseTest {
 
 
     @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Verify SendOut Transaction Option Valid Branch Code")
-        public void DSendout_TC_02_1()throws Exception{
+        public void sendOutTransactionOptionValidBranchCode()throws Exception{
             if(this.homeSteps.isInHomePage()){
                 this.sendOutSteps.DS_TC_02_1();
             }
@@ -39,29 +39,29 @@ public class SendOut_Tests extends BaseTest {
 
 
     @Test(dependsOnMethods = "loginGoogle" , priority = 3, description = "Verify Search KYC (Sender)")
-    public void DSendout_TC_03()throws Exception{
+    public void verifySearchKYCSender()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.sendOutSteps.DS_TC_03();
         }
     }
 
     @Test(dependsOnMethods = "loginGoogle" , priority = 4, description = "Verify Search KYC (Sender) Negative Test")
-    public void DSendout_TC_03_1()throws Exception{
+    public void verifySearchKYCSenderNegativeTest()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.sendOutSteps.DS_TC_03_1();
         }
     }
 
 
-    @Test(dependsOnMethods = "loginGoogle" , priority = 5, description = "Verify Add Receiver New")
-    public void DSendout_TC_04()throws Exception{
+    @Test(dependsOnMethods = "loginGoogle" , priority = 5, description = "Verify Add New Receiver")
+    public void verifyAddNewReceiver()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.sendOutSteps.DS_TC_04();
         }
     }
 
-    @Test(dependsOnMethods = "loginGoogle" , priority = 6, description = "Verify Add Receiver New Negative Test")
-    public void DSendout_TC_04_1()throws Exception{
+    @Test(dependsOnMethods = "loginGoogle" , priority = 6, description = "Verify Add New Receiver Negative Test")
+    public void verifyAddNewReceiverNegativeTest()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.sendOutSteps.DS_TC_04_1();
         }
@@ -69,7 +69,7 @@ public class SendOut_Tests extends BaseTest {
 
 
     @Test(dependsOnMethods = "loginGoogle", priority = 7, description = "Verify Search Receivers")
-    public void DSendout_TC_05() throws Exception {
+    public void verifySearchReceivers() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.sendOutSteps.DS_TC_05();
         }
@@ -77,28 +77,28 @@ public class SendOut_Tests extends BaseTest {
 
 
     @Test(dependsOnMethods = "loginGoogle", priority = 8, description = "Verify Other Information Inputs")
-    public void DSendout_TC_06() throws Exception {
+    public void verifyOtherInformationInputs() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.sendOutSteps.DS_TC_06();
         }
     }
 
     @Test(dependsOnMethods = "loginGoogle", priority = 9, description = "Verify Principal Amount")
-    public void DSendout_TC_07() throws Exception {
+    public void verifyPrincipalAmount() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.sendOutSteps.DS_TC_07();
         }
     }
 
     @Test(dependsOnMethods = "loginGoogle", priority = 11, description = "To Validate Submit SendOut Transaction")
-    public void DSendout_TC_8() throws Exception {
+    public void submitSendOutTransaction() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.sendOutSteps.DS_TC_08();
         }
     }
 
     @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "To Validate Cancel SendOut Transaction")
-    public void DSendout_TC_09() throws Exception {
+    public void cancelSendOutTransaction() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.sendOutSteps.DS_TC_09();
         }
@@ -107,7 +107,7 @@ public class SendOut_Tests extends BaseTest {
 
 
     @Test(dependsOnMethods = "loginGoogle", priority = 12, description = "To Validate Cancel No SendOut Transaction")
-    public void DSendout_TC_10() throws Exception {
+    public void cancelNoSendOutTransaction() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.sendOutSteps.DS_TC_10();
         }
@@ -116,14 +116,14 @@ public class SendOut_Tests extends BaseTest {
 
 
     @Test(dependsOnMethods = "loginGoogle", priority = 13, description = "To Validate kyc from the Watch List")
-    public void DSendout_TC_11() throws Exception {
+    public void validatekycfromtheWatchList() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.sendOutSteps.DS_TC_11();
         }
     }
 
     @Test(dependsOnMethods = "loginGoogle", priority = 14, description = "To Validate The Same Transaction")
-    public void DSendout_TC_12() throws Exception {
+    public void validateTheSameTransaction() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.sendOutSteps.DS_TC_12();
         }

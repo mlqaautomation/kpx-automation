@@ -25,6 +25,11 @@ public abstract class Base_Steps extends GeneralMethod {
     WS_CashOut_PageObjects wsCashOutPageObjects = new WS_CashOut_PageObjects();
     WS_KwartaPadalaPayOut_PageObjects wsKwartaPadalaPayOutPageObjects = new WS_KwartaPadalaPayOut_PageObjects();
     WS_ShopSafe_PageObjects wsShopSafePageObjects = new WS_ShopSafe_PageObjects();
+    SendoutPartner_Moneygram_PageObjects sendoutPartnerMoneygramPageObjects = new SendoutPartner_Moneygram_PageObjects();
+    SendoutPartnerMoneygramCancellation_PageObjects sendoutPartnerMoneygramCancellationPageObjects = new SendoutPartnerMoneygramCancellation_PageObjects();
+    RequestForChangePartner_PageObjects requestForChangePartnerPageObjects = new RequestForChangePartner_PageObjects();
+    ORReprintingPartner_PageObjects orReprintingPartnerPageObjects = new ORReprintingPartner_PageObjects();
+    SOReprintingPartner_PageObjects soReprintingPartnerPageObjects = new SOReprintingPartner_PageObjects();
 
 
     final String filepath = "src\\test\\java\\resources\\testData.properties";

@@ -14,7 +14,7 @@ public class SOReprinting_PageObjects {
         return getDriver().findElement(By.cssSelector("[name=\"reason\"]"));}
     public WebElement reprintButton(){
         return getDriver().findElement(By.cssSelector("[class=\"btn-sm btn btn-primary\"]"));}
-    public WebElement printSendoutReceiptText(){return getDriver().findElement(By.xpath("//*[text()=\"Print Sendout Receipt\"]"));}
+    public WebElement printSendoutReceiptText(){return getDriver().findElement(By.cssSelector("[class=\"sc-kAkpmW cYBaeZ\"]"));}
     public WebElement noTransactionFoundText(){return getDriver().findElement(By.xpath("//*[text()=\"No Transaction Found\"]"));}
 
 }

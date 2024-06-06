@@ -45,7 +45,11 @@ public class BaseTest {
     protected WS_KwartaPadalaPayOut_Steps wsKwartaPadalaPayOutSteps;
     protected WS_Reprinting_Steps wsReprintingSteps;
     protected WS_ShopSafe_Steps wsShopSafeSteps;
-
+    protected SendoutPartner_Moneygram_Steps sendoutPartnerMoneygramSteps;
+    protected SendoutPartnerMoneygramCancellation_Steps sendoutPartnerMoneygramCancellationSteps;
+    protected RequestForChangePartner_Steps requestForChangePartnerSteps;
+    protected ORReprintingPartner_Steps orReprintingPartnerSteps;
+    protected SOReprintingPartner_Steps soReprintingPartnerSteps;
 
 
     protected Login loginWalletSteps;
@@ -55,6 +59,7 @@ public class BaseTest {
     protected Kwarta_Padala kwartaPadala;
     protected Cash_Out cashOut;
     protected GenerateTestData generateTestData;
+
 
 
     @Parameters("type")
@@ -136,6 +141,11 @@ public class BaseTest {
         this.wsKwartaPadalaPayOutSteps = new WS_KwartaPadalaPayOut_Steps();
         this.wsReprintingSteps = new WS_Reprinting_Steps();
         this.wsShopSafeSteps = new WS_ShopSafe_Steps();
+        this.sendoutPartnerMoneygramSteps = new SendoutPartner_Moneygram_Steps();
+        this.sendoutPartnerMoneygramCancellationSteps = new SendoutPartnerMoneygramCancellation_Steps();
+        this.requestForChangePartnerSteps = new RequestForChangePartner_Steps();
+        this.orReprintingPartnerSteps = new ORReprintingPartner_Steps();
+        this.soReprintingPartnerSteps = new SOReprintingPartner_Steps();
 
 
 

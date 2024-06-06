@@ -157,6 +157,25 @@ public class yamlReader {
             return null;
         }
     }
+    public String getSendOutPartnerMoneygram10Min() {
+        try {
+            List<String> sendOutKptnList = (List<String>) yamlData.get("MoneyGramPartner10Minute");
+
+            if (sendOutKptnList == null || sendOutKptnList.isEmpty()) {
+                System.out.println("No send out moneygram partner KPTN values available.");
+                return null;
+            }
+
+            String selectedSendOutKptn = sendOutKptnList.get(sendOutKptnList.size() - 1); // Select the last stored send out KPTN
+            sendOutKptnList.remove(sendOutKptnList.size() - 1); // Remove the selected send out KPTN from the list
+            saveYamlData();
+            return selectedSendOutKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
     public void refreshTestData() {
         try {
             // Load the test data from the testdata.yaml file
@@ -262,7 +281,7 @@ public class yamlReader {
             List<String> kptnList = (List<String>) yamlData.get("remotePayoutKPTN");
 
             if (kptnList == null || kptnList.isEmpty()) {
-                System.out.println("No payoutKPTN values available.");
+                System.out.println("No remote payoutKPTN values available.");
                 return null;
             }
 
@@ -281,7 +300,7 @@ public class yamlReader {
             List<String> kptnList = (List<String>) yamlData.get("remotePayoutKPTN");
 
             if (kptnList == null || kptnList.isEmpty()) {
-                System.out.println("No payoutKPTN values available.");
+                System.out.println("No remote payoutKPTN values available.");
                 return null;
             }
 //
@@ -314,12 +333,13 @@ public class yamlReader {
             return null;
         }
     }
+
     public String getWatchlistKPTN() {
         try {
             List<String> remoteKptnList = (List<String>) yamlData.get("WatchlistKPTN");
 
             if (remoteKptnList == null || remoteKptnList.isEmpty()) {
-                System.out.println("No remote KPTN values available.");
+                System.out.println("No watchlist KPTN values available.");
                 return null;
             }
 
@@ -338,7 +358,7 @@ public class yamlReader {
             List<String> remoteKptnList = (List<String>) yamlData.get("RemoteWatchlistKPTN");
 
             if (remoteKptnList == null || remoteKptnList.isEmpty()) {
-                System.out.println("No remote KPTN values available.");
+                System.out.println("No remote watchlist KPTN values available.");
                 return null;
             }
 
@@ -389,7 +409,7 @@ public class yamlReader {
         try {
             List<String> kppReferenceNumList = (List<String>) yamlData.get("KwartaPadalaKTPN");
             if (kppReferenceNumList == null || kppReferenceNumList.isEmpty()) {
-                System.out.println("No KPPP Reference Number available.");
+                System.out.println("No Kwarta Padala Reference Number available.");
                 return null;
             }
             String randomKPPReferenceNum = kppReferenceNumList.get(kppReferenceNumList.size()- 1);
@@ -548,6 +568,86 @@ public class yamlReader {
             yamlData = yaml.load(fileInputStream); // Assign the loaded YAML data to the class member
 
             yamlData.put("sendOutKPTN", values); // Overwrite the existing values with the new values
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeKptnDataMoneygramPartner10MinuteService(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            yamlData = yaml.load(fileInputStream); // Assign the loaded YAML data to the class member
+
+            yamlData.put("MoneyGramPartner10Minute", values); // Overwrite the existing values with the new values
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeKptnDataMoneygramPartner10MinuteServiceRemote(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            yamlData = yaml.load(fileInputStream); // Assign the loaded YAML data to the class member
+
+            yamlData.put("MoneyGramPartner10MinuteRemote", values); // Overwrite the existing values with the new values
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeKptnDataWesternUnionPartner10MinuteService(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            yamlData = yaml.load(fileInputStream); // Assign the loaded YAML data to the class member
+
+            yamlData.put("WesternUnionPartner10Minute", values); // Overwrite the existing values with the new values
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeKptnDataWesternUnionPartner10MinuteServiceRemote(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            yamlData = yaml.load(fileInputStream); // Assign the loaded YAML data to the class member
+
+            yamlData.put("WesternUnionPartner10MinuteRemote", values); // Overwrite the existing values with the new values
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeKptnDataMoneygramPartnerAccountDeposit(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            yamlData = yaml.load(fileInputStream); // Assign the loaded YAML data to the class member
+
+            yamlData.put("MoneyGramPartnerAccountDeposit", values); // Overwrite the existing values with the new values
 
             FileWriter writer = new FileWriter(yamlFileName);
             yaml.dump(yamlData, writer);
