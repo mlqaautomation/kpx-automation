@@ -265,6 +265,23 @@ public class yamlReader {
             return null;
         }
     }
+    public String getPayoutReference() {
+        try {
+            List<String> payoutreferenceList = (List<String>) yamlData.get("payoutReference");
+            if (payoutreferenceList == null || payoutreferenceList.isEmpty()) {
+                System.out.println("No payout Reference values available.");
+                return null;
+            }
+            String selectPayoutRef = payoutreferenceList.get(payoutreferenceList.size() - 1);
+            payoutreferenceList.remove(payoutreferenceList.size() - 1);
+            saveYamlData();
+            return selectPayoutRef;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
     public String getSuccessPayoutKPTN() {
         try {
             List<String> kptnList = (List<String>) yamlData.get("payoutKPTN");
@@ -717,6 +734,33 @@ public class yamlReader {
             e.printStackTrace();
         }
     }
+    public void writeBillsPayCignalKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("CignalBPKTPN")) {
+                List<String> existingValues = (List<String>) yamlData.get("CignalBPKTPN");
+                for (String value : values) {
+                    existingValues.add(value.replace(" ", ""));
+                }
+            } else {
+                List<String> trimmedValues = new ArrayList<>();
+                for (String value : values) {
+                    trimmedValues.add(value.replace(" ", ""));
+                }
+                yamlData.put("CignalBPKTPN", trimmedValues);
+            }
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void writeRemoteBillsPayKptnData(List<String> values) {
         try {
             Yaml yaml = new Yaml();
@@ -746,6 +790,33 @@ public class yamlReader {
             yaml.dump(yamlData, writer);
             LoggingUtils.info(values + " saved to file");
             writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayRemoteCignalKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("CignalRemoteBPKTPN")) {
+                List<String> existingValues = (List<String>) yamlData.get("CignalRemoteBPKTPN");
+                for (String value : values) {
+                    existingValues.add(value.replace(" ", ""));
+                }
+            } else {
+                List<String> trimmedValues = new ArrayList<>();
+                for (String value : values) {
+                    trimmedValues.add(value.replace(" ", ""));
+                }
+                yamlData.put("CignalRemoteBPKTPN", trimmedValues);
+            }
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

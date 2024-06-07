@@ -61,9 +61,10 @@ public class Sendout_Partners_Steps extends Base_Steps{
         waitSleep(2000);
         scrollToElement(sendOutPageObjects.viewButton());
         click(sendOutPageObjects.viewButton(), "View Button ");
-        waitSleep(5000);
+        waitSleep(6000);
         scrollToBottomOfPageWEB();
         scrollDown(100);
+        scrollToElement(sendOutPageObjects.selectKYC());
         click(sendOutPageObjects.selectKYC(), "Select KYC Button");
         waitSleep(2000);
     }
@@ -80,7 +81,7 @@ public class Sendout_Partners_Steps extends Base_Steps{
         scrollDown(100);
         waitUntilLoadingGone(10000);
         click(sendOutPageObjects.SelectCountry(), "Select Country");
-        waitSleep(20000);
+        waitSleep(30000);
         waitUntilLoadingGone(10000);
         scrollDown(100);
         waitSleep(10000);

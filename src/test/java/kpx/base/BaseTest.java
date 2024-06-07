@@ -30,8 +30,10 @@ public class BaseTest {
     protected SendOutCancellation_Steps sendOutCancellationSteps;
     protected Payout_Steps payoutSteps;
     protected PayoutCancellation_Steps payoutCancellationSteps;
+    protected PayoutCancelle_Partner_Steps payoutCancellePartnerSteps;
     protected PayoutReprinting_Steps payoutReprintingSteps;
     protected BillsPay_Steps billsPaySteps;
+    protected BillsPayCignal_Steps billsPayCignalSteps;
     protected BillsPayCancellation_Steps billsPayCancellationSteps;
     protected BillsPayChangeD_Steps billsPayChangeDSteps;
     protected BillsPayReprinting_Steps billsPayReprintingSteps;
@@ -45,6 +47,7 @@ public class BaseTest {
     protected WS_KwartaPadalaPayOut_Steps wsKwartaPadalaPayOutSteps;
     protected WS_Reprinting_Steps wsReprintingSteps;
     protected WS_ShopSafe_Steps wsShopSafeSteps;
+
 
 
 
@@ -125,6 +128,7 @@ public class BaseTest {
         this.payoutCancellationSteps = new PayoutCancellation_Steps();
         this.payoutReprintingSteps = new PayoutReprinting_Steps();
         this.billsPaySteps = new BillsPay_Steps();
+        this.billsPayCignalSteps = new BillsPayCignal_Steps();
         this.billsPayCancellationSteps = new BillsPayCancellation_Steps();
         this.billsPayChangeDSteps = new BillsPayChangeD_Steps();
         this.billsPayReprintingSteps = new BillsPayReprinting_Steps();
@@ -141,6 +145,7 @@ public class BaseTest {
 
         this.sendoutPartnersSteps = new Sendout_Partners_Steps();
         this.payoutPartnersSteps = new Payout_Partners_Steps();
+        this.payoutCancellePartnerSteps = new PayoutCancelle_Partner_Steps();
 
     }
     public void initWallet(){

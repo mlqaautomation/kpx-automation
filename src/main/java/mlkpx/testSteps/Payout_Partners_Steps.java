@@ -29,7 +29,8 @@ public class Payout_Partners_Steps extends Base_Steps{
         waitSleep(3000);
         String sendoutReference = reader.getSendOutReferenceNum(); // Call the getSendOutKPTN function
         type(payoutPageObjects.InputReference(), "Reference Number", sendoutReference);
-        waitSleep(2000);
+        waitSleep(6000);
+        waitUntilLoadingGone(10000);
         scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
@@ -58,13 +59,14 @@ public class Payout_Partners_Steps extends Base_Steps{
             click(payoutPageObjects.PurposeOfTransaction(), "Purpose of Transaction");
             click(payoutPageObjects.RelationToSender(), "Relation to Sender");
             waitUntilLoadingGone(10000);
-            waitSleep(5000);
+            waitSleep(20000);
+            waitUntilLoadingGone(10000);
             scrollToElement(payoutPageObjects.ClaimAmount());
             click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
 
         }
         if (payoutPageObjects.PayoutConfirm().isEnabled()) {
-            waitSleep(2000);
+            waitSleep(3000);
             scrollToElement(payoutPageObjects.ConfirmPayout());
             click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
             waitUntilLoadingGone(10000);
@@ -77,7 +79,10 @@ public class Payout_Partners_Steps extends Base_Steps{
                 waitUntilLoadingGone(10000);
                 click(payoutPageObjects.proceedToPrinting(), "Proceed to Printing");
                 waitUntilLoadingGone(10000);
+                waitSleep(3000);
                 click(payoutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
+                waitSleep(5000);
+                click(payoutPageObjects.payout_link(), "Payout");
             }
 
         }
@@ -102,7 +107,8 @@ public class Payout_Partners_Steps extends Base_Steps{
             waitSleep(3000);
             String sendoutReference = reader.getSendOutReferenceNum(); // Call the getSendOutKPTN function
             type(payoutPageObjects.InputReference(), "Reference Number", sendoutReference);
-            waitSleep(2000);
+            waitSleep(6000);
+            waitUntilLoadingGone(10000);
             scrollToElement(payoutPageObjects.ClickOption());
             click(payoutPageObjects.ClickOption(), "Option");
             waitSleep(2000);
@@ -163,7 +169,8 @@ public class Payout_Partners_Steps extends Base_Steps{
         reader.refreshTestData();
         waitSleep(3000);
         type(payoutPageObjects.InputReference(), "Reference Number", "34645647");
-        waitSleep(2000);
+        waitSleep(6000);
+        waitUntilLoadingGone(10000);
         scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
@@ -197,7 +204,8 @@ public class Payout_Partners_Steps extends Base_Steps{
         reader.refreshTestData();
         waitSleep(3000);
         type(payoutPageObjects.InputReference(), "Reference Number", "645745745");
-        waitSleep(2000);
+        waitSleep(6000);
+        waitUntilLoadingGone(10000);
         scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
@@ -220,7 +228,8 @@ public class Payout_Partners_Steps extends Base_Steps{
         reader.refreshTestData();
         waitSleep(3000);
         type(payoutPageObjects.InputReference(), "Reference Number", "9371565521");
-        waitSleep(3000);
+        waitSleep(6000);
+        waitUntilLoadingGone(10000);
         scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
@@ -256,7 +265,8 @@ public class Payout_Partners_Steps extends Base_Steps{
         reader.refreshTestData();
         waitSleep(3000);
         type(payoutPageObjects.InputReference(), "Reference Number", "9371565521");
-        waitSleep(2000);
+        waitSleep(6000);
+        waitUntilLoadingGone(10000);
         scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
@@ -281,7 +291,8 @@ public class Payout_Partners_Steps extends Base_Steps{
         reader.refreshTestData();
         waitSleep(3000);
         type(payoutPageObjects.InputReference(), "Reference Number", "2322565816");
-        waitSleep(2000);
+        waitSleep(6000);
+        waitUntilLoadingGone(10000);
         scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
@@ -385,7 +396,8 @@ public class Payout_Partners_Steps extends Base_Steps{
         reader.refreshTestData();
         waitSleep(3000);
         type(payoutPageObjects.InputReference(), "Reference Number", "9371565521");
-        waitSleep(2000);
+        waitSleep(6000);
+        waitUntilLoadingGone(10000);
         scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
@@ -442,7 +454,8 @@ public class Payout_Partners_Steps extends Base_Steps{
         waitSleep(3000);
 
         type(payoutPageObjects.InputReference(), "Reference Number", "9371565521");
-        waitSleep(2000);
+        waitSleep(6000);
+        waitUntilLoadingGone(10000);
         scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
@@ -487,7 +500,24 @@ public class Payout_Partners_Steps extends Base_Steps{
                 LoggingUtils.info("Relationship to sender is invalid (code 7003)");
             }
             click(payoutPageObjects.OKInvalidKTPN(), "OK");
-
+            waitSleep(2000);
+            click(payoutPageObjects.RelationToSender(), "Relation to Sender");
+            waitUntilLoadingGone(10000);
+            waitSleep(5000);
+            scrollToElement(payoutPageObjects.ClaimAmount());
+            click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
+            if (payoutPageObjects.PayoutConfirm().isEnabled()) {
+                waitSleep(2000);
+                scrollToElement(payoutPageObjects.ConfirmPayout());
+                click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
+                waitUntilLoadingGone(10000);
+                waitSleep(20000);
+                waitUntilLoadingGone(10000);}
+            if(isVisible(payoutPageObjects.EmptyPurpose(), getText(payoutPageObjects.EmptyPurpose()))){
+                assertEqual(getText(payoutPageObjects.EmptyPurpose()), "Something Went Wrong");
+                LoggingUtils.info("Some transaction details have been changed. Kindly refresh the page and try again.");
+            }
+            click(payoutPageObjects.OKInvalidKTPN(), "OK");
         }
     }
 }

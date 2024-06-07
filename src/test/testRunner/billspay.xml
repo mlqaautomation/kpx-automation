@@ -9,10 +9,17 @@
     <test name="BILLSPAY Input">
         <parameter name="type" value="web">
             <classes>
-                <class name="kpx.actual.BillsPay_Tests">  </class>
-                <class name="kpx.actual.BillsPayCancellation_Tests">  </class>
-                <class name="kpx.actual.BillsPayChangeD_Tests">  </class>
-                <class name="kpx.actual.BillsPayReprinting_Tests">  </class>
+<!--                <class name="kpx.actual.BillsPay_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayCancellation_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayChangeD_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayReprinting_Tests">  </class>-->
+            </classes>
+        </parameter>
+    </test>
+    <test name="BILLSPAY Cignal Partner">
+        <parameter name="type" value="web">
+            <classes>
+                <class name="kpx.actual.BillsPayCignal_Tests">  </class>
             </classes>
         </parameter>
     </test>

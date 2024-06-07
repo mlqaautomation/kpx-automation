@@ -13,15 +13,15 @@ public class Payout_Partners_Tests extends BaseTest {
             ExtentReporter.logPass("loginGoogle","Login, Passed!!");
         }
     }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "Successful partner payout transaction")
-//    public void Partner_Payout_TC_01()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.sendoutPartnersSteps.PS_TC_01();
-//            this.payoutPartnersSteps.navigatePayoutPage();
-//            this.payoutPartnersSteps.validateSuccessfulPartnerPayout();
-//
-//        }
-//    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "Successful partner payout transaction")
+    public void Partner_Payout_TC_01()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.sendoutPartnersSteps.PS_TC_01();
+            this.payoutPartnersSteps.navigatePayoutPage();
+            this.payoutPartnersSteps.validateSuccessfulPartnerPayout();
+
+        }
+    }
 //    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "Successful remote partner payout transaction")
 //    public void Partner_Payout_TC_02()throws Exception{
 //        if(this.homeSteps.isInHomePage()){
@@ -110,7 +110,7 @@ public class Payout_Partners_Tests extends BaseTest {
 
         }
     }
-    @Test(dependsOnMethods = "loginGoogle", priority = 13, description = "Partner payout transaction empty relation")
+    @Test(dependsOnMethods = "loginGoogle", priority = 13, description = "Partner payout transaction empty relation and details been change")
     public void Partner_Payout_TC_13()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.payoutPartnersSteps.navigatePayoutPage();

@@ -18,6 +18,9 @@ public class Payout_PageObjects {
     public WebElement payoutCanPage(){
         return getDriver().findElement(By.xpath("//a[@class='dropdown-toggle nav-link']"));
     }
+    public WebElement payoutPartnerCancel(){
+        return getDriver().findElement(By.xpath("//a[@href='/payout/partner-cancellation']"));
+    }
     public WebElement payoutRepPage(){
         return getDriver().findElement(By.xpath("//a[@href='/payout/reprint']"));
     }
@@ -69,7 +72,7 @@ public class Payout_PageObjects {
         return getDriver().findElement(By.xpath("//input[@name='referenceNumber']"));
     }
     public WebElement ClickOption () {
-        return getDriver().findElement(By.cssSelector("[width='20']"));
+        return getDriver().findElement(By.cssSelector("[class=\"css-19bqh2r\"]"));
     }
     public WebElement ChooseOption () {
         return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div//div[4]"));
@@ -80,6 +83,9 @@ public class Payout_PageObjects {
 
     public WebElement CancelKTPN(){
         return getDriver().findElement(By.xpath("//input[@name='kptn']"));
+    }
+    public WebElement CancelReference(){
+        return getDriver().findElement(By.xpath("//input[@name='referenceNumber']"));
     }
     public WebElement RepKTPN(){
         return getDriver().findElement(By.xpath("//input[@name='kptn']"));
@@ -99,6 +105,9 @@ public class Payout_PageObjects {
     public WebElement CancelButton(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='Cancel Payout']"));
     }
+    public WebElement ReasonOfCan(){
+        return getDriver().findElement(By.xpath("//option[@label='WRONG PAYOUT']"));
+    }
     public WebElement PrintReceipt(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='Print Receipt']"));
     }
@@ -108,11 +117,17 @@ public class Payout_PageObjects {
     public WebElement YesCancelButton(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='Yes, Cancel Payout']"));
     }
+    public WebElement YesCancelTran(){
+        return getDriver().findElement(By.xpath("//button[normalize-space()='Yes, Cancel Transaction']"));
+    }
     public WebElement kptnText(){return getDriver().findElement(By.cssSelector("[data-testid='sendoutKPTN']"));
     }
     public WebElement PayAmount(){return getDriver().findElement(By.xpath("//input[@step='0.01' and @name='amount']"));}
     public WebElement SearchButton(){return getDriver().findElement(By.xpath("//button[normalize-space()='Search']"));
     }
+    public WebElement SelectPartners(){return getDriver().findElement(By.xpath("//option[@value='5']"));
+    }
+
     public WebElement Reprint(){return getDriver().findElement(By.xpath("//button[normalize-space()='Reprint']"));
     }
     public WebElement OKay(){return getDriver().findElement(By.xpath("//button[normalize-space()='OK']"));
@@ -170,6 +185,8 @@ public class Payout_PageObjects {
     }
     public WebElement SuccessfulCancelPay(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Payout Cancelled')]"));
     }
+    public WebElement SuccessfulCancelPartners(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Payout Reversed')]"));
+    }
     public WebElement InvalidKTPN(){return getDriver().findElement(By.xpath("//h5[contains(text(),'No Transaction Found')]"));
     }
     public WebElement InvalidRef(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Error')]"));
@@ -200,6 +217,12 @@ public class Payout_PageObjects {
     public WebElement IRNumRequired(){return getDriver().findElement(By.xpath("//small[contains(text(),'IR Number is required')]"));
     }
     public WebElement ReasonRequired(){return getDriver().findElement(By.xpath("//small[contains(text(),'Reason for Cancellation is required')]"));
+    }
+    public WebElement BranchRequired(){return getDriver().findElement(By.xpath("//span[contains(text(),'Branch not found')]"));
+    }
+    public WebElement OperatorRequired(){return getDriver().findElement(By.xpath("//span[contains(text(),'Operator not found')]"));
+    }
+    public WebElement ReasonsRequired(){return getDriver().findElement(By.xpath("//span[contains(text(),'Reason is required.')]"));
     }
 
     public WebElement RefRequired(){return getDriver().findElement(By.xpath("//small[contains(text(),'Reference number is required.')]"));
