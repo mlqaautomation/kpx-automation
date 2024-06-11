@@ -23,6 +23,7 @@ public class SOReprintingPartner_Steps extends Base_Steps{
             ExtentReporter.logFail("SOR_TC_01", "Fail to Validate SO Reprinting");
             Assert.fail("Fail to Validate SO Reprinting");
         }
+        click(soReprintingPageObjects.cancelButton(), "Cancel Button");
     }
     public void SOR_TC_02()throws Exception{
         click(sendOutPageObjects.sendOutLink(), "SendOut Page ");
