@@ -30,6 +30,7 @@ public abstract class Base_Steps extends GeneralMethod {
     RequestForChangePartner_PageObjects requestForChangePartnerPageObjects = new RequestForChangePartner_PageObjects();
     ORReprintingPartner_PageObjects orReprintingPartnerPageObjects = new ORReprintingPartner_PageObjects();
     SOReprintingPartner_PageObjects soReprintingPartnerPageObjects = new SOReprintingPartner_PageObjects();
+    KPDomesticReports_PageObjects kpDomesticReportsPageObjects = new KPDomesticReports_PageObjects();
 
 
     final String filepath = "src\\test\\java\\resources\\testData.properties";

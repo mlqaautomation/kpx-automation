@@ -50,6 +50,7 @@ public class BaseTest {
     protected RequestForChangePartner_Steps requestForChangePartnerSteps;
     protected ORReprintingPartner_Steps orReprintingPartnerSteps;
     protected SOReprintingPartner_Steps soReprintingPartnerSteps;
+    protected KPDomesticReports_Steps kpDomesticReportsSteps;
 
 
     protected Login loginWalletSteps;
@@ -146,6 +147,7 @@ public class BaseTest {
         this.requestForChangePartnerSteps = new RequestForChangePartner_Steps();
         this.orReprintingPartnerSteps = new ORReprintingPartner_Steps();
         this.soReprintingPartnerSteps = new SOReprintingPartner_Steps();
+        this.kpDomesticReportsSteps = new KPDomesticReports_Steps();
 
 
 
