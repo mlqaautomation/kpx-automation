@@ -21,7 +21,7 @@ public class SendoutPartnerMoneygramCancellation_PageObjects {
     }
 
     public WebElement cancelButtonInReceipt(){
-        return getDriver().findElement(By.cssSelector("[class=\"sc-jnOGJG blZoWd btn btn-secondary\"]"));
+        return getDriver().findElement(By.cssSelector("[class=\"sc-iMWBiJ dStcyq btn btn-secondary\"]"));
     }
     public WebElement irNumberField(){
         return getDriver().findElement(By.cssSelector("[name=\"irNumber\"]"));

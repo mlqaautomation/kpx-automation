@@ -14,7 +14,7 @@ public class WS_CashInToAnotherAcc_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful Cash In to another Account")
-    public void CashInAnotherAcc_TC_01()throws Exception{
+    public void successfulCashInToAnotherAccount()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.wsCashInToAnotherAccount.navigateWalletServicesPage();
             this.wsCashInToAnotherAccount.ValidateSuccessCashInToAnotherAccount();
@@ -23,7 +23,7 @@ public class WS_CashInToAnotherAcc_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate remote successful Cash In to another Account")
-    public void CashInAnotherAcc_TC_02()throws Exception{
+    public void remoteSuccessfulCashInToAnotherAccount()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.wsCashInToAnotherAccount.navigateWalletServicesPage();
             this.wsCashInToAnotherAccount.ValidateRemoteSuccessCashInToAnotherAccount();
@@ -32,7 +32,7 @@ public class WS_CashInToAnotherAcc_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate Cash In to another Account with no mobile number")
-    public void CashInAnotherAcc_TC_03()throws Exception{
+    public void cashInToAnotherAccountWithNoMobileNumber()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.wsCashInToAnotherAccount.navigateWalletServicesPage();
             this.wsCashInToAnotherAccount.ValidateCashInToAnotherAccWithNoMobileProvided();
@@ -41,7 +41,7 @@ public class WS_CashInToAnotherAcc_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "To validate Cash In to another Account with Invalid mobile number")
-    public void CashInAnotherAcc_TC_04()throws Exception{
+    public void cashInToAnotherAccountWithInvalidMobileNumber()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.wsCashInToAnotherAccount.navigateWalletServicesPage();
             this.wsCashInToAnotherAccount.ValidateCashInToAnotherAccWithInvalidMobileProvided();
@@ -50,7 +50,7 @@ public class WS_CashInToAnotherAcc_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 5, description = "To validate Cash In to another Account with No Principal Amount")
-    public void CashInAnotherAcc_TC_05()throws Exception{
+    public void cashIntoAnotherAccountWithNoPrincipalAmount()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.wsCashInToAnotherAccount.navigateWalletServicesPage();
             this.wsCashInToAnotherAccount.ValidateCashInToAnotherAccWithNoPrincipal();
@@ -59,7 +59,7 @@ public class WS_CashInToAnotherAcc_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 6, description = "To validate Cash In to another Account with Inputted Zero Amount")
-    public void CashInAnotherAcc_TC_06()throws Exception{
+    public void inputtedZeroAmount()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.wsCashInToAnotherAccount.navigateWalletServicesPage();
             this.wsCashInToAnotherAccount.ValidateCashInToAnotherAccWithInputtedZero();
@@ -68,7 +68,7 @@ public class WS_CashInToAnotherAcc_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 7, description = "To validate Cash In to another Account with Inputted less than from the total amount")
-    public void CashInAnotherAcc_TC_07()throws Exception{
+    public void inputtedLessThanFromTheTotalAmount()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.wsCashInToAnotherAccount.navigateWalletServicesPage();
             this.wsCashInToAnotherAccount.ValidateCashInToAnotherAccWithInputtedLessTotal();
@@ -77,7 +77,7 @@ public class WS_CashInToAnotherAcc_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 8, description = "To validate Cash In to another Account with Inputted max 50,000")
-    public void CashInAnotherAcc_TC_08()throws Exception{
+    public void inputtedMax50000()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.wsCashInToAnotherAccount.navigateWalletServicesPage();
             this.wsCashInToAnotherAccount.ValidateCashInToAnotherAccWithInputtedFiftyThousandsAbove();
@@ -86,7 +86,7 @@ public class WS_CashInToAnotherAcc_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 9, description = "To validate Cash In to another Account Customer cannot found")
-    public void CashInAnotherAcc_TC_09()throws Exception{
+    public void cashInToAnotherAccountCustomerCannotFound()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.wsCashInToAnotherAccount.navigateWalletServicesPage();
             this.wsCashInToAnotherAccount.ValidateCashInToAnotherAccCustomerCannotFound();
