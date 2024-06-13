@@ -51,6 +51,7 @@ public class BaseTest {
     protected ORReprintingPartner_Steps orReprintingPartnerSteps;
     protected SOReprintingPartner_Steps soReprintingPartnerSteps;
     protected KPDomesticReports_Steps kpDomesticReportsSteps;
+    protected MLWalletServicesReportBranchReport_Steps mlWalletServicesReportBranchReportSteps;
 
 
     protected Login loginWalletSteps;
@@ -148,7 +149,7 @@ public class BaseTest {
         this.orReprintingPartnerSteps = new ORReprintingPartner_Steps();
         this.soReprintingPartnerSteps = new SOReprintingPartner_Steps();
         this.kpDomesticReportsSteps = new KPDomesticReports_Steps();
-
+        this.mlWalletServicesReportBranchReportSteps = new MLWalletServicesReportBranchReport_Steps();
 
 
     }

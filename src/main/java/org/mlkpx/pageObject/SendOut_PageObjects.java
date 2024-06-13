@@ -189,7 +189,7 @@ public class SendOut_PageObjects {
 
     public WebElement cancelButton() { return getDriver().findElement(By.xpath("//*[text()='Cancel']"));}
     public WebElement cancelButtoninReceipt() {
-        return getDriver().findElement(By.cssSelector("[class=\"sc-jnOGJG blZoWd btn btn-secondary\"]"));}
+        return getDriver().findElement(By.xpath("//*[text()='Cancel']"));}
 
     public WebElement cancelButtoninConfirmation() { return getDriver().findElement(By.xpath("//button[@class='swal2-cancel swal2-styled' and @style='display: inline-block; background-color: rgb(170, 170, 170);' and text()='Cancel']"));}
     public WebElement provinceDanger() {
