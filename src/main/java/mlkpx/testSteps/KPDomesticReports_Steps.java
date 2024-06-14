@@ -38,9 +38,13 @@ public class KPDomesticReports_Steps extends Base_Steps{
             Assert.fail("Failed to Verify Transaction Type and TimeFrame Dropdown Optionst");
         }
         click(kpDomesticReportsPageObjects.transactionType(),"Transaction Type DropDown Button");
+        waitSleep(3000);
         click(kpDomesticReportsPageObjects.selectedTransactionTypeSendout(),"Sendout Transaction Type DropDown Button");
+        waitSleep(3000);
         click(kpDomesticReportsPageObjects.timeFrame(),"TimeFrame Dropdown Button");
+        waitSleep(3000);
         click(kpDomesticReportsPageObjects.selectedTimeFrameMonthly(),"Monthly TimeFrame Dropdown Button");
+        waitSleep(3000);
         if (isVisible(kpDomesticReportsPageObjects.month(), getText(kpDomesticReportsPageObjects.month()))) {
             ExtentReporter.logPass("Shows Month whenever user choose Monthly in Timeframe", "Successfully Verify Transaction Type Dropdown Options Sendout - Monthly");
         } else {
