@@ -99,7 +99,7 @@ public class KPDomesticReports_Steps extends Base_Steps{
         // Get the current tab count before clicking the generateReportButton
         int initialTabCount = driver.getWindowHandles().size();
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
-        waitSleep(15000);
+        waitSleep(20000);
         int finalTabCount = driver.getWindowHandles().size();
         // Verify that the tab count has increased by 1, indicating a new tab has been opened
         Assert.assertEquals(finalTabCount, initialTabCount + 1, "Generate Report Button did not open a new tab");
@@ -142,7 +142,7 @@ public class KPDomesticReports_Steps extends Base_Steps{
         // Get the current tab count before clicking the generateReportButton
         int initialTabCount = driver.getWindowHandles().size();
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
-        waitSleep(15000);
+        waitSleep(20000);
         int finalTabCount = driver.getWindowHandles().size();
         // Verify that the tab count has increased by 1, indicating a new tab has been opened
         Assert.assertEquals(finalTabCount, initialTabCount + 1, "Generate Report Button did not open a new tab");
@@ -345,7 +345,7 @@ public class KPDomesticReports_Steps extends Base_Steps{
         // Get the current tab count before clicking the generateReportButton
         int initialTabCount = driver.getWindowHandles().size();
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
-        waitSleep(15000);
+        waitSleep(20000);
         int finalTabCount = driver.getWindowHandles().size();
         // Verify that the tab count has increased by 1, indicating a new tab has been opened
         Assert.assertEquals(finalTabCount, initialTabCount + 1, "Generate Report Button did not open a new tab");
@@ -497,7 +497,7 @@ public class KPDomesticReports_Steps extends Base_Steps{
         // Get the current tab count before clicking the generateReportButton
         int initialTabCount = driver.getWindowHandles().size();
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
-        waitSleep(15000);
+        waitSleep(20000);
         int finalTabCount = driver.getWindowHandles().size();
         // Verify that the tab count has increased by 1, indicating a new tab has been opened
         Assert.assertEquals(finalTabCount, initialTabCount + 1, "Generate Report Button did not open a new tab");

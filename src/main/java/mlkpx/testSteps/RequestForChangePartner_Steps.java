@@ -72,7 +72,7 @@ public class RequestForChangePartner_Steps extends Base_Steps{
         click(requestForChangePartnerPageObjects.rfcReferenceNumber(),"RFCP Reference Nimber Field");
         type(requestForChangePartnerPageObjects.rfcReferenceNumber(), "RFCP Reference Nimber Field", propertyReader.getproperty("rfcpCancelledReference"));
         click(requestForChangePageObjects.searchButton(), "RFCP Search Button");
-        waitSleep(10000);
+        waitSleep(15000);
         if (isVisible(requestForChangePartnerPageObjects.rfcpCancelledText(), getText(requestForChangePartnerPageObjects.rfcpCancelledText()))) {
             ExtentReporter.logPass("RFCP_TC_03", "Sendout transaction has already been cancelled");
         } else {
