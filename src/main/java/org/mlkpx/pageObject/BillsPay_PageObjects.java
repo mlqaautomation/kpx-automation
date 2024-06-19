@@ -246,7 +246,7 @@ public class BillsPay_PageObjects {
         return getDriver().findElement(By.xpath("//button[normalize-space()='Print Receipt']"));
     }
     public WebElement NoTransactionFound(){
-        return getDriver().findElement(By.xpath("//p[contains(text(),'Bills Payment transaction could not be found. Please check the reference no. and try again.')]"));
+        return getDriver().findElement(By.xpath("//*[text()='No Transaction Found']"));
     }
     public WebElement CancelPayment(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='Cancel Payment']"));
@@ -302,7 +302,7 @@ public class BillsPay_PageObjects {
 
 
         public WebElement SuccessChanges () {
-            return getDriver().findElement(By.xpath("//p[contains(text(),'Details have been successfully updated.')]"));
+            return getDriver().findElement(By.xpath("//*[text()='Details have been successfully updated.']"));
         }
         public WebElement NoEditChanges () {
             return getDriver().findElement(By.xpath("//h5[text()='No Changes Have Been Made']"));

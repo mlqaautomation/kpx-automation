@@ -224,7 +224,7 @@ public class SendOut_PageObjects {
         return getDriver().findElement(By.cssSelector("[class=\"swal2-confirm swal2-styled\"]"));
     }
     public WebElement complianceText(){
-        return getDriver().findElement(By.cssSelector("[class=\"sc-aXZVg FiXoI\"]"));
+        return getDriver().findElement(By.xpath("//*[text()='For Compliance Assistance']"));
     }
     public WebElement complianceOKButton() {
         return getDriver().findElement(By.cssSelector("[class=\"swal2-confirm swal2-styled\"]"));
