@@ -139,10 +139,10 @@ public class PayoutCancellation_Steps extends Base_Steps{
             click(payoutPageObjects.PayoutCancellation(), "Payout Cancellation Page");
             LoggingUtils.info("Navigated the Payout Cancellation page");
         }
-        type(payoutPageObjects.CancelKTPN(), "KTPN Number", "KPNRCHYTSSW");
+        type(payoutPageObjects.CancelKTPN(), "KTPN Number", "KPNNHGIZUWY");
         click(payoutPageObjects.SearchButton(), "Search Button");
 
-        assertEqual(getText(payoutPageObjects.AlreadyBeenCancelled()), "Payout transaction has already been cancelled.");
+        assertEqual(getText(payoutPageObjects.AlreadyBeenCancelled()), "Payout Cancelled");
 
     }
     public void validatePayoutCancellationWithNoKPTN()throws Exception{

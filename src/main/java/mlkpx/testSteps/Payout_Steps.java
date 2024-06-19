@@ -58,6 +58,8 @@ public class Payout_Steps extends Base_Steps{
                 scrollDown(100);
             }
             waitSleep(2000);
+            scrollToBottomOfPageWEB();
+            scrollDown(100);
             scrollToElement(payoutPageObjects.SelectKYC());
             click(payoutPageObjects.SelectKYC(), "Select KYC");
             if (payoutPageObjects.KtpnInfo().getText().contains("KPTN")) {
@@ -97,7 +99,7 @@ public class Payout_Steps extends Base_Steps{
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
             wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
             //todo
             type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
@@ -282,6 +284,7 @@ public class Payout_Steps extends Base_Steps{
         type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
         type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "200");
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
+        waitUntilLoadingGone(15000);
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
         waitSleep(3000);
         //todo get value of kptn locator and post it to yaml file
@@ -297,7 +300,7 @@ public class Payout_Steps extends Base_Steps{
         click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
         click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));

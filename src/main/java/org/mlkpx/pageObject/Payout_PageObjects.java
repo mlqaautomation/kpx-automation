@@ -191,7 +191,7 @@ public class Payout_PageObjects {
     }
     public WebElement YesKeepTransaction(){return getDriver().findElement(By.xpath("//button[normalize-space()='Yes, Keep Transaction']"));
     }
-    public WebElement AlreadyBeenCancelled(){return getDriver().findElement(By.xpath("//p[contains(text(),'Payout transaction has already been cancelled.')]"));
+    public WebElement AlreadyBeenCancelled(){return getDriver().findElement(By.xpath("//*[text()='Payout Cancelled']"));
     }
 
 
