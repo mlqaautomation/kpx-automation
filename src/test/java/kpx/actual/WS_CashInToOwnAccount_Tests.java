@@ -16,13 +16,13 @@ public class WS_CashInToOwnAccount_Tests extends BaseTest {
     }
 
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "Validate Successful Cash In to Own Account")
-    public void CashInToOwnAccount_TC_01() throws Exception {
+    public void successfulCashIntoOwnAccount() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsCashInToOwnAccountSteps.CIOA_TC_01();
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 11, description = "Validate Successful remote Cash In to Own Account")
-    public void CashInToOwnAccount_TC_02() throws Exception {
+    public void successfulRemoteCashIntoOwnAccount() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsCashInToOwnAccountSteps.CIOA_TC_02();
         }
@@ -37,7 +37,7 @@ public class WS_CashInToOwnAccount_Tests extends BaseTest {
 //    }
 
     @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Validate invalid reference number")
-    public void CashInToOwnAccount_TC_04()throws Exception{
+    public void invalidReferenceNumber()throws Exception{
         if(this.homeSteps.isInHomePage()) {
             this.wsCashInToOwnAccountSteps.CIOA_TC_04();
 
@@ -45,7 +45,7 @@ public class WS_CashInToOwnAccount_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle" , priority = 4, description = "Validate invalid mobile number")
-    public void CashInToOwnAccount_TC_05()throws Exception{
+    public void invalidMobileNumber()throws Exception{
         if(this.homeSteps.isInHomePage()) {
             this.wsCashInToOwnAccountSteps.CIOA_TC_05();
 
@@ -61,7 +61,7 @@ public class WS_CashInToOwnAccount_Tests extends BaseTest {
 //
 //    }
     @Test(dependsOnMethods = "loginGoogle" , priority = 5, description = "Validate already claimed transaction")
-    public void CashInToOwnAccount_TC_07()throws Exception{
+    public void alreadyClaimedTransaction()throws Exception{
         if(this.homeSteps.isInHomePage()) {
             this.wsCashInToOwnAccountSteps.CIOA_TC_07();
 
@@ -69,7 +69,7 @@ public class WS_CashInToOwnAccount_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle" , priority = 6, description = "Validate validate expired transaction")
-    public void CashInToOwnAccount_TC_08()throws Exception{
+    public void validateExpiredTransaction()throws Exception{
         if(this.homeSteps.isInHomePage()) {
             this.wsCashInToOwnAccountSteps.CIOA_TC_08();
 
@@ -78,7 +78,7 @@ public class WS_CashInToOwnAccount_Tests extends BaseTest {
     }
 
     @Test(dependsOnMethods = "loginGoogle" , priority = 7, description = "Validate the tender amount is less than the total amount")
-    public void CashInToOwnAccount_TC_09()throws Exception{
+    public void tenderAmountIsLessThanTheTotalAmount()throws Exception{
         if(this.homeSteps.isInHomePage()) {
             this.wsCashInToOwnAccountSteps.CIOA_TC_09();
 
@@ -87,7 +87,7 @@ public class WS_CashInToOwnAccount_Tests extends BaseTest {
     }
 
     @Test(dependsOnMethods = "loginGoogle" , priority = 8, description = "Validate again the cash in transaction if its being proccessed or not")
-    public void CashInToOwnAccount_TC_10()throws Exception{
+    public void validateAgainTheCashInTransaction()throws Exception{
         if(this.homeSteps.isInHomePage()) {
             this.wsCashInToOwnAccountSteps.CIOA_TC_10();
 

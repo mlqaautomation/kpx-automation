@@ -9,7 +9,7 @@ public class RequestForChangePartner_Steps extends Base_Steps{
         click(sendOutPageObjects.sendOutLink(), "SendOut Page ");
         click(requestForChangePageObjects.rfcLink(),"Request for Change Link");
         click(requestForChangePartnerPageObjects.rfcPartnerSendoutLink(), "Request For Change Partner Sendout Link");
-        if(isVisible(requestForChangePartnerPageObjects.rfcpNavigation(), getText(requestForChangePartnerPageObjects.rfcpNavigation()))){
+        if(isVisible(requestForChangePartnerPageObjects.partnerSendoutAmendmentText(), getText(requestForChangePartnerPageObjects.partnerSendoutAmendmentText()))){
             ExtentReporter.logPass("RFCP_TC_01", "Successfully Navigation of Request for Change Page");
         }else{
             ExtentReporter.logFail("RFCP_TC_01", "Fail to Navigation of Request for Change Page");
@@ -72,7 +72,7 @@ public class RequestForChangePartner_Steps extends Base_Steps{
         click(requestForChangePartnerPageObjects.rfcReferenceNumber(),"RFCP Reference Nimber Field");
         type(requestForChangePartnerPageObjects.rfcReferenceNumber(), "RFCP Reference Nimber Field", propertyReader.getproperty("rfcpCancelledReference"));
         click(requestForChangePageObjects.searchButton(), "RFCP Search Button");
-        waitSleep(10000);
+        waitSleep(15000);
         if (isVisible(requestForChangePartnerPageObjects.rfcpCancelledText(), getText(requestForChangePartnerPageObjects.rfcpCancelledText()))) {
             ExtentReporter.logPass("RFCP_TC_03", "Sendout transaction has already been cancelled");
         } else {

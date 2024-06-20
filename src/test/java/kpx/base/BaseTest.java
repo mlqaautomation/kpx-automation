@@ -53,6 +53,8 @@ public class BaseTest {
     protected RequestForChangePartner_Steps requestForChangePartnerSteps;
     protected ORReprintingPartner_Steps orReprintingPartnerSteps;
     protected SOReprintingPartner_Steps soReprintingPartnerSteps;
+    protected KPDomesticReports_Steps kpDomesticReportsSteps;
+    protected MLWalletServicesReportBranchReport_Steps mlWalletServicesReportBranchReportSteps;
 
 
     protected Login loginWalletSteps;
@@ -156,6 +158,11 @@ public class BaseTest {
         this.sendoutPartnersSteps = new Sendout_Partners_Steps();
         this.payoutPartnersSteps = new Payout_Partners_Steps();
         this.payoutCancellePartnerSteps = new PayoutCancelle_Partner_Steps();
+
+        this.kpDomesticReportsSteps = new KPDomesticReports_Steps();
+        this.mlWalletServicesReportBranchReportSteps = new MLWalletServicesReportBranchReport_Steps();
+
+
 
     }
     public void initWallet(){

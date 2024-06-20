@@ -271,6 +271,7 @@ public class BillsPay_PageObjects {
     }
     public WebElement NoTransactionFound(){
         return getDriver().findElement(By.xpath("//h5[contains(text(),'No Transaction Found')]"));
+
     }
     public WebElement CancelPayment(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='Cancel Payment']"));
@@ -327,6 +328,7 @@ public class BillsPay_PageObjects {
 
         public WebElement SuccessChanges () {
             return getDriver().findElement(By.xpath("//h5[contains(text(),'Bills Pay Details Updated')]"));
+
         }
     public WebElement OKTransaction(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='OK']"));

@@ -30,6 +30,8 @@ public abstract class Base_Steps extends GeneralMethod {
     RequestForChangePartner_PageObjects requestForChangePartnerPageObjects = new RequestForChangePartner_PageObjects();
     ORReprintingPartner_PageObjects orReprintingPartnerPageObjects = new ORReprintingPartner_PageObjects();
     SOReprintingPartner_PageObjects soReprintingPartnerPageObjects = new SOReprintingPartner_PageObjects();
+    KPDomesticReports_PageObjects kpDomesticReportsPageObjects = new KPDomesticReports_PageObjects();
+    MLWalletServicesReportBranchReport_PageObjects mlWalletServicesReportBranchReportPageObjects = new MLWalletServicesReportBranchReport_PageObjects();
 
     Sendout_Partners_PageObjects sendoutPartnersPageObjects = new Sendout_Partners_PageObjects();
     Payout_Partners_PageObjects payoutPartnersPageObjects = new Payout_Partners_PageObjects();

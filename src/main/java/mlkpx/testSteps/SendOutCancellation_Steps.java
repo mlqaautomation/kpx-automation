@@ -74,8 +74,8 @@ public class SendOutCancellation_Steps extends Base_Steps{
     public void DS_TC_02_1() throws Exception { // Test Case for Sendout Transaction Option
         navigationFOrSendOutDomestic();
         click(sendOutPageObjects.yesRadioButton(), "Yes Button ");
-        waitSleep(3000);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        waitSleep(5000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));

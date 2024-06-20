@@ -20,7 +20,7 @@ public class WS_KwartaPadalaPayOut_Tests extends BaseTest {
     }
 
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "Validate To validate successful Wallet Services Kwarta Padala Payout")
-    public void KwartaPadalaPayOut_TC_01() throws Exception {
+    public void successfulWalletServicesKwartaPadalaPayout() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsKwartaPadalaPayOutSteps.KPP_TC_01();
 
@@ -28,14 +28,14 @@ public class WS_KwartaPadalaPayOut_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "Validate To validate successful remote Wallet Services Kwarta Padala Payout")
-    public void KwartaPadalaPayOut_TC_02() throws Exception {
+    public void remoteSuccessfulWalletServicesKwartaPadalaPayout() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsKwartaPadalaPayOutSteps.KPP_TC_02();
 
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "Validate kwarta padala payout without Reference No")
-    public void KwartaPadalaPayOut_TC_03() throws Exception {
+    public void kwartaPadalaPayoutWithoutReferenceNo() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsKwartaPadalaPayOutSteps.KPP_TC_03();
 
@@ -43,7 +43,7 @@ public class WS_KwartaPadalaPayOut_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "Validate kwarta padala payout invalid Reference No.")
-    public void KwartaPadalaPayOut_TC_04() throws Exception {
+    public void kwartaPadalaPayoutInvalidReferenceNo() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsKwartaPadalaPayOutSteps.KPP_TC_04();
 
@@ -51,7 +51,7 @@ public class WS_KwartaPadalaPayOut_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 5, description = "Validate kwarta padala payout invalid amount.")
-    public void KwartaPadalaPayOut_TC_05() throws Exception {
+    public void kwartaPadalaPayoutInvalidAmount() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsKwartaPadalaPayOutSteps.KPP_TC_05();
 
@@ -59,7 +59,7 @@ public class WS_KwartaPadalaPayOut_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 6, description = "Validate kwarta padala payout without inputting amount")
-    public void KwartaPadalaPayOut_TC_06() throws Exception {
+    public void kwartaPadalaPayoutWithoutInputtingAmount() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsKwartaPadalaPayOutSteps.KPP_TC_06();
 
@@ -67,7 +67,7 @@ public class WS_KwartaPadalaPayOut_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 7, description = "Validate claimed transaction")
-    public void KwartaPadalaPayOut_TC_07() throws Exception {
+    public void validateClaimedTransaction() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsKwartaPadalaPayOutSteps.KPP_TC_07();
 
@@ -75,7 +75,7 @@ public class WS_KwartaPadalaPayOut_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 8, description = "Validate Search Kyc in Wallet Services Kwarta Padala Payout")
-    public void KwartaPadalaPayOut_TC_08() throws Exception {
+    public void searchKycInWalletServicesKwartaPadalaPayout() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsKwartaPadalaPayOutSteps.KPP_TC_08();
 
@@ -83,15 +83,15 @@ public class WS_KwartaPadalaPayOut_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "Validate again the cash in transaction if its being processed or not")
-    public void KwartaPadalaPayOut_TC_09() throws Exception {
+    public void validateAgainTheCashInTransaction() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsKwartaPadalaPayOutSteps.KPP_TC_09();
 
         }
 
     }
-    @Test(dependsOnMethods = "loginGoogle", priority = 9, description = "Validate Cancel sendout transction")
-    public void KwartaPadalaPayOut_TC_10() throws Exception {
+    @Test(dependsOnMethods = "loginGoogle", priority = 9, description = "Validate Cancel sendout transaction")
+    public void validateCancelSendoutTransaction() throws Exception {
         if (this.homeSteps.isInHomePage()) {
             this.wsKwartaPadalaPayOutSteps.KPP_TC_10();
 

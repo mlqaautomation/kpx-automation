@@ -55,6 +55,7 @@ public class SendOut_Steps extends Base_Steps {
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
         WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
         waitSleep(10000);
+
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
@@ -297,7 +298,7 @@ public class SendOut_Steps extends Base_Steps {
         List<String> kptnValues = Collections.singletonList(kptnText);
         reader.writeKptnData(kptnValues);
         click(sendOutPageObjects.proceedToPrinting(), "Proceed to Printing");
-        waitUntilLoadingGone(10000);
+        waitUntilLoadingGone(12000);
         click(sendOutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
         if (isVisible(sendOutPageObjects.sendOutTransaction(), getText(sendOutPageObjects.sendOutTransaction()))) {
             ExtentReporter.logPass("DS_TC_08", "Successfully Validate Submit SendOut Transaction");
@@ -347,9 +348,9 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
         waitSleep(5000);
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
-        waitUntilLoadingGone(10000);
+        waitUntilLoadingGone(15000);
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
-        waitSleep(5000);
+        waitSleep(7000);
         if (isVisible(sendOutPageObjects.complianceText(), getText(sendOutPageObjects.complianceText()))) {
             ExtentReporter.logPass("DS_TC_11", "Successfully validate kyc from the Watch List");
         } else {
@@ -491,6 +492,7 @@ public class SendOut_Steps extends Base_Steps {
             waitSleep(10000);
             scrollToBottomOfPageWEB();
             scrollDown(100);
+            scrollToElement(sendOutPageObjects.selectKYC());
             click(sendOutPageObjects.selectKYC(), "Select KYC Button");
         }
     public void searchKYCAddNewReceiver () {

@@ -20,7 +20,7 @@ public class WS_CashOut_PageObjects {
     public WebElement proceedButtonToReceipt(){return getDriver().findElement(By.cssSelector("[class=\"swal2-confirm swal2-styled\"]"));}
     public WebElement cashOutSuccessfulText(){return getDriver().findElement(By.cssSelector("[class=\"sc-aXZVg FiXoI\"]"));}
     public WebElement transactionReceipt(){return getDriver().findElement(By.cssSelector("[class=\"sc-fxwrCY irBnWG\"]"));}
-    public WebElement cancelButtonInReceipt(){return getDriver().findElement(By.cssSelector("[class=\"sc-jnOGJG blZoWd btn btn-secondary\"]"));}
+    public WebElement cancelButtonInReceipt(){return getDriver().findElement(By.xpath("//*[text()='Cancel']"));}
     public WebElement invalidReferenceNum(){return getDriver().findElement(By.cssSelector("[class=\"sc-gEvEer lkAUft\"]"));}
     public WebElement okButton(){return getDriver().findElement(By.cssSelector("[class=\"swal2-confirm swal2-styled\"]"));}
     public WebElement claimedTransactionText(){return getDriver().findElement(By.cssSelector("[class=\"sc-gEvEer lkAUft\"]"));}

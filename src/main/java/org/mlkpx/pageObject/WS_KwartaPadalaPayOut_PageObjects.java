@@ -34,7 +34,7 @@ public class WS_KwartaPadalaPayOut_PageObjects {
     public WebElement payoutSuccessfulText(){return getDriver().findElement(By.cssSelector("[class=\"sc-aXZVg FiXoI\"]"));}
     public WebElement proceedToPrintingButton(){return getDriver().findElement(By.cssSelector("[class=\"swal2-confirm swal2-styled\"]"));}
     public WebElement confirmPayoutButton(){return getDriver().findElement(By.cssSelector("[class=\"swal2-confirm swal2-styled\"]"));}
-    public WebElement cancelButtonReceipt(){return getDriver().findElement(By.cssSelector("[class=\"sc-jnOGJG blZoWd btn btn-secondary\"]"));}
+    public WebElement cancelButtonReceipt(){return getDriver().findElement(By.xpath("//*[text()='Cancel']"));}
     public WebElement searchKYC() {
         return getDriver().findElement(By.xpath("//*[text()='Search KYC']"));
     }

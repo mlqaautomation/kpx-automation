@@ -50,7 +50,7 @@ public class WS_CashInToOwnAccount_PageObjects {
         return getDriver().findElement(By.cssSelector("[class=\"swal2-confirm swal2-styled\"]"));
     }
     public WebElement cancelReceiptButton(){
-        return getDriver().findElement(By.cssSelector("[class=\"sc-jnOGJG blZoWd btn btn-secondary\"]"));
+        return getDriver().findElement(By.xpath("//*[text()='Cancel']"));
     }
     public WebElement detailsReceipt(){
         return getDriver().findElement(By.cssSelector("[class=\"sc-fxwrCY irBnWG\"]"));

@@ -6,7 +6,7 @@
         <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
     </listeners>
 
-    <test name="Sendout Partner Moneygram Input">
+    <test name="Sendout Partner Moneygram and Western Union Input">
         <parameter name="type" value="web">
             <classes>
                 <class name="kpx.actual.SendoutPartner_Moneygram_Test"> </class>

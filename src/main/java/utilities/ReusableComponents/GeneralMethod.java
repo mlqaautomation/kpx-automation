@@ -437,6 +437,53 @@ public class GeneralMethod extends ExtentReporter{
             throw new AssertionError("Cannot get value for element" + e.getMessage());
         }
     }
+
+    /**
+     * Checks if an element is present on the web page.
+     *
+     * @param locator The locator of the element to be checked.
+     * @return true if the element is present, false otherwise.
+     */
+    public boolean isElementPresent(By locator) {
+        try {
+            driver.findElement(locator);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+    /**
+     * Checks if an element is clickable on the web page.
+     *
+     * @param locator The locator of the element to be checked.
+     * @return true if the element is clickable, false otherwise.
+     */
+    public boolean isElementClickable(By locator) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.elementToBeClickable(locator));
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
+
+
+    /**
+     * Checks if an element is present on the page.
+     *
+     * @param by The locator used to find the element.
+     * @return true if the element is present, false otherwise.
+     */
+    public boolean isPresent(By by) {
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
 }
 
 
