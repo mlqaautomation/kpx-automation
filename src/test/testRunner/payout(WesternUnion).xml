@@ -6,12 +6,12 @@
         <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
     </listeners>
 
-    <test name="PAYOUT Input (Domestic)">
+    <test name="Payout Transaction (Western Union Partners)">
         <parameter name="type" value="web">
             <classes>
-                <class name="kpx.actual.Payout_Tests"> </class>
-                <class name="kpx.actual.PayoutCancellation_Tests">  </class>
-                <class name="kpx.actual.PayoutReprinting_Tests">  </class>
+                <class name="kpx.actual.Payout_Partners_Tests"> </class>
+                <class name="kpx.actual.PartnersPayoutCancella_Tests"> </class>
+                <class name="kpx.actual.PayoutWesternPartnerReprinting_Tests"> </class>
             </classes>
         </parameter>
     </test>

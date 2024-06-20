@@ -39,15 +39,6 @@ public class PayoutCancellation_Steps extends Base_Steps{
             type(payoutPageObjects.IRNum(), "KTPN Number", "2111111111212");
             type(payoutPageObjects.ReasonCancel(), "Reason for Cancellation ", "Testing");
             click(payoutPageObjects.CancelButton(), "Cancel Payout");
-//            click(payoutPageObjects.YesCancelButton(), "Yes, Cancel Button");
-//            assertEqual(getText(payoutPageObjects.SuccessfulCancelPay()), "Payout Cancelled");
-//            if (getText(payoutPageObjects.SuccessfulCancelPay()).equals("Payout Cancelled")) {
-//                List<String> payoutKPTNList = Collections.singletonList(payoutKPTN);
-//                // Write the payout KPTN data to the YAML file
-//                reader.writeKptnData(payoutKPTNList);
-//                waitSleep(5000);
-//                click(payoutPageObjects.OKay(), "OK");
-//            }
 
             try{
                 click(payoutPageObjects.YesCancelButton(), "Yes, Cancel Button");
@@ -139,10 +130,13 @@ public class PayoutCancellation_Steps extends Base_Steps{
             click(payoutPageObjects.PayoutCancellation(), "Payout Cancellation Page");
             LoggingUtils.info("Navigated the Payout Cancellation page");
         }
-        type(payoutPageObjects.CancelKTPN(), "KTPN Number", "KPNNHGIZUWY");
+        type(payoutPageObjects.CancelKTPN(), "KTPN Number", "KPNABUNNJOA");
         click(payoutPageObjects.SearchButton(), "Search Button");
 
         assertEqual(getText(payoutPageObjects.AlreadyBeenCancelled()), "Payout Cancelled");
+        LoggingUtils.info("Payout Cancelled\n" +
+                "Payout transaction has already been cancelled.\n");
+
 
     }
     public void validatePayoutCancellationWithNoKPTN()throws Exception{

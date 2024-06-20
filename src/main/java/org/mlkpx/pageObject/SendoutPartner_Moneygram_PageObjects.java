@@ -106,13 +106,13 @@ public class SendoutPartner_Moneygram_PageObjects {
         return getDriver().findElement(By.cssSelector("[class=\"text-monospace\"]"));
     }
     public WebElement submitButton() {
-        return getDriver().findElement(By.xpath("//*[text()='Submit Sendout']"));
+        return getDriver().findElement(By.xpath("//button[normalize-space()='Submit Sendout']"));
     }
     public WebElement proceedToPrintingButton() {
         return getDriver().findElement(By.xpath("//*[text()='Proceed to Printing']"));
     }
-    public WebElement confirmSendoutButton() {
-        return getDriver().findElement(By.cssSelector("[class=\"swal2-confirm swal2-styled\"]"));
+
+    public WebElement confirmSendoutButton(){return getDriver().findElement(By.xpath("//button[normalize-space()='Confirm Sendout']"));
     }
     public WebElement sendoutSuccessfulText() {
         return getDriver().findElement(By.xpath("//*[text()='Sendout Successful']"));

@@ -17,6 +17,7 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         click(sendOutPageObjects.sendOutLink(), "SendOut Page ");
         click(sendoutPartnerMoneygramPageObjects.sendoutTransactionLink(), "Sendout Transaction");
         click(sendoutPartnerMoneygramPageObjects.partnerSendout(), "Partner Sendout Dropdown Button");
+        waitSleep(10000);
         if (isVisible(sendoutPartnerMoneygramPageObjects.sendoutPartnerText(), getText(sendoutPartnerMoneygramPageObjects.sendoutPartnerText()))) {
             ExtentReporter.logPass("PS_TC_01", "Successfully Validated  Sendout Partner Page Navigation");
         } else {
@@ -465,42 +466,26 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
 
     public void PS_TC_13() throws Exception {
         PS_TC_01();
+        waitSleep(5000);
         click(sendoutPartnerMoneygramPageObjects.selectPartner(), "Select Partner");
         click(sendoutPartnerMoneygramPageObjects.selectWesternUnion(), "Select Western Union in Dropdown");
+        waitUntilLoadingGone(10000);
+        waitSleep(5000);
         searchKYC();
+        waitSleep(5000);
+        scrollToElement(sendOutPageObjects.selectIDIssuedate());
+        click(sendOutPageObjects.selectIDIssuedate(), "ID Issue Date field ");
+        click(sendOutPageObjects.selectIDIssuedate(), "ID Issue Date field ");
+        type(sendOutPageObjects.selectIDIssuedate(), "Receiver Birthdate field ", "2020");
+        sendOutPageObjects.selectIDIssuedate().sendKeys(Keys.ARROW_LEFT);
+        type(sendOutPageObjects.selectIDIssuedate(), "Receiver Birthdate field ", "02");
+        sendOutPageObjects.selectIDIssuedate().sendKeys(Keys.ARROW_LEFT);
+        sendOutPageObjects.selectIDIssuedate().sendKeys(Keys.ARROW_LEFT);
+        type(sendOutPageObjects.selectIDIssuedate(), "Receiver Birthdate field ", "02");
 
         waitUntilLoadingGone(10000);
-        scrollToElement(sendOutPageObjects.searchReceivers());
-        click(sendoutPartnerMoneygramPageObjects.searchReceiver(), "Search Receivers Button ");
-        waitUntilLoadingGone(10000);
         scrollDown(100);
-        LoggingUtils.info(getText(sendOutPageObjects.name_Text(1)));
-        String selectedReceiverName = getText(sendOutPageObjects.name_Text(1));
-        click(sendOutPageObjects.selectButton(), "Select Button");
-        waitSleep(30000);
-        scrollToElement(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton());
-        click(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton(),"Restriction Modal Ok button Dropdown");
-        scrollDown(100);
-        click(sendoutPartnerMoneygramPageObjects.nationalityReceivers(),"Nationality Dropdown Field");
-        click(sendoutPartnerMoneygramPageObjects.selectedNationalityReceivers()," Selected Nationality Receivers ");
-        type(sendoutPartnerMoneygramPageObjects.contactNumberReceiver(),"Receiver's Contact Number", propertyReader.getproperty("Contact_number"));
-        String value = getValue(sendOutPageObjects.r_LastName());
-        String[] receiverNames = selectedReceiverName.split(",");
-        boolean containsName = false;
-        for (String name : receiverNames) {
-            if (value.contains(name.trim())) { //loops the lastname text until comma
-                containsName = true;
-                break;
-            }
-        }
-        if (containsName) {
-            ExtentReporter.logPass("PS_TC_13", "Successfully Validate Search Receiver  ");
-            LoggingUtils.info("Successfully Validate Search Receiver  ");
-        } else {
-            ExtentReporter.logFail("PS_TC_13", "Failed to Validate Search Receiver  ");
-            LoggingUtils.error("Failed to Validate Search Receiver " + getValue(sendOutPageObjects.r_LastName()) + " Expected " + selectedReceiverName);
-            Assert.fail("Failure due to Incorrect Details"); //assert the script to fail in testng
-        }
+        addReceiver1();
 
         scrollUp(driver);
         click(sendoutPartnerMoneygramPageObjects.sourceOfFund(),"Source of Fund Dropdown Button");
@@ -513,11 +498,16 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         click(sendoutPartnerMoneygramPageObjects.selectedDeliveryOptions10MinuteService(),"Selected Delivery Options 10 Minute Service");
 
         scrollToElement(sendoutPartnerMoneygramPageObjects.sendAmountField());
-        type(sendoutPartnerMoneygramPageObjects.sendAmountField(), "Valid Principal Amount field ", propertyReader.getproperty("validAmount"));
-        waitSleep(15000);
+        String SendoutAmount = reader.getPartnerSendoutAmount();
+        type(sendoutPartnerMoneygramPageObjects.sendAmountField(), "Valid Principal Amount field ", SendoutAmount);
+        waitSleep(20000);
+        scrollToElement(sendoutPartnerMoneygramPageObjects.submitButton());
         click(sendoutPartnerMoneygramPageObjects.submitButton(),"Submit Sendout Button");
+        waitSleep(10000);
+        scrollToElement(sendoutPartnerMoneygramPageObjects.confirmSendoutButton());
         click(sendoutPartnerMoneygramPageObjects.confirmSendoutButton(),"Confirm Sendout Button");
-        waitSleep(15000);
+        waitUntilLoadingGone(10000);
+        waitSleep(20000);
         //todo get value of kptn locator and post it to yaml file
         String referenceNumber = getText(sendoutPartnerMoneygramPageObjects.referenceNumber());
         List<String> kptnValues = Collections.singletonList(referenceNumber);
@@ -535,52 +525,36 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
     public void PS_TC_14() throws Exception {
         PS_TC_01();
         click(sendOutPageObjects.yesRadioButton(), "Yes Button ");
-        waitSleep(5000);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        waitUntilLoadingGone(10000);
+        waitSleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
-        //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(13));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+        waitUntilLoadingGone(10000);
+        waitSleep(15000);
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
+        waitSleep(3000);
+        scrollToElement(sendoutPartnerMoneygramPageObjects.selectPartner());
         click(sendoutPartnerMoneygramPageObjects.selectPartner(), "Select Partner");
         click(sendoutPartnerMoneygramPageObjects.selectWesternUnion(), "Select Western Union in Dropdown");
         searchKYC();
+        waitSleep(10000);
+        scrollToElement(sendOutPageObjects.selectIDIssuedate());
+        click(sendOutPageObjects.selectIDIssuedate(), "ID Issue Date field ");
+        type(sendOutPageObjects.selectIDIssuedate(), "Receiver Birthdate field ", "2020");
+        sendOutPageObjects.selectIDIssuedate().sendKeys(Keys.ARROW_LEFT);
+        type(sendOutPageObjects.selectIDIssuedate(), "Receiver Birthdate field ", "02");
+        sendOutPageObjects.selectIDIssuedate().sendKeys(Keys.ARROW_LEFT);
+        sendOutPageObjects.selectIDIssuedate().sendKeys(Keys.ARROW_LEFT);
+        type(sendOutPageObjects.selectIDIssuedate(), "Receiver Birthdate field ", "02");
 
         waitUntilLoadingGone(10000);
-        scrollToElement(sendOutPageObjects.searchReceivers());
-        click(sendoutPartnerMoneygramPageObjects.searchReceiver(), "Search Receivers Button ");
-        waitUntilLoadingGone(10000);
         scrollDown(100);
-        LoggingUtils.info(getText(sendOutPageObjects.name_Text(1)));
-        String selectedReceiverName = getText(sendOutPageObjects.name_Text(1));
-        click(sendOutPageObjects.selectButton(), "Select Button");
-        waitSleep(30000);
-        scrollToElement(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton());
-        click(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton(),"Restriction Modal Ok button Dropdown");
-        scrollDown(100);
-        click(sendoutPartnerMoneygramPageObjects.nationalityReceivers(),"Nationality Dropdown Field");
-        click(sendoutPartnerMoneygramPageObjects.selectedNationalityReceivers()," Selected Nationality Receivers ");
-        type(sendoutPartnerMoneygramPageObjects.contactNumberReceiver(),"Receiver's Contact Number", propertyReader.getproperty("Contact_number"));
-        String value = getValue(sendOutPageObjects.r_LastName());
-        String[] receiverNames = selectedReceiverName.split(",");
-        boolean containsName = false;
-        for (String name : receiverNames) {
-            if (value.contains(name.trim())) { //loops the lastname text until comma
-                containsName = true;
-                break;
-            }
-        }
-        if (containsName) {
-            ExtentReporter.logPass("PS_TC_14", "Successfully Validate Search Receiver  ");
-            LoggingUtils.info("Successfully Validate Search Receiver  ");
-        } else {
-            ExtentReporter.logFail("PS_TC_14", "Failed to Validate Search Receiver  ");
-            LoggingUtils.error("Failed to Validate Search Receiver " + getValue(sendOutPageObjects.r_LastName()) + " Expected " + selectedReceiverName);
-            Assert.fail("Failure due to Incorrect Details"); //assert the script to fail in testng
-        }
-
+        addReceiver1();
         scrollUp(driver);
         click(sendoutPartnerMoneygramPageObjects.sourceOfFund(),"Source of Fund Dropdown Button");
         click(sendoutPartnerMoneygramPageObjects.selectedSourceOfFund(),"Selected Source of Fund");
@@ -592,19 +566,24 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         click(sendoutPartnerMoneygramPageObjects.selectedDeliveryOptions10MinuteService(),"Selected Delivery Options 10 Minute Service");
 
         scrollToElement(sendoutPartnerMoneygramPageObjects.sendAmountField());
-        type(sendoutPartnerMoneygramPageObjects.sendAmountField(), "Valid Principal Amount field ", propertyReader.getproperty("validAmount"));
-        waitSleep(15000);
+        String SendoutAmount = reader.getPartnerSendoutAmount();
+        type(sendoutPartnerMoneygramPageObjects.sendAmountField(), "Valid Principal Amount field ", SendoutAmount);
+        waitSleep(20000);
+        scrollToElement(sendoutPartnerMoneygramPageObjects.submitButton());
         click(sendoutPartnerMoneygramPageObjects.submitButton(),"Submit Sendout Button");
+        waitSleep(10000);
+        scrollToElement(sendoutPartnerMoneygramPageObjects.confirmSendoutButton());
         click(sendoutPartnerMoneygramPageObjects.confirmSendoutButton(),"Confirm Sendout Button");
-        waitSleep(15000);
+        waitSleep(30000);
+        waitUntilLoadingGone(10000);
         //todo get value of kptn locator and post it to yaml file
         String referenceNumber = getText(sendoutPartnerMoneygramPageObjects.referenceNumber());
         List<String> kptnValues = Collections.singletonList(referenceNumber);
         reader.writeKptnDataWesternUnionPartner10MinuteServiceRemote(kptnValues);
         if(isVisible(sendoutPartnerMoneygramPageObjects.sendoutSuccessfulText(), getText(sendoutPartnerMoneygramPageObjects.sendoutSuccessfulText()))){
-            ExtentReporter.logPass("PS_TC_14", "Successfully Sendout Partner Moneygram");
+            ExtentReporter.logPass("PS_TC_13", "Successfully Sendout Partner Moneygram");
         }else{
-            ExtentReporter.logFail("PS_TC_14", "Fail to Verify Sendout Partner Moneygram");
+            ExtentReporter.logFail("PS_TC_13", "Fail to Verify Sendout Partner Moneygram");
             Assert.fail("Fail to Verify Sendout Partner Moneygram");
         }
         click(sendoutPartnerMoneygramPageObjects.proceedToPrintingButton(),"Proceed to Printing Button");
@@ -616,18 +595,23 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
 
 
     public void searchKYC () {
-        click(sendOutPageObjects.searchKYC(), "Search KYC button ");
-        String[] randomName = reader.getRandomName();
-        type(sendOutPageObjects.lastName(), "Lastname ", propertyReader.getproperty("forPartnerLastName"));
-        type(sendOutPageObjects.firstName(), "Firstname ", propertyReader.getproperty("forPartnerFirstName"));
+        waitSleep(5000);
+        click(sendOutPageObjects.searchKYC(), "Search KYC button");
+        type(sendOutPageObjects.lastName(), "Lastname ", "Balansag");
+        type(sendOutPageObjects.firstName(), "Firstname ", "Rochelle");
         click(sendOutPageObjects.searchBtn(), "Search Button ");
         waitUntilLoadingGone(10000);
+        waitSleep(10000);
+        scrollToElement(sendOutPageObjects.viewButton());
         click(sendOutPageObjects.viewButton(), "View Button ");
         waitSleep(5000);
         scrollDown(100);
+        waitSleep(8000);
         scrollToBottomOfPageWEB();
+
         scrollToElement(sendOutPageObjects.selectKYC());
         click(sendOutPageObjects.selectKYC(), "Select KYC Button");
+        waitSleep(4000);
     }
 
     public void addReceiver () {
@@ -658,8 +642,37 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         scrollUp(driver);
     }
 
-
-
+    public void addReceiver1 () {
+        scrollToElement(sendOutPageObjects.searchReceivers());
+        click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
+        waitUntilLoadingGone(10000);
+        click(sendOutPageObjects.addNewReceivers(), "Add new Receiver ");
+        waitUntilLoadingGone(10000);
+        type(sendOutPageObjects.r_LastName(), "R_Lastname ", "Siarot");
+        type(sendOutPageObjects.r_FirstName(), "R_Firstname ", "Enrique");
+        type(sendOutPageObjects.r_MiddleName(), "R_Middlename ", "Alferez");
+        scrollDown(100);
+        waitUntilLoadingGone(10000);
+        click(sendOutPageObjects.SelectCountry(), "Select Country");
+        waitUntilLoadingGone(10000);
+        scrollDown(100);
+        waitSleep(30000);
+        scrollToElement(sendOutPageObjects.OkCountry());
+        waitSleep(20000);
+        click(sendOutPageObjects.OkCountry(), "Confirm Country");
+        click(sendOutPageObjects.SelectNationality(), "Select Nationality");
+        click(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ");
+        type(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ", "2002");
+        sendOutPageObjects.selectBdate().sendKeys(Keys.ARROW_LEFT);
+        type(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ", "02");
+        sendOutPageObjects.selectBdate().sendKeys(Keys.ARROW_LEFT);
+        sendOutPageObjects.selectBdate().sendKeys(Keys.ARROW_LEFT);
+        type(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ", "11");
+        click(sendOutPageObjects.selectSex(), "Receiver Selected Sex Field ");
+        type(sendOutPageObjects.typeContactNum(), "Receiver Contact No.", "09203447377");
+        click(sendOutPageObjects.selectProvince(), "Receiver Province/State");
+        waitUntilLoadingGone(10000);
+    }
 
 
 
