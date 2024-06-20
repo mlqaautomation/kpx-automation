@@ -27,7 +27,7 @@ public class BillsPayChangeD_Steps extends Base_Steps{
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String BillsPayKPTN = reader.getBillsPayKPTN();
+            String BillsPayKPTN = reader.getBillsPayCignalKPTN();
             type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
@@ -49,9 +49,10 @@ public class BillsPayChangeD_Steps extends Base_Steps{
             click(billsPayPageObjects.InitiatedBy(), "Initiated By");
             click(billsPayPageObjects.SaveChanges(), "Save Changes");
             click(billsPayPageObjects.YesSaveChanges(), "Yes, Save Changes");
-            assertEqual(getText(billsPayPageObjects.SuccessChanges()), "Details have been successfully updated.");
+            assertEqual(getText(billsPayPageObjects.SuccessChanges()), "Bills Pay Details Updated");
             LoggingUtils.info("Bills Pay Details Updated" +
                     "Details have been successfully updated.");
+            click(billsPayPageObjects.OKTransaction(), "OK");
 
         }
     }
@@ -59,22 +60,23 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
+        waitSleep(5000);
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String RemoteBillsPayKPTN = reader.getRemoteBillsPayKPTN();
+            String RemoteBillsPayKPTN = reader.getRemoteBillsPayCignalKPTN();
             type(billsPayPageObjects.RefNum(), "KTPN Number",RemoteBillsPayKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation()))){
             click(billsPayPageObjects.RemoteTransaction(), "Remote Transaction");
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
             wait.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.BranchCode()));
 
             type(billsPayPageObjects.BranchCode(), "Search Branch Code",  propertyReader.getproperty("BranchCode"));
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(13));
+            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
 
             waits.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.OperatorID()));
             type(billsPayPageObjects.OperatorID(), "Search Operator ID",  propertyReader.getproperty("OperatorID"));
@@ -98,9 +100,10 @@ public class BillsPayChangeD_Steps extends Base_Steps{
             click(billsPayPageObjects.InitiatedBy(), "Initiated By");
             click(billsPayPageObjects.SaveChanges(), "Save Changes");
             click(billsPayPageObjects.YesSaveChanges(), "Yes, Save Changes");
-            assertEqual(getText(billsPayPageObjects.SuccessChanges()), "Details have been successfully updated.");
+            assertEqual(getText(billsPayPageObjects.SuccessChanges()), "Bills Pay Details Updated");
             LoggingUtils.info("Bills Pay Details Updated" +
                     "Details have been successfully updated.");
+            click(billsPayPageObjects.OKTransaction(), "OK");
 
         }
     }
@@ -224,11 +227,11 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation()))){
             click(billsPayPageObjects.RemoteTransaction(), "Remote Transaction");
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
             wait.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.BranchCode()));
 
             type(billsPayPageObjects.BranchCode(), "Search Branch Code",  propertyReader.getproperty("BranchCode"));
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(13));
+            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
 
             waits.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.OperatorID()));
             type(billsPayPageObjects.OperatorID(), "Search Operator ID",  propertyReader.getproperty("OperatorID"));

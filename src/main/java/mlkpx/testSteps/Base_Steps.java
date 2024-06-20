@@ -33,7 +33,8 @@ public abstract class Base_Steps extends GeneralMethod {
     KPDomesticReports_PageObjects kpDomesticReportsPageObjects = new KPDomesticReports_PageObjects();
     MLWalletServicesReportBranchReport_PageObjects mlWalletServicesReportBranchReportPageObjects = new MLWalletServicesReportBranchReport_PageObjects();
 
-
+    Sendout_Partners_PageObjects sendoutPartnersPageObjects = new Sendout_Partners_PageObjects();
+    Payout_Partners_PageObjects payoutPartnersPageObjects = new Payout_Partners_PageObjects();
     final String filepath = "src\\test\\java\\resources\\testData.properties";
     propertyReader propertyReader = new propertyReader(filepath);
     Assert anAssert;

@@ -15,7 +15,7 @@ public class  BillsPay_Tests extends BaseTest {
     }
 
    // B I L L S  P A Y    S E N D O U T
-    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful bills payment transaction")
+    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate successful bills payment transaction")
     public void BillsPay_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPaySteps.navigatePayoutPage();
@@ -24,7 +24,7 @@ public class  BillsPay_Tests extends BaseTest {
         }
 
     }
-    @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate successful remote bills payment transaction")
+    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful remote bills payment transaction")
     public void BillsPay_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPaySteps.navigatePayoutPage();

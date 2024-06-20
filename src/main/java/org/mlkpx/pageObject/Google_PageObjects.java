@@ -10,7 +10,9 @@ public class Google_PageObjects {
         return getDriver().findElement(By.cssSelector("[role='button']"));
     }
     public WebElement signInWithKPX (){
-        return getDriver().findElement(By.xpath("//*[text()='SIGN IN WITH KPX']"));
+
+        return getDriver().findElement(By.xpath("//button[normalize-space()='SIGN IN WITH KPX']"));
+
     }
 
     public WebElement emailField(){

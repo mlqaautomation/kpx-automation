@@ -6,7 +6,7 @@
         <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
     </listeners>
 
-    <test name="BILLSPAY Input">
+    <test name="BILLSPAY Maynilad Partner">
         <parameter name="type" value="web">
             <classes>
                 <class name="kpx.actual.BillsPay_Tests">  </class>

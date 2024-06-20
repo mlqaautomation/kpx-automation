@@ -13,14 +13,6 @@ import java.util.List;
 
 public class Payout_Steps extends Base_Steps{
 
-    //P A Y O U T    T R A N S A C T I O N
-    // todo
-    //  use method in yamlReader to retrieve random KPTN
-    //  use method in yamlReader to retrieve random KYC
-    //  parameterize test data for branch code
-    //  add Assert.fail() for failed tc
-    //  optimize code ** create method for common steps such as searching kyc and etc ** to reuse again.
-
     public void navigatePayoutPage()throws Exception{
         try{
             click(payoutPageObjects.payout_link(), "Payout");
@@ -103,7 +95,7 @@ public class Payout_Steps extends Base_Steps{
             wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
             //todo
             type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
 
             waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
             type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
@@ -179,7 +171,7 @@ public class Payout_Steps extends Base_Steps{
         click(sendOutPageObjects.searchBtn(), "Search Button ");
         waitUntilLoadingGone(10000);
         click(sendOutPageObjects.viewButton(), "View Button ");
-        waitSleep(5000);
+        waitSleep(10000);
         scrollToElement(sendOutPageObjects.selectKYC());
         scrollDown(100);
         click(sendOutPageObjects.selectKYC(), "Select KYC Button");
@@ -220,7 +212,7 @@ public class Payout_Steps extends Base_Steps{
         type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "200");
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
-        waitSleep(3000);
+        waitSleep(20000);
         //todo get value of kptn locator and post it to yaml file
         String kptnText = getText(sendOutPageObjects.kptnText());
         List<String> kptnValues = Collections.singletonList(kptnText);
@@ -242,8 +234,10 @@ public class Payout_Steps extends Base_Steps{
         type(payoutPageObjects.PayAmount(), "Amount", "200");
         click(payoutPageObjects.SearchButton(), "Search Button");
         waitUntilLoadingGone(10000);
+        waitSleep(5000);
         click(payoutPageObjects.SearchKYC(), "Search KYC");
         waitUntilLoadingGone(10000);
+        waitSleep(5000);
         click(payoutPageObjects.SearchKYCAc(), "Search Button");
         waitUntilLoadingGone(10000);
         click(payoutPageObjects.ViewKYCCustomer(), "View KYC");
@@ -304,8 +298,8 @@ public class Payout_Steps extends Base_Steps{
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+        waitSleep(10000);
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
@@ -377,8 +371,8 @@ public class Payout_Steps extends Base_Steps{
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+        waitSleep(10000);
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
@@ -422,8 +416,8 @@ public class Payout_Steps extends Base_Steps{
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+        waitSleep(10000);
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
@@ -460,8 +454,8 @@ public class Payout_Steps extends Base_Steps{
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+        waitSleep(10000);
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
@@ -496,8 +490,8 @@ public class Payout_Steps extends Base_Steps{
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+        waitSleep(10000);
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
@@ -533,8 +527,8 @@ public class Payout_Steps extends Base_Steps{
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+        waitSleep(10000);
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
@@ -570,8 +564,8 @@ public class Payout_Steps extends Base_Steps{
             wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
             payoutPageObjects.BranchCode().clear();
             type(payoutPageObjects.BranchCode(), "Search Branch Code", "0617143912");
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+            waitSleep(10000);
             waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
             type(payoutPageObjects.OperatorID(), "Search Operator ID", "20236709");
             ExtentReporter.logPass("validateRemoteInvalidOperatorID","Operator not found");

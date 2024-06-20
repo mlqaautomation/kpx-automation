@@ -30,8 +30,11 @@ public class BaseTest {
     protected SendOutCancellation_Steps sendOutCancellationSteps;
     protected Payout_Steps payoutSteps;
     protected PayoutCancellation_Steps payoutCancellationSteps;
+    protected PayoutCancelle_Partner_Steps payoutCancellePartnerSteps;
     protected PayoutReprinting_Steps payoutReprintingSteps;
     protected BillsPay_Steps billsPaySteps;
+    protected BillsPayCignal_Steps billsPayCignalSteps;
+    protected BillsPayPagbig_Steps billsPayPagbigSteps;
     protected BillsPayCancellation_Steps billsPayCancellationSteps;
     protected BillsPayChangeD_Steps billsPayChangeDSteps;
     protected BillsPayReprinting_Steps billsPayReprintingSteps;
@@ -63,7 +66,8 @@ public class BaseTest {
     protected GenerateTestData generateTestData;
 
 
-
+    protected Sendout_Partners_Steps sendoutPartnersSteps;
+    protected Payout_Partners_Steps payoutPartnersSteps;
     @Parameters("type")
     @BeforeClass (alwaysRun = true)
     public void setUp(final String type){
@@ -130,6 +134,8 @@ public class BaseTest {
         this.payoutCancellationSteps = new PayoutCancellation_Steps();
         this.payoutReprintingSteps = new PayoutReprinting_Steps();
         this.billsPaySteps = new BillsPay_Steps();
+        this.billsPayCignalSteps = new BillsPayCignal_Steps();
+        this.billsPayPagbigSteps = new BillsPayPagbig_Steps();
         this.billsPayCancellationSteps = new BillsPayCancellation_Steps();
         this.billsPayChangeDSteps = new BillsPayChangeD_Steps();
         this.billsPayReprintingSteps = new BillsPayReprinting_Steps();
@@ -148,8 +154,14 @@ public class BaseTest {
         this.requestForChangePartnerSteps = new RequestForChangePartner_Steps();
         this.orReprintingPartnerSteps = new ORReprintingPartner_Steps();
         this.soReprintingPartnerSteps = new SOReprintingPartner_Steps();
+
+        this.sendoutPartnersSteps = new Sendout_Partners_Steps();
+        this.payoutPartnersSteps = new Payout_Partners_Steps();
+        this.payoutCancellePartnerSteps = new PayoutCancelle_Partner_Steps();
+
         this.kpDomesticReportsSteps = new KPDomesticReports_Steps();
         this.mlWalletServicesReportBranchReportSteps = new MLWalletServicesReportBranchReport_Steps();
+
 
 
     }

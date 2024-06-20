@@ -5,10 +5,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Logger.LoggingUtils;
 
 import java.time.Duration;
-import java.util.Collections;
-import java.util.List;
 
-public class BillsPayCancellation_Steps extends Base_Steps{
+public class BillsPayCancellation_Cignal_Steps extends Base_Steps{
     //B I L L S  P A Y    C A N C E L L A T I O N
     public void navigatePayoutPage()throws Exception{
         try{
@@ -30,8 +28,8 @@ public class BillsPayCancellation_Steps extends Base_Steps{
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String BillsPayKPTN = reader.getBillsPayCignalKPTN();
-            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayKPTN);
+            String BillsPayCignalKPTN = reader.getBillsPayCignalKPTN();
+            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayCignalKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -59,18 +57,18 @@ public class BillsPayCancellation_Steps extends Base_Steps{
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String BillsPayRemoteKPTN = reader.getRemoteBillsPayCignalKPTN();
-            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayRemoteKPTN);
+            String BillsPayRemoteCignalKPTN = reader.getRemoteBillsPayCignalKPTN();
+            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayRemoteCignalKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))){
             click(billsPayPageObjects.RemoteTransaction(), "Remote Transaction");
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.BranchCode()));
 
             type(billsPayPageObjects.BranchCode(), "Search Branch Code",  propertyReader.getproperty("BranchCode"));
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(13));
 
             waits.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.OperatorID()));
             type(billsPayPageObjects.OperatorID(), "Search Operator ID",  propertyReader.getproperty("OperatorID"));
@@ -134,7 +132,7 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEMOSPERU");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -152,7 +150,7 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEMOSPERU");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -173,7 +171,7 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEMOSPERU");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -191,7 +189,7 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEMOSPERU");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -212,7 +210,7 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEMOSPERU");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -235,7 +233,7 @@ public class BillsPayCancellation_Steps extends Base_Steps{
         click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEMOSPERU");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 

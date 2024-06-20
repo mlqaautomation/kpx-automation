@@ -26,7 +26,7 @@ public class BillsPayReprinting_Steps extends Base_Steps{
         waitSleep(3000);
         reader.refreshTestData();
         waitSleep(3000);
-        String BillsPayKPTN = reader.getBillsPayKPTN();
+        String BillsPayKPTN = reader.getBillsPayCignalKPTN();
         type(billsPayPageObjects.RefNum(), "Reference Number",BillsPayKPTN);
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testings");
         click(billsPayPageObjects.Reprint(), "Search Button");
@@ -48,7 +48,7 @@ public class BillsPayReprinting_Steps extends Base_Steps{
         waitSleep(3000);
         reader.refreshTestData();
         waitSleep(3000);
-        String RemoteBillsPayKPTN = reader.getRemoteBillsPayKPTN();
+        String RemoteBillsPayKPTN = reader.getRemoteBillsPayCignalKPTN();
         type(billsPayPageObjects.RefNum(), "Reference Number",RemoteBillsPayKPTN);
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testings");
         click(billsPayPageObjects.Reprint(), "Search Button");
@@ -71,6 +71,9 @@ public class BillsPayReprinting_Steps extends Base_Steps{
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testings");
         click(billsPayPageObjects.Reprint(), "Search Button");
         assertEqual(getText(billsPayPageObjects.NoTransactionFound()), "No Transaction Found");
+        LoggingUtils.info("No Transaction Found\n" +
+                "Bills Payment transaction could not be found. Please check the reference no. and try again.");
+
 
     }
     public void validateEmptyRefBillsPayReprinting()throws Exception{
