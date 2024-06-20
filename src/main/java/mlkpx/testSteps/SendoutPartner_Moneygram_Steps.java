@@ -205,7 +205,7 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         assertEqual(getText(sendOutPageObjects.chargeAmount()), propertyReader.getproperty("minimumCharge"));
         clearField(sendoutPartnerMoneygramPageObjects.sendAmountField());
         type(sendoutPartnerMoneygramPageObjects.sendAmountField(), "Valid Principal Amount field ", propertyReader.getproperty("highestAmount"));
-        waitSleep(20000);
+        waitSleep(23000);
         assertEqual(getText(sendOutPageObjects.chargeAmount()), propertyReader.getproperty("maximumCharge"));
         waitSleep(3000);
         if (isTotalCorrect()) {
