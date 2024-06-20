@@ -9,17 +9,9 @@
     <test name="PAYOUT Input (Domestic)">
         <parameter name="type" value="web">
             <classes>
-<!--                <class name="kpx.actual.Payout_Tests"> </class>-->
-<!--                <class name="kpx.actual.PayoutCancellation_Tests">  </class>-->
-<!--                <class name="kpx.actual.PayoutReprinting_Tests">  </class>-->
-            </classes>
-        </parameter>
-    </test>
-    <test name="Payout Transaction (Partners)">
-        <parameter name="type" value="web">
-            <classes>
-                <class name="kpx.actual.Payout_Partners_Tests"> </class>
-                <class name="kpx.actual.PartnersPayoutCancella_Tests"> </class>
+                <class name="kpx.actual.Payout_Tests"> </class>
+                <class name="kpx.actual.PayoutCancellation_Tests">  </class>
+                <class name="kpx.actual.PayoutReprinting_Tests">  </class>
             </classes>
         </parameter>
     </test>

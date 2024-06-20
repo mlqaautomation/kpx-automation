@@ -22,13 +22,14 @@ public class PayoutReprinting_Steps extends Base_Steps{
         }
         waitSleep(2000);
         reader.refreshTestData();
-        waitSleep(3000);
+        waitSleep(10000);
         String payoutKPTN = reader.getSuccessPayoutKPTN();
         type(payoutCancellationPageObjects.RepKTPN(), "KTPN Number",payoutKPTN);
         type(payoutCancellationPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testing");
         click(payoutCancellationPageObjects.Reprint(), "Search Button");
-        if(isVisible(payoutCancellationPageObjects.ReprintPayoutReceipt(), getText(payoutCancellationPageObjects.ReprintPayoutReceipt()))){
-            LoggingUtils.info("Navigated the Payout Reprint Receipt page");
+        waitSleep(5000);
+        if(isVisible(payoutCancellationPageObjects.ReprintPayoutPartnerReceipt(), getText(payoutCancellationPageObjects.ReprintPayoutPartnerReceipt()))){
+            LoggingUtils.info("Navigated the Payout Partner Reprint Receipt page");
             click(payoutCancellationPageObjects.PrintReceipt(), "Print Receipt");
 //            click(payoutPageObjects.PrintButton(), "Print");
             LoggingUtils.info("Successful in printing payout receipt");
@@ -43,13 +44,14 @@ public class PayoutReprinting_Steps extends Base_Steps{
         }
         waitSleep(2000);
         reader.refreshTestData();
-        waitSleep(3000);
+        waitSleep(10000);
         String remotepayoutKPTN = reader.getSuccessRemotePayoutKPTN();
         type(payoutCancellationPageObjects.RepKTPN(), "KTPN Number",remotepayoutKPTN);
         type(payoutCancellationPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testing");
         click(payoutCancellationPageObjects.Reprint(), "Search Button");
-        if(isVisible(payoutCancellationPageObjects.ReprintPayoutReceipt(), getText(payoutCancellationPageObjects.ReprintPayoutReceipt()))){
-            LoggingUtils.info("Navigated the Payout Reprint Receipt page");
+        waitSleep(5000);
+        if(isVisible(payoutCancellationPageObjects.ReprintPayoutPartnerReceipt(), getText(payoutCancellationPageObjects.ReprintPayoutPartnerReceipt()))){
+            LoggingUtils.info("Navigated the Payout Partner Reprint Receipt page");
             click(payoutCancellationPageObjects.PrintReceipt(), "Print Receipt");
 //            click(payoutPageObjects.PrintButton(), "Print");
             LoggingUtils.info("Successful in printing payout receipt");

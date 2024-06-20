@@ -13,23 +13,24 @@ public class Payout_Partners_Tests extends BaseTest {
             ExtentReporter.logPass("loginGoogle","Login, Passed!!");
         }
     }
-    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "Successful partner payout transaction")
+    @Test(dependsOnMethods = "loginGoogle", priority =1, description = "Successful partner payout transaction")
     public void Partner_Payout_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
-            this.sendoutPartnersSteps.PS_TC_01();
+            this.sendoutPartnerMoneygramSteps.PS_TC_13();
             this.payoutPartnersSteps.navigatePayoutPage();
             this.payoutPartnersSteps.validateSuccessfulPartnerPayout();
 
         }
     }
-//    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "Successful remote partner payout transaction")
-//    public void Partner_Payout_TC_02()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.payoutPartnersSteps.navigatePayoutPage();
-//            this.payoutPartnersSteps.validateRemoteSuccessfulPartnerPayout();
-//
-//        }
-//    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "Successful remote partner payout transaction")
+    public void Partner_Payout_TC_02()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.sendoutPartnerMoneygramSteps.PS_TC_14();
+            this.payoutPartnersSteps.navigatePayoutPage();
+            this.payoutPartnersSteps.validateRemoteSuccessfulPartnerPayout();
+
+        }
+    }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "Partner payout transaction invalid ref")
     public void Partner_Payout_TC_03()throws Exception{
         if(this.homeSteps.isInHomePage()){

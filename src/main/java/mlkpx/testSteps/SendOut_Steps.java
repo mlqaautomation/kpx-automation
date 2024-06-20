@@ -53,7 +53,8 @@ public class SendOut_Steps extends Base_Steps {
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(13));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+        waitSleep(10000);
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
@@ -71,6 +72,7 @@ public class SendOut_Steps extends Base_Steps {
         scrollToBottomOfPageWEB();
         click(sendOutPageObjects.selectKYC(), "Select KYC Button");
         waitUntilLoadingGone(10000);
+        waitSleep(5000);
         scrollDown(100);
         searchReceiver();
         waitSleep(5000);
@@ -120,8 +122,7 @@ public class SendOut_Steps extends Base_Steps {
 
     public void DS_TC_04() throws Exception {
         navigationFOrSendOutDomestic();
-//        searchKYC();
-        searchKYCAddNewReceiver();
+        searchKYC();
         waitUntilLoadingGone(10000);
         addReceiver();
         scrollToElement(sendOutPageObjects.sourceOfFund());
@@ -284,8 +285,8 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
         type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
-        type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
-        waitSleep(5000);
+        type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "100");
+        waitSleep(10000);
         scrollToElement(sendOutPageObjects.submitSendOut());
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
         waitUntilLoadingGone(10000);
@@ -385,7 +386,9 @@ public class SendOut_Steps extends Base_Steps {
             waitUntilLoadingGone(10000);
             type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
             type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
+            waitSleep(3000);
             type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
+            waitSleep(3000);
             type(sendOutPageObjects.principalAmount(), "Principal Amount field ", propertyReader.getproperty("valid_principal_amount"));
             waitSleep(5000);
             click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
@@ -485,7 +488,7 @@ public class SendOut_Steps extends Base_Steps {
             click(sendOutPageObjects.searchBtn(), "Search Button ");
             waitUntilLoadingGone(10000);
             click(sendOutPageObjects.viewButton(), "View Button ");
-            waitSleep(5000);
+            waitSleep(10000);
             scrollToBottomOfPageWEB();
             scrollDown(100);
             click(sendOutPageObjects.selectKYC(), "Select KYC Button");
@@ -550,6 +553,7 @@ public class SendOut_Steps extends Base_Steps {
             scrollToElement(sendOutPageObjects.searchReceivers());
             click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
             waitUntilLoadingGone(10000);
+            scrollToElement(sendOutPageObjects.selectButton());
             click(sendOutPageObjects.selectButton(), "Select Button");
             waitUntilLoadingGone(10000);
             scrollToElement(sendOutPageObjects.no_ContactNo());

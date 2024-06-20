@@ -21,7 +21,7 @@ public class GeneralMethod extends ExtentReporter{
     public final yamlReader reader = new yamlReader();
     private JavascriptExecutor js;
     private boolean loadingInProgress = false;
-    
+
     public void click(WebElement locator, String elementName){
         try {
             if (isDisplayed(locator)) {
@@ -230,6 +230,7 @@ public class GeneralMethod extends ExtentReporter{
         }
 
     }
+
     public void waitUntilLoadingGone(int maxWaitTimeMs) {
         long startTime = System.currentTimeMillis();
         boolean isLoading = true;
@@ -299,7 +300,19 @@ public class GeneralMethod extends ExtentReporter{
             LoggingUtils.info("Error while scrolling to element: " + e);
         }
     }
-
+    public static void scrollVertically(By byLocator, int scrollValue) {
+        try {
+            WebElement divElement = getWebDriver().findElement(byLocator);
+            JavascriptExecutor jsExecutor = (JavascriptExecutor) getWebDriver();
+            jsExecutor.executeScript("arguments[0].scrollLeft = arguments[1]", divElement, scrollValue);
+            LoggingUtils.info(">>Scrolled vertically to using locator: " + byLocator);
+            ExtentReporter.logInfo("Scroll Vertically ", "Scrolling vertically with the  value of :" + scrollValue);
+        } catch (Exception e) {
+            LoggingUtils.error(">>Failed to scroll vertically using locator: " + byLocator + " - " + e.getMessage());
+            ExtentReporter.logFail("Unable Scroll vertically ", "Scrolling vertically with the  error of :" + e.getMessage());
+            throw e;
+        }
+    }
 
     public List<WebElement> staleException_Click(WebElement locator) {
         List<WebElement> outcome = null;
@@ -323,12 +336,17 @@ public class GeneralMethod extends ExtentReporter{
         jsExecutor.executeScript("window.scrollTo(0, " + scrollHeight + ")");
     }
 
+    public void scrollDownInElement(WebElement element, int scrollPercentage) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        long totalHeight = (long) jsExecutor.executeScript("return arguments[0].scrollHeight;", element);
+        long scrollHeight = totalHeight * scrollPercentage / 100;
+
+        jsExecutor.executeScript("arguments[0].scrollTop = arguments[1];", element, scrollHeight);
+    }
     public void scrollUp(WebDriver driver) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("window.scrollTo(0, 0)");
     }
-
-
     // Get the generated KPTN
     public String getGeneratedKPTN() {
         WebElement kptnElement = driver.findElement(By.id("kptnElementId")); // Replace "kptnElementId" with the actual ID or locator of the element displaying the KPTN

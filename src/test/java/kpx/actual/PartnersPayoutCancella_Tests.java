@@ -13,14 +13,25 @@ public class PartnersPayoutCancella_Tests extends BaseTest {
             ExtentReporter.logPass("loginGoogle","Login, Passed!!");
         }
     }
-    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "Successful Cancel partner payout transaction")
-    public void Partner_CancelPayout_TC_01()throws Exception{
+//    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "Successful Cancel partner payout transaction")
+//    public void Partner_CancelPayout_TC_01()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.sendoutPartnerMoneygramSteps.PS_TC_13();
+//            this.payoutPartnersSteps.navigatePayoutPage();
+//            this.payoutPartnersSteps.validateSuccessfulPartnerPayout();
+//            this.payoutCancellePartnerSteps.navigatePayoutPage();
+//            this.payoutCancellePartnerSteps.validateSuccessfulPartnerPayoutCancellation();
+//
+//        }
+//    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "Successful Remote Cancel partner payout transaction")
+    public void Partner_CancelPayout_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
-            this.sendoutPartnersSteps.PS_TC_01();
+            this.sendoutPartnerMoneygramSteps.PS_TC_14();
             this.payoutPartnersSteps.navigatePayoutPage();
-            this.payoutPartnersSteps.validateSuccessfulPartnerPayout();
+            this.payoutPartnersSteps.validateRemoteSuccessfulPartnerPayout();
             this.payoutCancellePartnerSteps.navigatePayoutPage();
-            this.payoutCancellePartnerSteps.validateSuccessfulPartnerPayoutCancellation();
+            this.payoutCancellePartnerSteps.validateSuccessfulPartnerRemotePayoutCancellation();
 
         }
     }

@@ -33,8 +33,8 @@ public class PayoutCancelle_Partner_Steps extends Base_Steps{
         waitSleep(2000);
         reader.refreshTestData();
         waitSleep(3000);
-        String payoutRef = reader.getPayoutReference();
-        type(payoutPageObjects.CancelReference(), "Reference Number",payoutRef);
+        String payoutRefRemote = reader.getPayoutReference();
+        type(payoutPageObjects.CancelReference(), "Reference Number",payoutRefRemote);
         click(payoutPageObjects.SelectPartners(), "Select Partner");
         click(payoutPageObjects.SearchButton(), "Search Button");
         waitUntilLoadingGone(10000);
@@ -50,7 +50,7 @@ public class PayoutCancelle_Partner_Steps extends Base_Steps{
                 waitSleep(5000);
                 if (getText(payoutPageObjects.SuccessfulCancelPartners()).equals("Payout Reversed")) {
                     assertEqual(getText(payoutPageObjects.SuccessfulCancelPartners()), "Payout Reversed");
-                    List<String> payoutKPTNList = Collections.singletonList(payoutRef);
+                    List<String> payoutKPTNList = Collections.singletonList(payoutRefRemote);
                     reader.writeReferenceNumData(payoutKPTNList);
                     waitSleep(2000);
                     click(payoutPageObjects.OKay(), "OK");
@@ -59,7 +59,51 @@ public class PayoutCancelle_Partner_Steps extends Base_Steps{
 
             }catch (Exception e){
                 LoggingUtils.info("Payout Cancellation Unsuccessful");
-                List<String> kptnValues = Collections.singletonList(payoutRef);
+                List<String> kptnValues = Collections.singletonList(payoutRefRemote);
+                reader.writeReferenceNumData(kptnValues);
+                waitSleep(2000);
+            }
+        }
+    }
+    public void validateSuccessfulPartnerRemotePayoutCancellation()throws Exception{
+        //Must need to cancel before/within five minutes.
+        waitUntilLoadingGone(10000);
+        click(payoutPageObjects.payoutCanPage(), "Payout Cancellation");
+        if(isVisible(payoutPageObjects.payoutPartnerCancel(), getText(payoutPageObjects.payoutPartnerCancel()))){
+            click(payoutPageObjects.payoutPartnerCancel(), "Payout Partner Cancellation Page");
+            LoggingUtils.info("Navigated the Payout Partner Cancellation page");
+
+        }
+        waitSleep(2000);
+        reader.refreshTestData();
+        waitSleep(3000);
+        String payoutRefRemote = reader.getPayoutRemoteReference();
+        type(payoutPageObjects.CancelReference(), "Reference Number",payoutRefRemote);
+        click(payoutPageObjects.SelectPartners(), "Select Partner");
+        click(payoutPageObjects.SearchButton(), "Search Button");
+        waitUntilLoadingGone(10000);
+        waitSleep(2000);
+        if(isVisible(payoutPageObjects.PayoutCancellationAmountInfo(), getText(payoutPageObjects.PayoutCancellationAmountInfo()))){
+            type(payoutPageObjects.IRNum(), "IR Number", "2111111711212");
+            click(payoutPageObjects.ReasonOfCan(), "Reason for Cancellation");
+            click(payoutPageObjects.CancelButton(), "Cancel Payout");
+
+            try{
+                click(payoutPageObjects.YesCancelTran(), "Yes, Cancel Transaction");
+                waitUntilLoadingGone(10000);
+                waitSleep(5000);
+                if (getText(payoutPageObjects.SuccessfulCancelPartners()).equals("Payout Reversed")) {
+                    assertEqual(getText(payoutPageObjects.SuccessfulCancelPartners()), "Payout Reversed");
+                    List<String> payoutKPTNList = Collections.singletonList(payoutRefRemote);
+                    reader.writeReferenceNumData(payoutKPTNList);
+                    waitSleep(2000);
+                    click(payoutPageObjects.OKay(), "OK");
+
+                }
+
+            }catch (Exception e){
+                LoggingUtils.info("Payout Cancellation Unsuccessful");
+                List<String> kptnValues = Collections.singletonList(payoutRefRemote);
                 reader.writeReferenceNumData(kptnValues);
                 waitSleep(2000);
             }
@@ -202,9 +246,8 @@ public class PayoutCancelle_Partner_Steps extends Base_Steps{
         waitSleep(2000);
         click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
-        //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", "6456456");
         if(isVisible(payoutPageObjects.PayoutCancellationAmountInfo(), getText(payoutPageObjects.PayoutCancellationAmountInfo()))){
             click(payoutPageObjects.CancelButton(), "Cancel Payout");
@@ -230,14 +273,13 @@ public class PayoutCancelle_Partner_Steps extends Base_Steps{
         waitSleep(2000);
         click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        waitSleep(10000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
-        //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
-        type(payoutPageObjects.OperatorID(), "Search Operator ID", "456464");
+        type(payoutPageObjects.OperatorID(), "Search Operator ID", "65645");
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
         if(isVisible(payoutPageObjects.PayoutCancellationAmountInfo(), getText(payoutPageObjects.PayoutCancellationAmountInfo()))){
             click(payoutPageObjects.CancelButton(), "Cancel Payout");
@@ -264,10 +306,11 @@ public class PayoutCancelle_Partner_Steps extends Base_Steps{
         waitUntilLoadingGone(10000);
         waitSleep(2000);
         click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        waitSleep(6000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "");

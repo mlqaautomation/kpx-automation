@@ -12,6 +12,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
     public void navigatePayoutPage()throws Exception{
         try{
             click(billsPayPageObjects.billsPay_link(), "Bills Pay");
+            waitSleep(5000);
             if(isVisible(billsPayPageObjects.billsPay_h2(), getText(billsPayPageObjects.billsPay_h2()))){
                 LoggingUtils.info("Navigated to Bills Pay Page");
             }
@@ -23,15 +24,15 @@ public class BillsPayCignal_Steps extends Base_Steps{
     public void validateSuccessfulBillsPayCignal()throws Exception {
         waitSleep(2000);
         waitUntilLoadingGone(10000);
-       // scrollToElement(billsPayPageObjects.BPSendout());
-//        click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
-//        click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
+        scrollToElement(billsPayPageObjects.BPSendout());
+        click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
+        click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(2000);
+        waitSleep(10000);
         click(billsPayPageObjects.ClickOption(), "Option");
-        waitSleep(3000);
+        waitSleep(8000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ChooseOptionCignal());
         click(billsPayPageObjects.ChooseOptionCignal(), "Cignal Partner");
@@ -43,6 +44,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
         type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "ALFEREZ");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
+        waitSleep(20000);
         click(billsPayPageObjects.Click2Option(), "Select Entity Code ");
         click(billsPayPageObjects.ChooseEntityCode(), "Entity Code ");
         type(billsPayPageObjects.BPOtherLname(), "Last Name", "SIAROT");
@@ -84,17 +86,18 @@ public class BillsPayCignal_Steps extends Base_Steps{
         }
     }
     public void validateSuccessfulRemoteBillsPayCignal()throws Exception {
-        waitSleep(2000);
+        waitSleep(5000);
         waitUntilLoadingGone(10000);
         // scrollToElement(billsPayPageObjects.BPSendout());
 //        click(billsPayPageObjects.BPSendout(), "Bills Pay Sendout Transaction");
 //        click(billsPayPageObjects.NoRemoteTransaction(), "No remote Transaction");
+        scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(13));
-        waitUntilLoadingGone(10000);
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+        waitSleep(5000);
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
         type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
@@ -114,6 +117,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
         type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "ALFEREZ");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
+        waitSleep(20000);
         click(billsPayPageObjects.Click2Option(), "Select Entity Code ");
         click(billsPayPageObjects.ChooseEntityCode(), "Entity Code ");
         type(billsPayPageObjects.BPOtherLname(), "Last Name", "SIAROT");
@@ -182,9 +186,9 @@ public class BillsPayCignal_Steps extends Base_Steps{
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(2000);
+        waitSleep(10000);
         click(billsPayPageObjects.ClickOption(), "Option");
-        waitSleep(3000);
+        waitSleep(5000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ChooseOptionCignal());
         click(billsPayPageObjects.ChooseOptionCignal(), "Cignal Partner");
@@ -242,7 +246,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(2000);
+        waitSleep(10000);
         click(billsPayPageObjects.ClickOption(), "Option");
         waitSleep(3000);
         waitUntilLoadingGone(10000);
@@ -283,7 +287,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(2000);
+        waitSleep(10000);
         click(billsPayPageObjects.ClickOption(), "Option");
         waitSleep(3000);
         waitUntilLoadingGone(10000);
@@ -342,7 +346,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(2000);
+        waitSleep(10000);
         click(billsPayPageObjects.ClickOption(), "Option");
         waitSleep(3000);
         waitUntilLoadingGone(10000);
@@ -377,7 +381,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(2000);
+        waitSleep(10000);
         click(billsPayPageObjects.ClickOption(), "Option");
         waitSleep(3000);
         waitUntilLoadingGone(10000);
@@ -413,7 +417,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(2000);
+        waitSleep(10000);
         click(billsPayPageObjects.ClickOption(), "Option");
         waitSleep(3000);
         waitUntilLoadingGone(10000);
@@ -483,9 +487,9 @@ public class BillsPayCignal_Steps extends Base_Steps{
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(2000);
+        waitSleep(6000);
         click(billsPayPageObjects.ClickOption(), "Option");
-        waitSleep(3000);
+        waitSleep(5000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ChooseOptionCignal());
         click(billsPayPageObjects.ChooseOptionCignal(), "Cignal Partner");
@@ -519,7 +523,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(2000);
+        waitSleep(6000);
         click(billsPayPageObjects.ClickOption(), "Option");
         waitSleep(3000);
         waitUntilLoadingGone(10000);
@@ -551,7 +555,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
             waitSleep(2000);
             scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            waitSleep(5000);
+            waitSleep(10000);
             assertEqual(getText(billsPayPageObjects.InvalidAccountNum()), "Incorrect Payment Details");
             LoggingUtils.info("Incorrect Payment Details" +
                     "The account number provided is invalid. Please try entering this again. (version: f6ec269)");
@@ -563,9 +567,9 @@ public class BillsPayCignal_Steps extends Base_Steps{
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(2000);
+        waitSleep(8000);
         click(billsPayPageObjects.ClickOption(), "Option");
-        waitSleep(3000);
+        waitSleep(5000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ChooseOptionCignal());
         click(billsPayPageObjects.ChooseOptionCignal(), "Cignal Partner");
@@ -650,9 +654,9 @@ public class BillsPayCignal_Steps extends Base_Steps{
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(2000);
+        waitSleep(6000);
         click(billsPayPageObjects.ClickOption(), "Option");
-        waitSleep(3000);
+        waitSleep(5000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ChooseOptionCignal());
         click(billsPayPageObjects.ChooseOptionCignal(), "Cignal Partner");
@@ -686,9 +690,9 @@ public class BillsPayCignal_Steps extends Base_Steps{
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(2000);
+        waitSleep(6000);
         click(billsPayPageObjects.ClickOption(), "Option");
-        waitSleep(3000);
+        waitSleep(5000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ChooseOptionCignal());
         click(billsPayPageObjects.ChooseOptionCignal(), "Cignal Partner");

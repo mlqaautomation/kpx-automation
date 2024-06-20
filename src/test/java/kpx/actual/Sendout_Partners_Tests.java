@@ -13,10 +13,16 @@ public class Sendout_Partners_Tests extends BaseTest {
             ExtentReporter.logPass("loginGoogle","Login, Passed!!");
         }
     }
-    @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Successful Partner Sendout Transaction")
-    public void PartnerSendout_TC_01()throws Exception{
+    @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Successful Western Union Partner Sendout Transaction")
+    public void PartnerSendoutWesternUnion_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.sendoutPartnersSteps.PS_TC_01();
+        }
+    }
+    @Test(dependsOnMethods = "loginGoogle" , priority = 2, description = "Successful Western Union Partner Remote Sendout Transaction")
+    public void PartnerSendoutWesternUnionRemote_TC_02()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.sendoutPartnersSteps.PS_TC_02();
         }
     }
 

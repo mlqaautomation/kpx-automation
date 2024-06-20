@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sendout Partner" thread-count="1" >
+    <listeners>
+        <listener class-name="utilities.ExtentReport.ExtentReporter" />
+        <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
+    </listeners>
+
+    <test name="Sendout Partner Moneygram Input">
+        <parameter name="type" value="web">
+            <classes>
+                <class name="kpx.actual.SendoutPartner_Moneygram_Test"> </class>
+                <class name="kpx.actual.SendoutPartnerMoneygramCancellation_Test"> </class>
+                <class name="kpx.actual.RequestForChangePartner_Tests"> </class>
+<!--                <class name="kpx.actual.ORReprintingPartner_Tests"> </class>-->
+                <class name="kpx.actual.SOReprintingPartner_Tests"> </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

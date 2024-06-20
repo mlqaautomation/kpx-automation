@@ -34,6 +34,7 @@ public class BaseTest {
     protected PayoutReprinting_Steps payoutReprintingSteps;
     protected BillsPay_Steps billsPaySteps;
     protected BillsPayCignal_Steps billsPayCignalSteps;
+    protected BillsPayPagbig_Steps billsPayPagbigSteps;
     protected BillsPayCancellation_Steps billsPayCancellationSteps;
     protected BillsPayChangeD_Steps billsPayChangeDSteps;
     protected BillsPayReprinting_Steps billsPayReprintingSteps;
@@ -47,8 +48,11 @@ public class BaseTest {
     protected WS_KwartaPadalaPayOut_Steps wsKwartaPadalaPayOutSteps;
     protected WS_Reprinting_Steps wsReprintingSteps;
     protected WS_ShopSafe_Steps wsShopSafeSteps;
-
-
+    protected SendoutPartner_Moneygram_Steps sendoutPartnerMoneygramSteps;
+    protected SendoutPartnerMoneygramCancellation_Steps sendoutPartnerMoneygramCancellationSteps;
+    protected RequestForChangePartner_Steps requestForChangePartnerSteps;
+    protected ORReprintingPartner_Steps orReprintingPartnerSteps;
+    protected SOReprintingPartner_Steps soReprintingPartnerSteps;
 
 
     protected Login loginWalletSteps;
@@ -129,6 +133,7 @@ public class BaseTest {
         this.payoutReprintingSteps = new PayoutReprinting_Steps();
         this.billsPaySteps = new BillsPay_Steps();
         this.billsPayCignalSteps = new BillsPayCignal_Steps();
+        this.billsPayPagbigSteps = new BillsPayPagbig_Steps();
         this.billsPayCancellationSteps = new BillsPayCancellation_Steps();
         this.billsPayChangeDSteps = new BillsPayChangeD_Steps();
         this.billsPayReprintingSteps = new BillsPayReprinting_Steps();
@@ -142,6 +147,11 @@ public class BaseTest {
         this.wsKwartaPadalaPayOutSteps = new WS_KwartaPadalaPayOut_Steps();
         this.wsReprintingSteps = new WS_Reprinting_Steps();
         this.wsShopSafeSteps = new WS_ShopSafe_Steps();
+        this.sendoutPartnerMoneygramSteps = new SendoutPartner_Moneygram_Steps();
+        this.sendoutPartnerMoneygramCancellationSteps = new SendoutPartnerMoneygramCancellation_Steps();
+        this.requestForChangePartnerSteps = new RequestForChangePartner_Steps();
+        this.orReprintingPartnerSteps = new ORReprintingPartner_Steps();
+        this.soReprintingPartnerSteps = new SOReprintingPartner_Steps();
 
         this.sendoutPartnersSteps = new Sendout_Partners_Steps();
         this.payoutPartnersSteps = new Payout_Partners_Steps();

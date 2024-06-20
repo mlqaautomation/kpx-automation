@@ -72,7 +72,7 @@ public class Payout_PageObjects {
         return getDriver().findElement(By.xpath("//input[@name='referenceNumber']"));
     }
     public WebElement ClickOption () {
-        return getDriver().findElement(By.cssSelector("[class=\"css-19bqh2r\"]"));
+        return getDriver().findElement(By.cssSelector("[width=\"20\"]"));
     }
     public WebElement ChooseOption () {
         return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div//div[4]"));
@@ -237,7 +237,7 @@ public class Payout_PageObjects {
     }
     public WebElement YesKeepTransaction(){return getDriver().findElement(By.xpath("//button[normalize-space()='Yes, Keep Transaction']"));
     }
-    public WebElement AlreadyBeenCancelled(){return getDriver().findElement(By.xpath("//p[contains(text(),'Payout transaction has already been cancelled.')]"));
+    public WebElement AlreadyBeenCancelled(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Payout Cancelled')]"));
     }
 
 

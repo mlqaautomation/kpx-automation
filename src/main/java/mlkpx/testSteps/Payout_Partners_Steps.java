@@ -22,15 +22,15 @@ public class Payout_Partners_Steps extends Base_Steps{
     }
     public void validateSuccessfulPartnerPayout()throws Exception {
         click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
-        click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
+
         click(payoutPageObjects.PartnerTransaction(), "Partner Transaction");
         waitUntilLoadingGone(10000);
         reader.refreshTestData();
-        waitSleep(3000);
-        String sendoutReference = reader.getSendOutReferenceNum(); // Call the getSendOutKPTN function
+        waitSleep(10000);
+        String sendoutReference = reader.getSendOutReferenceNum();
         type(payoutPageObjects.InputReference(), "Reference Number", sendoutReference);
-        waitSleep(6000);
         waitUntilLoadingGone(10000);
+        waitSleep(10000);
         scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
@@ -39,6 +39,8 @@ public class Payout_Partners_Steps extends Base_Steps{
         scrollToElement(payoutPageObjects.SearchButton());
         click(payoutPageObjects.SearchButton(), "Search Button");
         waitUntilLoadingGone(10000);
+        waitSleep(5000);
+        scrollToElement(payoutPageObjects.SearchKYC());
         click(payoutPageObjects.SearchKYC(), "Search KYC");
         waitUntilLoadingGone(10000);
         click(payoutPageObjects.SearchKYCAc(), "Search Button");
@@ -57,11 +59,13 @@ public class Payout_Partners_Steps extends Base_Steps{
         if (payoutPageObjects.SendoutInfo().getText().contains("Sendout Transaction Information")) {
             waitSleep(2000);
             click(payoutPageObjects.PurposeOfTransaction(), "Purpose of Transaction");
+            waitSleep(2000);
             click(payoutPageObjects.RelationToSender(), "Relation to Sender");
             waitUntilLoadingGone(10000);
-            waitSleep(20000);
+            waitSleep(30000);
             waitUntilLoadingGone(10000);
             scrollToElement(payoutPageObjects.ClaimAmount());
+            waitSleep(15000);
             click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
 
         }
@@ -70,8 +74,9 @@ public class Payout_Partners_Steps extends Base_Steps{
             scrollToElement(payoutPageObjects.ConfirmPayout());
             click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
             waitUntilLoadingGone(10000);
-            waitSleep(20000);
+            waitSleep(30000);
             waitUntilLoadingGone(10000);
+            waitSleep(30000);
             if (payoutPageObjects.SuccessfulPay().getText().contains("Payout Successful")) {
                 assertEqual(getText(payoutPageObjects.SuccessfulPay()), "Payout Successful");
                 List<String> sendoutReferenceList = Collections.singletonList(sendoutReference);
@@ -80,6 +85,7 @@ public class Payout_Partners_Steps extends Base_Steps{
                 click(payoutPageObjects.proceedToPrinting(), "Proceed to Printing");
                 waitUntilLoadingGone(10000);
                 waitSleep(3000);
+                scrollToElement(payoutPageObjects.cancelButtoninReceipt());
                 click(payoutPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
                 waitSleep(5000);
                 click(payoutPageObjects.payout_link(), "Payout");
@@ -90,25 +96,28 @@ public class Payout_Partners_Steps extends Base_Steps{
     public void validateRemoteSuccessfulPartnerPayout()throws Exception{
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
-
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            waitUntilLoadingGone(10000);
+            waitSleep(5000);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
             wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
             //todo
             type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+            waitSleep(5000);
+            waitUntilLoadingGone(10000);
             waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
             type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
             type(payoutPageObjects.ReasonRemote(), "Reason", "Testing");
-
+            waitSleep(5000);
+            waitUntilLoadingGone(10000);
             click(payoutPageObjects.PartnerTransaction(), "Partner Transaction");
             waitUntilLoadingGone(10000);
             reader.refreshTestData();
-            waitSleep(3000);
-            String sendoutReference = reader.getSendOutReferenceNum(); // Call the getSendOutKPTN function
+            waitSleep(10000);
+            String sendoutReference = reader.getSendOutReferenceNumRemote();
             type(payoutPageObjects.InputReference(), "Reference Number", sendoutReference);
             waitSleep(6000);
-            waitUntilLoadingGone(10000);
+            waitUntilLoadingGone(20000);
             scrollToElement(payoutPageObjects.ClickOption());
             click(payoutPageObjects.ClickOption(), "Option");
             waitSleep(2000);
@@ -117,6 +126,8 @@ public class Payout_Partners_Steps extends Base_Steps{
             scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
             waitUntilLoadingGone(10000);
+            waitSleep(10000);
+            scrollToElement(payoutPageObjects.SearchKYC());
             click(payoutPageObjects.SearchKYC(), "Search KYC");
             waitUntilLoadingGone(10000);
             click(payoutPageObjects.SearchKYCAc(), "Search Button");
@@ -132,27 +143,31 @@ public class Payout_Partners_Steps extends Base_Steps{
             waitSleep(2000);
             scrollToElement(payoutPageObjects.SelectKYC());
             click(payoutPageObjects.SelectKYC(), "Select KYC");
+            waitSleep(5000);
             if (payoutPageObjects.SendoutInfo().getText().contains("Sendout Transaction Information")) {
                 waitSleep(2000);
                 click(payoutPageObjects.PurposeOfTransaction(), "Purpose of Transaction");
                 click(payoutPageObjects.RelationToSender(), "Relation to Sender");
                 waitUntilLoadingGone(10000);
-                waitSleep(5000);
+                waitSleep(20000);
+                waitUntilLoadingGone(10000);
                 scrollToElement(payoutPageObjects.ClaimAmount());
+                waitSleep(20000);
                 click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
 
             }
             if (payoutPageObjects.PayoutConfirm().isEnabled()) {
-                waitSleep(2000);
+                waitSleep(3000);
                 scrollToElement(payoutPageObjects.ConfirmPayout());
                 click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
                 waitUntilLoadingGone(10000);
-                waitSleep(20000);
+                waitSleep(30000);
                 waitUntilLoadingGone(10000);
+                waitSleep(30000);
                 if (payoutPageObjects.SuccessfulPay().getText().contains("Payout Successful")) {
                     assertEqual(getText(payoutPageObjects.SuccessfulPay()), "Payout Successful");
                     List<String> sendoutReferenceList = Collections.singletonList(sendoutReference);
-                    reader.writePayoutReferenceData(sendoutReferenceList);
+                    reader.writePayoutRemoteReferenceData(sendoutReferenceList);
                     waitUntilLoadingGone(10000);
                     click(payoutPageObjects.proceedToPrinting(), "Proceed to Printing");
                     waitUntilLoadingGone(10000);
@@ -170,8 +185,9 @@ public class Payout_Partners_Steps extends Base_Steps{
         waitSleep(3000);
         type(payoutPageObjects.InputReference(), "Reference Number", "34645647");
         waitSleep(6000);
-        waitUntilLoadingGone(10000);
+        waitUntilLoadingGone(20000);
         scrollToElement(payoutPageObjects.ClickOption());
+        waitSleep(10000);
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
         click(payoutPageObjects.ChooseOption(), "Choose Partners");
@@ -188,12 +204,12 @@ public class Payout_Partners_Steps extends Base_Steps{
     public void validateRemotePartnerPayoutInvalidRef()throws Exception{
         click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
         click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
-
+        waitSleep(10000);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
 
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
@@ -205,10 +221,11 @@ public class Payout_Partners_Steps extends Base_Steps{
         waitSleep(3000);
         type(payoutPageObjects.InputReference(), "Reference Number", "645745745");
         waitSleep(6000);
-        waitUntilLoadingGone(10000);
+        waitUntilLoadingGone(20000);
         scrollToElement(payoutPageObjects.ClickOption());
+        waitSleep(10000);
         click(payoutPageObjects.ClickOption(), "Option");
-        waitSleep(2000);
+        waitSleep(5000);
         click(payoutPageObjects.ChooseOption(), "Choose Partners");
         waitSleep(10000);
         scrollToElement(payoutPageObjects.SearchButton());
@@ -229,7 +246,7 @@ public class Payout_Partners_Steps extends Base_Steps{
         waitSleep(3000);
         type(payoutPageObjects.InputReference(), "Reference Number", "9371565521");
         waitSleep(6000);
-        waitUntilLoadingGone(10000);
+        waitUntilLoadingGone(20000);
         scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
@@ -249,7 +266,8 @@ public class Payout_Partners_Steps extends Base_Steps{
     public void validateRemotePartnerPayoutWrongPartner()throws Exception{
         click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
         click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
-
+        waitUntilLoadingGone(10000);
+        waitSleep(5000);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
@@ -266,7 +284,7 @@ public class Payout_Partners_Steps extends Base_Steps{
         waitSleep(3000);
         type(payoutPageObjects.InputReference(), "Reference Number", "9371565521");
         waitSleep(6000);
-        waitUntilLoadingGone(10000);
+        waitUntilLoadingGone(20000);
         scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
@@ -292,10 +310,11 @@ public class Payout_Partners_Steps extends Base_Steps{
         waitSleep(3000);
         type(payoutPageObjects.InputReference(), "Reference Number", "2322565816");
         waitSleep(6000);
-        waitUntilLoadingGone(10000);
+        waitUntilLoadingGone(20000);
         scrollToElement(payoutPageObjects.ClickOption());
+        waitSleep(5000);
         click(payoutPageObjects.ClickOption(), "Option");
-        waitSleep(2000);
+        waitSleep(5000);
         scrollToElement(payoutPageObjects.ChooseOption());
         click(payoutPageObjects.ChooseOption(), "Choose Partners");
         waitSleep(10000);
@@ -371,7 +390,7 @@ public class Payout_Partners_Steps extends Base_Steps{
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
 
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));
@@ -397,10 +416,11 @@ public class Payout_Partners_Steps extends Base_Steps{
         waitSleep(3000);
         type(payoutPageObjects.InputReference(), "Reference Number", "9371565521");
         waitSleep(6000);
-        waitUntilLoadingGone(10000);
+        waitUntilLoadingGone(20000);
         scrollToElement(payoutPageObjects.ClickOption());
+        waitSleep(5000);
         click(payoutPageObjects.ClickOption(), "Option");
-        waitSleep(2000);
+        waitSleep(5000);
         click(payoutPageObjects.ChooseOption(), "Choose Partners");
         waitSleep(10000);
         scrollToElement(payoutPageObjects.SearchButton());
@@ -455,10 +475,11 @@ public class Payout_Partners_Steps extends Base_Steps{
 
         type(payoutPageObjects.InputReference(), "Reference Number", "9371565521");
         waitSleep(6000);
-        waitUntilLoadingGone(10000);
+        waitUntilLoadingGone(20000);
         scrollToElement(payoutPageObjects.ClickOption());
+        waitSleep(5000);
         click(payoutPageObjects.ClickOption(), "Option");
-        waitSleep(2000);
+        waitSleep(5000);
         click(payoutPageObjects.ChooseOption(), "Choose Partners");
         waitSleep(10000);
         scrollToElement(payoutPageObjects.SearchButton());
