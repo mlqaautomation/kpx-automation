@@ -349,7 +349,6 @@ public class BillsPay_Steps extends Base_Steps{
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "0");
             assertEqual(getText(billsPayPageObjects.ZeroAmount()), "Minimum amount is 1");
         }
-
     }
     public void validateInvalidAccountNumTransaction()throws Exception {
         waitSleep(2000);

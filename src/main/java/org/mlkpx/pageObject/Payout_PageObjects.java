@@ -18,6 +18,9 @@ public class Payout_PageObjects {
     public WebElement payoutCanPage(){
         return getDriver().findElement(By.xpath("//a[@class='dropdown-toggle nav-link']"));
     }
+    public WebElement payoutPartnerCancel(){
+        return getDriver().findElement(By.xpath("//a[@href='/payout/partner-cancellation']"));
+    }
     public WebElement payoutRepPage(){
         return getDriver().findElement(By.xpath("//a[@href='/payout/reprint']"));
     }
@@ -46,10 +49,10 @@ public class Payout_PageObjects {
     public WebElement NoTransactionFound(){
         return getDriver().findElement(By.xpath("//h5[contains(text(),'No Transaction Found')]"));
     }
-
-
-
-
+    public WebElement PurposeOfTransaction(){return getDriver().findElement(By.xpath("//option[@value='FAMILY SUPPORT/LIVING EXPENSES']"));
+    }
+    public WebElement RelationToSender(){return getDriver().findElement(By.xpath("//option[@value='FAMILY']"));
+    }
     public WebElement UnremoteTransaction(){
         return getDriver().findElement(By.xpath("//input[@value='0']"));
     }
@@ -59,11 +62,30 @@ public class Payout_PageObjects {
     public WebElement DomesticTransaction(){
         return getDriver().findElement(By.xpath("//input[@value='ML']"));
     }
+    public WebElement PartnerTransaction(){
+        return getDriver().findElement(By.xpath("//input[@value='PARTNER']"));
+    }
     public WebElement PayKTPN(){
         return getDriver().findElement(By.xpath("//input[@name='kptn']"));
     }
+    public WebElement InputReference(){
+        return getDriver().findElement(By.xpath("//input[@name='referenceNumber']"));
+    }
+    public WebElement ClickOption () {
+        return getDriver().findElement(By.cssSelector("[width=\"20\"]"));
+    }
+    public WebElement ChooseOption () {
+        return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div//div[4]"));
+    }
+    public WebElement WrongchooseOption () {
+        return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div//div[10]"));
+    }
+
     public WebElement CancelKTPN(){
         return getDriver().findElement(By.xpath("//input[@name='kptn']"));
+    }
+    public WebElement CancelReference(){
+        return getDriver().findElement(By.xpath("//input[@name='referenceNumber']"));
     }
     public WebElement RepKTPN(){
         return getDriver().findElement(By.xpath("//input[@name='kptn']"));
@@ -83,6 +105,9 @@ public class Payout_PageObjects {
     public WebElement CancelButton(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='Cancel Payout']"));
     }
+    public WebElement ReasonOfCan(){
+        return getDriver().findElement(By.xpath("//option[@label='WRONG PAYOUT']"));
+    }
     public WebElement PrintReceipt(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='Print Receipt']"));
     }
@@ -92,11 +117,17 @@ public class Payout_PageObjects {
     public WebElement YesCancelButton(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='Yes, Cancel Payout']"));
     }
+    public WebElement YesCancelTran(){
+        return getDriver().findElement(By.xpath("//button[normalize-space()='Yes, Cancel Transaction']"));
+    }
     public WebElement kptnText(){return getDriver().findElement(By.cssSelector("[data-testid='sendoutKPTN']"));
     }
     public WebElement PayAmount(){return getDriver().findElement(By.xpath("//input[@step='0.01' and @name='amount']"));}
     public WebElement SearchButton(){return getDriver().findElement(By.xpath("//button[normalize-space()='Search']"));
     }
+    public WebElement SelectPartners(){return getDriver().findElement(By.xpath("//option[@value='5']"));
+    }
+
     public WebElement Reprint(){return getDriver().findElement(By.xpath("//button[normalize-space()='Reprint']"));
     }
     public WebElement OKay(){return getDriver().findElement(By.xpath("//button[normalize-space()='OK']"));
@@ -119,6 +150,7 @@ public class Payout_PageObjects {
     }
 
     public WebElement KtpnInfo(){return getDriver().findElement(By.xpath("//p[contains(text(),'KPTN')]"));}
+    public WebElement SendoutInfo(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Sendout Transaction Information')]"));}
     public WebElement SearchKYC(){return getDriver().findElement(By.xpath("//button[normalize-space()='Search KYC']"));
     }
     public WebElement SearchLName(){return getDriver().findElement(By.xpath("//input[@name='lastName']"));
@@ -153,7 +185,13 @@ public class Payout_PageObjects {
     }
     public WebElement SuccessfulCancelPay(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Payout Cancelled')]"));
     }
+    public WebElement SuccessfulCancelPartners(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Payout Reversed')]"));
+    }
     public WebElement InvalidKTPN(){return getDriver().findElement(By.xpath("//h5[contains(text(),'No Transaction Found')]"));
+    }
+    public WebElement InvalidRef(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Error')]"));
+    }
+    public WebElement EmptyPurpose(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Something Went Wrong')]"));
     }
     public WebElement OKInvalidKTPN(){return getDriver().findElement(By.xpath("//button[normalize-space()='OK']"));
     }
@@ -180,8 +218,16 @@ public class Payout_PageObjects {
     }
     public WebElement ReasonRequired(){return getDriver().findElement(By.xpath("//small[contains(text(),'Reason for Cancellation is required')]"));
     }
+    public WebElement BranchRequired(){return getDriver().findElement(By.xpath("//span[contains(text(),'Branch not found')]"));
+    }
+    public WebElement OperatorRequired(){return getDriver().findElement(By.xpath("//span[contains(text(),'Operator not found')]"));
+    }
+    public WebElement ReasonsRequired(){return getDriver().findElement(By.xpath("//span[contains(text(),'Reason is required.')]"));
+    }
 
-    public WebElement ReReasonRequired(){return getDriver().findElement(By.xpath("//small[contains(text(),'Reason is required')]"));
+    public WebElement RefRequired(){return getDriver().findElement(By.xpath("//small[contains(text(),'Reference number is required.')]"));
+    }
+    public WebElement PartnerRequired(){return getDriver().findElement(By.xpath("//span[contains(text(),'Please select a partner')]"));
     }
     public WebElement CannotCancel(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Cannot Cancel Payout')]"));
     }
@@ -191,7 +237,8 @@ public class Payout_PageObjects {
     }
     public WebElement YesKeepTransaction(){return getDriver().findElement(By.xpath("//button[normalize-space()='Yes, Keep Transaction']"));
     }
-    public WebElement AlreadyBeenCancelled(){return getDriver().findElement(By.xpath("//*[text()='Payout Cancelled']"));
+    public WebElement AlreadyBeenCancelled(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Payout Cancelled')]"));
+
     }
 
 

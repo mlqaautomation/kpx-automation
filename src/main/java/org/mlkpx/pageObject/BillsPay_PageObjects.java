@@ -12,6 +12,9 @@ public class BillsPay_PageObjects {
     public WebElement billsPay_h2(){
         return getDriver().findElement(By.xpath("//h2"));
     }
+    public WebElement navBayad(){
+        return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div/div/div[@id=\"react-select-2-group-0-heading\"]"));
+    }
     public WebElement billsPay_PayInfo(){
         return getDriver().findElement(By.xpath("//h5[contains(text(),'Payor Information')]"));
     }
@@ -93,6 +96,9 @@ public class BillsPay_PageObjects {
     public WebElement InvalidAccountNum(){
         return getDriver().findElement(By.xpath("//h5[contains(text(),'Incorrect Payment Details')]"));
     }
+    public WebElement InvalidTransaction(){
+        return getDriver().findElement(By.xpath("//h5[contains(text(),'Payment Failed')]"));
+    }
     public WebElement InvalidContact(){
         return getDriver().findElement(By.xpath("//small[contains(text(),'Must start with 639|09|9 followed by 9 digits.')]"));
     }
@@ -109,6 +115,18 @@ public class BillsPay_PageObjects {
     }
     public WebElement BPMiddleName() {
         return getDriver().findElement(By.xpath("//input[@name='accountMiddleName']"));
+    }
+    public WebElement BPOwnContactNum() {
+        return getDriver().findElement(By.xpath("//input[@name='accountMobileNumber']"));
+    }
+    public WebElement BPOtherLname() {
+        return getDriver().findElement(By.xpath("//input[@name='otherInfo.LastName']"));
+    }
+    public WebElement BPOtherFname() {
+        return getDriver().findElement(By.xpath("//input[@name='otherInfo.FirstName']"));
+    }
+    public WebElement BPOtherMInitial() {
+        return getDriver().findElement(By.xpath("//input[@name='otherInfo.MI']"));
     }
     public WebElement AccountNum(){
         return getDriver().findElement(By.xpath("//input[@name='accountAccountNumber']"));
@@ -185,6 +203,12 @@ public class BillsPay_PageObjects {
     public WebElement ConfirmSubmitBillsPay(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='Confirm Payment']"));
     }
+    public WebElement RetrySubmitBillsPay(){
+        return getDriver().findElement(By.xpath("//button[normalize-space()='Retry']"));
+    }
+    public WebElement CancelSubmitBillsPay(){
+        return getDriver().findElement(By.xpath("//button[normalize-space()='Cancel']"));
+    }
     public WebElement SuccessfulBillsPay(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Bills Pay Successful')]"));
     }
     public WebElement DuplicateBillsPay(){return getDriver().findElement(By.xpath("//h5[contains(text(),'Duplicate Bills Payment')]"));
@@ -246,7 +270,8 @@ public class BillsPay_PageObjects {
         return getDriver().findElement(By.xpath("//button[normalize-space()='Print Receipt']"));
     }
     public WebElement NoTransactionFound(){
-        return getDriver().findElement(By.xpath("//*[text()='No Transaction Found']"));
+        return getDriver().findElement(By.xpath("//h5[contains(text(),'No Transaction Found')]"));
+
     }
     public WebElement CancelPayment(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='Cancel Payment']"));
@@ -302,8 +327,12 @@ public class BillsPay_PageObjects {
 
 
         public WebElement SuccessChanges () {
-            return getDriver().findElement(By.xpath("//*[text()='Details have been successfully updated.']"));
+            return getDriver().findElement(By.xpath("//h5[contains(text(),'Bills Pay Details Updated')]"));
+
         }
+    public WebElement OKTransaction(){
+        return getDriver().findElement(By.xpath("//button[normalize-space()='OK']"));
+    }
         public WebElement NoEditChanges () {
             return getDriver().findElement(By.xpath("//h5[text()='No Changes Have Been Made']"));
         }
@@ -326,11 +355,31 @@ public class BillsPay_PageObjects {
             return getDriver().findElement(By.xpath("//button[normalize-space()='OK']"));
         }
         public WebElement ClickOption () {
-            return getDriver().findElement(By.cssSelector("[width='20']"));
+            return getDriver().findElement(By.xpath("(//div[@class=' css-tlfecz-indicatorContainer'])[1]"));
         }
+
+    public WebElement Click2Option () {
+        return getDriver().findElement(By.xpath("(//div[@class=' css-tlfecz-indicatorContainer'])[2]"));
+    }
+    public WebElement TransactionType () {
+        return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div//div[2]"));
+    }
         public WebElement ChooseOption () {
             return getDriver().findElement(By.xpath("(//*[@class=' css-26l3qy-menu']//img)[2]"));
         }
+        public WebElement ChooseOptionCignal () {
+            return getDriver().findElement(By.xpath("(//*[@class=' css-26l3qy-menu']//img)[3]"));
+        }
+    public WebElement ChooseOptionpagibig() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'PAG-IBIG')]"));
+    }
+    public WebElement OtherBillerspagibig() {
+        return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div/div/div[@id=\"react-select-2-group-5-heading\"]"));
+    }
+        public WebElement ChooseEntityCode () {
+            return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div//div"));
+        }
+
 
 
 
