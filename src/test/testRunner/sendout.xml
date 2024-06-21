@@ -11,31 +11,31 @@
             <classes>
 <!--                <class name="kpx.actual.Kyc_Tests"> </class>-->
                 <class name="kpx.actual.SendOut_Tests"> </class>
-<!--                <class name="kpx.actual.RequestForChange_Tests"> </class>-->
-<!--                <class name="kpx.actual.ReturnToSender_Tests"> </class>-->
-<!--                <class name="kpx.actual.SendOutCancellation_Tests"> </class>-->
-<!--                <class name="kpx.actual.SOReprinting_Tests"> </class>-->
-<!--                <class name="kpx.actual.ORReprinting_Tests"> </class>-->
+                <class name="kpx.actual.RequestForChange_Tests"> </class>
+                <class name="kpx.actual.ReturnToSender_Tests"> </class>
+                <class name="kpx.actual.SendOutCancellation_Tests"> </class>
+                <class name="kpx.actual.SOReprinting_Tests"> </class>
+                <class name="kpx.actual.ORReprinting_Tests"> </class>
             </classes>
         </parameter>
     </test>
-<!--    <test name="Sendout Transaction (Western Union Partners)">-->
-<!--        <parameter name="type" value="web">-->
-<!--            <classes>-->
-<!--                <class name="kpx.actual.Sendout_Partners_Tests"> </class>-->
-<!--            </classes>-->
-<!--        </parameter>-->
-<!--    </test>-->
+    <test name="Sendout Transaction (Western Union Partners)">
+        <parameter name="type" value="web">
+            <classes>
+                <class name="kpx.actual.Sendout_Partners_Tests"> </class>
+            </classes>
+        </parameter>
+    </test>
 
-<!--    <test name="Sendout Transaction (Moneygram Partners)">-->
-<!--        <parameter name="type" value="web">-->
-<!--            <classes>-->
-<!--                <class name="kpx.actual.SendoutPartner_Moneygram_Test"> </class>-->
-<!--                <class name="kpx.actual.SendoutPartnerMoneygramCancellation_Test"> </class>-->
-<!--                <class name="kpx.actual.RequestForChangePartner_Tests"> </class>-->
-<!--                &lt;!&ndash;                <class name="kpx.actual.ORReprintingPartner_Tests"> </class>&ndash;&gt;-->
-<!--                <class name="kpx.actual.SOReprintingPartner_Tests"> </class>-->
-<!--            </classes>-->
-<!--        </parameter>-->
-<!--    </test>-->
+    <test name="Sendout Transaction (Moneygram Partners)">
+        <parameter name="type" value="web">
+            <classes>
+                <class name="kpx.actual.SendoutPartner_Moneygram_Test"> </class>
+                <class name="kpx.actual.SendoutPartnerMoneygramCancellation_Test"> </class>
+                <class name="kpx.actual.RequestForChangePartner_Tests"> </class>
+                <class name="kpx.actual.ORReprintingPartner_Tests"> </class>
+                <class name="kpx.actual.SOReprintingPartner_Tests"> </class>
+            </classes>
+        </parameter>
+    </test>
 </suite>

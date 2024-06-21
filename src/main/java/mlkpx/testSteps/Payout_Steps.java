@@ -563,7 +563,7 @@ public class Payout_Steps extends Base_Steps{
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
             payoutPageObjects.BranchCode().clear();
-            type(payoutPageObjects.BranchCode(), "Search Branch Code", "0617143912");
+            type(payoutPageObjects.BranchCode(), "Search Branch Code", "123301912");
             WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
             waitSleep(10000);
             waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));

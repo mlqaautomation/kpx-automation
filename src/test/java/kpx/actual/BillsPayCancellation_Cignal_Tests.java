@@ -41,7 +41,6 @@ public class BillsPayCancellation_Cignal_Tests extends BaseTest {
             this.billsPayCancellationSteps.validateEmptyRefBillsPayCancellation();
 
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "To validate Invalid Reference Bills Pay Cancellation ")
     public void BPCignalCancellation_TC_04()throws Exception{
