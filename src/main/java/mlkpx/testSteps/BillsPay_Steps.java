@@ -127,8 +127,9 @@ public class BillsPay_Steps extends Base_Steps{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.BranchCode()));
         //todo
+        waitSleep(5000);
         type(billsPayPageObjects.BranchCode(), "Search Branch Code",  propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
 
         waits.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.OperatorID()));
         type(billsPayPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));

@@ -9,8 +9,8 @@
     <test name="BILLSPAY Cignal Partner">
         <parameter name="type" value="web">
             <classes>
-<!--                <class name="kpx.actual.BillsPayCignal_Tests">  </class>-->
-<!--                <class name="kpx.actual.BillsPayCancellation_Cignal_Tests">  </class>-->
+                <class name="kpx.actual.BillsPayCignal_Tests">  </class>
+                <class name="kpx.actual.BillsPayCancellation_Cignal_Tests">  </class>
                 <class name="kpx.actual.BillsPayChangeD_Cignal_Tests">  </class>
                 <class name="kpx.actual.BillsPayReprinting_Cignal_Tests">  </class>
             </classes>

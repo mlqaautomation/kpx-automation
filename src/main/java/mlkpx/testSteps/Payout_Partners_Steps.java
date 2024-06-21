@@ -345,12 +345,12 @@ public class Payout_Partners_Steps extends Base_Steps{
     public void validateRemotePartnerPayoutEmptyRef()throws Exception{
         click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
         click(payoutPageObjects.RemoteTransaction(), "Remote Transaction");
-
+    waitSleep(5000);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.BranchCode()));
         //todo
         type(payoutPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("BranchCode"));
-        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
 
         waits.until(ExpectedConditions.elementToBeClickable(payoutPageObjects.OperatorID()));
         type(payoutPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("OperatorID"));

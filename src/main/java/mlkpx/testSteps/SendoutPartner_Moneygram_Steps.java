@@ -524,6 +524,7 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
     }
     public void PS_TC_14() throws Exception {
         PS_TC_01();
+        waitSleep(5000);
         click(sendOutPageObjects.yesRadioButton(), "Yes Button ");
 
         waitUntilLoadingGone(10000);
@@ -658,7 +659,7 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         scrollDown(100);
         waitSleep(30000);
         scrollToElement(sendOutPageObjects.OkCountry());
-        waitSleep(20000);
+        waitSleep(30000);
         click(sendOutPageObjects.OkCountry(), "Confirm Country");
         click(sendOutPageObjects.SelectNationality(), "Select Nationality");
         click(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ");
