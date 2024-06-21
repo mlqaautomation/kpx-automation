@@ -386,9 +386,9 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         click(sendoutPartnerMoneygramPageObjects.cancelButton(),"Cancel Button");
         click(sendoutPartnerMoneygramPageObjects.yesCancelTransactionButton(),"Yes, Cancel Transaction Button");
         if(isVisible(sendoutPartnerMoneygramPageObjects.sendoutPartnerText(), getText(sendoutPartnerMoneygramPageObjects.sendoutPartnerText()))){
-            ExtentReporter.logPass("PS_TC_09", "Successfully Cancel The Transaction");
+            ExtentReporter.logPass("PS_TC_09_PS_TC_011", "Successfully Cancel The Transaction");
         }else{
-            ExtentReporter.logFail("PS_TC_09", "Fail to Verify Cancel The Transaction");
+            ExtentReporter.logFail("PS_TC_09_PS_TC_011", "Fail to Verify Cancel The Transaction");
             Assert.fail("Fail to Verify Cancel The Transaction");
         }
     }
@@ -581,9 +581,9 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         List<String> kptnValues = Collections.singletonList(referenceNumber);
         reader.writeKptnDataWesternUnionPartner10MinuteServiceRemote(kptnValues);
         if(isVisible(sendoutPartnerMoneygramPageObjects.sendoutSuccessfulText(), getText(sendoutPartnerMoneygramPageObjects.sendoutSuccessfulText()))){
-            ExtentReporter.logPass("PS_TC_13", "Successfully Sendout Partner Moneygram");
+            ExtentReporter.logPass("PS_TC_14", "Successfully Sendout Partner Moneygram");
         }else{
-            ExtentReporter.logFail("PS_TC_13", "Fail to Verify Sendout Partner Moneygram");
+            ExtentReporter.logFail("PS_TC_14", "Fail to Verify Sendout Partner Moneygram");
             Assert.fail("Fail to Verify Sendout Partner Moneygram");
         }
         click(sendoutPartnerMoneygramPageObjects.proceedToPrintingButton(),"Proceed to Printing Button");
