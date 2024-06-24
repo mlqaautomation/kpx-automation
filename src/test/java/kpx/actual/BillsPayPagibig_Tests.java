@@ -90,7 +90,7 @@ public class  BillsPayPagibig_Tests extends BaseTest {
     public void PagibigBP_TC_13()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayPagbigSteps.navigatePayoutPage();
-            this.billsPayPagbigSteps.validateBillsPayCignalZeroAndEmptyAmount();
+            this.billsPayPagbigSteps.validateBillsPayPagibigZeroAndEmptyAmount();
 
         }
     }

@@ -4,7 +4,7 @@ import kpx.base.BaseTest;
 import org.testng.annotations.Test;
 import utilities.ExtentReport.ExtentReporter;
 
-public class BillsPayReprinting_Tests extends BaseTest {
+public class BillsPayReprinting_Maynilad_Tests extends BaseTest {
 
     //B I L L S  P A Y    R E P R I N T I N G
     @Test(description = "Logging in via gmail and kpx")

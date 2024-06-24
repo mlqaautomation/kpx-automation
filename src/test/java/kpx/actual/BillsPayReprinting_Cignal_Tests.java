@@ -18,9 +18,9 @@ public class BillsPayReprinting_Cignal_Tests extends BaseTest {
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate BillsPay Successful Payment Reprint")
     public void BPCignal_RP_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
-            this.billsPayReprintingSteps.navigatePayoutPage();
+            this.billsPayCignalSteps.navigatePayoutPage();
             this.billsPayCignalSteps.validateSuccessfulBillsPayCignal();
-            this.billsPayReprintingSteps.validateSuccessfulBillsPayReprinting();
+            this.billsPayReprintingCignalSteps.validateSuccessfulBillsPayCIGNALReprinting();
 
         }
 
@@ -28,9 +28,9 @@ public class BillsPayReprinting_Cignal_Tests extends BaseTest {
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate BillsPay Successful Remote Payment Reprint")
     public void BPCignal_RP_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
-            this.billsPayReprintingSteps.navigatePayoutPage();
+            this.billsPayCignalSteps.navigatePayoutPage();
             this.billsPayCignalSteps.validateSuccessfulRemoteBillsPayCignal();
-            this.billsPayReprintingSteps.validateSuccessfulRemoteBillsPayReprinting();
+            this.billsPayReprintingCignalSteps.validateSuccessfulRemoteBillsPayCIGNALReprinting();
 
         }
 
@@ -38,8 +38,8 @@ public class BillsPayReprinting_Cignal_Tests extends BaseTest {
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate BillsPay Reprint With Invalid Ref Number")
     public void BPCignal_RP_TC_03()throws Exception{
         if(this.homeSteps.isInHomePage()){
-            this.billsPayReprintingSteps.navigatePayoutPage();
-            this.billsPayReprintingSteps.validateInvalidKTPNBillsPayReprinting();
+            this.billsPayReprintingCignalSteps.navigatePayoutPage();
+            this.billsPayReprintingCignalSteps.validateInvalidKTPNBillsPayCIGNALReprinting();
 
         }
 
@@ -47,16 +47,16 @@ public class BillsPayReprinting_Cignal_Tests extends BaseTest {
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate BillsPay Reprint with No Ref NUmber")
     public void BPCignal_RP_TC_04()throws Exception{
         if(this.homeSteps.isInHomePage()){
-            this.billsPayReprintingSteps.navigatePayoutPage();
-            this.billsPayReprintingSteps.validateEmptyRefBillsPayReprinting();
+            this.billsPayReprintingCignalSteps.navigatePayoutPage();
+            this.billsPayReprintingCignalSteps.validateEmptyRefBillsPayCIGNALReprinting();
 
         }
 
     }    @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "To validate BillsPay Reprint with No Reason")
     public void BPCignal_RP_TC_05()throws Exception{
         if(this.homeSteps.isInHomePage()){
-            this.billsPayReprintingSteps.navigatePayoutPage();
-            this.billsPayReprintingSteps.validateEmptyReasonBillsPayReprinting();
+            this.billsPayReprintingCignalSteps.navigatePayoutPage();
+            this.billsPayReprintingCignalSteps.validateEmptyReasonBillsPayCIGNALReprinting();
 
         }
 
@@ -64,8 +64,8 @@ public class BillsPayReprinting_Cignal_Tests extends BaseTest {
     @Test(dependsOnMethods = "loginGoogle", priority = 5, description = "To validate BillsPay Number Not Allowed")
     public void BPCignal_RP_TC_06()throws Exception{
         if(this.homeSteps.isInHomePage()){
-            this.billsPayReprintingSteps.navigatePayoutPage();
-            this.billsPayReprintingSteps.validateOnlyLettersBillsPayReprinting();
+            this.billsPayReprintingCignalSteps.navigatePayoutPage();
+            this.billsPayReprintingCignalSteps.validateOnlyLettersBillsPayCIGNALReprinting();
 
         }
 

@@ -3,15 +3,13 @@ package mlkpx.testSteps;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.yaml.snakeyaml.error.YAMLException;
 import utilities.ExtentReport.ExtentReporter;
 import utilities.Logger.LoggingUtils;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
 
-public class Payout_Steps extends Base_Steps{
+public class Payout_Domestic_Steps extends Base_Steps{
 
     public void navigatePayoutPage()throws Exception{
         try{

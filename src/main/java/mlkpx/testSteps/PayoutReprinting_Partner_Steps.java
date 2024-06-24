@@ -2,8 +2,8 @@ package mlkpx.testSteps;
 
 import utilities.Logger.LoggingUtils;
 
-public class PayoutReprinting_Steps extends Base_Steps{
-    //P A Y O U T  R E P R I N T
+public class PayoutReprinting_Partner_Steps extends Base_Steps{
+    //P A Y O U T  W E S T E R N  P A R T N E R  R E P R I N T
     public void navigatePayoutPage()throws Exception{
         try{
             click(payoutCancellationPageObjects.payout_link(), "Payout");
@@ -14,7 +14,7 @@ public class PayoutReprinting_Steps extends Base_Steps{
             LoggingUtils.info("Failed to Navigate Payout Page "+ e);
         }
     }
-    public void validateSuccessfulPayoutReprinting()throws Exception{
+    public void validateSuccessfulWesternPayoutReprinting()throws Exception{
         click(payoutCancellationPageObjects.payoutRepPage(), "Payout Reprint");
         if(isVisible(payoutCancellationPageObjects.payoutRepPage(), getText(payoutCancellationPageObjects.payoutRepPage()))){
             LoggingUtils.info("Navigated the Payout Cancellation page");
@@ -22,21 +22,20 @@ public class PayoutReprinting_Steps extends Base_Steps{
         }
         waitSleep(2000);
         reader.refreshTestData();
-        waitSleep(10000);
-        String payoutKPTN = reader.getSuccessPayoutKPTN();
-        type(payoutCancellationPageObjects.RepKTPN(), "KTPN Number",payoutKPTN);
+        waitSleep(3000);
+        String payoutWesternKPTN = reader.getSuccessPayoutWesternKPTN();
+        type(payoutCancellationPageObjects.RepKTPN(), "KTPN Number",payoutWesternKPTN);
         type(payoutCancellationPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testing");
         click(payoutCancellationPageObjects.Reprint(), "Search Button");
-        waitSleep(5000);
-        if(isVisible(payoutCancellationPageObjects.ReprintPayoutPartnerReceipt(), getText(payoutCancellationPageObjects.ReprintPayoutPartnerReceipt()))){
-            LoggingUtils.info("Navigated the Payout Partner Reprint Receipt page");
+        if(isVisible(payoutCancellationPageObjects.ReprintPayoutReceipt(), getText(payoutCancellationPageObjects.ReprintPayoutReceipt()))){
+            LoggingUtils.info("Navigated the Payout Reprint Receipt page");
             click(payoutCancellationPageObjects.PrintReceipt(), "Print Receipt");
 //            click(payoutPageObjects.PrintButton(), "Print");
             LoggingUtils.info("Successful in printing payout receipt");
 
         }
     }
-    public void validateSuccessfulRemotePayoutReprinting()throws Exception{
+    public void validateSuccessfulWesternRemotePayoutReprinting()throws Exception{
         click(payoutCancellationPageObjects.payoutRepPage(), "Payout Reprint");
         if(isVisible(payoutCancellationPageObjects.payoutRepPage(), getText(payoutCancellationPageObjects.payoutRepPage()))){
             LoggingUtils.info("Navigated the Payout Cancellation page");
@@ -44,21 +43,20 @@ public class PayoutReprinting_Steps extends Base_Steps{
         }
         waitSleep(2000);
         reader.refreshTestData();
-        waitSleep(10000);
-        String remotepayoutKPTN = reader.getSuccessRemotePayoutKPTN();
-        type(payoutCancellationPageObjects.RepKTPN(), "KTPN Number",remotepayoutKPTN);
+        waitSleep(3000);
+        String remoteWesternpayoutKPTN = reader.getSuccessPayoutRemoteWesternKPTN();
+        type(payoutCancellationPageObjects.RepKTPN(), "KTPN Number",remoteWesternpayoutKPTN);
         type(payoutCancellationPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testing");
         click(payoutCancellationPageObjects.Reprint(), "Search Button");
-        waitSleep(5000);
-        if(isVisible(payoutCancellationPageObjects.ReprintPayoutPartnerReceipt(), getText(payoutCancellationPageObjects.ReprintPayoutPartnerReceipt()))){
-            LoggingUtils.info("Navigated the Payout Partner Reprint Receipt page");
+        if(isVisible(payoutCancellationPageObjects.ReprintPayoutReceipt(), getText(payoutCancellationPageObjects.ReprintPayoutReceipt()))){
+            LoggingUtils.info("Navigated the Payout Reprint Receipt page");
             click(payoutCancellationPageObjects.PrintReceipt(), "Print Receipt");
 //            click(payoutPageObjects.PrintButton(), "Print");
             LoggingUtils.info("Successful in printing payout receipt");
 
         }
     }
-    public void validateInvalidKTPNPayoutReprinting()throws Exception{
+    public void validateInvalidKTPNWesternPayoutReprinting()throws Exception{
         click(payoutCancellationPageObjects.payoutRepPage(), "Payout Reprint");
         if(isVisible(payoutCancellationPageObjects.payoutRepPage(), getText(payoutCancellationPageObjects.payoutRepPage()))){
             LoggingUtils.info("Navigated the Payout Cancellation page");
@@ -70,7 +68,7 @@ public class PayoutReprinting_Steps extends Base_Steps{
         assertEqual(getText(payoutCancellationPageObjects.NoTransactionFound()), "No Transaction Found");
 
     }
-    public void validateEmptyReasonPayoutReprinting()throws Exception{
+    public void validateEmptyReasonWesternPayoutReprinting()throws Exception{
         click(payoutCancellationPageObjects.payoutRepPage(), "Payout Reprint");
         if(isVisible(payoutCancellationPageObjects.payoutRepPage(), getText(payoutCancellationPageObjects.payoutRepPage()))){
             LoggingUtils.info("Navigated the Payout Cancellation page");

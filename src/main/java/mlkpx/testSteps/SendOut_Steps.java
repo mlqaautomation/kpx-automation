@@ -287,8 +287,8 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
         type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
-        type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "100");
-        waitSleep(10000);
+        type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "50000");
+        waitSleep(15000);
         scrollToElement(sendOutPageObjects.submitSendOut());
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
         waitUntilLoadingGone(10000);
@@ -485,8 +485,8 @@ public class SendOut_Steps extends Base_Steps {
         public void searchKYC () {
             click(sendOutPageObjects.searchKYC(), "Search KYC button ");
             String[] randomName = reader.getRandomName();
-            type(sendOutPageObjects.lastName(), "Lastname ", randomName[1]);
-            type(sendOutPageObjects.firstName(), "Firstname ", randomName[0]);
+            type(sendOutPageObjects.lastName(), "Lastname ", "Siarot");
+            type(sendOutPageObjects.firstName(), "Firstname ", "Enrique");
             click(sendOutPageObjects.searchBtn(), "Search Button ");
             waitUntilLoadingGone(10000);
             click(sendOutPageObjects.viewButton(), "View Button ");

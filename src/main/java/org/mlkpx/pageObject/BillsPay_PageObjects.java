@@ -96,14 +96,18 @@ public class BillsPay_PageObjects {
     public WebElement InvalidAccountNum(){
         return getDriver().findElement(By.xpath("//h5[contains(text(),'Incorrect Payment Details')]"));
     }
+    public WebElement InvalidAccountNumNordeco(){
+        return getDriver().findElement(By.xpath("//h5[contains(text(),'Payment Failed')]"));
+    }
     public WebElement InvalidTransaction(){
         return getDriver().findElement(By.xpath("//h5[contains(text(),'Payment Failed')]"));
     }
     public WebElement InvalidContact(){
         return getDriver().findElement(By.xpath("//small[contains(text(),'Must start with 639|09|9 followed by 9 digits.')]"));
     }
-
-
+    public WebElement InvalidNordeco(){
+        return getDriver().findElement(By.xpath("//span[contains(text(),'Maximum allowed amount is PHP 50,000.00. (version: aa833cf)')]"));
+    }
     public WebElement BPAccNum(){
         return getDriver().findElement(By.xpath("//input[@name='accountNumber']"));
     }
@@ -372,6 +376,9 @@ public class BillsPay_PageObjects {
         }
     public WebElement ChooseOptionpagibig() {
         return getDriver().findElement(By.xpath("//div[contains(text(), 'PAG-IBIG')]"));
+    }
+    public WebElement ChooseOptionNordeco() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'NORTHERN DAVAO ELECTRIC COOPERATIVE (NORDECO)')]"));
     }
     public WebElement OtherBillerspagibig() {
         return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div/div/div[@id=\"react-select-2-group-5-heading\"]"));

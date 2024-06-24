@@ -26,16 +26,16 @@ public class Payout_Partners_Steps extends Base_Steps{
         click(payoutPageObjects.PartnerTransaction(), "Partner Transaction");
         waitUntilLoadingGone(10000);
         reader.refreshTestData();
-        waitSleep(10000);
+        waitSleep(5000);
         String sendoutReference = reader.getSendOutReferenceNum();
         type(payoutPageObjects.InputReference(), "Reference Number", sendoutReference);
         waitUntilLoadingGone(10000);
-        waitSleep(10000);
+        waitSleep(5000);
         scrollToElement(payoutPageObjects.ClickOption());
         click(payoutPageObjects.ClickOption(), "Option");
         waitSleep(2000);
         click(payoutPageObjects.ChooseOption(), "Choose Partners");
-        waitSleep(10000);
+        waitSleep(5000);
         scrollToElement(payoutPageObjects.SearchButton());
         click(payoutPageObjects.SearchButton(), "Search Button");
         waitUntilLoadingGone(10000);
@@ -61,8 +61,8 @@ public class Payout_Partners_Steps extends Base_Steps{
             click(payoutPageObjects.PurposeOfTransaction(), "Purpose of Transaction");
             waitSleep(2000);
             click(payoutPageObjects.RelationToSender(), "Relation to Sender");
-            waitUntilLoadingGone(10000);
-            waitSleep(30000);
+            waitUntilLoadingGone(5000);
+            waitSleep(10000);
             waitUntilLoadingGone(10000);
             scrollToElement(payoutPageObjects.ClaimAmount());
             waitSleep(15000);
@@ -74,9 +74,9 @@ public class Payout_Partners_Steps extends Base_Steps{
             scrollToElement(payoutPageObjects.ConfirmPayout());
             click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
             waitUntilLoadingGone(10000);
-            waitSleep(30000);
+            waitSleep(1000);
             waitUntilLoadingGone(10000);
-            waitSleep(30000);
+            waitSleep(1000);
             if (payoutPageObjects.SuccessfulPay().getText().contains("Payout Successful")) {
                 assertEqual(getText(payoutPageObjects.SuccessfulPay()), "Payout Successful");
                 List<String> sendoutReferenceList = Collections.singletonList(sendoutReference);
@@ -113,7 +113,7 @@ public class Payout_Partners_Steps extends Base_Steps{
             click(payoutPageObjects.PartnerTransaction(), "Partner Transaction");
             waitUntilLoadingGone(10000);
             reader.refreshTestData();
-            waitSleep(10000);
+            waitSleep(5000);
             String sendoutReference = reader.getSendOutReferenceNumRemote();
             type(payoutPageObjects.InputReference(), "Reference Number", sendoutReference);
             waitSleep(6000);
@@ -122,11 +122,11 @@ public class Payout_Partners_Steps extends Base_Steps{
             click(payoutPageObjects.ClickOption(), "Option");
             waitSleep(2000);
             click(payoutPageObjects.ChooseOption(), "Choose Partners");
-            waitSleep(10000);
+            waitSleep(5000);
             scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
             waitUntilLoadingGone(10000);
-            waitSleep(10000);
+            waitSleep(5000);
             scrollToElement(payoutPageObjects.SearchKYC());
             click(payoutPageObjects.SearchKYC(), "Search KYC");
             waitUntilLoadingGone(10000);
@@ -149,10 +149,10 @@ public class Payout_Partners_Steps extends Base_Steps{
                 click(payoutPageObjects.PurposeOfTransaction(), "Purpose of Transaction");
                 click(payoutPageObjects.RelationToSender(), "Relation to Sender");
                 waitUntilLoadingGone(10000);
-                waitSleep(20000);
+                waitSleep(10000);
                 waitUntilLoadingGone(10000);
                 scrollToElement(payoutPageObjects.ClaimAmount());
-                waitSleep(20000);
+                waitSleep(10000);
                 click(payoutPageObjects.ClaimAmount(), "Select Claim Amount");
 
             }
@@ -161,9 +161,9 @@ public class Payout_Partners_Steps extends Base_Steps{
                 scrollToElement(payoutPageObjects.ConfirmPayout());
                 click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
                 waitUntilLoadingGone(10000);
-                waitSleep(30000);
+                waitSleep(10000);
                 waitUntilLoadingGone(10000);
-                waitSleep(30000);
+                waitSleep(10000);
                 if (payoutPageObjects.SuccessfulPay().getText().contains("Payout Successful")) {
                     assertEqual(getText(payoutPageObjects.SuccessfulPay()), "Payout Successful");
                     List<String> sendoutReferenceList = Collections.singletonList(sendoutReference);

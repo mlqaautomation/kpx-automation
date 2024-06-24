@@ -4,8 +4,8 @@ import kpx.base.BaseTest;
 import org.testng.annotations.Test;
 import utilities.ExtentReport.ExtentReporter;
 
-public class BillsPayCancellation_Tests extends BaseTest {
-    //  B I L L S  P A Y    C A N C E L L A T I O N
+public class BillsPayCancellation_Maynilad_Tests extends BaseTest {
+    //  B I L L S  P A Y   M A Y N I L A D  C A N C E L L A T I O N
     @Test(description = "Logging in via gmail and kpx")
     public void loginGoogle() throws Exception {
         this.loginSteps.signInGoogle("teller");
