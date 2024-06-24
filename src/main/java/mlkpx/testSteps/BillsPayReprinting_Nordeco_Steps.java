@@ -2,7 +2,7 @@ package mlkpx.testSteps;
 
 import utilities.Logger.LoggingUtils;
 
-public class BillsPayReprinting_Steps extends Base_Steps{
+public class BillsPayReprinting_Nordeco_Steps extends Base_Steps{
     public void navigatePayoutPage()throws Exception{
         try{
             waitSleep(2000);
@@ -15,19 +15,19 @@ public class BillsPayReprinting_Steps extends Base_Steps{
             LoggingUtils.info("Failed to Navigate Bills Pay Page "+ e);
         }
     }
-    //B I L L S  P A Y    R E P R I N T I N G
-    public void validateSuccessfulBillsPayReprinting()throws Exception{
+    //B I L L S  P A Y   N O R D E C O  R E P R I N T I N G
+    public void validateSuccessfulBillsPayNORDECOReprinting()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPReprinting());
-        click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
+        click(billsPayPageObjects.BPReprinting(), "NORDECO Partner Bills Pay Reprinting");
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");
         }
         waitSleep(3000);
         reader.refreshTestData();
         waitSleep(3000);
-        String BillsPayKPTN = reader.getBillsPayCignalKPTN();
-        type(billsPayPageObjects.RefNum(), "Reference Number",BillsPayKPTN);
+        String BillsPayKPTNNordeco = reader.getBillsPayNordecoKPTN();
+        type(billsPayPageObjects.RefNum(), "Reference Number",BillsPayKPTNNordeco);
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testings");
         click(billsPayPageObjects.Reprint(), "Search Button");
         if(isVisible(billsPayPageObjects.ReprintBillsReceipt(), getText(billsPayPageObjects.ReprintBillsReceipt()))){
@@ -38,18 +38,18 @@ public class BillsPayReprinting_Steps extends Base_Steps{
 
         }
     }
-    public void validateSuccessfulRemoteBillsPayReprinting()throws Exception{
+    public void validateSuccessfulRemoteBillsPayNORDECOReprinting()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPReprinting());
-        click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
+        click(billsPayPageObjects.BPReprinting(), "NORDECO Partner Bills Pay Reprinting");
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");
         }
         waitSleep(3000);
         reader.refreshTestData();
         waitSleep(3000);
-        String RemoteBillsPayKPTN = reader.getRemoteBillsPayCignalKPTN();
-        type(billsPayPageObjects.RefNum(), "Reference Number",RemoteBillsPayKPTN);
+        String RemoteBillsPayKPTNNordeco = reader.getRemoteBillsPayNordecoKPTN();
+        type(billsPayPageObjects.RefNum(), "Reference Number",RemoteBillsPayKPTNNordeco);
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testings");
         click(billsPayPageObjects.Reprint(), "Search Button");
         if(isVisible(billsPayPageObjects.ReprintBillsReceipt(), getText(billsPayPageObjects.ReprintBillsReceipt()))){
@@ -60,7 +60,7 @@ public class BillsPayReprinting_Steps extends Base_Steps{
 
         }
     }
-    public void validateInvalidKTPNBillsPayReprinting()throws Exception{
+    public void validateInvalidKTPNBillsPayNORDECOReprinting()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
@@ -76,7 +76,7 @@ public class BillsPayReprinting_Steps extends Base_Steps{
 
 
     }
-    public void validateEmptyRefBillsPayReprinting()throws Exception{
+    public void validateEmptyRefBillsPayNORDECOReprinting()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
@@ -88,7 +88,7 @@ public class BillsPayReprinting_Steps extends Base_Steps{
         assertEqual(getText(billsPayPageObjects.RefRequired()), "Reference number is required");
 
     }
-    public void validateEmptyReasonBillsPayReprinting()throws Exception{
+    public void validateEmptyReasonBillsPayNORDECOReprinting()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
@@ -101,7 +101,7 @@ public class BillsPayReprinting_Steps extends Base_Steps{
         assertEqual(getText(billsPayPageObjects.ReasonRequired()), "Reason is required");
 
     }
-    public void validateOnlyLettersBillsPayReprinting()throws Exception{
+    public void validateOnlyLettersBillsPayNORDECOReprinting()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");

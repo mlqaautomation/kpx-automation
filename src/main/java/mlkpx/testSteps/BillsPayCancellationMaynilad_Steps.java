@@ -5,10 +5,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Logger.LoggingUtils;
 
 import java.time.Duration;
-import java.util.Collections;
-import java.util.List;
 
-public class BillsPayCancellation_Steps extends Base_Steps{
+public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
     //B I L L S  P A Y    C A N C E L L A T I O N
     public void navigatePayoutPage()throws Exception{
         try{

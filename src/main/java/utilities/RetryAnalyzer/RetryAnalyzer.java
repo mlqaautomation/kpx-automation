@@ -4,7 +4,7 @@ import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
 public class RetryAnalyzer implements IRetryAnalyzer {
-    private int retryCnt = 1;
+    private int retryCnt = 3;
 
     //This method will be called everytime a test fails. It will return TRUE if a test fails and need to be retried, else it returns FALSE
     @Override
