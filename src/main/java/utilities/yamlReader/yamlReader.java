@@ -91,6 +91,21 @@ public class yamlReader {
         String lastName = (String) kycData.get("lastName");
         return new String[]{firstName, lastName};
     }
+    public List<Map<String, Object>> getSenderSendOutPartnerData() { return (List<Map<String, Object>>) yamlData.get("SenderForSendOutPartner"); }
+
+    public Map<String, Object> getRandomSenderSendOutPartnerData() {
+        List<Map<String, Object>> senderSendOutPartner = getSenderSendOutPartnerData();
+        Random random = new Random();
+        int randomIndex = random.nextInt(senderSendOutPartner.size());
+        return senderSendOutPartner.get(randomIndex);
+    }
+    public String[] getRandomNameForSenderSendOutPartner() {
+        Map<String, Object> randomNameForSenderSendOutPartner = getRandomSenderSendOutPartnerData();
+        Map<String, Object> kycData = (Map<String, Object>) randomNameForSenderSendOutPartner.get("kyc");
+        String firstName = (String) kycData.get("firstName");
+        String lastName = (String) kycData.get("lastName");
+        return new String[]{firstName, lastName};
+    }
 //    public String[] getRandomNameAddNewReciever() {
 //        Map<String, Object> randomSender = getRandomSenderData();
 //        Map<String, Object> kycData = (Map<String, Object>) randomSender.get("kyc");

@@ -54,6 +54,7 @@ public class MLWalletServicesReportBranchReport_Steps extends Base_Steps{
         }
         click(kpDomesticReportsPageObjects.monthDropDownButton(),"Month DropDown Button");
         click(kpDomesticReportsPageObjects.selectedMonthMay(),"May Month Dropdown Button");
+        waitSleep(2000);
         click(kpDomesticReportsPageObjects.yearlyTimeFrame(),"Yearly TimeFrame Dropdown Button");
         click(kpDomesticReportsPageObjects.selectedYear2024(),"Year 2024 Button");
     }

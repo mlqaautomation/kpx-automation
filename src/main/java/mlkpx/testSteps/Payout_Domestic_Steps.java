@@ -34,7 +34,7 @@ public class Payout_Domestic_Steps extends Base_Steps{
             waitUntilLoadingGone(10000);
             scrollToElement(payoutPageObjects.SearchButton());
             click(payoutPageObjects.SearchButton(), "Search Button");
-            waitUntilLoadingGone(10000);
+            waitUntilLoadingGone(15000);
             click(payoutPageObjects.SearchKYC(), "Search KYC");
             waitUntilLoadingGone(10000);
             click(payoutPageObjects.SearchKYCAc(), "Search Button");

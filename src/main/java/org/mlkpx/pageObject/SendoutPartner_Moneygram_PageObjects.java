@@ -23,7 +23,7 @@ public class SendoutPartner_Moneygram_PageObjects {
         return getDriver().findElement(By.cssSelector("[name=\"beneficiary.address.addressL0Id\"]"));
     }
     public WebElement selectPartner() {
-        return getDriver().findElement(By.cssSelector("[name=\"partnerId\"]"));
+        return getDriver().findElement(By.xpath("//*[text()='SELECT PARTNER']"));
     }
     public WebElement selectMoneygram() {
         return getDriver().findElement(By.cssSelector("[label=\"MONEYGRAM\"]"));
@@ -33,6 +33,12 @@ public class SendoutPartner_Moneygram_PageObjects {
     }
     public WebElement contactNumberReceiver() {
         return getDriver().findElement(By.cssSelector("[name=\"beneficiary.contactNumber\"]"));
+    }
+    public WebElement countryField() {
+        return getDriver().findElement(By.cssSelector("[name=\"beneficiary.address.addressL0Id\"]"));
+    }
+    public WebElement malaysiaCountry() {
+        return getDriver().findElement(By.xpath("//*[text()='MALAYSIA']"));
     }
     public WebElement nationalityReceivers() {
         return getDriver().findElement(By.cssSelector("[name=\"beneficiary.nationality\"]"));
@@ -170,6 +176,10 @@ public class SendoutPartner_Moneygram_PageObjects {
     public WebElement birthDateDropDown(){
 
         return getDriver().findElement(By.cssSelector("[name=\"beneficiary.birthDate\"]"));
+    }
+    public WebElement idIssueDateField(){
+
+        return getDriver().findElement(By.cssSelector("[name=\"senderIdIssueDate\"]"));
     }
 
 

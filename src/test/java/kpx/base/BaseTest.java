@@ -63,7 +63,7 @@ public class BaseTest {
     protected SOReprintingPartner_Steps soReprintingPartnerSteps;
     protected KPDomesticReports_Steps kpDomesticReportsSteps;
     protected MLWalletServicesReportBranchReport_Steps mlWalletServicesReportBranchReportSteps;
-
+    protected CorporatePartnerReport_Steps corporatePartnerReportSteps;
 
     protected Login loginWalletSteps;
     protected Cash_In cashInSteps;
@@ -176,7 +176,7 @@ public class BaseTest {
 
         this.kpDomesticReportsSteps = new KPDomesticReports_Steps();
         this.mlWalletServicesReportBranchReportSteps = new MLWalletServicesReportBranchReport_Steps();
-
+        this.corporatePartnerReportSteps = new CorporatePartnerReport_Steps();
 
 
     }

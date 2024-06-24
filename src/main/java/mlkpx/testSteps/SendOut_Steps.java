@@ -287,7 +287,7 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
         type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
-        type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "50000");
+        type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "100");
         waitSleep(15000);
         scrollToElement(sendOutPageObjects.submitSendOut());
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
@@ -482,20 +482,20 @@ public class SendOut_Steps extends Base_Steps {
             return Math.abs(expectedTotal - totalAmt) < 0.0001;
         }
 
-        public void searchKYC () {
-            click(sendOutPageObjects.searchKYC(), "Search KYC button ");
-            String[] randomName = reader.getRandomName();
-            type(sendOutPageObjects.lastName(), "Lastname ", "Siarot");
-            type(sendOutPageObjects.firstName(), "Firstname ", "Enrique");
-            click(sendOutPageObjects.searchBtn(), "Search Button ");
-            waitUntilLoadingGone(10000);
-            click(sendOutPageObjects.viewButton(), "View Button ");
-            waitSleep(10000);
-            scrollToBottomOfPageWEB();
-            scrollDown(100);
-            scrollToElement(sendOutPageObjects.selectKYC());
-            click(sendOutPageObjects.selectKYC(), "Select KYC Button");
-        }
+    public void searchKYC () {
+        click(sendOutPageObjects.searchKYC(), "Search KYC button ");
+        String[] randomName = reader.getRandomName();
+        type(sendOutPageObjects.lastName(), "Lastname ", randomName[1]);
+        type(sendOutPageObjects.firstName(), "Firstname ", randomName[0]);
+        click(sendOutPageObjects.searchBtn(), "Search Button ");
+        waitUntilLoadingGone(10000);
+        click(sendOutPageObjects.viewButton(), "View Button ");
+        waitSleep(10000);
+        scrollToBottomOfPageWEB();
+        scrollDown(100);
+        scrollToElement(sendOutPageObjects.selectKYC());
+        click(sendOutPageObjects.selectKYC(), "Select KYC Button");
+    }
     public void searchKYCAddNewReceiver () {
         click(sendOutPageObjects.searchKYC(), "Search KYC button ");
 //        String[] randomNameReceiver = reader.getRandomNameAddNewReciever();
@@ -540,7 +540,7 @@ public class SendOut_Steps extends Base_Steps {
             click(sendOutPageObjects.r_CityMunicipalitySelected(), "Receiver Selected City Municipality");
             type(sendOutPageObjects.r_HouseNoStreetBarangaySitio(), "Receiver House No. Street/Barangay/Sitio ", propertyReader.getproperty("HouseNoStreetBarangaySitio"));
             click(sendOutPageObjects.r_birthdate_Field(), "Receiver Birthdate field ");
-            type(sendOutPageObjects.r_birthdate_Field(), "Receiver Birthdate field ", propertyReader.getproperty("r_birthDate"));
+            type(sendOutPageObjects.r_birthdate_Field(), "Receiver Birthdate field ", propertyReader.getproperty("r_birthYear"));
             sendOutPageObjects.r_birthdate_Field().sendKeys(Keys.ARROW_LEFT);
             type(sendOutPageObjects.r_birthdate_Field(), "Receiver Birthdate field ", propertyReader.getproperty("r_month"));
             sendOutPageObjects.r_birthdate_Field().sendKeys(Keys.ARROW_LEFT);
