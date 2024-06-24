@@ -483,6 +483,17 @@ public class GeneralMethod extends ExtentReporter{
             return false;
         }
     }
+    public static boolean isnotVisible(WebElement element) {
+        try {
+            return !element.isDisplayed();
+        } catch (NoSuchElementException | StaleElementReferenceException e) {
+            // If the element is not found or the reference is stale, consider it as not visible
+            return true;
+        } catch (Exception e) {
+            // Handle any other exceptions that may occur
+            return true;
+        }
+    }
 
 }
 

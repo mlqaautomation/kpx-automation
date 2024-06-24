@@ -540,7 +540,7 @@ public class SendOut_Steps extends Base_Steps {
             click(sendOutPageObjects.r_CityMunicipalitySelected(), "Receiver Selected City Municipality");
             type(sendOutPageObjects.r_HouseNoStreetBarangaySitio(), "Receiver House No. Street/Barangay/Sitio ", propertyReader.getproperty("HouseNoStreetBarangaySitio"));
             click(sendOutPageObjects.r_birthdate_Field(), "Receiver Birthdate field ");
-            type(sendOutPageObjects.r_birthdate_Field(), "Receiver Birthdate field ", propertyReader.getproperty("r_birthDate"));
+            type(sendOutPageObjects.r_birthdate_Field(), "Receiver Birthdate field ", propertyReader.getproperty("r_birthYear"));
             sendOutPageObjects.r_birthdate_Field().sendKeys(Keys.ARROW_LEFT);
             type(sendOutPageObjects.r_birthdate_Field(), "Receiver Birthdate field ", propertyReader.getproperty("r_month"));
             sendOutPageObjects.r_birthdate_Field().sendKeys(Keys.ARROW_LEFT);

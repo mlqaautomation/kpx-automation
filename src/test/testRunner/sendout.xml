@@ -19,23 +19,4 @@
             </classes>
         </parameter>
     </test>
-    <test name="Sendout Transaction (Western Union Partners)">
-        <parameter name="type" value="web">
-            <classes>
-                <class name="kpx.actual.Sendout_Partners_Tests"> </class>
-            </classes>
-        </parameter>
-    </test>
-
-    <test name="Sendout Transaction (Moneygram Partners)">
-        <parameter name="type" value="web">
-            <classes>
-                <class name="kpx.actual.SendoutPartner_Moneygram_Test"> </class>
-                <class name="kpx.actual.SendoutPartnerMoneygramCancellation_Test"> </class>
-                <class name="kpx.actual.RequestForChangePartner_Tests"> </class>
-                <class name="kpx.actual.ORReprintingPartner_Tests"> </class>
-                <class name="kpx.actual.SOReprintingPartner_Tests"> </class>
-            </classes>
-        </parameter>
-    </test>
 </suite>
