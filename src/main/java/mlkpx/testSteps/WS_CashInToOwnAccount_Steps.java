@@ -79,10 +79,10 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(walletServicesPageObjects.BranchCode()));
 
-        type(walletServicesPageObjects.BranchCode(), "Search Branch Code", "0617143912");
+        type(walletServicesPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("validBranch_code"));
         waitSleep(15000);
 
-        type(walletServicesPageObjects.OperatorID(), "Search Operator ID", "20248207");
+        type(walletServicesPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("operatorID"));
         type(walletServicesPageObjects.ReasonRemote(), "Reason", "Testing");
         waitUntilLoadingGone(10000);
         reader.refreshTestData();
@@ -188,8 +188,8 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
     }
     public void CIOA_TC_09()throws Exception {
         navigationWalletServices();
-        String randomReferenceNum = reader.getRandomWriteCashIn_Kptn();
-        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", randomReferenceNum);
+//        String randomReferenceNum = reader.getRandomWriteCashIn_Kptn();
+        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", propertyReader.getproperty("referenceNumber"));
         click(wsCashInToOwnAccountPageObjects.searchButton(), "Search Button");
         waitSleep(3000);
         if(isVisible(wsCashInToOwnAccountPageObjects.cashInText(), getText(wsCashInToOwnAccountPageObjects.cashInText()))){
@@ -215,14 +215,14 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         updatedTenderAmountValues = Collections.singletonList(updatedTenderAmountText);
         reader.writeTenderAmountData(updatedTenderAmountValues);
 
-        reader.setRandomValueFromCIOA_TC_09(randomReferenceNum);
+        reader.setRandomValueFromCIOA_TC_09("ACILKATHIKS");
     }
 
     public void CIOA_TC_10()throws Exception {
         navigationWalletServices();
-        String randomValueOFCIOA9 = reader.getRandomValueFromCIOA_TC_09(); // Store the random value here
-        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", randomValueOFCIOA9);
-//        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", propertyReader.getproperty("referenceNumber"));
+//        String randomValueOFCIOA9 = reader.getRandomValueFromCIOA_TC_09(); // Store the random value here
+//        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", randomValueOFCIOA9);
+        type(wsCashInToOwnAccountPageObjects.referenceNumField(), "Reference Number Field", propertyReader.getproperty("referenceNumber"));
         click(wsCashInToOwnAccountPageObjects.searchButton(), "Search Button");
         if(isVisible(wsCashInToOwnAccountPageObjects.transactionBeingProcessText(), getText(wsCashInToOwnAccountPageObjects.transactionBeingProcessText()))){
             ExtentReporter.logPass("CIOA_TC_10", "Successfully validate  again the cash in transaction if its being processed or not");

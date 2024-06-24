@@ -15,7 +15,7 @@ public class SendoutPartner_Moneygram_Test extends BaseTest {
     }
 
     @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Verify Navigation of Partner Sendout")
-    public void navigationFOrSendOutPartner()throws Exception{
+    public void navigationForSendOutPartner()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.sendoutPartnerMoneygramSteps.PS_TC_01();
         }

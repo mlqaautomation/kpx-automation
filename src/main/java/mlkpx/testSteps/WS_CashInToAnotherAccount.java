@@ -81,10 +81,10 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(walletServicesPageObjects.BranchCode()));
 
-            type(walletServicesPageObjects.BranchCode(), "Search Branch Code", "0617143912");
+            type(walletServicesPageObjects.BranchCode(), "Search Branch Code", propertyReader.getproperty("validBranch_code"));
             waitSleep(15000);
 
-            type(walletServicesPageObjects.OperatorID(), "Search Operator ID", "20248207");
+            type(walletServicesPageObjects.OperatorID(), "Search Operator ID", propertyReader.getproperty("operatorID"));
             type(walletServicesPageObjects.ReasonRemote(), "Reason", "Testing");
 //            type(walletServicesPageObjects.WalletCardNum(), "ML Card Number", "");
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");

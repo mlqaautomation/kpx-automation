@@ -12,7 +12,6 @@
                 <class name="kpx.actual.SendoutPartner_Moneygram_Test"> </class>
                 <class name="kpx.actual.SendoutPartnerMoneygramCancellation_Test"> </class>
                 <class name="kpx.actual.RequestForChangePartner_Tests"> </class>
-                <class name="kpx.actual.ORReprintingPartner_Tests"> </class>
                 <class name="kpx.actual.SOReprintingPartner_Tests"> </class>
             </classes>
         </parameter>

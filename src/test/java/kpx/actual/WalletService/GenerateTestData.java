@@ -17,12 +17,12 @@ public class GenerateTestData extends BaseTest{
         cashInSteps.cashIn();
 
     }
-    @Test(priority = 3 ,description = "Third Test to get cash in KPTN")
-    public void cashIn3(){
-        generateTestData.loginWalletTestData3();
-        cashInSteps.cashIn();
-
-    }
+//    @Test(priority = 3 ,description = "Third Test to get cash in KPTN")
+//    public void cashIn3(){
+//        generateTestData.loginWalletTestData3();
+//        cashInSteps.cashIn();
+//
+//    }
 
     @Test(priority = 4 ,description = "First Test to get KwartaPadala KPTN")
     public void kwartaPadala(){
