@@ -118,6 +118,4 @@ public class SendoutPartner_Moneygram_Test extends BaseTest {
             this.sendoutPartnerMoneygramSteps.PS_TC_14();
         }
     }
-
-
 }
