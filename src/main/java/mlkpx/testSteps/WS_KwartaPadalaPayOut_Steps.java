@@ -180,7 +180,12 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
         type(wsKwartaPadalaPayOutPageObjects.referenceNumField(), "KPP KPTN Field", propertyReader.getproperty("validReference"));
         type(wsKwartaPadalaPayOutPageObjects.amountField(), "Amount Field", propertyReader.getproperty("validamount"));
         click(wsKwartaPadalaPayOutPageObjects.searchButton(), "Search Button");
-        waitSleep(2000);
+        click(wsKwartaPadalaPayOutPageObjects.searchKYC(), "Search KYC");
+        navigationWalletServicesToKwartaPadalaPayout();
+        type(wsKwartaPadalaPayOutPageObjects.referenceNumField(), "KPP KPTN Field", propertyReader.getproperty("validReference"));
+        type(wsKwartaPadalaPayOutPageObjects.amountField(), "Amount Field", propertyReader.getproperty("validamount"));
+        click(wsKwartaPadalaPayOutPageObjects.searchButton(), "Search Button");
+        waitSleep(5000);
         if (isVisible(wsKwartaPadalaPayOutPageObjects.transactionBeingProcessedText(), getText(wsKwartaPadalaPayOutPageObjects.transactionBeingProcessedText()))) {
             ExtentReporter.logPass("KPP_TC_09", "Successfully validate again the cash in transaction if its being proccessed or not");
         } else {
