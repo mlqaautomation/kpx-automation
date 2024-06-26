@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="BILLSPAY" thread-count="1" >
+<suite name="BILLSPAY(Maynilad)" thread-count="1" >
     <listeners>
         <listener class-name="utilities.ExtentReport.ExtentReporter" />
         <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
@@ -9,10 +9,10 @@
     <test name="BILLSPAY Maynilad Partner">
         <parameter name="type" value="web">
             <classes>
-                <class name="kpx.actual.BillsPay_Tests">  </class>
-                <class name="kpx.actual.BillsPayCancellation_Tests">  </class>
-                <class name="kpx.actual.BillsPayChangeD_Tests">  </class>
-                <class name="kpx.actual.BillsPayReprinting_Tests">  </class>
+                <class name="kpx.actual.BillsPayMaynilad_Tests">  </class>
+                <class name="kpx.actual.BillsPayCancellation_Maynilad_Tests">  </class>
+                <class name="kpx.actual.BillsPayChangeD_Maynilad_Tests">  </class>
+                <class name="kpx.actual.BillsPayReprinting_Maynilad_Tests">  </class>
             </classes>
         </parameter>
     </test>

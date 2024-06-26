@@ -8,7 +8,7 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
 
-public class PayoutCancellation_Steps extends Base_Steps{
+public class PayoutCancell_Domestic_Steps extends Base_Steps{
 
     //P A Y O U T    C A N C E L L A T I O N
     public void navigatePayoutPage()throws Exception{

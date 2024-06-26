@@ -17,7 +17,7 @@ SenderForSendOutPartner:
 - kyc: {firstName: The, lastName: Same}
 sendOutKPTN: []
 sendoutReferenceNum: []
-remoteSendoutKPTN: []
+remoteSendoutKPTN: [KPNAZRHYDTT]
 payoutRemoteReference: []
 CignalBPKTPN: []
 CignalRemoteBPKTPN: []

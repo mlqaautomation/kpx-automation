@@ -156,6 +156,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
             click(billsPayPageObjects.proceedToPrinting(), "Proceed to Printing");
             waitSleep(2000);
             click(billsPayPageObjects.cancelButtoninReceipt(), "Cancel Button Receipt");
+            waitSleep(3000);
         }
     }
     public void validateBillsPayCignalNoPartner()throws Exception {
