@@ -32,7 +32,7 @@ public class GenerateTestData extends BaseTest{
     @Test(priority = 5 ,description = "Second Test to get KwartaPadala KPTN")
     public void kwartaPadala1(){
         generateTestData.loginWalletTestData1();
-        kwartaPadala.kwartaPadala2();
+        kwartaPadala.kwartaPadala1();
     }
     @Test(priority = 6 ,description = "Third Test to get KwartaPadala KPTN")
     public void kwartaPadala2(){

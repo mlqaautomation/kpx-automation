@@ -215,7 +215,7 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         updatedTenderAmountValues = Collections.singletonList(updatedTenderAmountText);
         reader.writeTenderAmountData(updatedTenderAmountValues);
 
-        reader.setRandomValueFromCIOA_TC_09("ACILKATHIKS");
+//        reader.setRandomValueFromCIOA_TC_09("ACILKATHIKS");
     }
 
     public void CIOA_TC_10()throws Exception {
