@@ -288,7 +288,7 @@ public class SendOut_Steps extends Base_Steps {
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
         type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
         type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "100");
-        waitSleep(10000);
+        waitSleep(15000);
         scrollToElement(sendOutPageObjects.submitSendOut());
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
         waitUntilLoadingGone(10000);
@@ -482,20 +482,20 @@ public class SendOut_Steps extends Base_Steps {
             return Math.abs(expectedTotal - totalAmt) < 0.0001;
         }
 
-        public void searchKYC () {
-            click(sendOutPageObjects.searchKYC(), "Search KYC button ");
-            String[] randomName = reader.getRandomName();
-            type(sendOutPageObjects.lastName(), "Lastname ", randomName[1]);
-            type(sendOutPageObjects.firstName(), "Firstname ", randomName[0]);
-            click(sendOutPageObjects.searchBtn(), "Search Button ");
-            waitUntilLoadingGone(10000);
-            click(sendOutPageObjects.viewButton(), "View Button ");
-            waitSleep(10000);
-            scrollToBottomOfPageWEB();
-            scrollDown(100);
-            scrollToElement(sendOutPageObjects.selectKYC());
-            click(sendOutPageObjects.selectKYC(), "Select KYC Button");
-        }
+    public void searchKYC () {
+        click(sendOutPageObjects.searchKYC(), "Search KYC button ");
+        String[] randomName = reader.getRandomName();
+        type(sendOutPageObjects.lastName(), "Lastname ", randomName[1]);
+        type(sendOutPageObjects.firstName(), "Firstname ", randomName[0]);
+        click(sendOutPageObjects.searchBtn(), "Search Button ");
+        waitUntilLoadingGone(10000);
+        click(sendOutPageObjects.viewButton(), "View Button ");
+        waitSleep(10000);
+        scrollToBottomOfPageWEB();
+        scrollDown(100);
+        scrollToElement(sendOutPageObjects.selectKYC());
+        click(sendOutPageObjects.selectKYC(), "Select KYC Button");
+    }
     public void searchKYCAddNewReceiver () {
         click(sendOutPageObjects.searchKYC(), "Search KYC button ");
 //        String[] randomNameReceiver = reader.getRandomNameAddNewReciever();

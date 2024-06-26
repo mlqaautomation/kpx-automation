@@ -4,7 +4,7 @@ import kpx.base.BaseTest;
 import org.testng.annotations.Test;
 import utilities.ExtentReport.ExtentReporter;
 
-public class  BillsPay_Tests extends BaseTest {
+public class BillsPayMaynilad_Tests extends BaseTest {
     @Test(description = "Logging in via gmail and kpx")
     public void loginGoogle() throws Exception {
         this.loginSteps.signInGoogle("teller");

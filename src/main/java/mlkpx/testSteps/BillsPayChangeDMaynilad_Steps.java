@@ -6,7 +6,7 @@ import utilities.Logger.LoggingUtils;
 
 import java.time.Duration;
 
-public class BillsPayChangeD_Steps extends Base_Steps{
+public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
     public void navigatePayoutPage()throws Exception{
         try{
             click(billsPayPageObjects.billsPay_link(), "Bills Pay");
@@ -27,8 +27,8 @@ public class BillsPayChangeD_Steps extends Base_Steps{
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String BillsPayKPTN = reader.getBillsPayCignalKPTN();
-            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayKPTN);
+            String BillsPayKPTNNordeco = reader.getBillsPayCignalKPTN();
+            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayKPTNNordeco);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))){
@@ -124,7 +124,7 @@ public class BillsPayChangeD_Steps extends Base_Steps{
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEEEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEEEFRDUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
             if(isVisible(billsPayPageObjects.InvalidKTPN(), getText(billsPayPageObjects.Page_h5()))){
                 assertEqual(getText(billsPayPageObjects.Page_h5()), "No Transaction Found");
