@@ -23,7 +23,7 @@ public class PayoutReprinting_Domestic_Steps extends Base_Steps{
         waitSleep(2000);
         reader.refreshTestData();
         waitSleep(10000);
-        String payoutKPTN = reader.getPayoutKPTN();
+        String payoutKPTN = reader.getSuccessPayoutKPTN();
         type(payoutCancellationPageObjects.RepKTPN(), "KTPN Number",payoutKPTN);
         type(payoutCancellationPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testing");
         click(payoutCancellationPageObjects.Reprint(), "Search Button");
