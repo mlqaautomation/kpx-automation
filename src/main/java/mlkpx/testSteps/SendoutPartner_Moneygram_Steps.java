@@ -611,7 +611,7 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         waitUntilLoadingGone(10000);
         waitSleep(5000);
         searchKYC();
-        waitSleep(5000);
+        waitSleep(15000);
         scrollToElement(sendOutPageObjects.selectIDIssuedate());
         click(sendOutPageObjects.selectIDIssuedate(), "ID Issue Date field ");
         click(sendOutPageObjects.selectIDIssuedate(), "ID Issue Date field ");
@@ -797,7 +797,7 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         scrollDown(100);
         waitSleep(30000);
         scrollToElement(sendOutPageObjects.OkCountry());
-        waitSleep(30000);
+        waitSleep(40000);
         click(sendOutPageObjects.OkCountry(), "Confirm Country");
         click(sendOutPageObjects.SelectNationality(), "Select Nationality");
         click(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ");

@@ -380,6 +380,9 @@ public class BillsPay_PageObjects {
     public WebElement ChooseOptionNordeco() {
         return getDriver().findElement(By.xpath("//div[contains(text(), 'NORTHERN DAVAO ELECTRIC COOPERATIVE (NORDECO)')]"));
     }
+    public WebElement ChooseOptionCebeco() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'CEBU III ELECTRIC COOPERATIVE (CEBECO III)')]"));
+    }
     public WebElement OtherBillerspagibig() {
         return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div/div/div[@id=\"react-select-2-group-5-heading\"]"));
     }
