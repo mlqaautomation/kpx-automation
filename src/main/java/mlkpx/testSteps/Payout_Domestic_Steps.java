@@ -435,7 +435,7 @@ public class Payout_Domestic_Steps extends Base_Steps{
             click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
             click(payoutPageObjects.UnremoteTransaction(), "Un-remote Transaction");
             click(payoutPageObjects.DomesticTransaction(), "Domestic Transaction");
-            String payoutKPTN = reader.getSuccessPayoutKPTN(); // Call the getPayoutKPTN function
+            String payoutKPTN = reader.getPayoutKPTN(); // Call the getPayoutKPTN function
             type(payoutPageObjects.PayKTPN(), "KTPN Number", payoutKPTN);
             type(payoutPageObjects.PayAmount(), "Amount", "100");
             click(payoutPageObjects.SearchButton(), "Search Button");

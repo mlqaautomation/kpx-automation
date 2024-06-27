@@ -4,7 +4,7 @@ import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
 public class RetryAnalyzer implements IRetryAnalyzer {
-    private int retryCnt = 3;
+    private int retryCnt = 0;
 
     //This method will be called everytime a test fails. It will return TRUE if a test fails and need to be retried, else it returns FALSE
     @Override
@@ -14,7 +14,7 @@ public class RetryAnalyzer implements IRetryAnalyzer {
             //You could mention maxRetryCnt (Max Retry Count) as per your requirement. Here I took 2, If any failed testcases then it runs two times
             int maxRetryCnt = 3;
             if (retryCnt < maxRetryCnt) {
-                System.out.println("Retrying " + result.getName() + " again and the count is " + (retryCnt + 3));
+                System.out.println("Retrying " + result.getName() + " again and the count is " + (retryCnt + 1));
                 retryCnt++;
                 return true;
             }
