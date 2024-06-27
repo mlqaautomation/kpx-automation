@@ -29,8 +29,8 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");
         }
         waitUntilLoadingGone(10000);
-        type(walletServicesPageObjects.SearchLName(), "Last name field", "AMOC");
-        type(walletServicesPageObjects.SearchFName(), "First name field", "ROSELYN");
+        type(walletServicesPageObjects.SearchLName(), "Last name field", propertyReader.getproperty("lastname"));
+        type(walletServicesPageObjects.SearchFName(), "First name field", propertyReader.getproperty("firstname"));
         type(walletServicesPageObjects.SearchMName(), "Middle name field", "");
         click(walletServicesPageObjects.SearchKYCAc(), "Search Button");
         waitUntilLoadingGone(10000);
@@ -46,17 +46,18 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
         if (walletServicesPageObjects.CashInInfos().isEnabled()) {
             LoggingUtils.info("Navigated to View Cash In to Another Account Information's");
             click(walletServicesPageObjects.ReceiversMobileNum(), "Receiver's ML Money Mobile No.");
-            type(walletServicesPageObjects.ReceiversMobileNum(), "Receiver's ML Money Mobile No.", "078845625");
-            type(walletServicesPageObjects.PrincipalAmount(), "Principal Amount", "1000");
+            type(walletServicesPageObjects.ReceiversMobileNum(), "Receiver's ML Money Mobile No.", "984444442");
+            type(walletServicesPageObjects.PrincipalAmount(), "Principal Amount", propertyReader.getproperty("amountT"));
             click(walletServicesPageObjects.SubmitSendMoney(), "Select Claim Amount");
             waitSleep(2000);
         }
         if (walletServicesPageObjects.SendMoneyInfo().isEnabled()) {
-            type(walletServicesPageObjects.TenderAmount(), "Tender Amount", "1003");
+            type(walletServicesPageObjects.TenderAmount(), "Tender Amount", propertyReader.getproperty("amountTAdd"));
             click(walletServicesPageObjects.ProceedSendMoney(), "Proceed");
         }
         if (walletServicesPageObjects.SendMoneyConfirmation().isEnabled()) {
             click(walletServicesPageObjects.ConfirmSendMoney(), "Confirm Send Money");
+            waitSleep(3000);
             assertEqual(getText(walletServicesPageObjects.SuccessfulSendMoney()), "Send Money Successful");
             String kptnText = getText(walletServicesPageObjects.kptnText());
             List<String> kptnValues = Collections.singletonList(kptnText);
@@ -90,8 +91,8 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
             click(walletServicesPageObjects.SearchKYC(), "Search KYC Button");
         }
         waitSleep(2);
-        type(walletServicesPageObjects.SearchLName(), "Last name field", "AMOC");
-        type(walletServicesPageObjects.SearchFName(), "First name field", "ROSELYN");
+        type(walletServicesPageObjects.SearchLName(), "Last name field", "MONCEDA");
+        type(walletServicesPageObjects.SearchFName(), "First name field", "ALBERT");
         type(walletServicesPageObjects.SearchMName(), "Middle name field", "");
         click(walletServicesPageObjects.SearchKYCAc(), "Search Button");
         waitSleep(2);
@@ -107,18 +108,20 @@ public class WS_CashInToAnotherAccount extends Base_Steps{
         if (walletServicesPageObjects.CashInInfos().isEnabled()) {
             LoggingUtils.info("Navigated to View Cash In to Another Account Information's");
             click(walletServicesPageObjects.ReceiversMobileNum(), "Receiver's ML Money Mobile No.");
-            type(walletServicesPageObjects.ReceiversMobileNum(), "Receiver's ML Money Mobile No.", "078845625");
-            type(walletServicesPageObjects.PrincipalAmount(), "Principal Amount", "1000");
+            type(walletServicesPageObjects.ReceiversMobileNum(), "Receiver's ML Money Mobile No.", "9999999999");
+            type(walletServicesPageObjects.PrincipalAmount(), "Principal Amount", propertyReader.getproperty("amountT"));
             click(walletServicesPageObjects.SubmitSendMoney(), "Select Claim Amount");
             waitSleep(2000);
         }
         if (walletServicesPageObjects.SendMoneyInfo().isEnabled()) {
-            type(walletServicesPageObjects.TenderAmount(), "Tender Amount", "1003");
+            type(walletServicesPageObjects.TenderAmount(), "Tender Amount", propertyReader.getproperty("amountTAdd"));
             click(walletServicesPageObjects.ProceedSendMoney(), "Proceed");
         }
         if (walletServicesPageObjects.SendMoneyConfirmation().isEnabled()) {
             click(walletServicesPageObjects.ConfirmSendMoney(), "Confirm Send Money");
+            waitSleep(5000);
             assertEqual(getText(walletServicesPageObjects.SuccessfulSendMoney()), "Send Money Successful");
+
             String kptnText = getText(walletServicesPageObjects.kptnText());
             List<String> kptnValues = Collections.singletonList(kptnText);
             reader.writeCIAPrintKTPN(kptnValues);

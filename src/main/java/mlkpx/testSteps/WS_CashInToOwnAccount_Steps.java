@@ -114,7 +114,7 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         click(wsCashInToOwnAccountPageObjects.cancelInProceedButton(), "Cancel Button");
         click(wsCashInToOwnAccountPageObjects.proceedButton(), "Proceed Button");
         click(wsCashInToOwnAccountPageObjects.confirmCashInButton(), "Confirm Cash In Button");
-        waitSleep(5000);
+        waitSleep(8000);
         if (isVisible(wsCashInToOwnAccountPageObjects.cashInSuccessfulText(), getText(wsCashInToOwnAccountPageObjects.cashInSuccessfulText()))) {
             ExtentReporter.logPass("CIOA_TC_01", "Successfully Cash In");
             String kptnText = getText(walletServicesPageObjects.kptnText());
@@ -215,7 +215,7 @@ public class WS_CashInToOwnAccount_Steps extends Base_Steps{
         updatedTenderAmountValues = Collections.singletonList(updatedTenderAmountText);
         reader.writeTenderAmountData(updatedTenderAmountValues);
 
-        reader.setRandomValueFromCIOA_TC_09("ACILKATHIKS");
+//        reader.setRandomValueFromCIOA_TC_09("ACILKATHIKS");
     }
 
     public void CIOA_TC_10()throws Exception {

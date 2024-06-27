@@ -26,7 +26,7 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
         click(wsKwartaPadalaPayOutPageObjects.claimAmountButton(),"Claim Amount Button");
         waitUntilLoadingGone(10000);
         click(wsKwartaPadalaPayOutPageObjects.confirmPayoutButton(),"Confirm Payout Button");
-        waitSleep(5000);
+        waitSleep(8000);
         if (isVisible(wsKwartaPadalaPayOutPageObjects.payoutSuccessfulText(), getText(wsKwartaPadalaPayOutPageObjects.payoutSuccessfulText()))) {
             ExtentReporter.logPass("KPP_TC_01", "Successfully validate successful Wallet Services Kwarta Padala Payout");
             String  kptnText = getText(wsKwartaPadalaPayOutPageObjects.kptnText());
@@ -59,7 +59,18 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
         scrollDown(100);
         scrollToElement(wsKwartaPadalaPayOutPageObjects.searchKYCButton());
         click(wsKwartaPadalaPayOutPageObjects.searchKYCButton(), "Search KYC Button");
-        searchKYC();
+        String[] randomName = reader.getRandomName();
+        type(sendOutPageObjects.lastName(), "Lastname ", randomName[1]);
+        type(sendOutPageObjects.firstName(), "Firstname ", randomName[0]);
+        click(sendOutPageObjects.searchBtn(), "Search Button ");
+        waitUntilLoadingGone(10000);
+        click(sendOutPageObjects.viewButton(), "View Button ");
+        waitSleep(5000);
+        scrollDown(100);
+        scrollToBottomOfPageWEB();
+        scrollToElement(sendOutPageObjects.selectKYC());
+        click(sendOutPageObjects.selectKYC(), "Select KYC Button");
+        waitSleep(5000);
         click(wsKwartaPadalaPayOutPageObjects.claimAmountButton(),"Claim Amount Button");
         click(wsKwartaPadalaPayOutPageObjects.confirmPayoutButton(),"Confirm Payout Button");
         waitSleep(5000);
@@ -169,6 +180,12 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
         type(wsKwartaPadalaPayOutPageObjects.referenceNumField(), "KPP KPTN Field", propertyReader.getproperty("validReference"));
         type(wsKwartaPadalaPayOutPageObjects.amountField(), "Amount Field", propertyReader.getproperty("validamount"));
         click(wsKwartaPadalaPayOutPageObjects.searchButton(), "Search Button");
+        click(wsKwartaPadalaPayOutPageObjects.searchKYC(), "Search KYC");
+        navigationWalletServicesToKwartaPadalaPayout();
+        type(wsKwartaPadalaPayOutPageObjects.referenceNumField(), "KPP KPTN Field", propertyReader.getproperty("validReference"));
+        type(wsKwartaPadalaPayOutPageObjects.amountField(), "Amount Field", propertyReader.getproperty("validamount"));
+        click(wsKwartaPadalaPayOutPageObjects.searchButton(), "Search Button");
+        waitSleep(5000);
         if (isVisible(wsKwartaPadalaPayOutPageObjects.transactionBeingProcessedText(), getText(wsKwartaPadalaPayOutPageObjects.transactionBeingProcessedText()))) {
             ExtentReporter.logPass("KPP_TC_09", "Successfully validate again the cash in transaction if its being proccessed or not");
         } else {
