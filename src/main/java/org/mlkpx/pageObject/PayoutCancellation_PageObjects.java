@@ -40,7 +40,7 @@ public class PayoutCancellation_PageObjects {
         return getDriver().findElement(By.xpath("//h3[contains(text(),'Reprint Payout Receipt')]"));
     }
     public WebElement ReprintPayoutPartnerReceipt(){
-        return getDriver().findElement(By.xpath("//h3[contains(text(),'Reprint Partner Payout Receipt')]"));
+        return getDriver().findElement(By.cssSelector("[class=\"sc-gFVvzn cNiBCK\"]"));
     }
 
     public WebElement NoTransactionFound(){
