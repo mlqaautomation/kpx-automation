@@ -81,13 +81,13 @@ public class SendoutPartner_Moneygram_Test extends BaseTest {
             this.sendoutPartnerMoneygramSteps.PS_TC_07();
         }
     }
-    @Test(dependsOnMethods = "loginGoogle" , priority = 12, description = "Verify Sendout Information (10 minute service)")
+    @Test(dependsOnMethods = "loginGoogle" , priority = 12, description = "Verify Sendout Moneygram (10 minute service)")
     public void submitSendoutMoneygram10MinuteService()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.sendoutPartnerMoneygramSteps.PS_TC_08();
         }
     }
-    @Test(dependsOnMethods = "loginGoogle" , priority = 13, description = "Verify Sendout Information (10 minute service) Remote")
+    @Test(dependsOnMethods = "loginGoogle" , priority = 13, description = "Verify Sendout Moneygram (10 minute service) Remote")
     public void submitSendoutMoneygram10MinuteServiceRemote()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.sendoutPartnerMoneygramSteps.PS_TC_08_1();

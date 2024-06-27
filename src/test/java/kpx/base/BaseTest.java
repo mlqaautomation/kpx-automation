@@ -64,6 +64,7 @@ public class BaseTest {
     protected KPDomesticReports_Steps kpDomesticReportsSteps;
     protected MLWalletServicesReportBranchReport_Steps mlWalletServicesReportBranchReportSteps;
     protected CorporatePartnerReport_Steps corporatePartnerReportSteps;
+    protected BillsPayReport_Steps billsPayReportSteps;
 
     protected Login loginWalletSteps;
     protected Cash_In cashInSteps;
@@ -178,6 +179,7 @@ public class BaseTest {
         this.mlWalletServicesReportBranchReportSteps = new MLWalletServicesReportBranchReport_Steps();
         this.corporatePartnerReportSteps = new CorporatePartnerReport_Steps();
 
+        this.billsPayReportSteps = new BillsPayReport_Steps();
 
     }
     public void initWallet(){
