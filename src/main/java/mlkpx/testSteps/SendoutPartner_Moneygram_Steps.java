@@ -609,6 +609,7 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         waitUntilLoadingGone(10000);
         waitSleep(5000);
         searchKYC();
+
         try {
             if (isVisible(sendoutPartnerMoneygramPageObjects.idIssueDateField(), "ID Issue Field")) {
                 type(sendoutPartnerMoneygramPageObjects.idIssueDateField(), "ID Issue Field", propertyReader.getproperty("idIssueDateDay"));
@@ -882,37 +883,38 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         scrollUp(driver);
     }
 
-//    public void addReceiver1 () {
-//        scrollToElement(sendOutPageObjects.searchReceivers());
-//        click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
-//        waitUntilLoadingGone(10000);
-//        click(sendOutPageObjects.addNewReceivers(), "Add new Receiver ");
-//        type(sendOutPageObjects.r_LastName(), "R_Lastname ", "Siarot");
-//        type(sendOutPageObjects.r_FirstName(), "R_Firstname ", "Enrique");
-//        type(sendOutPageObjects.r_MiddleName(), "R_Middlename ", "Alferez");
-//        scrollDown(100);
-//        waitUntilLoadingGone(10000);
-//        click(sendoutPartnerMoneygramPageObjects.receiversCountry(), "Receiver's Country");
-//        click(sendoutPartnerMoneygramPageObjects.countryMalaysia(), "Select Country Malaysia");
-//        waitUntilLoadingGone(10000);
-//        scrollDown(100);
-//        waitSleep(30000);
-//        scrollToElement(sendOutPageObjects.OkCountry());
-//        waitSleep(30000);
-//        click(sendOutPageObjects.OkCountry(), "Confirm Country");
-//        click(sendOutPageObjects.SelectNationality(), "Select Nationality");
-//        click(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ");
-//        type(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ", "2002");
-//        sendOutPageObjects.selectBdate().sendKeys(Keys.ARROW_LEFT);
-//        type(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ", "02");
-//        sendOutPageObjects.selectBdate().sendKeys(Keys.ARROW_LEFT);
-//        sendOutPageObjects.selectBdate().sendKeys(Keys.ARROW_LEFT);
-//        type(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ", "11");
-//        click(sendOutPageObjects.selectSex(), "Receiver Selected Sex Field ");
-//        type(sendOutPageObjects.typeContactNum(), "Receiver Contact No.", "09203447377");
-//        click(sendOutPageObjects.selectProvince(), "Receiver Province/State");
-//        waitUntilLoadingGone(10000);
-//    }
+    public void addReceiver1 () {
+        scrollToElement(sendOutPageObjects.searchReceivers());
+        click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
+        waitUntilLoadingGone(10000);
+        click(sendOutPageObjects.addNewReceivers(), "Add new Receiver ");
+        waitUntilLoadingGone(10000);
+        type(sendOutPageObjects.r_LastName(), "R_Lastname ", "Siarot");
+        type(sendOutPageObjects.r_FirstName(), "R_Firstname ", "Enrique");
+        type(sendOutPageObjects.r_MiddleName(), "R_Middlename ", "Alferez");
+        scrollDown(100);
+        waitUntilLoadingGone(10000);
+        click(sendOutPageObjects.SelectCountry(), "Select Country");
+        waitUntilLoadingGone(10000);
+        scrollDown(100);
+        waitSleep(30000);
+        scrollToElement(sendOutPageObjects.OkCountry());
+        waitSleep(40000);
+        click(sendOutPageObjects.OkCountry(), "Confirm Country");
+        click(sendOutPageObjects.SelectNationality(), "Select Nationality");
+        click(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ");
+        type(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ", "2002");
+        sendOutPageObjects.selectBdate().sendKeys(Keys.ARROW_LEFT);
+        type(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ", "02");
+        sendOutPageObjects.selectBdate().sendKeys(Keys.ARROW_LEFT);
+        sendOutPageObjects.selectBdate().sendKeys(Keys.ARROW_LEFT);
+        type(sendOutPageObjects.selectBdate(), "Receiver Birthdate field ", "11");
+        click(sendOutPageObjects.selectSex(), "Receiver Selected Sex Field ");
+        type(sendOutPageObjects.typeContactNum(), "Receiver Contact No.", "09203447377");
+        click(sendOutPageObjects.selectProvince(), "Receiver Province/State");
+        waitUntilLoadingGone(10000);
+    }
+
 
 
 

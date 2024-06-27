@@ -339,6 +339,25 @@ public class yamlReader {
             return null;
         }
     }
+    public String getBillsPayCEBECOKPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("CebecoBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No CEBECO III BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
     public String getRemoteBillsPayNordecoKPTN() {
         try {
             List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("NordecoRemoteBPKTPN");
@@ -1108,6 +1127,33 @@ public class yamlReader {
             e.printStackTrace();
         }
     }
+    public void writeBillsPayCEBECOKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("CebecoBPKTPN")) {
+                List<String> existingValues = (List<String>) yamlData.get("CebecoBPKTPN");
+                for (String value : values) {
+                    existingValues.add(value.replace(" ", ""));
+                }
+            } else {
+                List<String> trimmedValues = new ArrayList<>();
+                for (String value : values) {
+                    trimmedValues.add(value.replace(" ", ""));
+                }
+                yamlData.put("CebecoBPKTPN", trimmedValues);
+            }
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void writeBillsPayRemoteNordecoKptnData(List<String> values) {
         try {
             Yaml yaml = new Yaml();
@@ -1125,6 +1171,33 @@ public class yamlReader {
                     trimmedValues.add(value.replace(" ", ""));
                 }
                 yamlData.put("NordecoRemoteBPKTPN", trimmedValues);
+            }
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayRemoteCEBECOKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("CebecoRemoteBPKTPN")) {
+                List<String> existingValues = (List<String>) yamlData.get("CebecoRemoteBPKTPN");
+                for (String value : values) {
+                    existingValues.add(value.replace(" ", ""));
+                }
+            } else {
+                List<String> trimmedValues = new ArrayList<>();
+                for (String value : values) {
+                    trimmedValues.add(value.replace(" ", ""));
+                }
+                yamlData.put("CebecoRemoteBPKTPN", trimmedValues);
             }
             FileWriter writer = new FileWriter(yamlFileName);
             yaml.dump(yamlData, writer);
