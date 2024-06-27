@@ -38,4 +38,37 @@ public class BillsPayReport_PageObjects {
     public WebElement clearButtonB(){
         return getDriver().findElement(By.xpath("//*[text()='Clear']"));
     }
+    public WebElement billsPaymentCancellationTransactionType(){
+        return getDriver().findElement(By.xpath("//*[text()='BILLS PAYMENT CANCELLATION REPORT']"));
+    }
+    public WebElement billsPaymentChangeDetailsTransactionType(){
+        return getDriver().findElement(By.xpath("//*[text()='BILLS PAYMENT CHANGE DETAILS REPORT']"));
+    }
+    public WebElement filterDropdown(){
+        return getDriver().findElement(By.cssSelector("[name=\"scope\"]"));
+    }
+    public WebElement selectedFilterBranch(){
+        return getDriver().findElement(By.cssSelector("[value=\"BRANCH\"]"));
+    }
+    public WebElement branchDropdown(){
+        return getDriver().findElement(By.xpath("(//div[contains(@class, 'css-yk16xz-control')])[2]"));
+    }
+    public WebElement misDivision(){
+        return getDriver().findElement(By.xpath("//*[text()='MIS DIVISION - 123301912']"));
+    }
+    public WebElement reportsGenerated(){
+        return getDriver().findElement(By.xpath("//*[text()='Reports Generated']"));
+    }
+    public WebElement monthOfJune(){
+        return getDriver().findElement(By.xpath("//*[text()='June']"));
+    }
+    public WebElement yearDropdown(){
+        return getDriver().findElement(By.cssSelector("[name=\"yearlyTimeframe\"]"));
+    }
+    public WebElement year2024(){
+        return getDriver().findElement(By.xpath("//*[text()='2024']"));
+    }
+    public WebElement branchText(){
+        return getDriver().findElement(By.xpath("//*[text()='Branch']"));
+    }
 }
