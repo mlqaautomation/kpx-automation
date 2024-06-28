@@ -360,10 +360,10 @@ public class yamlReader {
     }
     public String getRemoteBillsPayNordecoKPTN() {
         try {
-            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("CebecoRemoteBPKTPN");
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("NordecoRemoteBPKTPN");
 
             if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
-                System.out.println("No Remote CEBECO BillsPay KPTN values available.");
+                System.out.println("No Remote Nordeco BillsPay KPTN values available.");
                 return null;
             }
             String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
@@ -378,10 +378,10 @@ public class yamlReader {
     }
     public String getRemoteBillsPayCEBECOKPTN() {
         try {
-            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("NordecoRemoteBPKTPN");
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("CebecoRemoteBPKTPN");
 
             if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
-                System.out.println("No Remote Nordeco BillsPay KPTN values available.");
+                System.out.println("No Remote Cebeco BillsPay KPTN values available.");
                 return null;
             }
             String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);

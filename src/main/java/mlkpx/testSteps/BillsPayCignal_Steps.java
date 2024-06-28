@@ -118,6 +118,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
         waitSleep(20000);
+        scrollToElement(billsPayPageObjects.Click2Option());
         click(billsPayPageObjects.Click2Option(), "Select Entity Code ");
         click(billsPayPageObjects.ChooseEntityCode(), "Entity Code ");
         type(billsPayPageObjects.BPOtherLname(), "Last Name", "SIAROT");
