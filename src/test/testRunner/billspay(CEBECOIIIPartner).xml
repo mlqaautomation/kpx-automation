@@ -6,13 +6,13 @@
         <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
     </listeners>
 
-    <test name="BILLSPAY Pag-ibig Partner">
+    <test name="BILLSPAY CEBECO III Partner">
         <parameter name="type" value="web">
             <classes>
-<!--                <class name="kpx.actual.BillsPayPagibig_Tests">  </class>-->
-<!--                <class name="kpx.actual.BillsPayCancellation_Cignal_Tests">  </class>-->
-<!--                <class name="kpx.actual.BillsPayChangeD_Cignal_Tests">  </class>-->
-<!--                <class name="kpx.actual.BillsPayReprinting_Cignal_Tests">  </class>-->
+                <class name="kpx.actual.BillsPayCEBECOIII_Tests">  </class>
+                <class name="kpx.actual.BillsPayCancellatio_CEBECO_Tests">  </class>
+                <class name="kpx.actual.BillsPayChangeD_CEBECO_Tests">  </class>
+                <class name="kpx.actual.BillsPayReprinting_CEBECO_Tests">  </class>
             </classes>
         </parameter>
     </test>
