@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Billspay Report" thread-count="1" >
+<suite name="Billspay Reports" thread-count="1" >
     <listeners>
         <listener class-name="utilities.ExtentReport.ExtentReporter" />
         <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
     </listeners>
 
-    <test name="Billspay Report Input">
+    <test name="Billspay Reports Input">
         <parameter name="type" value="web">
             <classes>
                 <class name="kpx.actual.BillsPayReport_Tests"> </class>
