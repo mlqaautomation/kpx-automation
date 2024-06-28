@@ -48,8 +48,8 @@ public class BillsPayReprinting_Nordeco_Steps extends Base_Steps{
         waitSleep(3000);
         reader.refreshTestData();
         waitSleep(3000);
-        String RemoteBillsPayKPTNNordeco = reader.getRemoteBillsPayNordecoKPTN();
-        type(billsPayPageObjects.RefNum(), "Reference Number",RemoteBillsPayKPTNNordeco);
+        String RemoteBillsPayKPTN = reader.getRemoteBillsPayCEBECOKPTN();
+        type(billsPayPageObjects.RefNum(), "Reference Number",RemoteBillsPayKPTN);
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testings");
         click(billsPayPageObjects.Reprint(), "Search Button");
         if(isVisible(billsPayPageObjects.ReprintBillsReceipt(), getText(billsPayPageObjects.ReprintBillsReceipt()))){
@@ -67,7 +67,7 @@ public class BillsPayReprinting_Nordeco_Steps extends Base_Steps{
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");
         }
-        type(billsPayPageObjects.RefNum(), "Reference Number","KBPTLFFEFUPGI");
+        type(billsPayPageObjects.RefNum(), "Reference Number","KBPTLFFETRFUPGI");
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testings");
         click(billsPayPageObjects.Reprint(), "Search Button");
         assertEqual(getText(billsPayPageObjects.NoTransactionFound()), "No Transaction Found");
@@ -95,7 +95,7 @@ public class BillsPayReprinting_Nordeco_Steps extends Base_Steps{
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");
         }
-        type(billsPayPageObjects.RefNum(), "Reference Number","KBPTLERSPGI");
+        type(billsPayPageObjects.RefNum(), "Reference Number","KBPYZYPRMEU");
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "");
         click(billsPayPageObjects.Reprint(), "Search Button");
         assertEqual(getText(billsPayPageObjects.ReasonRequired()), "Reason is required");
@@ -108,7 +108,7 @@ public class BillsPayReprinting_Nordeco_Steps extends Base_Steps{
         if(isVisible(billsPayPageObjects.BillsPayPrint(), getText(billsPayPageObjects.BillsPayPrint()))) {
             LoggingUtils.info("Navigated the BillsPay Reprinting page");
         }
-        type(billsPayPageObjects.RefNum(), "Reference Number","KBPTLERSPGI");
+        type(billsPayPageObjects.RefNum(), "Reference Number","KBPYZYPRMEU");
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "466Testings");
         click(billsPayPageObjects.Reprint(), "Search Button");
         assertEqual(getText(billsPayPageObjects.OnlyLettersP()), "Only letters are allowed.");

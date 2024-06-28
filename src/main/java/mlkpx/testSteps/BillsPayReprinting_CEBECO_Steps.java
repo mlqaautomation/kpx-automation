@@ -38,7 +38,7 @@ public class BillsPayReprinting_CEBECO_Steps extends Base_Steps{
 
         }
     }
-    public void validateSuccessfulRemoteBillsPayNORDECOReprinting()throws Exception{
+    public void validateSuccessfulRemoteBillsPayCEBECOReprinting()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "NORDECO Partner Bills Pay Reprinting");
@@ -60,7 +60,7 @@ public class BillsPayReprinting_CEBECO_Steps extends Base_Steps{
 
         }
     }
-    public void validateInvalidKTPNBillsPayNORDECOReprinting()throws Exception{
+    public void validateInvalidKTPNBillsPayCEBECOReprinting()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
@@ -76,7 +76,7 @@ public class BillsPayReprinting_CEBECO_Steps extends Base_Steps{
 
 
     }
-    public void validateEmptyRefBillsPayNORDECOReprinting()throws Exception{
+    public void validateEmptyRefBillsPayCEBECOReprinting()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
@@ -88,7 +88,7 @@ public class BillsPayReprinting_CEBECO_Steps extends Base_Steps{
         assertEqual(getText(billsPayPageObjects.RefRequired()), "Reference number is required");
 
     }
-    public void validateEmptyReasonBillsPayNORDECOReprinting()throws Exception{
+    public void validateEmptyReasonBillsPayCEBECOReprinting()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");
@@ -101,7 +101,7 @@ public class BillsPayReprinting_CEBECO_Steps extends Base_Steps{
         assertEqual(getText(billsPayPageObjects.ReasonRequired()), "Reason is required");
 
     }
-    public void validateOnlyLettersBillsPayNORDECOReprinting()throws Exception{
+    public void validateOnlyLettersBillsPayCEBECOReprinting()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPReprinting());
         click(billsPayPageObjects.BPReprinting(), "Bills Pay Reprinting");

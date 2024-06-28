@@ -10,9 +10,9 @@
         <parameter name="type" value="web">
             <classes>
                 <class name="kpx.actual.BillsPayCEBECOIII_Tests">  </class>
-<!--                <class name="kpx.actual.BillsPayChangeD_CEBECO_Tests">  </class>-->
-<!--                <class name="kpx.actual.BillsPayReprinting_CEBECO_Tests">  </class>-->
-<!--                <class name="kpx.actual.BillsPayCancellatio_CEBECO_Tests">  </class>-->
+                <class name="kpx.actual.BillsPayCancellatio_CEBECO_Tests">  </class>
+                <class name="kpx.actual.BillsPayChangeD_CEBECO_Tests">  </class>
+                <class name="kpx.actual.BillsPayReprinting_CEBECO_Tests">  </class>
             </classes>
         </parameter>
     </test>

@@ -10,7 +10,7 @@
         <parameter name="type" value="web">
             <classes>
                 <class name="kpx.actual.Payout_Partners_Tests"> </class>
-<!--                <class name="kpx.actual.PartnersPayoutCancella_Tests"> </class>-->
+                <class name="kpx.actual.PartnersPayoutCancella_Tests"> </class>
                 <class name="kpx.actual.PayoutWesternPartnerReprinting_Tests"> </class>
             </classes>
         </parameter>

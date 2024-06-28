@@ -22,7 +22,7 @@ public class BillsPayCancellation_CEBECO_Steps extends Base_Steps{
         //Must need to cancel before/within five minutes.
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "NORDECO Partner Bills Pay Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "CEBECO III Partner Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
             waitSleep(3000);
@@ -48,18 +48,18 @@ public class BillsPayCancellation_CEBECO_Steps extends Base_Steps{
         }
 
     }
-    public void validateSuccessfulRemoteBillsPayCancellationNORDECOPartner()throws Exception{
+    public void validateSuccessfulRemoteBillsPayCancellationCEBECOPartner()throws Exception{
         //Must need to cancel before/within five minutes.
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "NORDECO Partner  Bills Pay Remote Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "CEBECO III Partner  Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String BillsPayRemoteNOREDCOKPTN = reader.getRemoteBillsPayNORDECOKPTN();
-            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayRemoteNOREDCOKPTN);
+            String BillsPayRemoteKPTN = reader.getRemoteBillsPayCEBECOKPTN();
+            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayRemoteKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -86,10 +86,10 @@ public class BillsPayCancellation_CEBECO_Steps extends Base_Steps{
                     "Payment has been successfully cancelled.");
         }
     }
-    public void validateEmptyRefBillsPayCancellationNORDECOPartner()throws Exception{
+    public void validateEmptyRefBillsPayCancellationCEBECOPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "NORDECO Partner Bills Pay Remote Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "CEBECO III Partner Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
             type(billsPayPageObjects.RefNum(), "KTPN Number","");
@@ -97,13 +97,13 @@ public class BillsPayCancellation_CEBECO_Steps extends Base_Steps{
             assertEqual(getText(billsPayPageObjects.EmptyRef()), "Reference Number is required");
         }
     }
-    public void validateInvalidRefBillsPayCancellationNORDECOPartner()throws Exception{
+    public void validateInvalidRefBillsPayCancellationCEBECOPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "NORDECO Partner Bills Pay Remote Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "CEBECO III Partner Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGQTCVKWTN");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGQTGFERGFCVKWTN");
             click(billsPayPageObjects.SearchButton(), "Search Button");
 
             if(isVisible(billsPayPageObjects.InvalidKTPN(), getText(billsPayPageObjects.Page_h5()))){
@@ -112,13 +112,13 @@ public class BillsPayCancellation_CEBECO_Steps extends Base_Steps{
             click(billsPayPageObjects.OKButton(), "OK");
         }
     }
-    public void validateCancelledBillsPayRefNumNORDECOPartner()throws Exception{
+    public void validateCancelledBillsPayRefNumCEBECOPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "NORDECO Partner Bills Pay Remote Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "CEBECO III Partner Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGQTCVWTN");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPIAOTZTHZ");
             click(billsPayPageObjects.SearchButton(), "Search Button");
 
             if(isVisible(billsPayPageObjects.CancelledRefNum(), getText(billsPayPageObjects.CancelledRefNum()))){
@@ -127,36 +127,36 @@ public class BillsPayCancellation_CEBECO_Steps extends Base_Steps{
             click(billsPayPageObjects.OKButton(), "OK");
         }
     }
-    public void validateCancelledBillsPayInvalidIRNumberNORDECOPartner()throws Exception{
+    public void validateCancelledBillsPayInvalidIRNumberCEBECOPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "NORDECO Partner Bills Pay Remote Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "CEBECO III Partner Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPFRVDQZNG");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))){
-            type(billsPayPageObjects.IRNum(), "KTPN Number", "343453453453");
+            type(billsPayPageObjects.IRNum(), "KTPN Number", "2111566262");
             waitSleep(2000);
             scrollToElement(billsPayPageObjects.CancelPayment());
             click(billsPayPageObjects.CancelPayment(), "Cancel Payment");
             assertEqual(getText(billsPayPageObjects.InvalidIR()), "Please enter valid IR No.");
         }
     }
-    public void validateCancelledBillsPayNoReasonNORDECOPartner()throws Exception{
+    public void validateCancelledBillsPayNoReasonCEBECOPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "NORDECO Partner Bills Pay Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "CEBECO III Partner Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPFRVDQZNG");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))){
-            type(billsPayPageObjects.IRNum(), "KTPN Number", "2111111111262");
+            type(billsPayPageObjects.IRNum(), "KTPN Number", "2111123111262");
             type(billsPayPageObjects.ReasonCancel(), "Reason for Cancellation ", "");
             waitSleep(2000);
             scrollToElement(billsPayPageObjects.CancelPayment());
@@ -166,13 +166,13 @@ public class BillsPayCancellation_CEBECO_Steps extends Base_Steps{
 
         }
     }
-    public void validateCancelledBillsPayNoIRNumberNORDECOPartner()throws Exception{
+    public void validateCancelledBillsPayNoIRNumberCEBECOPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "NORDECO Partner Bills Pay Remote Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "CEBECO III Partner Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPFRVDQZNG");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -184,13 +184,13 @@ public class BillsPayCancellation_CEBECO_Steps extends Base_Steps{
             assertEqual(getText(billsPayPageObjects.NoIRNum()), "IR Number is required");
         }
     }
-    public void validateCancelledBillsPayNoInitiatedByNORDECOPartner()throws Exception{
+    public void validateCancelledBillsPayNoInitiatedByCEBECOPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "NORDECO Partner Bills Pay Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "CEBECO III Partner Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPFRVDQZNG");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -205,13 +205,13 @@ public class BillsPayCancellation_CEBECO_Steps extends Base_Steps{
 
         }
     }
-    public void validateCancelledBillsPayKeepTransactionNORDECOPartner()throws Exception{
+    public void validateCancelledBillsPayKeepTransactionCEBECOPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "NORDECO Partner Bills Pay Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "CEBECO III Partner Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPFRVDQZNG");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -228,13 +228,13 @@ public class BillsPayCancellation_CEBECO_Steps extends Base_Steps{
 
         }
     }
-    public void validateCancelledBillsPayStayInPageNORDECOPartner()throws Exception{
+    public void validateCancelledBillsPayStayInPageCEBECOPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "NORDECO Partner Bills Pay Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "CEBECO III Partner Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPFRVDQZNG");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
