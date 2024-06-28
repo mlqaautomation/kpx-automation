@@ -30,14 +30,14 @@ public class GenerateTestData extends BaseTest{
         kwartaPadala.kwartaPadala();
     }
     @Test(priority = 5 ,description = "Second Test to get KwartaPadala KPTN")
-    public void kwartaPadala1(){
-        generateTestData.loginWalletTestData1();
-        kwartaPadala.kwartaPadala1();
-    }
-    @Test(priority = 6 ,description = "Third Test to get KwartaPadala KPTN")
     public void kwartaPadala2(){
         generateTestData.loginWalletTestData1();
         kwartaPadala.kwartaPadala2();
+    }
+    @Test(priority = 6 ,description = "Third Test to get KwartaPadala KPTN")
+    public void kwartaPadala3(){
+        generateTestData.loginWalletTestData1();
+        kwartaPadala.kwartaPadala3();
     }
 
     @Test(priority = 7 ,description = "First Test to get CashOut KPTN")

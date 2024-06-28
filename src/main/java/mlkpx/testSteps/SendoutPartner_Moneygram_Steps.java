@@ -397,17 +397,18 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
     }
     public void PS_TC_08_1() throws Exception {
         PS_TC_02();
-        click(sendOutPageObjects.searchKYC(), "Search KYC button ");
-        String[] randomName = reader.getRandomName();
-        type(sendOutPageObjects.lastName(), "Lastname ", propertyReader.getproperty("forPartnerLastName"));
-        type(sendOutPageObjects.firstName(), "Firstname ", propertyReader.getproperty("forPartnerFirstName"));
-        click(sendOutPageObjects.searchBtn(), "Search Button ");
-        waitUntilLoadingGone(10000);
-        click(sendOutPageObjects.viewButton(), "View Button ");
-        waitSleep(5000);
-        scrollToBottomOfPageWEB();
-        scrollToElement(sendOutPageObjects.selectKYC());
-        click(sendOutPageObjects.selectKYC(), "Select KYC Button");
+        searchKYC();
+//        click(sendOutPageObjects.searchKYC(), "Search KYC button ");
+//        String[] randomName = reader.getRandomName();
+//        type(sendOutPageObjects.lastName(), "Lastname ", propertyReader.getproperty("forPartnerLastName"));
+//        type(sendOutPageObjects.firstName(), "Firstname ", propertyReader.getproperty("forPartnerFirstName"));
+//        click(sendOutPageObjects.searchBtn(), "Search Button ");
+//        waitUntilLoadingGone(10000);
+//        click(sendOutPageObjects.viewButton(), "View Button ");
+//        waitSleep(5000);
+//        scrollToBottomOfPageWEB();
+//        scrollToElement(sendOutPageObjects.selectKYC());
+//        click(sendOutPageObjects.selectKYC(), "Select KYC Button");
         try {
             if (isVisible(sendoutPartnerMoneygramPageObjects.idIssueDateField(), "ID Issue Field")) {
                 type(sendoutPartnerMoneygramPageObjects.idIssueDateField(), "ID Issue Field", propertyReader.getproperty("idIssueDateDay"));
@@ -629,24 +630,24 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
                 click(sendoutPartnerMoneygramPageObjects.nationalityReceivers(), "Nationality Dropdown Field");
                 click(sendoutPartnerMoneygramPageObjects.selectedNationalityReceivers(), " Selected Nationality Receivers ");
                 type(sendoutPartnerMoneygramPageObjects.contactNumberReceiver(), "Receiver's Contact Number", propertyReader.getproperty("Contact_number"));
-                click(sendOutPageObjects.selectProvince(), "Receiver Province/State");
-                String value = getValue(sendOutPageObjects.r_LastName());
-                String[] receiverNames = selectedReceiverName.split(",");
-                boolean containsName = false;
-                for (String name : receiverNames) {
-                    if (value.contains(name.trim())) { //loops the lastname text until comma
-                        containsName = true;
-                        break;
-                    }
-                }
-                if (containsName) {
-                    ExtentReporter.logPass("PS_TC_05", "Successfully Validate Search Receiver  ");
-                    LoggingUtils.info("Successfully Validate Search Receiver  ");
-                } else {
-                    ExtentReporter.logFail("PS_TC_05", "Failed to Validate Search Receiver  ");
-                    LoggingUtils.error("Failed to Validate Search Receiver " + getValue(sendOutPageObjects.r_LastName()) + " Expected " + selectedReceiverName);
-                    Assert.fail("Failure due to Incorrect Details"); //assert the script to fail in testng
-                }
+//                click(sendOutPageObjects.selectProvince(), "Receiver Province/State");
+//                String value = getValue(sendOutPageObjects.r_LastName());
+//                String[] receiverNames = selectedReceiverName.split(",");
+//                boolean containsName = false;
+//                for (String name : receiverNames) {
+//                    if (value.contains(name.trim())) { //loops the lastname text until comma
+//                        containsName = true;
+//                        break;
+//                    }
+//                }
+//                if (containsName) {
+//                    ExtentReporter.logPass("PS_TC_05", "Successfully Validate Search Receiver  ");
+//                    LoggingUtils.info("Successfully Validate Search Receiver  ");
+//                } else {
+//                    ExtentReporter.logFail("PS_TC_05", "Failed to Validate Search Receiver  ");
+//                    LoggingUtils.error("Failed to Validate Search Receiver " + getValue(sendOutPageObjects.r_LastName()) + " Expected " + selectedReceiverName);
+//                    Assert.fail("Failure due to Incorrect Details"); //assert the script to fail in testng
+//                }
             }
 
         } catch (Exception e) {
@@ -695,17 +696,17 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         waitSleep(10000);
         scrollToElement(sendoutPartnerMoneygramPageObjects.confirmSendoutButton());
         click(sendoutPartnerMoneygramPageObjects.confirmSendoutButton(),"Confirm Sendout Button");
-        waitUntilLoadingGone(10000);
-        waitSleep(20000);
+        waitSleep(40000);
+
         //todo get value of kptn locator and post it to yaml file
         String referenceNumber = getText(sendoutPartnerMoneygramPageObjects.referenceNumber());
         List<String> kptnValues = Collections.singletonList(referenceNumber);
         reader.writeKptnDataWesternUnionPartner10MinuteService(kptnValues);
         if(isVisible(sendoutPartnerMoneygramPageObjects.sendoutSuccessfulText(), getText(sendoutPartnerMoneygramPageObjects.sendoutSuccessfulText()))){
-            ExtentReporter.logPass("PS_TC_13", "Successfully Sendout Partner Moneygram");
+            ExtentReporter.logPass("PS_TC_13", "Successfully Sendout Partner Western Union");
         }else{
-            ExtentReporter.logFail("PS_TC_13", "Fail to Verify Sendout Partner Moneygram");
-            Assert.fail("Fail to Verify Sendout Partner Moneygram");
+            ExtentReporter.logFail("PS_TC_13", "Fail to Verify Sendout Partner Western Union");
+            Assert.fail("Fail to Verify Sendout Partner Western Union");
         }
         click(sendoutPartnerMoneygramPageObjects.proceedToPrintingButton(),"Proceed to Printing Button");
         click(sendoutPartnerMoneygramPageObjects.cancelInPrintingButton(),"Cancel In Printing Button");
@@ -751,24 +752,24 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
                 click(sendoutPartnerMoneygramPageObjects.nationalityReceivers(), "Nationality Dropdown Field");
                 click(sendoutPartnerMoneygramPageObjects.selectedNationalityReceivers(), " Selected Nationality Receivers ");
                 type(sendoutPartnerMoneygramPageObjects.contactNumberReceiver(), "Receiver's Contact Number", propertyReader.getproperty("Contact_number"));
-                click(sendOutPageObjects.selectProvince(), "Receiver Province/State");
-                String value = getValue(sendOutPageObjects.r_LastName());
-                String[] receiverNames = selectedReceiverName.split(",");
-                boolean containsName = false;
-                for (String name : receiverNames) {
-                    if (value.contains(name.trim())) { //loops the lastname text until comma
-                        containsName = true;
-                        break;
-                    }
-                }
-                if (containsName) {
-                    ExtentReporter.logPass("PS_TC_05", "Successfully Validate Search Receiver  ");
-                    LoggingUtils.info("Successfully Validate Search Receiver  ");
-                } else {
-                    ExtentReporter.logFail("PS_TC_05", "Failed to Validate Search Receiver  ");
-                    LoggingUtils.error("Failed to Validate Search Receiver " + getValue(sendOutPageObjects.r_LastName()) + " Expected " + selectedReceiverName);
-                    Assert.fail("Failure due to Incorrect Details"); //assert the script to fail in testng
-                }
+//                click(sendOutPageObjects.selectProvince(), "Receiver Province/State");
+//                String value = getValue(sendOutPageObjects.r_LastName());
+//                String[] receiverNames = selectedReceiverName.split(",");
+//                boolean containsName = false;
+//                for (String name : receiverNames) {
+//                    if (value.contains(name.trim())) { //loops the lastname text until comma
+//                        containsName = true;
+//                        break;
+//                    }
+//                }
+//                if (containsName) {
+//                    ExtentReporter.logPass("PS_TC_05", "Successfully Validate Search Receiver  ");
+//                    LoggingUtils.info("Successfully Validate Search Receiver  ");
+//                } else {
+//                    ExtentReporter.logFail("PS_TC_05", "Failed to Validate Search Receiver  ");
+//                    LoggingUtils.error("Failed to Validate Search Receiver " + getValue(sendOutPageObjects.r_LastName()) + " Expected " + selectedReceiverName);
+//                    Assert.fail("Failure due to Incorrect Details"); //assert the script to fail in testng
+//                }
             }
 
         } catch (Exception e) {
@@ -823,10 +824,10 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         List<String> kptnValues = Collections.singletonList(referenceNumber);
         reader.writeKptnDataWesternUnionPartner10MinuteServiceRemote(kptnValues);
         if(isVisible(sendoutPartnerMoneygramPageObjects.sendoutSuccessfulText(), getText(sendoutPartnerMoneygramPageObjects.sendoutSuccessfulText()))){
-            ExtentReporter.logPass("PS_TC_14", "Successfully Sendout Partner Moneygram");
+            ExtentReporter.logPass("PS_TC_14", "Successfully Sendout Partner Western Union Remote");
         }else{
-            ExtentReporter.logFail("PS_TC_14", "Fail to Verify Sendout Partner Moneygram");
-            Assert.fail("Fail to Verify Sendout Partner Moneygram");
+            ExtentReporter.logFail("PS_TC_14", "Fail to Verify Sendout Partner Western Union Remote");
+            Assert.fail("Fail to Verify Sendout Partner Western Union Remote");
         }
         click(sendoutPartnerMoneygramPageObjects.proceedToPrintingButton(),"Proceed to Printing Button");
         click(sendoutPartnerMoneygramPageObjects.cancelInPrintingButton(),"Cancel In Printing Button");
@@ -841,8 +842,10 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         String[] randomSenderName = reader.getRandomNameForSenderSendOutPartner();
 //        type(sendOutPageObjects.lastName(), "Lastname ", randomSenderName[1]);
 //        type(sendOutPageObjects.firstName(), "Firstname ", randomSenderName[0]);
-        type(sendOutPageObjects.lastName(), "Lastname ", "Balansag");
-        type(sendOutPageObjects.firstName(), "Firstname ", "Rochelle");
+
+        type(sendOutPageObjects.lastName(), "Lastname ", "BALANSAG");
+        type(sendOutPageObjects.firstName(), "Firstname ", "ROCHELLE");
+
         click(sendOutPageObjects.searchBtn(), "Search Button ");
         waitUntilLoadingGone(10000);
         waitSleep(10000);

@@ -34,7 +34,7 @@ public class Kwarta_Padala extends Base_Steps{
 
 
     }
-    public void kwartaPadala1() {
+    public void kwartaPadala2() {
         mobileGeneralMethod.waitSleep(2000);
         mobileGeneralMethod.tap(mlWalletPageObjects.sendMoney_icon(), "Send Money Icon");
         mobileGeneralMethod.tap(mlWalletPageObjects.sendMoney_branchOption(), "Send Money Via Branch");
@@ -63,7 +63,7 @@ public class Kwarta_Padala extends Base_Steps{
 
 
     }
-    public void kwartaPadala2() {
+    public void kwartaPadala3() {
         mobileGeneralMethod.waitSleep(2000);
         mobileGeneralMethod.tap(mlWalletPageObjects.sendMoney_icon(), "Send Money Icon");
         mobileGeneralMethod.tap(mlWalletPageObjects.sendMoney_branchOption(), "Send Money Via Branch");
