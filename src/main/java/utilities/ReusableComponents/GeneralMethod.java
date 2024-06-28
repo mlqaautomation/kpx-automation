@@ -468,7 +468,6 @@ public class GeneralMethod extends ExtentReporter{
         }
     }
 
-
     /**
      * Checks if an element is present on the page.
      *
