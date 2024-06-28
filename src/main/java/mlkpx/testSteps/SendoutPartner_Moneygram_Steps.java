@@ -839,10 +839,10 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
     public void searchKYC () {
         click(sendOutPageObjects.searchKYC(), "Search KYC button");
         String[] randomSenderName = reader.getRandomNameForSenderSendOutPartner();
-        type(sendOutPageObjects.lastName(), "Lastname ", randomSenderName[1]);
-        type(sendOutPageObjects.firstName(), "Firstname ", randomSenderName[0]);
-//        type(sendOutPageObjects.lastName(), "Lastname ", "Same");
-//        type(sendOutPageObjects.firstName(), "Firstname ", "The");
+//        type(sendOutPageObjects.lastName(), "Lastname ", randomSenderName[1]);
+//        type(sendOutPageObjects.firstName(), "Firstname ", randomSenderName[0]);
+        type(sendOutPageObjects.lastName(), "Lastname ", "Balansag");
+        type(sendOutPageObjects.firstName(), "Firstname ", "Rochelle");
         click(sendOutPageObjects.searchBtn(), "Search Button ");
         waitUntilLoadingGone(10000);
         waitSleep(10000);

@@ -360,6 +360,24 @@ public class yamlReader {
     }
     public String getRemoteBillsPayNordecoKPTN() {
         try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("CebecoRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote CEBECO BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            RemoteBillsPayKptnList.remove(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayCEBECOKPTN() {
+        try {
             List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("NordecoRemoteBPKTPN");
 
             if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {

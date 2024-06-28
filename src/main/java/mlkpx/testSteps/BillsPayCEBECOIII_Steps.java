@@ -32,7 +32,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         waitSleep(5000);
         click(billsPayPageObjects.ChooseOptionCebeco(), "CEBU III ELECTRIC COOPERATIVE (CEBECO III) Partner");
         waitUntilLoadingGone(10000);
-        waitSleep(5000);
+        waitSleep(10000);
         type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P");
         String[] randomName = reader.getRandomName();
         type(billsPayPageObjects.BPLastName(), "BP Last Name", randomName[1]);
@@ -102,7 +102,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         click(billsPayPageObjects.ChooseOptionCebeco(), "CEBU III ELECTRIC COOPERATIVE (CEBECO III) Partner");
         waitUntilLoadingGone(10000);
         waitSleep(5000);
-        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A009789C");
         String[] randomName = reader.getRandomName();
         type(billsPayPageObjects.BPLastName(), "BP Last Name", randomName[1]);
         type(billsPayPageObjects.BPFirstName(), "BP First Name", randomName[0]);
@@ -119,7 +119,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
             type(billsPayPageObjects.PayorAddress(), "Payor Address", "Cebu City");
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
 //            String AmountBillsPayKPTN = reader.getBillsPayAmount();
-            type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "26303.86");
+            type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "4223.07");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "For Bills");
             waitSleep(10000);
             scrollToElement(billsPayPageObjects.SubmitBillsPay());
@@ -148,16 +148,18 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
             waitSleep(3000);
         }
     }
-    public void validateBillsPayNORDECONoPartner()throws Exception {
+    public void validateBillsPayCEBECOIIINoPartner()throws Exception {
         waitSleep(2000);
         waitUntilLoadingGone(10000);
         waitSleep(5000);
-        type(billsPayPageObjects.BPAccNum(), "BP NORDECO Account Number", "P691575261");
-        type(billsPayPageObjects.BPLastName(), "BP Last Name", "LAPASA ");
-        type(billsPayPageObjects.BPFirstName(), "BP First Name", "VENANCIO");
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P");
+        String[] randomName = reader.getRandomName();
+        type(billsPayPageObjects.BPLastName(), "BP Last Name", randomName[1]);
+        type(billsPayPageObjects.BPFirstName(), "BP First Name", randomName[0]);
+        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
+
 
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
@@ -175,7 +177,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
             assertEqual(getText(billsPayPageObjects.SelectPartners()), "Please select the partner that will receive the payment.");
         }
     }
-    public void validateBillsPayNORDECONoAccNumLnameFname()throws Exception {
+    public void validateBillsPayCEBECOIIINoAccNumLnameFname()throws Exception {
         waitSleep(10000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
@@ -183,15 +185,16 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         click(billsPayPageObjects.ClickOption(), "Option");
         scrollVertically(By.cssSelector("[class=' css-11unzgr']"),2500);
         waitSleep(5000);
-        click(billsPayPageObjects.ChooseOptionNordeco(), "NORTHERN DAVAO ELECTRIC COOPERATIVE (NORDECO) Partner");
+        click(billsPayPageObjects.ChooseOptionCebeco(), "CEBU III ELECTRIC COOPERATIVE (CEBECO III) Partner");
         waitUntilLoadingGone(10000);
         waitSleep(10000);
-        type(billsPayPageObjects.BPAccNum(), "BP NORDECO Account Number", "");
-        type(billsPayPageObjects.BPLastName(), "BP Last Name", "LAPASA ");
-        type(billsPayPageObjects.BPFirstName(), "BP First Name", "VENANCIO");
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "");
+        type(billsPayPageObjects.BPLastName(), "BP Last Name", "Monte");
+        type(billsPayPageObjects.BPFirstName(), "BP First Name", "Sarah");
+        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
-        //Payor Information
+        waitUntilLoadingGone(10000);
+
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.SubmitBillsPay());
         click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
@@ -199,16 +202,17 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
 
         waitSleep(3000);
         billsPayPageObjects.BPAccNum().clear();
-        type(billsPayPageObjects.BPAccNum(), "BP Cignal Account Number", "P691575261");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P");
         billsPayPageObjects.BPLastName().clear();
         type(billsPayPageObjects.BPLastName(), "BP Last Name", "");
         billsPayPageObjects.BPFirstName().clear();
-        type(billsPayPageObjects.BPFirstName(), "BP First Name", "VENANCIO");
+        type(billsPayPageObjects.BPFirstName(), "BP First Name", "Sarah");
         billsPayPageObjects.BPMiddleName().clear();
         type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
         billsPayPageObjects.BPOwnContactNum().clear();
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
-        //Payor Information
+        waitUntilLoadingGone(10000);
+
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.SubmitBillsPay());
         click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
@@ -216,13 +220,13 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
 
         waitSleep(3000);
         billsPayPageObjects.BPAccNum().clear();
-        type(billsPayPageObjects.BPAccNum(), "BP Cignal Account Number", "P691575261");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P");
         billsPayPageObjects.BPLastName().clear();
-        type(billsPayPageObjects.BPLastName(), "BP Last Name", "Salingbay");
+        type(billsPayPageObjects.BPLastName(), "BP Last Name", "Monte");
         billsPayPageObjects.BPFirstName().clear();
         type(billsPayPageObjects.BPFirstName(), "BP First Name", "");
         billsPayPageObjects.BPMiddleName().clear();
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "ALFEREZ");
+        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
         billsPayPageObjects.BPOwnContactNum().clear();
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         //Payor Information
@@ -233,7 +237,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
 
 
     }
-    public void validateBillsPayNORDECOEmptyPayorLname()throws Exception {
+    public void validateBillsPayCEBECOIIIEmptyPayorLname()throws Exception {
         waitSleep(10000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
@@ -242,13 +246,14 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         waitSleep(3000);
         scrollVertically(By.cssSelector("[class=' css-11unzgr']"),2500);
         waitSleep(5000);
-        click(billsPayPageObjects.ChooseOptionNordeco(), "NORTHERN DAVAO ELECTRIC COOPERATIVE (NORDECO) Partner");
+        click(billsPayPageObjects.ChooseOptionCebeco(), "CEBU III ELECTRIC COOPERATIVE (CEBECO III) Partner");
         waitUntilLoadingGone(10000);
         waitSleep(5000);
-        type(billsPayPageObjects.BPAccNum(), "BP NORDECO Account Number", "P691575261");
-        type(billsPayPageObjects.BPLastName(), "BP Last Name", "LAPASA ");
-        type(billsPayPageObjects.BPFirstName(), "BP First Name", "VENANCIO");
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P");
+        String[] randomName = reader.getRandomName();
+        type(billsPayPageObjects.BPLastName(), "BP Last Name", randomName[1]);
+        type(billsPayPageObjects.BPFirstName(), "BP First Name", randomName[0]);
+        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
 
@@ -261,7 +266,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
             assertEqual(getText(billsPayPageObjects.EmptyLPayor()), "Payor last name is a required field");
         }
     }
-    public void validateBillsPayNORDECOEmptyPayorFname()throws Exception {
+    public void validateBillsPayCEBECOIIIEmptyPayorFname()throws Exception {
         waitSleep(10000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
@@ -270,19 +275,19 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         waitSleep(3000);
         scrollVertically(By.cssSelector("[class=' css-11unzgr']"),2500);
         waitSleep(5000);
-        click(billsPayPageObjects.ChooseOptionNordeco(), "NORTHERN DAVAO ELECTRIC COOPERATIVE (NORDECO) Partner");
+        click(billsPayPageObjects.ChooseOptionCebeco(), "CEBU III ELECTRIC COOPERATIVE (CEBECO III) Partner");
         waitUntilLoadingGone(10000);
         waitSleep(5000);
-        type(billsPayPageObjects.BPAccNum(), "BP NORDECO Account Number", "P691575261");
-        type(billsPayPageObjects.BPLastName(), "BP Last Name", "LAPASA ");
-        type(billsPayPageObjects.BPFirstName(), "BP First Name", "VENANCIO");
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P");
+        String[] randomName = reader.getRandomName();
+        type(billsPayPageObjects.BPLastName(), "BP Last Name", randomName[1]);
+        type(billsPayPageObjects.BPFirstName(), "BP First Name", randomName[0]);
+        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
 
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
-//            type(billsPayPageObjects.PayorLastName(), "Payor Last Name", "AGUILARTEST");
             type(billsPayPageObjects.PayorFirstName(), "Payor First Name", "");
             waitSleep(2000);
             scrollToElement(billsPayPageObjects.SubmitBillsPay());
@@ -290,7 +295,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
             assertEqual(getText(billsPayPageObjects.EmptyFPayor()), "Payor first name is a required field");
         }
     }
-    public void validateBillsPayNORDECOEmptyPayorAddress()throws Exception {
+    public void validateBillsPayCEBECOIIIEmptyPayorAddress()throws Exception {
         waitSleep(10000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
@@ -299,13 +304,14 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         waitSleep(3000);
         scrollVertically(By.cssSelector("[class=' css-11unzgr']"),2500);
         waitSleep(5000);
-        click(billsPayPageObjects.ChooseOptionNordeco(), "NORTHERN DAVAO ELECTRIC COOPERATIVE (NORDECO) Partner");
+        click(billsPayPageObjects.ChooseOptionCebeco(), "CEBU III ELECTRIC COOPERATIVE (CEBECO III) Partner");
         waitUntilLoadingGone(10000);
         waitSleep(5000);
-        type(billsPayPageObjects.BPAccNum(), "BP NORDECO Account Number", "P691575261");
-        type(billsPayPageObjects.BPLastName(), "BP Last Name", "LAPASA ");
-        type(billsPayPageObjects.BPFirstName(), "BP First Name", "VENANCIO");
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P");
+        String[] randomName = reader.getRandomName();
+        type(billsPayPageObjects.BPLastName(), "BP Last Name", randomName[1]);
+        type(billsPayPageObjects.BPFirstName(), "BP First Name", randomName[0]);
+        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
 
@@ -318,7 +324,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
             assertEqual(getText(billsPayPageObjects.EmptyAddress()), "Payor address is a required field");
         }
     }
-    public void validateBillsPayNORDECOEmptyPayorContact()throws Exception {
+    public void validateBillsPayCEBECOIIIEmptyPayorContact()throws Exception {
         waitSleep(10000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
@@ -327,13 +333,14 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         waitSleep(3000);
         scrollVertically(By.cssSelector("[class=' css-11unzgr']"),2500);
         waitSleep(5000);
-        click(billsPayPageObjects.ChooseOptionNordeco(), "NORTHERN DAVAO ELECTRIC COOPERATIVE (NORDECO) Partner");
+        click(billsPayPageObjects.ChooseOptionCebeco(), "CEBU III ELECTRIC COOPERATIVE (CEBECO III) Partner");
         waitUntilLoadingGone(10000);
         waitSleep(5000);
-        type(billsPayPageObjects.BPAccNum(), "BP NORDECO Account Number", "P691575261");
-        type(billsPayPageObjects.BPLastName(), "BP Last Name", "LAPASA ");
-        type(billsPayPageObjects.BPFirstName(), "BP First Name", "VENANCIO");
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P");
+        String[] randomName = reader.getRandomName();
+        type(billsPayPageObjects.BPLastName(), "BP Last Name", randomName[1]);
+        type(billsPayPageObjects.BPFirstName(), "BP First Name", randomName[0]);
+        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
         //Payor Information
@@ -345,7 +352,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
             assertEqual(getText(billsPayPageObjects.EmptyContact()), "Payor contact number is a required field");
         }
     }
-    public void validateBillsPayNORDECOZeroAndEmptyAmount()throws Exception {
+    public void validateBillsPayCEBECOIIIZeroAndEmptyAmount()throws Exception {
         waitSleep(10000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
@@ -354,13 +361,14 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         waitSleep(3000);
         scrollVertically(By.cssSelector("[class=' css-11unzgr']"),2500);
         waitSleep(5000);
-        click(billsPayPageObjects.ChooseOptionNordeco(), "NORTHERN DAVAO ELECTRIC COOPERATIVE (NORDECO) Partner");
+        click(billsPayPageObjects.ChooseOptionCebeco(), "CEBU III ELECTRIC COOPERATIVE (CEBECO III) Partner");
         waitUntilLoadingGone(10000);
         waitSleep(5000);
-        type(billsPayPageObjects.BPAccNum(), "BP NORDECO Account Number", "P691575261");
-        type(billsPayPageObjects.BPLastName(), "BP Last Name", "LAPASA ");
-        type(billsPayPageObjects.BPFirstName(), "BP First Name", "VENANCIO");
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P");
+        String[] randomName = reader.getRandomName();
+        type(billsPayPageObjects.BPLastName(), "BP Last Name", randomName[1]);
+        type(billsPayPageObjects.BPFirstName(), "BP First Name", randomName[0]);
+        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
 
@@ -374,7 +382,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         }
 
     }
-    public void validateBillsPayNORDECOInvalidAccNum()throws Exception {
+    public void validateBillsPayCEBECOIIIInvalidAccNum()throws Exception {
         waitSleep(10000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
@@ -383,13 +391,14 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         waitSleep(3000);
         scrollVertically(By.cssSelector("[class=' css-11unzgr']"),2500);
         waitSleep(5000);
-        click(billsPayPageObjects.ChooseOptionNordeco(), "NORTHERN DAVAO ELECTRIC COOPERATIVE (NORDECO) Partner");
+        click(billsPayPageObjects.ChooseOptionCebeco(), "CEBU III ELECTRIC COOPERATIVE (CEBECO III) Partner");
         waitUntilLoadingGone(10000);
         waitSleep(5000);
-        type(billsPayPageObjects.BPAccNum(), "BP NORDECO Account Number", "P6915752661");
-        type(billsPayPageObjects.BPLastName(), "BP Last Name", "LAPASA ");
-        type(billsPayPageObjects.BPFirstName(), "BP First Name", "VENANCIO");
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P464");
+        String[] randomName = reader.getRandomName();
+        type(billsPayPageObjects.BPLastName(), "BP Last Name", randomName[1]);
+        type(billsPayPageObjects.BPFirstName(), "BP First Name", randomName[0]);
+        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
 
@@ -416,7 +425,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
                     "Invalid customer account number (code 1154) (version: aa833cf)");
         }
     }
-    public void validateBillsPayNORDECOFourDigAccNum()throws Exception {
+    public void validateBillsPayCEBECOIIIFourDigAccNum()throws Exception {
         waitSleep(10000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
@@ -425,13 +434,14 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         waitSleep(3000);
         scrollVertically(By.cssSelector("[class=' css-11unzgr']"),2500);
         waitSleep(5000);
-        click(billsPayPageObjects.ChooseOptionNordeco(), "NORTHERN DAVAO ELECTRIC COOPERATIVE (NORDECO) Partner");
+        click(billsPayPageObjects.ChooseOptionCebeco(), "CEBU III ELECTRIC COOPERATIVE (CEBECO III) Partner");
         waitUntilLoadingGone(10000);
         waitSleep(5000);
-        type(billsPayPageObjects.BPAccNum(), "BP NORDECO Account Number", "P691575261566");
-        type(billsPayPageObjects.BPLastName(), "BP Last Name", "LAPASA ");
-        type(billsPayPageObjects.BPFirstName(), "BP First Name", "VENANCIO");
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600657547567P");
+        String[] randomName = reader.getRandomName();
+        type(billsPayPageObjects.BPLastName(), "BP Last Name", randomName[1]);
+        type(billsPayPageObjects.BPFirstName(), "BP First Name", randomName[0]);
+        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
 
@@ -458,7 +468,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
                     "Invalid customer account number (code 1154) (version: aa833cf)");
         }
     }
-    public void validateBillsPayNORDECOInvalidContactNum()throws Exception {
+    public void validateBillsPayCEBECOIIIInvalidContactNum()throws Exception {
         waitSleep(10000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
@@ -467,13 +477,14 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         waitSleep(3000);
         scrollVertically(By.cssSelector("[class=' css-11unzgr']"),2500);
         waitSleep(10000);
-        click(billsPayPageObjects.ChooseOptionNordeco(), "NORTHERN DAVAO ELECTRIC COOPERATIVE (NORDECO) Partner");
+        click(billsPayPageObjects.ChooseOptionCebeco(), "CEBU III ELECTRIC COOPERATIVE (CEBECO III) Partner");
         waitUntilLoadingGone(10000);
         waitSleep(5000);
-        type(billsPayPageObjects.BPAccNum(), "BP NORDECO Account Number", "P691575261");
-        type(billsPayPageObjects.BPLastName(), "BP Last Name", "LAPASA ");
-        type(billsPayPageObjects.BPFirstName(), "BP First Name", "VENANCIO");
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "");
+        type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P");
+        String[] randomName = reader.getRandomName();
+        type(billsPayPageObjects.BPLastName(), "BP Last Name", randomName[1]);
+        type(billsPayPageObjects.BPFirstName(), "BP First Name", randomName[0]);
+        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
 
@@ -487,7 +498,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
             LoggingUtils.info("Must start with 639|09|9 followed by 9 digits.");
         }
     }
-    public void validateBillsPayNORDECOMaxAmountNum()throws Exception {
+    public void validateBillsPayCEBECOIIIMaxAmountNum()throws Exception {
         waitSleep(10000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
