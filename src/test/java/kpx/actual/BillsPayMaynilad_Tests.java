@@ -85,7 +85,6 @@ public class BillsPayMaynilad_Tests extends BaseTest {
             this.billsPaySteps.validateEmptyFirstnamePayor();
 
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "To validate bills payment with no Payor's Address provided")
     public void BillsPay_TC_09()throws Exception{
@@ -94,7 +93,6 @@ public class BillsPayMaynilad_Tests extends BaseTest {
             this.billsPaySteps.validateEmptyAddressPayor();
 
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 11, description = "To validate bills payment with no contact number provided")
     public void BillsPay_TC_10()throws Exception{
