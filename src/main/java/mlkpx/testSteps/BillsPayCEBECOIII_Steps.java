@@ -152,6 +152,9 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         waitSleep(2000);
         waitUntilLoadingGone(10000);
         waitSleep(5000);
+        click(billsPayPageObjects.ClickOption(), "Option");
+        click(billsPayPageObjects.PayorLastName(), "Option");
+        assertEqual(getText(billsPayPageObjects.SelectPartners()), "Please select the partner that will receive the payment.");
         type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "A000600P");
         String[] randomName = reader.getRandomName();
         type(billsPayPageObjects.BPLastName(), "BP Last Name", randomName[1]);
@@ -171,11 +174,9 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
             String AmountBillsPayKPTN = reader.getBillsPayAmount();
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", AmountBillsPayKPTN);
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
-            waitSleep(15000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            assertEqual(getText(billsPayPageObjects.SelectPartners()), "Please select the partner that will receive the payment.");
-        }
+            waitSleep(5000);
+            LoggingUtils.info("Incorrect Payment Details, Cannot read properties of undefined (reading 'partnerId') (version: 140c9bc)");
+  }
     }
     public void validateBillsPayCEBECOIIINoAccNumLnameFname()throws Exception {
         waitSleep(10000);
@@ -190,14 +191,6 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         waitSleep(10000);
         type(billsPayPageObjects.BPAccNum(), "BP (CEBECO III) Account Number", "");
         type(billsPayPageObjects.BPLastName(), "BP Last Name", "Monte");
-        type(billsPayPageObjects.BPFirstName(), "BP First Name", "Sarah");
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
-        type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
-        waitUntilLoadingGone(10000);
-
-        waitSleep(2000);
-        scrollToElement(billsPayPageObjects.SubmitBillsPay());
-        click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
         assertEqual(getText(billsPayPageObjects.EmptyAccount()), "Account number is a required field");
 
         waitSleep(3000);
@@ -207,15 +200,6 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         type(billsPayPageObjects.BPLastName(), "BP Last Name", "");
         billsPayPageObjects.BPFirstName().clear();
         type(billsPayPageObjects.BPFirstName(), "BP First Name", "Sarah");
-        billsPayPageObjects.BPMiddleName().clear();
-        type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
-        billsPayPageObjects.BPOwnContactNum().clear();
-        type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
-        waitUntilLoadingGone(10000);
-
-        waitSleep(2000);
-        scrollToElement(billsPayPageObjects.SubmitBillsPay());
-        click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
         assertEqual(getText(billsPayPageObjects.EmptyLastname()), "Account last name is a required field");
 
         waitSleep(3000);
@@ -227,12 +211,6 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         type(billsPayPageObjects.BPFirstName(), "BP First Name", "");
         billsPayPageObjects.BPMiddleName().clear();
         type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "A");
-        billsPayPageObjects.BPOwnContactNum().clear();
-        type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
-        //Payor Information
-        waitSleep(2000);
-        scrollToElement(billsPayPageObjects.SubmitBillsPay());
-        click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
         assertEqual(getText(billsPayPageObjects.EmptyFirstname()), "Account first name is a required field");
 
 
@@ -260,9 +238,8 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorLastName(), "Payor Last Name", "");
+            type(billsPayPageObjects.PayorFirstName(), "Payor First Name", "test");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyLPayor()), "Payor last name is a required field");
         }
     }
@@ -289,10 +266,10 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorFirstName(), "Payor First Name", "");
+            type(billsPayPageObjects.PayorAddress(), "Payor Address", "cebu");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyFPayor()), "Payor first name is a required field");
+
         }
     }
     public void validateBillsPayCEBECOIIIEmptyPayorAddress()throws Exception {
@@ -318,9 +295,8 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorAddress(), "Payor Address", "");
+            type(billsPayPageObjects.PayorContact(), "Payor Contact", "09657865477");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyAddress()), "Payor address is a required field");
         }
     }
@@ -346,10 +322,10 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "");
+            type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "90");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyContact()), "Payor contact number is a required field");
+
         }
     }
     public void validateBillsPayCEBECOIIIZeroAndEmptyAmount()throws Exception {
@@ -375,9 +351,10 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", " ");
-            type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
+            click(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number");
             assertEqual(getText(billsPayPageObjects.EmptyAmount()), "Payment amount must have a valid value");
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "0");
+            click(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number");
             assertEqual(getText(billsPayPageObjects.ZeroAmount()), "Minimum amount is 1");
         }
 
@@ -412,17 +389,8 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            waitSleep(10000);
-            LoggingUtils.info("Bills Pay Confirmation");
-            click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
-            waitSleep(2000);
-            click(billsPayPageObjects.ConfirmSubmitBillsPay(), "Confirm Payment");
-            waitSleep(15000);
-            assertEqual(getText(billsPayPageObjects.InvalidAccountNumNordeco()), "Payment Failed");
-            LoggingUtils.info("Payment Failed\n" +
-                    "Invalid customer account number (code 1154) (version: aa833cf)");
+            assertEqual(getText(billsPayPageObjects.IncorrectPayment()), "Incorrect Payment Details");
+            LoggingUtils.info("Incorrect Payment Details\n" + "Invalid customer account number (code 1154) (version: 140c9bc)");
         }
     }
     public void validateBillsPayCEBECOIIIFourDigAccNum()throws Exception {
@@ -455,17 +423,8 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            waitSleep(10000);
-            LoggingUtils.info("Bills Pay Confirmation");
-            click(billsPayPageObjects.ReviewBillsPay(), "Reviewed Bills Payment Input");
-            waitSleep(2000);
-            click(billsPayPageObjects.ConfirmSubmitBillsPay(), "Confirm Payment");
-            waitSleep(5000);
-            assertEqual(getText(billsPayPageObjects.InvalidAccountNumNordeco()), "Payment Failed");
-            LoggingUtils.info("Payment Failed\n" +
-                    "Invalid customer account number (code 1154) (version: aa833cf)");
+            assertEqual(getText(billsPayPageObjects.IncorrectPayment()), "Incorrect Payment Details");
+            LoggingUtils.info("Incorrect Payment Details\n" +"Invalid customer account number (code 1154) (version: 140c9bc)");
         }
     }
     public void validateBillsPayCEBECOIIIInvalidContactNum()throws Exception {
@@ -492,8 +451,7 @@ public class BillsPayCEBECOIII_Steps extends Base_Steps{
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "08635129781");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
+            click(billsPayPageObjects.PaymentAmount(), "Payment Amount");
             assertEqual(getText(billsPayPageObjects.InvalidContact()), "Must start with 639|09|9 followed by 9 digits.");
             LoggingUtils.info("Must start with 639|09|9 followed by 9 digits.");
         }

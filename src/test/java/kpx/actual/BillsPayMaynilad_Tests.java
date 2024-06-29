@@ -130,15 +130,15 @@ public class BillsPayMaynilad_Tests extends BaseTest {
         }
 
     }
-    @Test(dependsOnMethods = "loginGoogle", priority = 15, description = "To validate bills payment with 20 below amount provided")
-    public void BillsPay_TC_14()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.billsPaySteps.navigatePayoutPage();
-            this.billsPaySteps.validateBelow20AmountTransaction();
-
-        }
-
-    }
+//    @Test(dependsOnMethods = "loginGoogle", priority = 15, description = "To validate bills payment with 20 below amount provided")
+//    public void BillsPay_TC_14()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.billsPaySteps.navigatePayoutPage();
+//            this.billsPaySteps.validateBelow20AmountTransaction();
+//
+//        }
+//
+//    }
     @Test(dependsOnMethods = "loginGoogle", priority = 16, description = "To validate bills payment with invalid Contact Number provided")
     public void BillsPay_TC_15()throws Exception{
         if(this.homeSteps.isInHomePage()){

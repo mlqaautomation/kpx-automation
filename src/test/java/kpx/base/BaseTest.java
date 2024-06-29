@@ -38,6 +38,7 @@ public class BaseTest {
     protected BillsPayPagbig_Steps billsPayPagbigSteps;
     protected BillsPayNordeco_Steps billsPayNordecoSteps;
     protected BillsPayCEBECOIII_Steps billsPayCEBECOIIISteps;
+    protected BillsPayFlashpay_Steps billsPayFlashpaySteps;
     protected BillsPayCancellationMaynilad_Steps billsPayCancellationSteps;
     protected BillsPayCancellation_Nordeco_Steps billsPayCancellationNordecoSteps;
     protected BillsPayCancellation_Cignal_Steps billsPayCancellationCignalTests;
@@ -151,6 +152,7 @@ public class BaseTest {
         this.billsPayPagbigSteps = new BillsPayPagbig_Steps();
         this.billsPayNordecoSteps = new BillsPayNordeco_Steps();
         this.billsPayCEBECOIIISteps = new BillsPayCEBECOIII_Steps();
+        this.billsPayFlashpaySteps = new BillsPayFlashpay_Steps();
         this.billsPayCancellationSteps = new BillsPayCancellationMaynilad_Steps();
         this.billsPayCancellationCignalTests = new BillsPayCancellation_Cignal_Steps();
         this.billsPayCancellationNordecoSteps = new BillsPayCancellation_Nordeco_Steps();

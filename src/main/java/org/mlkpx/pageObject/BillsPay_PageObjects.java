@@ -96,6 +96,12 @@ public class BillsPay_PageObjects {
     public WebElement InvalidAccountNum(){
         return getDriver().findElement(By.xpath("//h5[contains(text(),'Incorrect Payment Details')]"));
     }
+    public WebElement IncorrectPayment(){
+        return getDriver().findElement(By.xpath("//h5[contains(text(),'Incorrect Payment Details')]"));
+    }
+    public WebElement MaxAmount(){
+        return getDriver().findElement(By.xpath("//span[contains(text(),'Maximum allowed amount is PHP 50,000.00. (version: N/A)')]"));
+    }
     public WebElement InvalidAccountNumNordeco(){
         return getDriver().findElement(By.xpath("//h5[contains(text(),'Payment Failed')]"));
     }
@@ -379,6 +385,9 @@ public class BillsPay_PageObjects {
     }
     public WebElement ChooseOptionNordeco() {
         return getDriver().findElement(By.xpath("//div[contains(text(), 'NORTHERN DAVAO ELECTRIC COOPERATIVE (NORDECO)')]"));
+    }
+    public WebElement ChooseOptionFlashpay() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'FLASHPAY')]"));
     }
     public WebElement ChooseOptionCebeco() {
         return getDriver().findElement(By.xpath("//div[contains(text(), 'CEBU III ELECTRIC COOPERATIVE (CEBECO III)')]"));

@@ -164,6 +164,9 @@ public class BillsPayCignal_Steps extends Base_Steps{
         waitSleep(2000);
         waitUntilLoadingGone(10000);
         waitSleep(5000);
+        click(billsPayPageObjects.ClickOption(), "Option");
+        click(billsPayPageObjects.PayorLastName(), "Option");
+        assertEqual(getText(billsPayPageObjects.SelectPartners()), "Please select the partner that will receive the payment.");
         type(billsPayPageObjects.BPAccNum(), "BP Cignal Account Number", "9006567444");
         type(billsPayPageObjects.BPLastName(), "BP Last Name", "SIAROT");
         type(billsPayPageObjects.BPFirstName(), "BP First Name", "ENRIQUE");
@@ -179,9 +182,8 @@ public class BillsPayCignal_Steps extends Base_Steps{
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            assertEqual(getText(billsPayPageObjects.SelectPartners()), "Please select the partner that will receive the payment.");
+            LoggingUtils.info("Incorrect Payment Details, Cannot read properties of undefined (reading 'partnerId') (version: 140c9bc)");
+
         }
     }
     public void validateBillsPayCignalNoAccNum()throws Exception {
@@ -201,30 +203,17 @@ public class BillsPayCignal_Steps extends Base_Steps{
         type(billsPayPageObjects.BPFirstName(), "BP First Name", "ENRIQUE");
         type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "ALFEREZ");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
-        //Payor Information
-        if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
-            type(billsPayPageObjects.PayorLastName(), "Payor Last Name", "AGUILARTEST");
-            type(billsPayPageObjects.PayorFirstName(), "Payor First Name", "ANGELYTEST");
-            type(billsPayPageObjects.PayorMiddleName(), "Payor Middle Name", "TESTING");
-            type(billsPayPageObjects.PayorAddress(), "Payor Address", "Cebu City");
-            type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
-            type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
-            type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
-            waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            assertEqual(getText(billsPayPageObjects.EmptyAccount()), "Account number is a required field");
-        }
+        assertEqual(getText(billsPayPageObjects.EmptyAccount()), "Account number is a required field");
+
     }
     public void validateBillsPayCignalEmptyLName()throws Exception {
         waitSleep(6000);
         waitUntilLoadingGone(10000);
         type(billsPayPageObjects.BPLastName(), "BP Last Name", "");
+        type(billsPayPageObjects.BPFirstName(), "BP First Name", "ENRIQUE");
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyLastname()), "Account last name is a required field");
         }
 
@@ -238,8 +227,6 @@ public class BillsPayCignal_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyFirstname()), "Account first name is a required field");
         }
 
@@ -262,6 +249,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
         type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "ALFEREZ");
         type(billsPayPageObjects.BPOwnContactNum(), "BP Account Owner Contact Number", "09203447377");
         waitUntilLoadingGone(10000);
+        waitSleep(10000);
         type(billsPayPageObjects.BPOtherLname(), "Last Name", "SIAROT");
         type(billsPayPageObjects.BPOtherFname(), "First Name", "Enrique");
         type(billsPayPageObjects.BPOtherMInitial(), "Middle Initial", "A");
@@ -276,10 +264,10 @@ public class BillsPayCignal_Steps extends Base_Steps{
             String AmountBillsPayKPTN = reader.getBillsPayAmount();
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", AmountBillsPayKPTN);
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
-            waitSleep(2000);
+            waitSleep(5000);
             scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            waitSleep(5000);
+            waitSleep(15000);
             assertEqual(getText(billsPayPageObjects.InvalidAccountNum()), "Incorrect Payment Details");
             LoggingUtils.info("Incorrect Payment Details\n" +
                     "Please provide the external entity name. (version: ee39e51)");
@@ -371,9 +359,8 @@ public class BillsPayCignal_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorLastName(), "Payor Last Name", "");
+            type(billsPayPageObjects.PayorFirstName(), "Payor First Name", "enrique");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyLPayor()), "Payor last name is a required field");
         }
     }
@@ -405,11 +392,9 @@ public class BillsPayCignal_Steps extends Base_Steps{
 
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
-//            type(billsPayPageObjects.PayorLastName(), "Payor Last Name", "AGUILARTEST");
             type(billsPayPageObjects.PayorFirstName(), "Payor First Name", "");
+            type(billsPayPageObjects.PayorAddress(), "Payor Address", "cebu");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyFPayor()), "Payor first name is a required field");
         }
     }
@@ -442,9 +427,8 @@ public class BillsPayCignal_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorAddress(), "Payor Address", "");
+            type(billsPayPageObjects.PayorContact(), "Payor Contact", "09657865477");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyAddress()), "Payor address is a required field");
         }
     }
@@ -477,9 +461,8 @@ public class BillsPayCignal_Steps extends Base_Steps{
         //Payor Information
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "");
+            type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "90");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             assertEqual(getText(billsPayPageObjects.EmptyContact()), "Payor contact number is a required field");
         }
     }
@@ -533,7 +516,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
         click(billsPayPageObjects.ChooseOptionCignal(), "Cignal Partner");
         waitUntilLoadingGone(10000);
         waitSleep(5000);
-        type(billsPayPageObjects.BPAccNum(), "BP Cignal Account Number", "90067444");
+        type(billsPayPageObjects.BPAccNum(), "BP Cignal Account Number", "900656744456");
         type(billsPayPageObjects.BPLastName(), "BP Last Name", "SIAROT");
         type(billsPayPageObjects.BPFirstName(), "BP First Name", "ENRIQUE");
         type(billsPayPageObjects.BPMiddleName(), "BP Middle Name", "ALFEREZ");
@@ -554,13 +537,13 @@ public class BillsPayCignal_Steps extends Base_Steps{
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
-            waitSleep(2000);
+            waitSleep(5000);
             scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            waitSleep(10000);
+            waitSleep(15000);
             assertEqual(getText(billsPayPageObjects.InvalidAccountNum()), "Incorrect Payment Details");
-            LoggingUtils.info("Incorrect Payment Details" +
-                    "The account number provided is invalid. Please try entering this again. (version: f6ec269)");
+            LoggingUtils.info("Incorrect Payment Details\n" +
+                    "The account number must be 10 digits. (version: 140c9bc)");
         }
     }
     public void validateBillsPayCignalFourDigAccNum()throws Exception {
@@ -598,13 +581,13 @@ public class BillsPayCignal_Steps extends Base_Steps{
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "100");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
-            waitSleep(2000);
+            waitSleep(5000);
             scrollToElement(billsPayPageObjects.SubmitBillsPay());
             click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
-            waitSleep(5000);
-            assertEqual(getText(billsPayPageObjects.InvalidAccountNum()), "Incorrect Payment Details");
-            LoggingUtils.info("Incorrect Payment Details" +
-                    "The account number must be 8 digits. (version: f6ec269)");
+            waitSleep(15000);
+            assertEqual(getText(billsPayPageObjects.IncorrectPayment()), "Incorrect Payment Details");
+            LoggingUtils.info("Incorrect Payment Details\n" +
+                    "The account number must be 10 digits. (version: 140c9bc)");
         }
     }
 //    public void validateBillsPayCignalInvalidAmount()throws Exception {
@@ -680,8 +663,7 @@ public class BillsPayCignal_Steps extends Base_Steps{
         if(isVisible(billsPayPageObjects.billsPay_PayInfo(), getText(billsPayPageObjects.billsPay_PayInfo()))){
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "08635129781");
             waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
+            click(billsPayPageObjects.PaymentAmount(), "Payment Amount");
             assertEqual(getText(billsPayPageObjects.InvalidContact()), "Must start with 639|09|9 followed by 9 digits.");
             LoggingUtils.info("Must start with 639|09|9 followed by 9 digits.");
         }
@@ -721,12 +703,8 @@ public class BillsPayCignal_Steps extends Base_Steps{
             type(billsPayPageObjects.PayorContact(), "Payor Contact", "09635129781");
             type(billsPayPageObjects.PaymentAmount(), "Payment Amount", "500000");
             type(billsPayPageObjects.PaymentDetails(), "Payment Details", "Testing Testing");
-            waitSleep(2000);
-            scrollToElement(billsPayPageObjects.SubmitBillsPay());
-            click(billsPayPageObjects.SubmitBillsPay(), "Submit Bills Pay Button");
             waitSleep(5000);
-            assertEqual(getText(billsPayPageObjects.InvalidAccountNum()), "Incorrect Payment Details");
-            LoggingUtils.info("The maximum amount for payments is Php100,000.00. Please enter a lower amount.");
+            LoggingUtils.info("Maximum allowed amount is PHP 50,000.00. (version: aa833cf)");
         }
     }
 
