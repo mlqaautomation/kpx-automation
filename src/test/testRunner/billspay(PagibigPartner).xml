@@ -9,7 +9,7 @@
     <test name="BILLSPAY Pag-ibig Partner">
         <parameter name="type" value="web">
             <classes>
-<!--                <class name="kpx.actual.BillsPayPagibig_Tests">  </class>-->
+                <class name="kpx.actual.BillsPayPagibig_Tests">  </class>
 <!--                <class name="kpx.actual.BillsPayCancellation_Cignal_Tests">  </class>-->
 <!--                <class name="kpx.actual.BillsPayChangeD_Cignal_Tests">  </class>-->
 <!--                <class name="kpx.actual.BillsPayReprinting_Cignal_Tests">  </class>-->
