@@ -48,7 +48,7 @@ public class BillsPayReprinting_CEBECO_Steps extends Base_Steps{
         waitSleep(3000);
         reader.refreshTestData();
         waitSleep(3000);
-        String RemoteBillsPayKPTNNordeco = reader.getRemoteBillsPayNordecoKPTN();
+        String RemoteBillsPayKPTNNordeco = reader.getRemoteBillsPayCEBECOKPTN();
         type(billsPayPageObjects.RefNum(), "Reference Number",RemoteBillsPayKPTNNordeco);
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testings");
         click(billsPayPageObjects.Reprint(), "Search Button");

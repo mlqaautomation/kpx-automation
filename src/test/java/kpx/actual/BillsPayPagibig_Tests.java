@@ -55,7 +55,7 @@ public class  BillsPayPagibig_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 6, description = "To validate bills payment transaction in Pagibig with empty lname")
-    public void PagibigBP_TC_09()throws Exception{
+    public void PagibigBP_TC_08()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateBillsPayPagibigEmptyPayorLname();
@@ -63,7 +63,7 @@ public class  BillsPayPagibig_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 7, description = "To validate bills payment transaction in Pagibig with empty fname")
-    public void PagibigBP_TC_10()throws Exception{
+    public void PagibigBP_TC_09()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateBillsPayPagibigEmptyPayorFname();
@@ -71,7 +71,7 @@ public class  BillsPayPagibig_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 8, description = "To validate bills payment transaction in Pagibig with empty address")
-    public void PagibigBP_TC_11()throws Exception{
+    public void PagibigBP_TC_10()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateBillsPayPagibigEmptyPayorAddress();
@@ -79,7 +79,7 @@ public class  BillsPayPagibig_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 9, description = "To validate bills payment transaction in Pagibig with Empty Payor Contact")
-    public void PagibigBP_TC_12()throws Exception{
+    public void PagibigBP_TC_11()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateBillsPayPagibigEmptyPayorContact();
@@ -87,7 +87,7 @@ public class  BillsPayPagibig_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "To validate bills payment transaction in Pagibig with Xero and Empty Amount")
-    public void PagibigBP_TC_13()throws Exception{
+    public void PagibigBP_TC_12()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateBillsPayPagibigZeroAndEmptyAmount();
@@ -95,7 +95,7 @@ public class  BillsPayPagibig_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 11, description = "To validate bills payment transaction in Pagibig with Invalid Account Number")
-    public void PagibigBP_TC_14()throws Exception{
+    public void PagibigBP_TC_13()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateBillsPayPagibigInvalidAccNum();
@@ -103,7 +103,7 @@ public class  BillsPayPagibig_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 12, description = "To validate bills payment transaction in Pagibig Four Digits Account Num")
-    public void PagibigBP_TC_15()throws Exception{
+    public void PagibigBP_TC_14()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateBillsPayPagibigFourDigAccNum();
@@ -111,7 +111,7 @@ public class  BillsPayPagibig_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 13, description = "To validate bills payment transaction in Pagibig with Invalid Contact Number")
-    public void PagibigBP_TC_17()throws Exception{
+    public void PagibigBP_TC_15()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateBillsPayPagibigInvalidContactNum();
@@ -119,7 +119,7 @@ public class  BillsPayPagibig_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 14, description = "To validate bills payment transaction in Pagibig Max Amount Number")
-    public void PagibigBP_TC_18()throws Exception{
+    public void PagibigBP_TC_16()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateBillsPayPagibigMaxAmountNum();
