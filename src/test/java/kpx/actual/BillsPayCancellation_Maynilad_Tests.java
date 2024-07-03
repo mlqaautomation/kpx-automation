@@ -15,7 +15,7 @@ public class BillsPayCancellation_Maynilad_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful Bills Pay Cancellation ")
-    public void BPC_TC_01()throws Exception{
+    public void BPMayniladC_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
             this.billsPaySteps.validateSuccessfulBillsPayTransaction();
@@ -25,7 +25,7 @@ public class BillsPayCancellation_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate remote successful Bills Pay Cancellation ")
-    public void BPC_TC_02()throws Exception{
+    public void BPMayniladC_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
             this.billsPaySteps.validateSuccessfulRemoteBillsPayTransaction();
@@ -35,7 +35,7 @@ public class BillsPayCancellation_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate Empty Reference Bills Pay Cancellation ")
-    public void BPC_TC_03()throws Exception{
+    public void BPMayniladC_TC_03()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
             this.billsPayCancellationSteps.validateEmptyRefBillsPayCancellation();
@@ -44,7 +44,7 @@ public class BillsPayCancellation_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "To validate Invalid Reference Bills Pay Cancellation ")
-    public void BPC_TC_04()throws Exception{
+    public void BPMayniladC_TC_04()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
             this.billsPayCancellationSteps.validateInvalidRefBillsPayCancellation();
@@ -53,7 +53,7 @@ public class BillsPayCancellation_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 5, description = "To validate Cancelled Reference Bills Pay Transaction ")
-    public void BPC_TC_05()throws Exception{
+    public void BPMayniladC_TC_05()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
             this.billsPayCancellationSteps.validateCancelledBillsPayRefNum();
@@ -62,7 +62,7 @@ public class BillsPayCancellation_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 6, description = "To validate Invalid IR number Bills Pay Transaction ")
-    public void BPC_TC_06()throws Exception{
+    public void BPMayniladC_TC_06()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
             this.billsPayCancellationSteps.validateCancelledBillsPayInvalidIRNumber();
@@ -71,7 +71,7 @@ public class BillsPayCancellation_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 7, description = "To validate No Reason Bills Pay Transaction ")
-    public void BPC_TC_07()throws Exception{
+    public void BPMayniladC_TC_07()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
             this.billsPayCancellationSteps.validateCancelledBillsPayNoReason();
@@ -80,7 +80,7 @@ public class BillsPayCancellation_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 8, description = "To validate NO IR number Bills Pay Transaction ")
-    public void BPC_TC_08()throws Exception{
+    public void BPMayniladC_TC_08()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
             this.billsPayCancellationSteps.validateCancelledBillsPayNoIRNumber();
@@ -89,7 +89,7 @@ public class BillsPayCancellation_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 9, description = "To validate NO Initiated By Bills Pay Transaction ")
-    public void BPC_TC_09()throws Exception{
+    public void BPMayniladC_TC_09()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
             this.billsPayCancellationSteps.validateCancelledBillsPayNoInitiatedBy();
@@ -98,7 +98,7 @@ public class BillsPayCancellation_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 10, description = "To validate Keep Transaction By Bills Pay Transaction ")
-    public void BPC_TC_10()throws Exception{
+    public void BPMayniladC_TC_10()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
             this.billsPayCancellationSteps.validateCancelledBillsPayKeepTransaction();
@@ -107,7 +107,7 @@ public class BillsPayCancellation_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 11, description = "To validate Stay Transaction By Bills Pay Transaction ")
-    public void BPC_TC_11()throws Exception{
+    public void BPMayniladC_TC_11()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationSteps.navigatePayoutPage();
             this.billsPayCancellationSteps.validateCancelledBillsPayStayInPage();

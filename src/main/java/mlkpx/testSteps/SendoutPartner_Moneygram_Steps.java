@@ -19,7 +19,7 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         click(sendOutPageObjects.sendOutLink(), "SendOut Page ");
         click(sendoutPartnerMoneygramPageObjects.sendoutTransactionLink(), "Sendout Transaction");
         click(sendoutPartnerMoneygramPageObjects.partnerSendout(), "Partner Sendout Dropdown Button");
-        waitSleep(10000);
+        waitSleep(5000);
         if (isVisible(sendoutPartnerMoneygramPageObjects.sendoutPartnerText(), getText(sendoutPartnerMoneygramPageObjects.sendoutPartnerText()))) {
             ExtentReporter.logPass("PS_TC_01", "Successfully Validated  Sendout Partner Page Navigation");
         } else {
@@ -604,7 +604,7 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
 
     public void PS_TC_13() throws Exception {
         PS_TC_01();
-        waitSleep(5000);
+        waitSleep(20000);
         click(sendoutPartnerMoneygramPageObjects.selectPartner(), "Select Partner");
         click(sendoutPartnerMoneygramPageObjects.selectWesternUnion(), "Select Western Union in Dropdown");
         waitUntilLoadingGone(10000);

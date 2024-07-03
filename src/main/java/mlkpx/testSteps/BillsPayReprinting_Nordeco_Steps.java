@@ -26,7 +26,7 @@ public class BillsPayReprinting_Nordeco_Steps extends Base_Steps{
         waitSleep(3000);
         reader.refreshTestData();
         waitSleep(3000);
-        String BillsPayKPTNNordeco = reader.getBillsPayNordecoKPTN();
+        String BillsPayKPTNNordeco = reader.getBillsPayNORDECOKPTN();
         type(billsPayPageObjects.RefNum(), "Reference Number",BillsPayKPTNNordeco);
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testings");
         click(billsPayPageObjects.Reprint(), "Search Button");
@@ -48,7 +48,7 @@ public class BillsPayReprinting_Nordeco_Steps extends Base_Steps{
         waitSleep(3000);
         reader.refreshTestData();
         waitSleep(3000);
-        String RemoteBillsPayKPTN = reader.getRemoteBillsPayCEBECOKPTN();
+        String RemoteBillsPayKPTN = reader.getRemoteBillsPayNORDECOKPTN();
         type(billsPayPageObjects.RefNum(), "Reference Number",RemoteBillsPayKPTN);
         type(billsPayPageObjects.ReasonReprinting(), "Reason for Reprinting ", "Testings");
         click(billsPayPageObjects.Reprint(), "Search Button");

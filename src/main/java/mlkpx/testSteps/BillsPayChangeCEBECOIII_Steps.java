@@ -67,7 +67,7 @@ public class BillsPayChangeCEBECOIII_Steps extends Base_Steps{
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String RemoteBillsPayKPTNCEBECO = reader.getRemoteBillsPayNordecoKPTN();
+            String RemoteBillsPayKPTNCEBECO = reader.getRemoteBillsPayCEBECOKPTN();
             type(billsPayPageObjects.RefNum(), "KTPN Number",RemoteBillsPayKPTNCEBECO);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }

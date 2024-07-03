@@ -35,27 +35,20 @@ public class PayoutReprinting_Tests extends BaseTest {
             this.payoutSteps.validateSuccessfulRemoteDomesticPayout();
             this.payoutReprintingSteps.navigatePayoutPage();
             this.payoutReprintingSteps.validateSuccessfulRemotePayoutReprinting();
-
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate payout reprinting with invalid KPTN transaction")
     public void Payout_TC_Reprinting_03()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.payoutReprintingSteps.navigatePayoutPage();
             this.payoutReprintingSteps.validateInvalidKTPNPayoutReprinting();
-
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "To validate payout reprinting with no Reason provided")
     public void Payout_TC_Reprinting_04()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.payoutReprintingSteps.navigatePayoutPage();
             this.payoutReprintingSteps.validateEmptyReasonPayoutReprinting();
-
         }
-
     }
-
 }

@@ -16,7 +16,7 @@ public class BillsPayReprinting_Maynilad_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate BillsPay Successful Payment Reprint")
-    public void BP_RP_TC_01()throws Exception{
+    public void BPMaynilad_RP_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayReprintingSteps.navigatePayoutPage();
             this.billsPaySteps.validateSuccessfulBillsPayTransaction();
@@ -26,7 +26,7 @@ public class BillsPayReprinting_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate BillsPay Successful Remote Payment Reprint")
-    public void BP_RP_TC_02()throws Exception{
+    public void BPMaynilad_RP_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayReprintingSteps.navigatePayoutPage();
             this.billsPaySteps.validateSuccessfulRemoteBillsPayTransaction();
@@ -36,7 +36,7 @@ public class BillsPayReprinting_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate BillsPay Reprint With Invalid Ref Number")
-    public void BP_RP_TC_03()throws Exception{
+    public void BPMaynilad_RP_TC_03()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayReprintingSteps.navigatePayoutPage();
             this.billsPayReprintingSteps.validateInvalidKTPNBillsPayReprinting();
@@ -45,7 +45,7 @@ public class BillsPayReprinting_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate BillsPay Reprint with No Ref NUmber")
-    public void BP_RP_TC_04()throws Exception{
+    public void BPMaynilad_RP_TC_04()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayReprintingSteps.navigatePayoutPage();
             this.billsPayReprintingSteps.validateEmptyRefBillsPayReprinting();
@@ -53,7 +53,7 @@ public class BillsPayReprinting_Maynilad_Tests extends BaseTest {
         }
 
     }    @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "To validate BillsPay Reprint with No Reason")
-    public void BP_RP_TC_05()throws Exception{
+    public void BPMaynilad_RP_TC_05()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayReprintingSteps.navigatePayoutPage();
             this.billsPayReprintingSteps.validateEmptyReasonBillsPayReprinting();
@@ -62,7 +62,7 @@ public class BillsPayReprinting_Maynilad_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 5, description = "To validate BillsPay Number Not Allowed")
-    public void BP_RP_TC_06()throws Exception{
+    public void BPMaynilad_RP_TC_06()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayReprintingSteps.navigatePayoutPage();
             this.billsPayReprintingSteps.validateOnlyLettersBillsPayReprinting();

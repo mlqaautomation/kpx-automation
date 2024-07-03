@@ -27,7 +27,7 @@ public class BillsPayChangeDNordeco_Steps extends Base_Steps{
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String BillsPayKPTN = reader.getBillsPayNordecoKPTN();
+            String BillsPayKPTN = reader.getBillsPayNORDECOKPTN();
             type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
@@ -66,7 +66,7 @@ public class BillsPayChangeDNordeco_Steps extends Base_Steps{
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String RemoteBillsPayKPTNNoredco = reader.getRemoteBillsPayNordecoKPTN();
+            String RemoteBillsPayKPTNNoredco = reader.getRemoteBillsPayNORDECOKPTN();
             type(billsPayPageObjects.RefNum(), "KTPN Number",RemoteBillsPayKPTNNoredco);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
