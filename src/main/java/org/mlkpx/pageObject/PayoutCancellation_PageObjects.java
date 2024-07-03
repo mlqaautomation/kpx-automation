@@ -42,6 +42,9 @@ public class PayoutCancellation_PageObjects {
     public WebElement ReprintPayoutPartnerReceipt(){
         return getDriver().findElement(By.cssSelector("[class=\"sc-gFVvzn cNiBCK\"]"));
     }
+    public WebElement ReprintPayoutPartnerReceipts(){
+        return getDriver().findElement(By.xpath("//h3[contains(text(),'Reprint Partner Payout Receipt')]"));
+    }
 
     public WebElement NoTransactionFound(){
         return getDriver().findElement(By.xpath("//h5[contains(text(),'No Transaction Found')]"));

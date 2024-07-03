@@ -6,8 +6,8 @@ import utilities.Logger.LoggingUtils;
 
 import java.time.Duration;
 
-public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
-    //B I L L S  P A Y    C A N C E L L A T I O N
+public class BillsPayCancellation_Pagibig_Steps extends Base_Steps{
+    //B I L L S  P A Y   P A G - I B I G   C A N C E L L A T I O N
     public void navigatePayoutPage()throws Exception{
         try{
             click(billsPayPageObjects.billsPay_link(), "Bills Pay");
@@ -18,18 +18,18 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
             LoggingUtils.info("Failed to Navigate Bills Pay Page "+ e);
         }
     }
-    public void validateSuccessfulBillsPayCancellation()throws Exception{
+    public void validateSuccessfulBillsPayCancellationPAGIBIGPartner()throws Exception{
         //Must need to cancel before/within five minutes.
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "PAG_IBIG Partner Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String BillsPayKPTN = reader.getBillsPayKPTN();
-            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayKPTN);
+            String BillsPayPagibigKPTN = reader.getBillsPayPagibigKPTN();
+            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayPagibigKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -47,28 +47,28 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
         }
 
     }
-    public void validateSuccessfulRemoteBillsPayCancellation()throws Exception{
+    public void validateSuccessfulRemoteBillsPayCancellationPAGIBIGPartner()throws Exception{
         //Must need to cancel before/within five minutes.
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "NORDECO Partner  Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String BillsPayRemoteKPTN = reader.getRemoteBillsPayKPTN();
-            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayRemoteKPTN);
+            String BillsPayRemotePagibigKPTN = reader.getRemoteBillsPayPagibigKPTN();
+            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayRemotePagibigKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))){
             click(billsPayPageObjects.RemoteTransaction(), "Remote Transaction");
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.BranchCode()));
 
             type(billsPayPageObjects.BranchCode(), "Search Branch Code",  propertyReader.getproperty("BranchCode"));
-            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(13));
 
             waits.until(ExpectedConditions.elementToBeClickable(billsPayPageObjects.OperatorID()));
             type(billsPayPageObjects.OperatorID(), "Search Operator ID",  propertyReader.getproperty("OperatorID"));
@@ -85,10 +85,10 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
                     "Payment has been successfully cancelled.");
         }
     }
-    public void validateEmptyRefBillsPayCancellation()throws Exception{
+    public void validateEmptyRefBillsPayCancellationPAGIBIGPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "PAGIBIG Partner Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
             type(billsPayPageObjects.RefNum(), "KTPN Number","");
@@ -96,10 +96,10 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
             assertEqual(getText(billsPayPageObjects.EmptyRef()), "Reference Number is required");
         }
     }
-    public void validateInvalidRefBillsPayCancellation()throws Exception{
+    public void validateInvalidRefBillsPayCancellationPAGIBIGPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "PAGIBIG Partner Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
             type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGQTCVKWTN");
@@ -111,10 +111,10 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
             click(billsPayPageObjects.OKButton(), "OK");
         }
     }
-    public void validateCancelledBillsPayRefNum()throws Exception{
+    public void validateCancelledBillsPayRefNumNPAGIBIGPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "PAGIBIG Partner Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
             type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGQTCVWTN");
@@ -126,13 +126,13 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
             click(billsPayPageObjects.OKButton(), "OK");
         }
     }
-    public void validateCancelledBillsPayInvalidIRNumber()throws Exception{
+    public void validateCancelledBillsPayInvalidIRNumberPAGIBIGPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "PAGIBIG Partner Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEMOSPERU");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -144,13 +144,13 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
             assertEqual(getText(billsPayPageObjects.InvalidIR()), "Please enter valid IR No.");
         }
     }
-    public void validateCancelledBillsPayNoReason()throws Exception{
+    public void validateCancelledBillsPayNoReasonPAGIBIGPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "PAGIBIG Partner Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEMOSPERU");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -165,13 +165,13 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateCancelledBillsPayNoIRNumber()throws Exception{
+    public void validateCancelledBillsPayNoIRNumberPAGIBIGPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "Bills Pay Remote Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "PAGIBIG Partner Bills Pay Remote Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEMOSPERU");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -183,13 +183,13 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
             assertEqual(getText(billsPayPageObjects.NoIRNum()), "IR Number is required");
         }
     }
-    public void validateCancelledBillsPayNoInitiatedBy()throws Exception{
+    public void validateCancelledBillsPayNoInitiatedByPAGIBIGPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "PAGIBIG Partner Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEMOSPERU");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -204,13 +204,13 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateCancelledBillsPayKeepTransaction()throws Exception{
+    public void validateCancelledBillsPayKeepTransactionPAGIBIGPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "PAGIBIG Partner Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEMOSPERU");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 
@@ -227,13 +227,13 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateCancelledBillsPayStayInPage()throws Exception{
+    public void validateCancelledBillsPayStayInPagePAGIBIGPartner()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPCancellation());
-        click(billsPayPageObjects.BPCancellation(), "Bills Pay Cancellation Transaction");
+        click(billsPayPageObjects.BPCancellation(), "PAGIBIG Partner Bills Pay Cancellation Transaction");
         if(isVisible(billsPayPageObjects.BillsPayText(), getText(billsPayPageObjects.BillsPayText()))) {
             LoggingUtils.info("Navigated the BillsPay Cancellation page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEMOSPERU");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
 

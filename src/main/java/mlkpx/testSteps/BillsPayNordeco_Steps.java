@@ -23,10 +23,10 @@ public class BillsPayNordeco_Steps extends Base_Steps{
     }
     //B I L L S  P A Y   N O R D E C O   S E N D O U T
     public void validateSuccessfulBillsPayNORDECO()throws Exception {
-        waitSleep(10000);
+        waitSleep(5000);
         waitUntilLoadingGone(10000);
         scrollToElement(billsPayPageObjects.ClickOption());
-        waitSleep(10000);
+        waitSleep(5000);
         click(billsPayPageObjects.ClickOption(), "Option");
         scrollVertically(By.cssSelector("[class=' css-11unzgr']"),2500);
         waitSleep(5000);

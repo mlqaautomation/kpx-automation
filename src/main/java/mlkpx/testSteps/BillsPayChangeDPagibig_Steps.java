@@ -6,7 +6,7 @@ import utilities.Logger.LoggingUtils;
 
 import java.time.Duration;
 
-public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
+public class BillsPayChangeDPagibig_Steps extends Base_Steps{
     public void navigatePayoutPage()throws Exception{
         try{
             click(billsPayPageObjects.billsPay_link(), "Bills Pay");
@@ -17,8 +17,8 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
             LoggingUtils.info("Failed to Navigate Bills Pay Page "+ e);
         }
     }
-    //B I L L S  P A Y    C H A N G E  D E T A I L S
-    public void validateSuccessfulBillsPayChangeDetails()throws Exception{
+    //B I L L S  P A Y   P A G - I B I G   C H A N G E  D E T A I L S
+    public void validateSuccessfulBillsPayPAGIBIGChangeDetails()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
@@ -27,8 +27,8 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String BillsPayKPTNNordeco = reader.getBillsPayKPTN();
-            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayKPTNNordeco);
+            String BillsPayKPTN = reader.getBillsPayPagibigKPTN();
+            type(billsPayPageObjects.RefNum(), "KTPN Number",BillsPayKPTN);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))){
@@ -56,7 +56,7 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateSuccessfulBillsPayRemoteChangeDetails()throws Exception{
+    public void validateSuccessfulBillsPayRemotePAGIBIGChangeDetails()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
@@ -66,8 +66,8 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
             waitSleep(3000);
             reader.refreshTestData();
             waitSleep(3000);
-            String RemoteBillsPayKPTN = reader.getRemoteBillsPayKPTN();
-            type(billsPayPageObjects.RefNum(), "KTPN Number",RemoteBillsPayKPTN);
+            String RemoteBillsPayKPTNPagibig = reader.getRemoteBillsPayPagibigKPTN();
+            type(billsPayPageObjects.RefNum(), "KTPN Number",RemoteBillsPayKPTNPagibig);
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation()))){
@@ -107,7 +107,7 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateBillsPayChangeDetailsNoRef()throws Exception{
+    public void validateBillsPayChangeDetailsPAGIBIGNoRef()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
@@ -118,13 +118,13 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
             assertEqual(getText(billsPayPageObjects.EmptyRef()), "Reference Number is required");
         }
     }
-    public void validateBillsPayChangeDetailsInvalidRef()throws Exception{
+    public void validateBillsPayChangeDetailsPAGIBIGInvalidRef()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPEEEFRDUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGLNTRFUZTY");
             click(billsPayPageObjects.SearchButton(), "Search Button");
             if(isVisible(billsPayPageObjects.InvalidKTPN(), getText(billsPayPageObjects.Page_h5()))){
                 assertEqual(getText(billsPayPageObjects.Page_h5()), "No Transaction Found");
@@ -132,13 +132,13 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
             click(billsPayPageObjects.OKButton(), "OK");
         }
     }
-    public void validateBillsPayChangeDetailsNoIR()throws Exception{
+    public void validateBillsPayChangeDetailsPAGIBIGNoIR()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGIHWZJCI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation()))){
@@ -160,13 +160,13 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateBillsPayChangeDetailsInvalidIR()throws Exception{
+    public void validateBillsPayChangeDetailsPAGIBIGInvalidIR()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGIHWZJCI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation()))){
@@ -187,13 +187,13 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateBillsPayChangeDetailsNoReason()throws Exception{
+    public void validateBillsPayChangeDetailsPAGIBIGNoReason()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGIHWZJCI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation()))){
@@ -216,13 +216,13 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateBillsPayRemoteChangeDetailsNoReason()throws Exception{
+    public void validateBillsPayRemoteChangeDetailsPAGIBIGNoReason()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPHFXQPWMF");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGIHWZJCI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation()))){
@@ -255,13 +255,13 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateBillsPayChangeDetailsNoInitiated()throws Exception{
+    public void validateBillsPayChangeDetailsPAGIBIGNoInitiated()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGIHWZJCI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation()))){
@@ -284,13 +284,13 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateKeepTransactionBillsPayChangeDetails()throws Exception{
+    public void validateKeepTransactionBillsPayChangeDetailsPAGIBIG()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGIHWZJCI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation()))){
@@ -315,13 +315,13 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateStayPageBillsPayChangeDetails()throws Exception{
+    public void validateStayPageBillsPayChangeDetailsPAGIBIG()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGIHWZJCI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation()))){
@@ -346,28 +346,17 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateStayPageBillsPayNoChangeDetails()throws Exception{
+    public void validateStayPageBillsPayNoChangeDetailsPAGIBIG()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGIHWZJCI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation
                 ()))){
-            //Payor Information
-            billsPayPageObjects.ChangePayorLastName().clear();
-            type(billsPayPageObjects.ChangePayorLastName(), "Payor Last Name", "TEST TEST");
-            billsPayPageObjects.ChangePayorFirstName().clear();
-            type(billsPayPageObjects.ChangePayorFirstName(), "Payor First Name", "TEST TEST");
-            billsPayPageObjects.ChangePayorMiddleName().clear();
-            type(billsPayPageObjects.ChangePayorMiddleName(), "Payor Middle Name", "TESTING TEST");
-            billsPayPageObjects.ChangePayorAddress().clear();
-            type(billsPayPageObjects.ChangePayorAddress(), "Payor Address", "BOHOL TEST");
-            billsPayPageObjects.ChangePayorContact().clear();
-            type(billsPayPageObjects.ChangePayorContact(), "Payor Contact", "09077629345");
             type(billsPayPageObjects.IRNum(), "IR Number", "2122214441262");
             type(billsPayPageObjects.ReasonChange(), "Reason for Change ", "TestingTest");
             click(billsPayPageObjects.InitiatedBy(), "Initiated By");
@@ -378,13 +367,13 @@ public class BillsPayChangeDMaynilad_Steps extends Base_Steps{
 
         }
     }
-    public void validateStayPageBillsPayOnlyLetters()throws Exception{
+    public void validateStayPageBillsPayPAGIBIGOnlyLetters()throws Exception{
         waitSleep(2000);
         scrollToElement(billsPayPageObjects.BPChangeDetails());
         click(billsPayPageObjects.BPChangeDetails(), "Bills Pay Change Details");
         if(isVisible(billsPayPageObjects.BillsPayChange(), getText(billsPayPageObjects.BillsPayChange()))) {
             LoggingUtils.info("Navigated the BillsPay Change Details page");
-            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPTLEFUPGI");
+            type(billsPayPageObjects.RefNum(), "KTPN Number","KBPGIHWZJCI");
             click(billsPayPageObjects.SearchButton(), "Search Button");
         }
         if(isVisible(billsPayPageObjects.PayInformation(), getText(billsPayPageObjects.PayInformation
