@@ -5,18 +5,18 @@ import org.testng.annotations.Test;
 
 public class GenerateTestData extends BaseTest{
 
-    @Test(priority = 1 ,description = "First Test to get cash in KPTN")
-    public void cashIn1(){
-        generateTestData.loginWalletTestData1();
-        cashInSteps.cashIn();
-
-    }
-    @Test(priority = 2 ,description = "Second Test to get cash in KPTN")
-    public void cashIn2(){
-        generateTestData.loginWalletTestData2();
-        cashInSteps.cashIn();
-
-    }
+//    @Test(priority = 1 ,description = "First Test to get cash in KPTN")
+//    public void cashIn1(){
+//        generateTestData.loginWalletTestData1();
+//        cashInSteps.cashIn();
+//
+//    }
+//    @Test(priority = 2 ,description = "Second Test to get cash in KPTN")
+//    public void cashIn2(){
+//        generateTestData.loginWalletTestData2();
+//        cashInSteps.cashIn();
+//
+//    }
 //    @Test(priority = 3 ,description = "Third Test to get cash in KPTN")
 //    public void cashIn3(){
 //        generateTestData.loginWalletTestData3();

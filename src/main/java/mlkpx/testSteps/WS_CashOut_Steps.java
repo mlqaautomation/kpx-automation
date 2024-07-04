@@ -42,7 +42,7 @@ public class WS_CashOut_Steps extends Base_Steps{
         click(wsCashOutPageObjects.cancelButtonInProceed(), "Cancel Button");
         click(wsCashOutPageObjects.proceedButton(),"Proceed Button");
         click(wsCashOutPageObjects.confirmCashOut(),"Confirm Cash Out");
-        waitSleep(4000);
+        waitSleep(6000);
         if(isVisible(wsCashOutPageObjects.cashOutSuccessfulText(), getText(wsCashOutPageObjects.cashOutSuccessfulText()))){
             ExtentReporter.logPass("CO_TC_01", "Transaction successfully process.");
             String kptnText = getText(walletServicesPageObjects.kptnText());
@@ -142,7 +142,7 @@ public class WS_CashOut_Steps extends Base_Steps{
     public void CO_TC_08()throws Exception{
         navigationWalletServices();
         click(sendOutPageObjects.yesRadioButton(), "Yes Button ");
-        waitSleep(4000);
+        waitSleep(7000);
         type(sendOutPageObjects.branchField(), "Branch Code Field", propertyReader.getproperty("validBranch_code"));
         waitSleep(3000);
         type(wsKwartaPadalaPayOutPageObjects.operatorIDField(), "Operator ID Field", propertyReader.getproperty("operatorID"));

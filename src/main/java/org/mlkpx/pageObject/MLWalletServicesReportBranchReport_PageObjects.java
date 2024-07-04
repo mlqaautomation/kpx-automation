@@ -13,7 +13,7 @@ public class MLWalletServicesReportBranchReport_PageObjects {
         return getDriver().findElement(By.cssSelector("[href=\"/reports/ml-money/branch-transaction\"]"));
     }
     public WebElement branchTransactionPage(){
-        return getDriver().findElement(By.cssSelector("[class=\"sc-kbhJrz iJPEWO\"]"));
+        return getDriver().findElement(By.xpath("(//*[text()='Branch Transaction Report'])[2]"));
     }
     public WebElement sendMoneyKwartaPadala(){
         return getDriver().findElement(By.cssSelector("[value=\"SEND_MONEY_AKP\"]"));

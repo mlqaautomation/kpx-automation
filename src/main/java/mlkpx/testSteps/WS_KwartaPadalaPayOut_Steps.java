@@ -43,7 +43,7 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
     public void KPP_TC_02() throws Exception {
         navigationWalletServicesToKwartaPadalaPayout();
         click(sendOutPageObjects.yesRadioButton(), "Yes Button ");
-        waitSleep(4000);
+        waitSleep(7000);
         type(sendOutPageObjects.branchField(), "Branch Code Field", propertyReader.getproperty("validBranch_code"));
         waitSleep(4000);
         type(wsKwartaPadalaPayOutPageObjects.operatorIDField(),"Operator ID Field", propertyReader.getproperty("operatorID"));
@@ -200,6 +200,7 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
         type(wsKwartaPadalaPayOutPageObjects.referenceNumField(), "KPP KPTN Field", propertyReader.getproperty("validReferenceCancel"));
         type(wsKwartaPadalaPayOutPageObjects.amountField(), "Amount Field", propertyReader.getproperty("validamount"));
         click(wsKwartaPadalaPayOutPageObjects.searchButton(), "Search Button");
+        waitSleep(3000);
         click(wsKwartaPadalaPayOutPageObjects.searchKYCButton(), "Search KYC Button");
         searchKYC();
         click(wsKwartaPadalaPayOutPageObjects.cancelButtonInPayoutPage(),"Cancel Button");
