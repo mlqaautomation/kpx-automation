@@ -39,6 +39,7 @@ public class SendoutPartnerMoneygramCancellation_Steps extends Base_Steps{
             Assert.fail("Failed to Cancel the Transaction");
         }
         click(sendoutPartnerMoneygramCancellationPageObjects.proceedPrintingButton(),"Proceed to Printing Button");
+        waitSleep(2000);
         click(sendoutPartnerMoneygramCancellationPageObjects.cancelButtonInReceipt(),"Cancel Button");
     }
 

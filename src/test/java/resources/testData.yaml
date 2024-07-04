@@ -1,8 +1,8 @@
 Roles:
-  - {role: admin, gmail_email: dominic.melgo@mlhuillier.com, gmail_password: Y0yong26,
-     kpx_username: DOMINIC, kpx_password: 1234567}
-  - {role: teller, gmail_email: albert.monceda@mlhuillier.com, gmail_password: UY_AL@111000!,
-     kpx_username: MONC20248261, kpx_password: '@lb3rtM111000'}
+- {role: admin, gmail_email: dominic.melgo@mlhuillier.com, gmail_password: Y0yong26,
+  kpx_username: DOMINIC, kpx_password: 1234567}
+- {role: teller, gmail_email: albert.monceda@mlhuillier.com, gmail_password: UY_AL@111000!,
+  kpx_username: MONC20248261, kpx_password: '@lb3rtM111000'}
 AccessKey: 5ks4 eadn w5ku gucv dfcc sr4g qtxo d7m6
 Senders:
 - kyc: {firstName: ALBE, lastName: MONCE}
@@ -19,7 +19,8 @@ sendOutKPTN: []
 sendoutReferenceNum: ['6080596293', '3460328068', '3722522815', '7671217051', '1102671838',
   '4232655383', '4001627983', '1350111221', '0530968121']
 payoutReference: ['8480825451']
-remoteSendoutKPTN: [KPNZYWXYGTP, KPNSGNUNLHM, KPNJYWTAGLI]
+remoteSendoutKPTN: [KPNZYWXYGTP, KPNSGNUNLHM, KPNJYWTAGLI, KPNESICSRKF, KPNDDHTEDRZ,
+  KPNAFXAMJKW]
 payoutRemoteReference: ['7181350848', '2330414161', '3840186269', '0670950439']
 CignalBPKTPN: [KBPZUWHXCZQ]
 CignalRemoteBPKTPN: [KBPMRVOSWZN]
@@ -39,24 +40,29 @@ PagibigBPKTPN: [KBPBPWWKSXE, KBPPRYRGFOS]
 PagibigRemoteBPKTPN: [KBPOFZRRALV, KBPFBZMZLIL, KBPVNVBZBAN]
 BillsPayAmount: [80, 90, 100, 130, 140, 150, 170, 290, 300, 320, 330, 350, 370, 400,
   430, 460, 490]
-totalAmount: [PHP 100.00]
+totalAmount: [PHP 100.00, PHP 100.00, PHP 100.00, PHP 100.00, PHP 100.00, PHP 100.00,
+  PHP 100.00, PHP 100.00, PHP 100.00, PHP 100.00, PHP 100.00, PHP 100.00, PHP 100.00]
 tenderAmount: ['10', '110.0', '110.0', '110.0', '110.0', '110.0', '110.0', '110.0',
   '-90.0', '110.0', '-90.0', '110.0', '110.0', '-90.0', '110.0', '-90.0', '110.0',
   '110.0', '110.0', '110.0', '110.0', '-90.0', '110.0', '-90.0', '110.0', '-90.0',
-  '110.0', '-90.0', '-90.0', '110.0']
+  '110.0', '-90.0', '-90.0', '110.0', '110.0', '-90.0', '110.0', '110.0', '-90.0',
+  '110.0', '110.0', '-90.0', '110.0', '110.0', '-90.0', '110.0']
 TotalAmount: [PHP 200.00]
 TenderAmount: ['110.0']
-CashInKTPN: [ACIDKVDLRTF]
-KwartaPadalaKTPN: []
-CashOutKTPN: []
-CIOReprintKPTN: []
-CIAReprintKPTN: []
-COReprintKPTN: []
-KPReprintKPTN: []
+CashInKTPN: [ACIICPDGNPU]
+KwartaPadalaKTPN: [AKPLUOFADFB, AKPKBBVRVDL, AKPKDPRWRAQ]
+CashOutKTPN: [ACOEFRNPEUF, ACOWVROMXCZ, ACOHWRNELZZ, ACOTLXAVXAQ]
+CIOReprintKPTN: [ACIOBSXYCIZ, ACILITKJLUK, ACIDNIRMNQL, ACIWLMPJAEZ, ACIMHHMLLHP,
+  ACIYVZLXSVX, ACICTJWQQCA, ACIKMSYKXIB]
+CIAReprintKPTN: [ACAFUJEYYUQ, ACARWSSVMBS, ACABASZFTIS, ACAGGLHQCFY, ACABUYBWMRI,
+  ACAUDZNLAMP, ACARLFAZASQ, ACAMOOSIVMZ]
+COReprintKPTN: [ACOFUENJBLO, ACOZLGZIVKK, ACOEPEKQARI, ACOUTUGXVLP, ACOFSKWAPRR, ACORXPUNOQU]
+KPReprintKPTN: [AKPMGFPDTMZ, AKPKHSVUKLG, AKPJCHDYHHE, AKPZTPDZSIF, AKPUXTEAOMS, AKPULJFFCVV,
+  AKPWTXWSCUI]
 WatchlistKPTN: []
 RemoteWatchlistKPTN: []
 MoneyGramPartner10Minute: []
-MoneyGramPartner10MinuteRemote: ['55959631']
-MoneyGramPartnerAccountDeposit: ['32699607']
-WesternUnionPartner10Minute: ['7742227566']
-WesternUnionPartner10MinuteRemote: ['7971116721']
+MoneyGramPartner10MinuteRemote: ['87200213']
+MoneyGramPartnerAccountDeposit: ['23743311']
+WesternUnionPartner10Minute: ['8512387048']
+WesternUnionPartner10MinuteRemote: ['9760367549']
