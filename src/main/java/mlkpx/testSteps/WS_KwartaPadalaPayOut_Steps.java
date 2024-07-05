@@ -227,6 +227,7 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
         waitSleep(5000);
         scrollDown(100);
         scrollToElement(sendOutPageObjects.selectKYC());
+        waitSleep(2000);
         click(sendOutPageObjects.selectKYC(), "Select KYC Button");
     }
 }
