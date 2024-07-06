@@ -18,6 +18,7 @@ public class RequestForChange_Tests extends BaseTest {
     @Test(dependsOnMethods = "loginGoogle" , priority = 1, description = "Verify Navigation of Request for Change Page and can Request for Change")
     public void rfcNavigation_RFC_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
+            this.sendOutSteps.DS_TC_08();
             this.requestForChangeSteps.RFC_TC_01();
         }
     }
