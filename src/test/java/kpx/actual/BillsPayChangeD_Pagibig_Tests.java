@@ -21,7 +21,6 @@ public class BillsPayChangeD_Pagibig_Tests extends BaseTest {
             this.billsPayPagbigSteps.validateSuccessfulBillsPayPagibig();
             this.billsPayChangeDPagibigSteps.validateSuccessfulBillsPayPAGIBIGChangeDetails();
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate successful remote BillsPay Change Details PAGIBIG Partner")
     public void BPPagibig_ChangeDetails_TC_02()throws Exception{
@@ -29,9 +28,7 @@ public class BillsPayChangeD_Pagibig_Tests extends BaseTest {
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateSuccessfulRemoteBillsPayPagibig();
             this.billsPayChangeDPagibigSteps.validateSuccessfulBillsPayRemotePAGIBIGChangeDetails();
-
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate BillsPay Change Details No Reference Provided PAGIBIG Partner")
     public void BPPagibig_ChangeDetails_TC_03()throws Exception{

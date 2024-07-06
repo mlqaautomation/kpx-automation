@@ -713,6 +713,7 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         try {
             if (isVisible(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton(),"restriction Modal OK Button")){
                 scrollDown(100);
+                wait(8000);
                 scrollToElement(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton());
                 click(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton(),"OK Button");
                 click(sendoutPartnerMoneygramPageObjects.nationalityReceivers(),"Nationality Dropdown Field");

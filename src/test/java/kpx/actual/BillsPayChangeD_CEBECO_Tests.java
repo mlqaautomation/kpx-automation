@@ -28,9 +28,7 @@ public class BillsPayChangeD_CEBECO_Tests extends BaseTest {
             this.billsPayChangeCEBECOIIISteps.navigatePayoutPage();
             this.billsPayCEBECOIIISteps.validateSuccessfulRemoteBillsPayCEBECOIII();
             this.billsPayChangeCEBECOIIISteps.validateSuccessfulBillsPayRemoteCEBECOChangeDetails();
-
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate BillsPay Change Details No Reference Provided Nordeco Partner")
     public void BPCEBECO_ChangeDetails_TC_03()throws Exception{

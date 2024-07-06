@@ -21,9 +21,7 @@ public class BillsPayReprinting_Nordeco_Tests extends BaseTest {
             this.billsPayNordecoSteps.navigatePayoutPage();
             this.billsPayNordecoSteps.validateSuccessfulBillsPayNORDECO();
             this.billsPayReprintingNordecoSteps.validateSuccessfulBillsPayNORDECOReprinting();
-
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate BillsPay Successful Remote Payment Reprint Nordeco Partner")
     public void BPNordeco_RP_TC_02()throws Exception{
@@ -31,9 +29,7 @@ public class BillsPayReprinting_Nordeco_Tests extends BaseTest {
             this.billsPayNordecoSteps.navigatePayoutPage();
             this.billsPayNordecoSteps.validateSuccessfulRemoteBillsPayNORDECO();
             this.billsPayReprintingNordecoSteps.validateSuccessfulRemoteBillsPayNORDECOReprinting();
-
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate BillsPay Reprint With Invalid Ref Number Nordeco Partner")
     public void BPNordeco_RP_TC_03()throws Exception{

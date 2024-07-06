@@ -19,7 +19,6 @@ public class  BillsPayPagibig_Tests extends BaseTest {
         if(this.homeSteps.isInHomePage()){
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateSuccessfulBillsPayPagibig();
-
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate successful remote bills payment transaction in Pagibig Partner")
@@ -27,7 +26,6 @@ public class  BillsPayPagibig_Tests extends BaseTest {
         if(this.homeSteps.isInHomePage()){
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateSuccessfulRemoteBillsPayPagibig();
-
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate bills payment transaction in Pagibig with no partner")

@@ -20,7 +20,6 @@ public class BillsPayCancellatio_CEBECO_Tests extends BaseTest {
             this.billsPayCEBECOIIISteps.navigatePayoutPage();
             this.billsPayCEBECOIIISteps.validateSuccessfulBillsPayCEBECOIII();
             this.billsPayCancellationCebecoSteps.validateSuccessfulBillsPayCancellationCEBECOPartner();
-
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate remote successful Bills Pay Cancellation CEBECO III PARTNER")
@@ -29,9 +28,7 @@ public class BillsPayCancellatio_CEBECO_Tests extends BaseTest {
             this.billsPayNordecoSteps.navigatePayoutPage();
             this.billsPayNordecoSteps.validateSuccessfulRemoteBillsPayNORDECO();
             this.billsPayCancellationCebecoSteps.validateSuccessfulRemoteBillsPayCancellationCEBECOPartner();
-
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate Empty Reference Bills Pay Cancellation CEBECO III PARTNER")
     public void BPCEBECOCancellation_TC_03()throws Exception{
@@ -46,9 +43,7 @@ public class BillsPayCancellatio_CEBECO_Tests extends BaseTest {
         if(this.homeSteps.isInHomePage()){
             this.billsPayCancellationCebecoSteps.navigatePayoutPage();
             this.billsPayCancellationCebecoSteps.validateInvalidRefBillsPayCancellationCEBECOPartner();
-
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 5, description = "To validate Cancelled Reference Bills Pay Transaction CEBECO III PARTNER")
     public void BPCEBECOCancellation_TC_05()throws Exception{

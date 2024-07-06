@@ -20,7 +20,6 @@ public class BillsPayCancellation_Nordeco_Tests extends BaseTest {
             this.billsPayNordecoSteps.navigatePayoutPage();
             this.billsPayNordecoSteps.validateSuccessfulBillsPayNORDECO();
             this.billsPayCancellationNordecoSteps.validateSuccessfulBillsPayCancellationNORDECOPartner();
-
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate remote successful Bills Pay Cancellation NORDECO PARTNER")
@@ -29,10 +28,9 @@ public class BillsPayCancellation_Nordeco_Tests extends BaseTest {
             this.billsPayNordecoSteps.navigatePayoutPage();
             this.billsPayNordecoSteps.validateSuccessfulRemoteBillsPayNORDECO();
             this.billsPayCancellationNordecoSteps.validateSuccessfulRemoteBillsPayCancellationNORDECOPartner();
-
         }
-
     }
+
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate Empty Reference Bills Pay Cancellation NORDECO PARTNER")
     public void BPNordecoCancellation_TC_03()throws Exception{
         if(this.homeSteps.isInHomePage()){

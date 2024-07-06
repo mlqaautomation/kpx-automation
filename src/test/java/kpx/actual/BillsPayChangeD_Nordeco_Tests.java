@@ -21,7 +21,6 @@ public class BillsPayChangeD_Nordeco_Tests extends BaseTest {
             this.billsPayCignalSteps.validateSuccessfulBillsPayCignal();
             this.billsPayChangeDNordecoSteps.validateSuccessfulBillsPayNORDECOChangeDetails();
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate successful remote BillsPay Change Details Nordeco Partner")
     public void BPNordeco_ChangeDetails_TC_02()throws Exception{
@@ -29,9 +28,7 @@ public class BillsPayChangeD_Nordeco_Tests extends BaseTest {
             this.billsPayCignalSteps.navigatePayoutPage();
             this.billsPayCignalSteps.validateSuccessfulRemoteBillsPayCignal();
             this.billsPayChangeDNordecoSteps.validateSuccessfulBillsPayRemoteNORDECOChangeDetails();
-
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate BillsPay Change Details No Reference Provided Nordeco Partner")
     public void BPNordeco_ChangeDetails_TC_03()throws Exception{
