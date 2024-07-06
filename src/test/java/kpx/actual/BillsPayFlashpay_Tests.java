@@ -14,14 +14,14 @@ public class BillsPayFlashpay_Tests extends BaseTest {
         }
     }
     // B I L L S  P A Y   F L A S H P A Y   S E N D O U T
-//    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful bills payment transaction in NORDECO Partner")
-//    public void NordecoBP_TC_01()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.billsPayNordecoSteps.navigatePayoutPage();
-//            this.billsPayNordecoSteps.validateSuccessfulBillsPayNORDECO();
-//
-//        }
-//    }
+    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful bills payment transaction in NORDECO Partner")
+    public void FlashpayBP_TC_01()throws Exception{
+        if(this.homeSteps.isInHomePage()){
+            this.billsPayNordecoSteps.navigatePayoutPage();
+            this.billsPayNordecoSteps.validateSuccessfulBillsPayNORDECO();
+
+        }
+    }
 //    @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate successful remote bills payment transaction in NORDECO Partner")
 //    public void NordecoBP_TC_02()throws Exception{
 //        if(this.homeSteps.isInHomePage()){
@@ -119,7 +119,7 @@ public class BillsPayFlashpay_Tests extends BaseTest {
 //        }
 //    }
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate bills payment transaction in Flashpay 1st Negative Test Already Paid")
-    public void FlashpayBP_TC_01()throws Exception{
+    public void FlashpayBP_TC_011()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayFlashpaySteps.navigatePayoutPage();
             this.billsPayFlashpaySteps.validateBillsPayFLASHPAYNegativeTestAlreadyPaid();
@@ -127,7 +127,7 @@ public class BillsPayFlashpay_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate bills payment transaction in Flashpay 2nd Negative Test Already Paid")
-    public void FlashpayBP_TC_02()throws Exception{
+    public void FlashpayBP_TC_022()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayFlashpaySteps.navigatePayoutPage();
             this.billsPayFlashpaySteps.validateBillsPayFLASHPAYSecondNegativeTestAlreadyPaid();
@@ -135,7 +135,7 @@ public class BillsPayFlashpay_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate bills payment transaction in Flashpay 1st Negative Test Without Phone Number")
-    public void FlashpayBP_TC_03()throws Exception{
+    public void FlashpayBP_TC_033()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.billsPayFlashpaySteps.navigatePayoutPage();
             this.billsPayFlashpaySteps.validateBillsPayFLASHPAYNegativeTestWithoutPhoneNumber();

@@ -485,6 +485,8 @@ public class BillsPayFlashpay_Steps extends Base_Steps{
         }
     }
 
+
+
     public void validateBillsPayFLASHPAYNegativeTestAlreadyPaid()throws Exception {
         waitSleep(10000);
         waitUntilLoadingGone(10000);
@@ -518,7 +520,6 @@ public class BillsPayFlashpay_Steps extends Base_Steps{
 
         }
     }
-
     public void validateBillsPayFLASHPAYSecondNegativeTestAlreadyPaid()throws Exception {
         waitSleep(10000);
         waitUntilLoadingGone(10000);

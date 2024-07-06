@@ -19,7 +19,6 @@ public class BillsPayNordeco_Tests extends BaseTest {
         if(this.homeSteps.isInHomePage()){
             this.billsPayNordecoSteps.navigatePayoutPage();
             this.billsPayNordecoSteps.validateSuccessfulBillsPayNORDECO();
-
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate successful remote bills payment transaction in NORDECO Partner")
@@ -27,7 +26,6 @@ public class BillsPayNordeco_Tests extends BaseTest {
         if(this.homeSteps.isInHomePage()){
             this.billsPayNordecoSteps.navigatePayoutPage();
             this.billsPayNordecoSteps.validateSuccessfulRemoteBillsPayNORDECO();
-
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate bills payment transaction in NORDECO with no partner")

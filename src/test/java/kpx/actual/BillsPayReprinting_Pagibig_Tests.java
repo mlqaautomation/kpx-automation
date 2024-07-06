@@ -21,9 +21,7 @@ public class BillsPayReprinting_Pagibig_Tests extends BaseTest {
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateSuccessfulBillsPayPagibig();
             this.billsPayReprintingPagibigSteps.validateSuccessfulBillsPayPagibigReprinting();
-
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate BillsPay Successful Remote Payment Reprint Pagibig Partner")
     public void BPPagibig_RP_TC_02()throws Exception{
@@ -31,9 +29,7 @@ public class BillsPayReprinting_Pagibig_Tests extends BaseTest {
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateSuccessfulRemoteBillsPayPagibig();
             this.billsPayReprintingPagibigSteps.validateSuccessfulRemoteBillsPayPagibigReprinting();
-
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate BillsPay Reprint With Invalid Ref Number Pagibig Partner")
     public void BPPagibig_RP_TC_03()throws Exception{

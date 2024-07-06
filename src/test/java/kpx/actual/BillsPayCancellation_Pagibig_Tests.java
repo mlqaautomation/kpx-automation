@@ -20,7 +20,6 @@ public class BillsPayCancellation_Pagibig_Tests extends BaseTest {
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateSuccessfulBillsPayPagibig();
             this.billsPayCancellationPagibigSteps.validateSuccessfulBillsPayCancellationPAGIBIGPartner();
-
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate remote successful Bills Pay Cancellation PAG-IBIG PARTNER")
@@ -29,9 +28,7 @@ public class BillsPayCancellation_Pagibig_Tests extends BaseTest {
             this.billsPayPagbigSteps.navigatePayoutPage();
             this.billsPayPagbigSteps.validateSuccessfulRemoteBillsPayPagibig();
             this.billsPayCancellationPagibigSteps.validateSuccessfulRemoteBillsPayCancellationPAGIBIGPartner();
-
         }
-
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 3, description = "To validate Empty Reference Bills Pay Cancellation PAG-IBIG PARTNER")
     public void BPPagibigCancellation_TC_03()throws Exception{
