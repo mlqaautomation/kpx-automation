@@ -633,8 +633,33 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         type(sendoutPartnerMoneygramPageObjects.idIssueDateField(), "ID Issue Field", propertyReader.getproperty("idIssueDateDay"));
         type(sendoutPartnerMoneygramPageObjects.idIssueDateField(), "Receiver Birthdate field ", propertyReader.getproperty("idIssueDateMonth"));
         type(sendoutPartnerMoneygramPageObjects.idIssueDateField(), "Receiver Birthdate field ", propertyReader.getproperty("idIssueDateYear"));
-        addReceiver();
+//        addReceiver();
+        scrollToElement(sendoutPartnerMoneygramPageObjects.searchReceiver());
+        click(sendoutPartnerMoneygramPageObjects.searchReceiver(), "Search Receivers Button ");
+        waitUntilLoadingGone(10000);
+        click(sendOutPageObjects.addNewReceivers(), "Add new Receiver ");
+        waitUntilLoadingGone(10000);
+        type(sendOutPageObjects.r_LastName(), "R_Lastname ", propertyReader.getproperty("ReceiverLastName"));
+        type(sendOutPageObjects.r_FirstName(), "R_Firstname ", propertyReader.getproperty("ReceiverFirstName"));
+        type(sendOutPageObjects.r_MiddleName(), "R_Firstname ", propertyReader.getproperty("ReceiverMiddleName"));
+        scrollDown(100);
+        waitUntilLoadingGone(10000);
+        click(sendoutPartnerMoneygramPageObjects.receiversCountry(), "Receiver's Country");
+        click(sendoutPartnerMoneygramPageObjects.countryMalaysia(), "Select Country Malaysia");
+        waitSleep(30000);
+        scrollToElement(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton());
+        click(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton(),"OK Button");
+        click(sendoutPartnerMoneygramPageObjects.nationalityReceivers(),"Nationality Dropdown Field");
+        click(sendoutPartnerMoneygramPageObjects.selectedNationalityReceivers()," Selected Nationality Receivers ");
 
+        type(sendoutPartnerMoneygramPageObjects.birthDateDropDown(), "Receiver Birthdate field", propertyReader.getproperty("r_day"));
+        type(sendoutPartnerMoneygramPageObjects.birthDateDropDown(), "Receiver Birthdate field ", propertyReader.getproperty("r_month"));
+        type(sendoutPartnerMoneygramPageObjects.birthDateDropDown(), "Receiver Birthdate field ", propertyReader.getproperty("r_birthYear"));
+
+        click(sendOutPageObjects.r_sex_Field(), "Receiver Sex Field ");
+        click(sendOutPageObjects.r_selected_Sex_Field(), "Receiver Selected Sex Field ");
+        type(sendoutPartnerMoneygramPageObjects.contactNumberReceiver(),"Receiver's Contact Number", propertyReader.getproperty("Contact_number"));
+        scrollUp(driver);
 
         click(sendoutPartnerMoneygramPageObjects.sourceOfFund(),"Source of Fund Dropdown Button");
         click(sendoutPartnerMoneygramPageObjects.selectedSourceOfFund(),"Selected Source of Fund");
@@ -712,7 +737,7 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
         waitSleep(30000);
         try {
             if (isVisible(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton(),"restriction Modal OK Button")){
-                scrollDown(100);
+                scrollToElement(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton());
                 wait(8000);
                 scrollToElement(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton());
                 click(sendoutPartnerMoneygramPageObjects.restrictionModalOKButton(),"OK Button");
