@@ -157,7 +157,8 @@ public class WS_KwartaPadalaPayOut_Steps extends Base_Steps {
         type(wsKwartaPadalaPayOutPageObjects.referenceNumField(), "KPP KPTN Field", randomKPPKPTN);
         type(wsKwartaPadalaPayOutPageObjects.amountField(), "Amount Field", propertyReader.getproperty("validamount"));
         click(wsKwartaPadalaPayOutPageObjects.searchButton(), "Search Button");
-        waitUntilLoadingGone(10000);
+        waitSleep(10000);
+        scrollToElement(wsKwartaPadalaPayOutPageObjects.searchKYCButton());
         click(wsKwartaPadalaPayOutPageObjects.searchKYCButton(), "Search KYC Button");
         if (isVisible(wsKwartaPadalaPayOutPageObjects.searchKYCText(), getText(wsKwartaPadalaPayOutPageObjects.searchKYCText()))) {
             ExtentReporter.logPass("KPP_TC_08", "Successfully Navigate KYC Search Page");
