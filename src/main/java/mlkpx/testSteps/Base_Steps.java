@@ -33,6 +33,7 @@ public abstract class Base_Steps extends GeneralMethod {
     KPDomesticReports_PageObjects kpDomesticReportsPageObjects = new KPDomesticReports_PageObjects();
     MLWalletServicesReportBranchReport_PageObjects mlWalletServicesReportBranchReportPageObjects = new MLWalletServicesReportBranchReport_PageObjects();
     CorporatePartnerReport_PageObjects corporatePartnerReportPageObjects = new CorporatePartnerReport_PageObjects();
+    GcashCashIn_PageObjects gcashCashInPageObjects = new GcashCashIn_PageObjects();
 
     BillsPayReport_PageObjects billsPayReportPageObjects = new BillsPayReport_PageObjects();
 
