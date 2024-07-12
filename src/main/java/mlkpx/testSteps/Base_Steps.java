@@ -34,6 +34,7 @@ public abstract class Base_Steps extends GeneralMethod {
     MLWalletServicesReportBranchReport_PageObjects mlWalletServicesReportBranchReportPageObjects = new MLWalletServicesReportBranchReport_PageObjects();
     CorporatePartnerReport_PageObjects corporatePartnerReportPageObjects = new CorporatePartnerReport_PageObjects();
     GcashCashIn_PageObjects gcashCashInPageObjects = new GcashCashIn_PageObjects();
+    GcashTransaction_PageObjects gcashTransactionPageObjects = new GcashTransaction_PageObjects();
 
     BillsPayReport_PageObjects billsPayReportPageObjects = new BillsPayReport_PageObjects();
 
