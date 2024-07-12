@@ -9,9 +9,10 @@
     <test name="GCASH Input">
         <parameter name="type" value="web">
             <classes>
-<!--                <class name="kpx.actual.GcashCashIn_Tests"> </class>-->
+                <class name="kpx.actual.GcashCashIn_Tests"> </class>
 <!--                <class name="kpx.actual.GcashCashOut_Tests"> </class>-->
                 <class name="kpx.actual.GcashTransaction_Tests"> </class>
+                <class name="kpx.actual.GcashReceiptReprinting_Tests"> </class>
             </classes>
         </parameter>
     </test>

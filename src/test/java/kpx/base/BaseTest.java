@@ -75,6 +75,7 @@ public class BaseTest {
     protected BillsPayReport_Steps billsPayReportSteps;
     protected GcashCashIn_Steps gcashCashInSteps;
     protected GcashTransaction_Steps gcashTransactionSteps;
+    protected GcashReceiptReprinting_Steps gcashReceiptReprintingSteps;
 
     protected Login loginWalletSteps;
     protected Cash_In cashInSteps;
@@ -200,6 +201,7 @@ public class BaseTest {
         this.billsPayReportSteps = new BillsPayReport_Steps();
         this.gcashCashInSteps = new GcashCashIn_Steps();
         this.gcashTransactionSteps = new GcashTransaction_Steps();
+        this.gcashReceiptReprintingSteps = new GcashReceiptReprinting_Steps();
 
     }
     public void initWallet(){
