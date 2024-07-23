@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Users" thread-count="1" >
+    <listeners>
+        <listener class-name="utilities.ExtentReport.ExtentReporter" />
+        <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
+    </listeners>
+
+    <test name="Users Input">
+        <parameter name="type" value="web">
+            <classes>
+                <class name="kpx.actual.Users_Tests"> </class>
+                <class name="kpx.actual.UserNewBranch_Tests"> </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

@@ -31,9 +31,14 @@ public class GcashCashIn_Steps extends Base_Steps{
         waitSleep(5000);
         type(gcashCashInPageObjects.principalAmount(), "Principal Amount Field", propertyReader.getproperty("gcashPrincipalAmount"));
         click(gcashCashInPageObjects.submitButton(), "Submit Button");
-        click(gcashCashInPageObjects.confirmButton(), "Confirm Button");
+        try{
+            isVisible(gcashCashInPageObjects.existingSimilarTransactionModal(), "Existing Similar Transaction Modal");
+            click(gcashCashInPageObjects.yesProceedTransaction(),"Yes, Proceed Transaction Button");
+            click(gcashCashInPageObjects.confirmButton(),"Confirm Cash In Button");
+        }catch(Exception e){
+            click(gcashCashInPageObjects.confirmButton(), "Confirm Button");
+        }
         waitSleep(5000);
-
         if (isVisible(gcashCashInPageObjects.cashInSuccessfulText(), getText(gcashCashInPageObjects.cashInSuccessfulText()))) {
             ExtentReporter.logPass("GCI_TC_03", "Successfully verify Successful Cash In Transaction");
         } else {
@@ -71,7 +76,7 @@ public class GcashCashIn_Steps extends Base_Steps{
         GCI_TC_02();
         type(gcashCashInPageObjects.gcashNumberReceiver(), "Receiver Gcash Number", propertyReader.getproperty("validReceiverGcashNumber"));
         type(gcashCashInPageObjects.gcashNumberSender(), "Sender Gcash Number", propertyReader.getproperty("invalidSenderGcashNumber"));
-        waitSleep(5000);
+        waitSleep(8000);
         type(gcashCashInPageObjects.senderFirstName(), "Sender FirstName Field", propertyReader.getproperty("senderFirstName"));
         type(gcashCashInPageObjects.senderMiddleName(), "Sender MiddleName Field", propertyReader.getproperty("senderMiddleName"));
         type(gcashCashInPageObjects.senderLastName(), "Sender LastName Field", propertyReader.getproperty("senderLastName"));
@@ -135,7 +140,7 @@ public class GcashCashIn_Steps extends Base_Steps{
         GCI_TC_02();
         type(gcashCashInPageObjects.gcashNumberReceiver(), "Receiver Gcash Number", propertyReader.getproperty("validReceiverGcashNumber"));
         type(gcashCashInPageObjects.gcashNumberSender(), "Sender Gcash Number", propertyReader.getproperty("notRegisteredSenderGcashNumber"));
-
+        waitSleep(3000);
         type(gcashCashInPageObjects.senderMiddleName(), "Sender MiddleName Field", propertyReader.getproperty("senderMiddleName"));
         type(gcashCashInPageObjects.senderLastName(), "Sender LastName Field", propertyReader.getproperty("senderLastName"));
         type(gcashCashInPageObjects.senderBirthdate(), "Sender Birth Month Field", propertyReader.getproperty("senderBirthMonth"));
@@ -158,13 +163,13 @@ public class GcashCashIn_Steps extends Base_Steps{
         GCI_TC_02();
         type(gcashCashInPageObjects.gcashNumberReceiver(), "Receiver Gcash Number", propertyReader.getproperty("validReceiverGcashNumber"));
         type(gcashCashInPageObjects.gcashNumberSender(), "Sender Gcash Number", propertyReader.getproperty("notRegisteredSenderGcashNumber"));
-
+        waitSleep(3000);
         type(gcashCashInPageObjects.senderFirstName(), "Sender Firstname Field", propertyReader.getproperty("senderFirstName"));
         type(gcashCashInPageObjects.senderLastName(), "Sender LastName Field", propertyReader.getproperty("senderLastName"));
         type(gcashCashInPageObjects.senderBirthdate(), "Sender Birth Month Field", propertyReader.getproperty("senderBirthMonth"));
         type(gcashCashInPageObjects.senderBirthdate(), "Sender Birth Date Field", propertyReader.getproperty("senderBirthDate"));
         type(gcashCashInPageObjects.senderBirthdate(), "Sender Birth Year Field", propertyReader.getproperty("senderBirthYear"));
-        waitSleep(5000);
+        waitSleep(8000);
         type(gcashCashInPageObjects.senderEmail(), "Sender Email Address Field", propertyReader.getproperty("senderEmailAddress"));
         type(gcashCashInPageObjects.principalAmount(), "Principal Amount Field", propertyReader.getproperty("gcashPrincipalAmount"));
         click(gcashCashInPageObjects.submitButton(), "Submit Button");
@@ -204,7 +209,7 @@ public class GcashCashIn_Steps extends Base_Steps{
         GCI_TC_02();
         type(gcashCashInPageObjects.gcashNumberReceiver(), "Receiver Gcash Number", propertyReader.getproperty("validReceiverGcashNumber"));
         type(gcashCashInPageObjects.gcashNumberSender(), "Sender Gcash Number", propertyReader.getproperty("notRegisteredSenderGcashNumber"));
-
+        waitSleep(3000);
         type(gcashCashInPageObjects.senderFirstName(), "Sender Firstname Field", propertyReader.getproperty("senderFirstName"));
         type(gcashCashInPageObjects.senderMiddleName(), "Sender MiddleName Field", propertyReader.getproperty("senderMiddleName"));
         type(gcashCashInPageObjects.senderLastName(), "Sender LastName Field", propertyReader.getproperty("senderLastName"));
