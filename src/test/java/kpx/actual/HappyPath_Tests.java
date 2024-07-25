@@ -706,6 +706,7 @@ public class HappyPath_Tests extends BaseTest {
 
         }
     }
+
     @Test(dependsOnMethods = "loginGoogle", priority = 76, description = "To validate successful WS-Reprint Kwarta Padala Payout Receipt Reprinting")
     public void WS_RR_TC_13()throws Exception{
         if(this.homeSteps.isInHomePage()){

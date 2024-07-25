@@ -1,34 +1,52 @@
 package utilities.yamlReader;
 import org.yaml.snakeyaml.Yaml;
+import utilities.ExtentReport.ExtentReporter;
 import utilities.Logger.LoggingUtils;
-
+import java.util.List;
 import java.io.*;
 import java.util.*;
+import java.util.Map;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class yamlReader {
-    /** The YAML file name. */
+    /**
+     * The YAML file name.
+     */
     private String yamlFileName;
 
-    /** The YAML object. */
+    /**
+     * The YAML object.
+     */
     private Map<String, Object> yamlData;
     private String filePath;
     private String randomValueFromCIOA_TC_09;
+    private String username;
+    private List<String> randomGeneratedResourceID;
 
-    public yamlReader(){
+    public yamlReader() {
         this.filePath = ".\\src\\test\\java\\resources\\testData.yaml";
         this.yamlFileName = this.filePath;
         yamlLoader();
     }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-    private void yamlLoader(){
-        try{
+    public String getUsername() {
+        return username;
+    }
+
+    private void yamlLoader() {
+        try {
             Yaml yaml = new Yaml();
             FileInputStream fileInputStream = new FileInputStream(yamlFileName);
             yamlData = yaml.load(fileInputStream);
             if (yamlData == null) {
                 yamlData = new LinkedHashMap<>();
             }
-        }catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             LoggingUtils.error(e.getMessage());
         }
     }
@@ -44,14 +62,15 @@ public class yamlReader {
         return null;
     }
 
-    public String getEmailByRole(String role){
+    public String getEmailByRole(String role) {
         Map<String, Object> roleData = getRoleData(role);
         if (roleData != null) {
             return (String) roleData.get("gmail_email");
         }
         return null;
     }
-    public String getPasswordByRole(String role){
+
+    public String getPasswordByRole(String role) {
         Map<String, Object> roleData = getRoleData(role);
         if (roleData != null) {
             return (String) roleData.get("gmail_password");
@@ -59,7 +78,7 @@ public class yamlReader {
         return null;
     }
 
-    public String getKpxUsername(String role){
+    public String getKpxUsername(String role) {
         Map<String, Object> roleData = getRoleData(role);
         if (roleData != null) {
             return roleData.get("kpx_username").toString();
@@ -67,13 +86,36 @@ public class yamlReader {
         return null;
     }
 
-    public String getKpxPassword(String role){
+    public String getKpxPassword(String role) {
         Map<String, Object> roleData = getRoleData(role);
         if (roleData != null) {
             return roleData.get("kpx_password").toString();
         }
         return null;
     }
+    public String getUsernameInActiveAccount(String credentials) {
+        Map<String, Object> roleData = getRoleData(credentials);
+        if (roleData != null) {
+            return roleData.get("inactive_username").toString();
+        }
+        return null;
+    }
+    public String getPasswordInActiveAccount(String credentials) {
+        Map<String, Object> roleData = getRoleData(credentials);
+        if (roleData != null) {
+            return roleData.get("inactive_password").toString();
+        }
+        return null;
+    }
+
+    public String getPasswordNewBranch(String credentials) {
+        Map<String, Object> roleData = getRoleData(credentials);
+        if (roleData != null) {
+            return roleData.get("password").toString();
+        }
+        return null;
+    }
+
     public List<Map<String, Object>> getSendersData() {
         return (List<Map<String, Object>>) yamlData.get("Senders");
     }
@@ -84,6 +126,7 @@ public class yamlReader {
         int randomIndex = random.nextInt(senders.size());
         return senders.get(randomIndex);
     }
+
     public String[] getRandomName() {
         Map<String, Object> randomSender = getRandomSenderData();
         Map<String, Object> kycData = (Map<String, Object>) randomSender.get("kyc");
@@ -91,7 +134,10 @@ public class yamlReader {
         String lastName = (String) kycData.get("lastName");
         return new String[]{firstName, lastName};
     }
-    public List<Map<String, Object>> getSenderSendOutPartnerData() { return (List<Map<String, Object>>) yamlData.get("SenderForSendOutPartner"); }
+
+    public List<Map<String, Object>> getSenderSendOutPartnerData() {
+        return (List<Map<String, Object>>) yamlData.get("SenderForSendOutPartner");
+    }
 
     public Map<String, Object> getRandomSenderSendOutPartnerData() {
         List<Map<String, Object>> senderSendOutPartner = getSenderSendOutPartnerData();
@@ -99,6 +145,7 @@ public class yamlReader {
         int randomIndex = random.nextInt(senderSendOutPartner.size());
         return senderSendOutPartner.get(randomIndex);
     }
+
     public String[] getRandomNameForSenderSendOutPartner() {
         Map<String, Object> randomNameForSenderSendOutPartner = getRandomSenderSendOutPartnerData();
         Map<String, Object> kycData = (Map<String, Object>) randomNameForSenderSendOutPartner.get("kyc");
@@ -106,13 +153,84 @@ public class yamlReader {
         String lastName = (String) kycData.get("lastName");
         return new String[]{firstName, lastName};
     }
-//    public String[] getRandomNameAddNewReciever() {
-//        Map<String, Object> randomSender = getRandomSenderData();
-//        Map<String, Object> kycData = (Map<String, Object>) randomSender.get("kyc");
-//        String firstName = (String) kycData.get("firstName");
-//        String lastName = (String) kycData.get("lastName");
-//        return new String[]{firstName, lastName};
-//    }
+
+    public void getRandomResourceID(String value) {
+        try {
+            String cleanedValue = value.replaceAll("\\[|\\]", "");
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            yamlData.put("passWordNewBranchUser", value);
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(value + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void getGenerateUsername(String value) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            yamlData.put("usernameNewBranchUser", value);
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(value + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String getUsernameNewBranchUser() {
+        String usernameNewBranchUser = null;
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> data = yaml.load(fileInputStream);
+
+            if (data.containsKey("usernameNewBranchUser")) {
+                usernameNewBranchUser = (String) data.get("usernameNewBranchUser");
+            } else {
+                ExtentReporter.logFail("getUsernameNewBranchUser ","Failed to getUsernameNewBranchUser");
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return usernameNewBranchUser;
+    }
+    public String getPasswordNewBranchUser() {
+        String passwordNewBranchUser = null;
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> data = yaml.load(fileInputStream);
+
+            if (data.containsKey("passWordNewBranchUser")) {
+                Object passWordNewBranchUser = data.get("passWordNewBranchUser");
+                if (passWordNewBranchUser instanceof String) {
+                    String password = (String) passWordNewBranchUser;
+                    // Remove both square brackets and quotation marks from the password
+                    passwordNewBranchUser = password.replaceAll("[\\[\\]\"]", "");
+                }
+            } else {
+                ExtentReporter.logFail("getPasswordNewBranchUser ","Failed to getPasswordNewBranchUser");
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return passwordNewBranchUser;
+    }
+
+
 
 
     public String getSendOutKPTN() {
@@ -155,7 +273,7 @@ public class yamlReader {
         try {
             List<String> sendOutReferenceList = (List<String>) yamlData.get("WesternUnionPartner10MinuteRemote");
             if (sendOutReferenceList == null || sendOutReferenceList.isEmpty()) {
-                System.out.println("No Sendout Reference values available.");
+                System.out.println("No Sendout Reference remote values available.");
                 return null;
             }
 
@@ -174,7 +292,7 @@ public class yamlReader {
             List<String> sendOutKptnList = (List<String>) yamlData.get("remoteSendoutKPTN");
 
             if (sendOutKptnList == null || sendOutKptnList.isEmpty()) {
-                System.out.println("No send out KPTN values available.");
+                System.out.println("No send out remote KPTN values available.");
                 return null;
             }
 
@@ -194,7 +312,7 @@ public class yamlReader {
             List<String> sendOutKptnList = (List<String>) yamlData.get("sendOutKPTN");
 
             if (sendOutKptnList == null || sendOutKptnList.isEmpty()) {
-                System.out.println("No send out KPTN values available.");
+                System.out.println("No send out for change KPTN values available.");
                 return null;
             }
 
@@ -213,7 +331,7 @@ public class yamlReader {
             List<String> sendOutKptnList = (List<String>) yamlData.get("MoneyGramPartner10Minute");
 
             if (sendOutKptnList == null || sendOutKptnList.isEmpty()) {
-                System.out.println("No send out moneygram partner KPTN values available.");
+                System.out.println("No send out moneygram partner 10mins KPTN values available.");
                 return null;
             }
 
@@ -980,6 +1098,11 @@ public class yamlReader {
             e.printStackTrace();
         }
     }
+
+
+
+
+
     public void writePayoutReferenceData(List<String> values) {
         try {
             Yaml yaml = new Yaml();
@@ -1574,13 +1697,14 @@ public class yamlReader {
         }
     }
 
-    public void setRandomValueFromCIOA_TC_09(String randomValue) {
-        randomValueFromCIOA_TC_09 = randomValue;
-    }
+//    public void setRandomValueFromCIOA_TC_09(String randomValue) {
+//        randomValueFromCIOA_TC_09 = randomValue;
+//    }
+//
+//    public String getRandomValueFromCIOA_TC_09() {
+//        return randomValueFromCIOA_TC_09;
+//    }
 
-    public String getRandomValueFromCIOA_TC_09() {
-        return randomValueFromCIOA_TC_09;
-    }
 
     public String getAccessKey() {
         return (String) yamlData.get("AccessKey");

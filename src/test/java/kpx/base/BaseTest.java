@@ -73,6 +73,11 @@ public class BaseTest {
     protected MLWalletServicesReportBranchReport_Steps mlWalletServicesReportBranchReportSteps;
     protected CorporatePartnerReport_Steps corporatePartnerReportSteps;
     protected BillsPayReport_Steps billsPayReportSteps;
+    protected GcashCashIn_Steps gcashCashInSteps;
+    protected GcashTransaction_Steps gcashTransactionSteps;
+    protected GcashReceiptReprinting_Steps gcashReceiptReprintingSteps;
+    protected Users_Steps usersSteps;
+    protected UserNewBranch_Steps userNewBranchSteps;
 
     protected Login loginWalletSteps;
     protected Cash_In cashInSteps;
@@ -196,6 +201,11 @@ public class BaseTest {
         this.corporatePartnerReportSteps = new CorporatePartnerReport_Steps();
 
         this.billsPayReportSteps = new BillsPayReport_Steps();
+        this.gcashCashInSteps = new GcashCashIn_Steps();
+        this.gcashTransactionSteps = new GcashTransaction_Steps();
+        this.gcashReceiptReprintingSteps = new GcashReceiptReprinting_Steps();
+        this.usersSteps = new Users_Steps();
+        this.userNewBranchSteps = new UserNewBranch_Steps();
 
     }
     public void initWallet(){

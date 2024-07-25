@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="HappyPath" thread-count="1" >
+<suite name="Gcash" thread-count="1" >
     <listeners>
         <listener class-name="utilities.ExtentReport.ExtentReporter" />
         <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
     </listeners>
-    <test name="MLWALLET">
-        <parameter name="type" value="mobile">
-            <classes>
-                <class name="kpx.actual.WalletService.WalletService"> </class>
-            </classes>
-        </parameter>
-    </test>
 
-    <test name="Happy Paths">
+    <test name="GCASH Input">
         <parameter name="type" value="web">
             <classes>
-                <class name="kpx.actual.HappyPath_Tests"> </class>
+                <class name="kpx.actual.GcashCashIn_Tests"> </class>
+<!--                <class name="kpx.actual.GcashCashOut_Tests"> </class>-->
+                <class name="kpx.actual.GcashTransaction_Tests"> </class>
+                <class name="kpx.actual.GcashReceiptReprinting_Tests"> </class>
             </classes>
         </parameter>
     </test>

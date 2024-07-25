@@ -9,6 +9,9 @@ public class Google_PageObjects {
     public WebElement googleContainer (){
         return getDriver().findElement(By.cssSelector("[role='button']"));
     }
+    public WebElement googleContainerAlbert (){
+        return getDriver().findElement(By.cssSelector("[class=\"nsm7Bb-HzV7m-LgbsSe-MJoBVe\"]"));
+    }
     public WebElement signInWithKPX (){
 
         return getDriver().findElement(By.xpath("//button[normalize-space()='SIGN IN WITH KPX']"));
@@ -54,6 +57,9 @@ public class Google_PageObjects {
 
     public WebElement googleContainer2 (){
         return getDriver().findElement(By.cssSelector("[class='haAclf']"));
+    }
+    public WebElement emailAlbertContainer2 (){
+        return getDriver().findElement(By.cssSelector("[class=\"fFW7wc-ibnC6b-sM5MNb TAKBxb \"]"));
     }
 
 }
