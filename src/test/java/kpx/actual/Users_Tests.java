@@ -40,18 +40,6 @@ public class Users_Tests extends BaseTest {
 
     }
 
-//    @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "To verify That The New Branch User Can Login Successfully")
-//    public void verifyThatTheNewBranchUserCanLoginSuccessfully()throws Exception{
-//        if(this.homeSteps.isInHomePage()){
-//            this.homeSteps.logout();
-//            this.loginSteps.signInGoogle2();
-//            this.loginSteps.newBranchUser();
-//            this.userNewBranchSteps.isInHomePageNewBranch();
-//            this.userNewBranchSteps.U_TC_04();
-//
-//        }
-//
-//    }
     @Test(dependsOnMethods = "loginGoogle", priority = 4, description = "To verify Add Branch User - Existing Resource ID")
     public void verifyAddBranchUserExistingResourceID()throws Exception{
         if(this.homeSteps.isInHomePage()){

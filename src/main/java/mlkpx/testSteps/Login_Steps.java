@@ -35,16 +35,6 @@ public class Login_Steps extends Base_Steps {
         click(googlePageObjects.emailAlbertContainer2(), "emailAlbertContainer2");
         switchToPreviousTab();
     }
-    public void signInGoogle3()throws NoSuchElementException {
-
-        click(googlePageObjects.signInWithKPX(), "Sign in With KPX");
-        switchToNextTab();
-        waitSleep(5000);
-        click(googlePageObjects.googleContainerAlbert(), "Google Sign in Container");
-        click(googlePageObjects.emailAlbertContainer2(), "Email Google Sign in Container");
-        waitUntilLoadingGone(10000);
-        switchToPreviousTab();
-    }
     public void signInGoogleV2()throws Exception{
         // logging in google via clicking the email, this only happens when browser is not closed
         try{
