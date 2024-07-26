@@ -50,7 +50,7 @@ public class CorporatePartnerReport_Steps extends Base_Steps{
         waitSleep(3000);
         click(corporatePartnerReportPageObjects.timeFrameField(), "Timeframe Field");
         click(corporatePartnerReportPageObjects.selectedTimeFrameMonthly(), "Monthly Timeframe Field");
-        click(corporatePartnerReportPageObjects.selectedMonthJune(), "Selected Month June");
+        click(kpDomesticReportsPageObjects.selectedMonthJuly(), "Selected Month July");
 //        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");
 //        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporate"));
 //        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporate"));
