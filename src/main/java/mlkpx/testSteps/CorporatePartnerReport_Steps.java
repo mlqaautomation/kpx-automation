@@ -38,7 +38,7 @@ public class CorporatePartnerReport_Steps extends Base_Steps{
             ExtentReporter.logPass("CPRBTR_TC_02", "Successfully Verify Transaction Type and TimeFrame Dropdown Options");
         } else {
             ExtentReporter.logFail("CPRBTR_TC_02", "Failed to Verify Transaction Type and TimeFrame Dropdown Options");
-            Assert.fail("Failed to Verify Transaction Type and TimeFrame Dropdown Optionst");
+            Assert.fail("Failed to Verify Transaction Type and TimeFrame Dropdown Option");
         }
     }
     public void CPRBTR_TC_04() throws Exception {
@@ -48,10 +48,13 @@ public class CorporatePartnerReport_Steps extends Base_Steps{
         waitSleep(3000);
         click(corporatePartnerReportPageObjects.sendoutInTransactionType(), "Selected Transaction Type (Sendout))");
         waitSleep(3000);
-        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporate"));
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporate"));
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporate"));
+        click(corporatePartnerReportPageObjects.timeFrameField(), "Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedTimeFrameMonthly(), "Monthly Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedMonthJune(), "Selected Month June");
+//        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporate"));
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporate"));
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporate"));
         Assert.assertTrue(kpDomesticReportsPageObjects.generateReportButton().isEnabled(), "Generate Report Button is not clickable");
         // Get the current tab count before clicking the generateReportButton
         int initialTabCount = driver.getWindowHandles().size();
@@ -69,10 +72,14 @@ public class CorporatePartnerReport_Steps extends Base_Steps{
         waitSleep(3000);
         click(corporatePartnerReportPageObjects.payoutInTransactionType(), "Selected Transaction Type (Payout))");
         waitSleep(3000);
-        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporate"));
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporate"));
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporate"));
+
+        click(corporatePartnerReportPageObjects.timeFrameField(), "Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedTimeFrameMonthly(), "Monthly Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedMonthJune(), "Selected Month June");
+//        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporate"));
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporate"));
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporate"));
         Assert.assertTrue(kpDomesticReportsPageObjects.generateReportButton().isEnabled(), "Generate Report Button is not clickable");
         waitSleep(3000);
         // Get the current tab count before clicking the generateReportButton
@@ -94,10 +101,13 @@ public class CorporatePartnerReport_Steps extends Base_Steps{
         click(corporatePartnerReportPageObjects.currencyDropdown(), "Currency DropDown Button");
         click(corporatePartnerReportPageObjects.phpText(), "PHP DropDown Button");
         waitSleep(3000);
-        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporate"));
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporate"));
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporate"));
+        click(corporatePartnerReportPageObjects.timeFrameField(), "Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedTimeFrameMonthly(), "Monthly Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedMonthJune(), "Selected Month June");
+//        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporate"));
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporate"));
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporate"));
         Assert.assertTrue(kpDomesticReportsPageObjects.generateReportButton().isEnabled(), "Generate Report Button is not clickable");
         waitSleep(3000);
         // Get the current tab count before clicking the generateReportButton
@@ -143,10 +153,13 @@ public class CorporatePartnerReport_Steps extends Base_Steps{
         waitSleep(3000);
         click(corporatePartnerReportPageObjects.phpText(), "PHP DropDown Button");
         waitSleep(3000);
-        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");;
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporate"));
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporate"));
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporate"));
+        click(corporatePartnerReportPageObjects.timeFrameField(), "Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedTimeFrameMonthly(), "Monthly Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedMonthJune(), "Selected Month June");
+//        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");;
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporate"));
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporate"));
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporate"));
         Assert.assertTrue(kpDomesticReportsPageObjects.generateReportButton().isEnabled(), "Generate Report Button is not clickable");
         waitSleep(3000);
         // Get the current tab count before clicking the generateReportButton
@@ -192,11 +205,14 @@ public class CorporatePartnerReport_Steps extends Base_Steps{
         click(corporatePartnerReportPageObjects.currencyDropdown(), "Currency DropDown Button");
         click(corporatePartnerReportPageObjects.phpText(), "PHP DropDown Button");
         waitSleep(3000);
-        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");
-
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporate"));
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporate"));
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporate"));
+        click(corporatePartnerReportPageObjects.timeFrameField(), "Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedTimeFrameMonthly(), "Monthly Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedMonthJune(), "Selected Month June");
+//        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");
+//
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporate"));
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporate"));
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporate"));
         click(kpDomesticReportsPageObjects.clearButton(),"Clear button");
         Assert.assertTrue(corporatePartnerReportPageObjects.phpText().isEnabled(), "Failed to verify the function of Clear Button");
 //        List<WebElement> phpElements = driver.findElements(By.cssSelector("[value=\"PHP\"]"));
@@ -214,11 +230,29 @@ public class CorporatePartnerReport_Steps extends Base_Steps{
         waitSleep(3000);
         click(corporatePartnerReportPageObjects.sendoutInTransactionType(), "Selected Transaction Type (Sendout))");
         waitSleep(3000);
-        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");
-        waitSleep(3000);
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporateI"));
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporateI"));
-        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporateI"));
+        click(corporatePartnerReportPageObjects.timeFrameField(), "Timeframe Field");
+        click(corporatePartnerReportPageObjects.dateRange(), "Date Range Timeframe Field");
+
+        type(kpDomesticReportsPageObjects.DateRangeFrom(), "Year - Date From Dropdown Button", propertyReader.getproperty("yearFrom"));
+        kpDomesticReportsPageObjects.DateRangeFrom().sendKeys(Keys.ARROW_LEFT);
+        type(kpDomesticReportsPageObjects.DateRangeFrom(), "Month - Date From Dropdown Button", propertyReader.getproperty("dateFrom"));
+        kpDomesticReportsPageObjects.DateRangeFrom().sendKeys(Keys.ARROW_LEFT);
+        kpDomesticReportsPageObjects.DateRangeFrom().sendKeys(Keys.ARROW_LEFT);
+        type(kpDomesticReportsPageObjects.DateRangeFrom(), "Date - Date From Dropdown Button", propertyReader.getproperty("monthFrom"));
+        click(kpDomesticReportsPageObjects.DateRangeTo(),"Date To Dropdown Button");
+        type(kpDomesticReportsPageObjects.DateRangeTo(), "", propertyReader.getproperty("yearFuture"));
+        kpDomesticReportsPageObjects.DateRangeTo().sendKeys(Keys.ARROW_LEFT);
+        type(kpDomesticReportsPageObjects.DateRangeTo(), "Date - Date To Dropdown Button", propertyReader.getproperty("dateFuture"));
+        kpDomesticReportsPageObjects.DateRangeTo().sendKeys(Keys.ARROW_LEFT);
+        kpDomesticReportsPageObjects.DateRangeTo().sendKeys(Keys.ARROW_LEFT);
+        type(kpDomesticReportsPageObjects.DateRangeTo(), "Month - Date To Dropdown Button", propertyReader.getproperty("monthFuture"));
+
+
+//        click(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Date DropDown Button");
+//        waitSleep(3000);
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporateI"));
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporateI"));
+//        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporateI"));
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
         waitSleep(2000);
         if (isVisible(corporatePartnerReportPageObjects.futureDateText(), getText(corporatePartnerReportPageObjects.futureDateText()))) {

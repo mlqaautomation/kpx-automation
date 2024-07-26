@@ -36,8 +36,41 @@ public class CorporatePartnerReport_PageObjects {
     public WebElement dateInCorporatePartner(){
         return getDriver().findElement(By.cssSelector("[name=\"dailyTimeframe\"]"));
     }
+    public WebElement timeFrameField(){
+        return getDriver().findElement(By.cssSelector("[name=\"timeframe\"]"));
+    }
     public WebElement futureDateText(){
         return getDriver().findElement(By.xpath("//*[text()='Date cannot be a future date.']"));
     }
+    public WebElement DateRangeFrom(){
+        return getDriver().findElement(By.cssSelector("[name=\"dateRangeFrom\"]"));
+    }
+    public WebElement DateRangeTo(){
+        return getDriver().findElement(By.cssSelector("[name=\"dateRangeTo\"]"));
+    }
 
+    public WebElement invalidDateFutureDate(){
+        return getDriver().findElement(By.xpath("//*[text()='Date cannot be a future date.']"));
+    }
+    public WebElement yearlyTimeFrame(){
+        return getDriver().findElement(By.cssSelector("[name=\"yearlyTimeframe\"]"));
+    }
+    public WebElement selectedTimeFrameDaily(){
+        return getDriver().findElement(By.cssSelector("[value=\"DAILY\"]"));
+    }
+    public WebElement selectedTimeFrameMonthly(){
+        return getDriver().findElement(By.cssSelector("[value=\"MONTHLY\"]"));
+    }
+    public WebElement selectedTimeFrameDailyDate(){
+        return getDriver().findElement(By.cssSelector("[name=\"dailyTimeframe\"]"));
+    }
+
+    public WebElement dateRange(){
+        return getDriver().findElement(By.cssSelector("[value=\"DATE_RANGE\"]"));
+    }
+
+
+    public WebElement selectedMonthJune(){
+        return getDriver().findElement(By.xpath("//*[text()='June']"));
+    }
 }

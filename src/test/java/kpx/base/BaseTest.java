@@ -3,7 +3,6 @@ package kpx.base;
 
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-import kpx.actual.BillsPayChangeD_Nordeco_Tests;
 import mlkpx.testSteps.*;
 import mlkpx.testSteps.Home_Steps;
 import mlkpx.testSteps.Kyc_Steps;
@@ -78,6 +77,9 @@ public class BaseTest {
     protected GcashReceiptReprinting_Steps gcashReceiptReprintingSteps;
     protected Users_Steps usersSteps;
     protected UserNewBranch_Steps userNewBranchSteps;
+    protected BillspayMetroBankCollection_Steps billspayMetroBankCollectionSteps;
+
+
 
     protected Login loginWalletSteps;
     protected Cash_In cashInSteps;
@@ -191,21 +193,19 @@ public class BaseTest {
         this.requestForChangePartnerSteps = new RequestForChangePartner_Steps();
         this.orReprintingPartnerSteps = new ORReprintingPartner_Steps();
         this.soReprintingPartnerSteps = new SOReprintingPartner_Steps();
-
         this.sendoutPartnersSteps = new Sendout_Partners_Steps();
         this.payoutPartnersSteps = new Payout_Partners_Steps();
         this.payoutCancellePartnerSteps = new PayoutCancelle_Partner_Steps();
-
         this.kpDomesticReportsSteps = new KPDomesticReports_Steps();
         this.mlWalletServicesReportBranchReportSteps = new MLWalletServicesReportBranchReport_Steps();
         this.corporatePartnerReportSteps = new CorporatePartnerReport_Steps();
-
         this.billsPayReportSteps = new BillsPayReport_Steps();
         this.gcashCashInSteps = new GcashCashIn_Steps();
         this.gcashTransactionSteps = new GcashTransaction_Steps();
         this.gcashReceiptReprintingSteps = new GcashReceiptReprinting_Steps();
         this.usersSteps = new Users_Steps();
         this.userNewBranchSteps = new UserNewBranch_Steps();
+        this.billspayMetroBankCollectionSteps = new BillspayMetroBankCollection_Steps();
 
     }
     public void initWallet(){

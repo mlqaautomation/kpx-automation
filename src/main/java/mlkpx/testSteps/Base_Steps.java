@@ -43,6 +43,9 @@ public abstract class Base_Steps extends GeneralMethod {
 
     Sendout_Partners_PageObjects sendoutPartnersPageObjects = new Sendout_Partners_PageObjects();
     Payout_Partners_PageObjects payoutPartnersPageObjects = new Payout_Partners_PageObjects();
+    BillspayMetroBankCollection_PageObjects billspayMetroBankCollectionPageObjects = new BillspayMetroBankCollection_PageObjects();
+
+
     final String filepath = "src\\test\\java\\resources\\testData.properties";
     propertyReader propertyReader = new propertyReader(filepath);
     Assert anAssert;

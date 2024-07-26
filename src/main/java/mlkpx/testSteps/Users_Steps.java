@@ -97,7 +97,7 @@ public class Users_Steps extends Base_Steps{
         type(usersPageObjects.lastNameUserInfo(),"Last Name Field", propertyReader.getproperty("lastnameBranchUser"));
         type(usersPageObjects.emailUserInfo(),"Email Field", propertyReader.getproperty("emailBranchUser"));
         type(usersPageObjects.contactInfo(),"Contact Field", propertyReader.getproperty("contactBranchUser"));
-        waitSleep(15000);
+        waitSleep(20000);
         click(usersPageObjects.roleTellerAutoApprove(),"Teller Auto Approve Role");
         click(usersPageObjects.selectedZoneVISAYAS(),"VISAYAS ZONE");
         waitSleep(13000);
@@ -278,7 +278,7 @@ public class Users_Steps extends Base_Steps{
         U_TC_12();
         type(usersPageObjects.resourceIDNoField(), "Resource ID Number Field", propertyReader.getproperty("sameResourceID"));
         click(usersPageObjects.searchButton(), "Search Button");
-        waitSleep(20000);
+        waitSleep(40000);
         if(isVisible(usersPageObjects.userInformationText(), getText(usersPageObjects.userInformationText()))){
             ExtentReporter.logPass("U_TC_13", "Successfully verify Search User ID in Branch Users");
         }else{
@@ -335,7 +335,7 @@ public class Users_Steps extends Base_Steps{
     public void U_TC_17() throws Exception {
         U_TC_12();
         click(usersPageObjects.generateReportButton(), "generate Report Button");
-        waitSleep(8000);
+        waitSleep(10000);
         click(usersPageObjects.selectedZoneVISAYAS(), "selected Zone VISAYAS");
         waitSleep(15000);
         click(usersPageObjects.invalidRegionSWQAFORTESTREGION(), "invalid Region SWQA FORTEST REGION");
@@ -363,7 +363,7 @@ public class Users_Steps extends Base_Steps{
         U_TC_18();
         type(usersPageObjects.resourceIDNoField(), "Resource ID Number Field", propertyReader.getproperty("otherResourceID"));
         click(usersPageObjects.searchButton(), "Search Button");
-        waitSleep(20000);
+        waitSleep(40000);
         if(isVisible(usersPageObjects.userInformationText(), getText(usersPageObjects.userInformationText()))){
             ExtentReporter.logPass("U_TC_19", "Successfully verify Search User ID in Reliever");
         }else{

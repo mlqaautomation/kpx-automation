@@ -46,13 +46,13 @@ public class KPDomesticReports_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle" , priority = 6, description = "Verify Transaction Type Dropdown Options Return to Sender - Monthly")
-    public void transactionTypeDropdownOptionsReturntoSenderMonthly()throws Exception{
+    public void transactionTypeDropdownOptionsReturnToSenderMonthly()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.kpDomesticReportsSteps.KP_BTR_TC_06();
         }
     }
     @Test(dependsOnMethods = "loginGoogle" , priority = 7, description = "Verify Transaction Type Dropdown Options Request for Change - Monthly")
-    public void transactionTypeDropdownOptionsRequestforChangeMonthly()throws Exception{
+    public void transactionTypeDropdownOptionsRequestForChangeMonthly()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.kpDomesticReportsSteps.KP_BTR_TC_07();
         }
@@ -88,7 +88,7 @@ public class KPDomesticReports_Tests extends BaseTest {
         }
     }
     @Test(dependsOnMethods = "loginGoogle" , priority = 13, description = "Verify Transaction Type Dropdown Options Request for Change - Date Range")
-    public void transactionTypeDropdownOptionsRequestforChangeDateRange()throws Exception{
+    public void transactionTypeDropdownOptionsRequestForChangeDateRange()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.kpDomesticReportsSteps.KP_BTR_TC_13();
         }
@@ -119,13 +119,13 @@ public class KPDomesticReports_Tests extends BaseTest {
 
     }
     @Test(dependsOnMethods = "loginGoogle" , priority = 18, description = "Verify Transaction Type Dropdown Options Return to Sender - Daily")
-    public void transactionTypeDropdownOptionsReturntoSenderDaily()throws Exception{
+    public void transactionTypeDropdownOptionsReturnToSenderDaily()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.kpDomesticReportsSteps.KP_BTR_TC_18();
         }
     }
     @Test(dependsOnMethods = "loginGoogle" , priority = 19, description = "Verify Transaction Type Dropdown Options Request for Change - Daily")
-    public void transactionTypeDropdownOptionsRequestforChangeDaily()throws Exception{
+    public void transactionTypeDropdownOptionsRequestForChangeDaily()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.kpDomesticReportsSteps.KP_BTR_TC_19();
         }
