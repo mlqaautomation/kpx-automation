@@ -335,6 +335,13 @@ public class GeneralMethod extends ExtentReporter{
 
         jsExecutor.executeScript("window.scrollTo(0, " + scrollHeight + ")");
     }
+    public void scrollUp2(int scrollPercentage) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        long totalHeight = (long) jsExecutor.executeScript("return document.body.scrollHeight");
+        long scrollHeight = totalHeight * scrollPercentage / 100;
+
+        jsExecutor.executeScript("window.scrollTo(0, -" + scrollHeight + ")");
+    }
 
     public void scrollDownInElement(WebElement element, int scrollPercentage) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;

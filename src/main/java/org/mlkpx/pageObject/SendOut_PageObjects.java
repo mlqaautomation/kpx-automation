@@ -107,11 +107,22 @@ public class SendOut_PageObjects {
     public WebElement viewButton() {
         return getDriver().findElement(By.xpath("//button[@class=\"mr-3 btn btn-outline-primary btn-sm\" and text()=\"View\"]"));
     }
+    public WebElement editButton() {
+        return getDriver().findElement(By.xpath("//button[@class='btn btn-outline-secondary btn-sm']"));
+    }
 
 
     public WebElement selectKYC(){return getDriver().findElement(By.xpath("//button[contains(., 'Select KYC')]"));
     }
-    //[class='btn btn-primary btn-sm']
+    public WebElement WatchlistStat(){return getDriver().findElement(By.xpath("//select[@placeholder='Watchlist Status']"));
+    }
+    public WebElement NotExempted(){return getDriver().findElement(By.xpath("//option[contains(text(), 'NOT EXEMPTED')]"));
+    }
+    public WebElement Exempted(){return getDriver().findElement(By.xpath("//option[contains(text(), 'EXEMPTED')]"));
+    }
+    public WebElement UnderTerrorism(){return getDriver().findElement(By.xpath("//option[contains(text(), 'UNDER TERRORISM')]"));
+    }
+
     public WebElement contactNumber() {
         return getDriver().findElement(By.cssSelector("[name=\"senderOtherInformation.contactNumber\"]"));
     }
@@ -268,6 +279,10 @@ public class SendOut_PageObjects {
     public WebElement kptnText(){
 
         return getDriver().findElement(By.cssSelector("[data-testid='sendoutKPTN']"));
+    }
+    public WebElement reqNum(){
+
+        return getDriver().findElement(By.cssSelector("[data-testid='requestNumber']"));
     }
 
     public WebElement sendOutSuccessMsg(){

@@ -40,6 +40,7 @@ public abstract class Base_Steps extends GeneralMethod {
     UserNewBranch_PageObjects userNewBranchPageObjects = new UserNewBranch_PageObjects();
 
     BillsPayReport_PageObjects billsPayReportPageObjects = new BillsPayReport_PageObjects();
+    Watchlist_PageObjects watchlistPageObjects = new Watchlist_PageObjects();
 
     Sendout_Partners_PageObjects sendoutPartnersPageObjects = new Sendout_Partners_PageObjects();
     Payout_Partners_PageObjects payoutPartnersPageObjects = new Payout_Partners_PageObjects();

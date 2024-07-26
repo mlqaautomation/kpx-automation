@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="KYC" thread-count="1" >
+<suite name="Test" thread-count="1" >
     <listeners>
         <listener class-name="utilities.ExtentReport.ExtentReporter" />
         <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
     </listeners>
 
-    <test name="KYC Input">
+    <test name="Test Input">
         <parameter name="type" value="web">
             <classes>
-<!--                <class name="kpx.actual.Kyc_Tests"> </class>-->
-                <class name="kpx.actual.SendOut_Tests"> </class>
-                <class name="kpx.actual.RequestForChange_Tests"> </class>
-                <class name="kpx.actual.ReturnToSender_Tests"> </class>
-                <class name="kpx.actual.SendOutCancellation_Tests"> </class>
-                <class name="kpx.actual.SOReprinting_Tests"> </class>
-                <class name="kpx.actual.ORReprinting_Tests"> </class>
-                <class name="kpx.actual.Payout_Tests"> </class>
-                <class name="kpx.actual.PayoutCancellation_Tests">  </class>
-                <class name="kpx.actual.Payout_Tests"> </class>
-                <class name="kpx.actual.PayoutReprinting_Tests">  </class>
-                <class name="kpx.actual.BillsPayMaynilad_Tests">  </class>
-                <class name="kpx.actual.BillsPayCancellation_Maynilad_Tests">  </class>
-                <class name="kpx.actual.BillsPayChangeD_Maynilad_Tests">  </class>
-                <class name="kpx.actual.BillsPayReprinting_Maynilad_Tests">  </class>
-                <class name="kpx.actual.WS_CashInToOwnAccount_Tests"> </class>
-                <class name="kpx.actual.WS_CashInToAnotherAcc_Tests"> </class>
-                <class name="kpx.actual.WS_CashOut_Tests"> </class>
-                <class name="kpx.actual.WS_KwartaPadalaPayOut_Tests"> </class>
-                <class name="kpx.actual.WS_Reprinting_Tests"> </class>
-                <class name="kpx.actual.WS_ShopSafe_Tests">  </class>
+                <class name="kpx.actual.Kyc_Tests"> </class>
+<!--                <class name="kpx.actual.SendOut_Tests"> </class>-->
+<!--                <class name="kpx.actual.RequestForChange_Tests"> </class>-->
+<!--                <class name="kpx.actual.ReturnToSender_Tests"> </class>-->
+<!--                <class name="kpx.actual.SendOutCancellation_Tests"> </class>-->
+<!--                <class name="kpx.actual.SOReprinting_Tests"> </class>-->
+<!--                <class name="kpx.actual.ORReprinting_Tests"> </class>-->
+<!--                <class name="kpx.actual.Payout_Tests"> </class>-->
+<!--                <class name="kpx.actual.PayoutCancellation_Tests">  </class>-->
+<!--                <class name="kpx.actual.Payout_Tests"> </class>-->
+<!--                <class name="kpx.actual.PayoutReprinting_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayMaynilad_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayCancellation_Maynilad_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayChangeD_Maynilad_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayReprinting_Maynilad_Tests">  </class>-->
+<!--                <class name="kpx.actual.WS_CashInToOwnAccount_Tests"> </class>-->
+<!--                <class name="kpx.actual.WS_CashInToAnotherAcc_Tests"> </class>-->
+<!--                <class name="kpx.actual.WS_CashOut_Tests"> </class>-->
+<!--                <class name="kpx.actual.WS_KwartaPadalaPayOut_Tests"> </class>-->
+<!--                <class name="kpx.actual.WS_Reprinting_Tests"> </class>-->
+<!--                <class name="kpx.actual.WS_ShopSafe_Tests">  </class>-->
             </classes>
         </parameter>
     </test>
