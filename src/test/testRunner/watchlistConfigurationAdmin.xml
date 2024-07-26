@@ -7,7 +7,7 @@
         <listener class-name="utilities.RetryAnalyzer.RetryTransformer"/>
     </listeners>
 
-    <test name="watchlist">
+    <test name="watchlist configuration admin">
         <parameter name="type" value="web">
             <classes>
                 <class name="kpx.actual.WatchlistConfiguration_Tests">  </class>
