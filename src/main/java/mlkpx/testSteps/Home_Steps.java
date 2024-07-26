@@ -8,8 +8,7 @@ import utilities.Logger.LoggingUtils;
 
 public class Home_Steps extends Base_Steps {
     public boolean isInHomePage(){
-        waitSleep(10000);
-        waitUntilLoadingGone(10000);
+        waitSleep(5000);
         if (isVisible(homePageObjects.searchField(), "Search Field")) {
             LoggingUtils.info("Successfully directed to the Homepage");
             return true;
