@@ -61,6 +61,12 @@ public class KPDomesticReports_PageObjects {
     public WebElement selectedMonthJune(){
         return getDriver().findElement(By.xpath("//*[text()='June']"));
     }
+    public WebElement selectedMonthApril(){
+        return getDriver().findElement(By.xpath("//*[text()='April']"));
+    }
+    public WebElement selectedMonthJuly(){
+        return getDriver().findElement(By.xpath("//*[text()='July']"));
+    }
     public WebElement selectedYear2024(){
         return getDriver().findElement(By.cssSelector("[value=\"2024\"]"));
     }

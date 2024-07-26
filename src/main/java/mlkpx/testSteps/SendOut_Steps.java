@@ -88,7 +88,7 @@ public class SendOut_Steps extends Base_Steps {
         waitUntilLoadingGone(10000);
         waitSleep(10000);
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
-        waitSleep(5000);
+        waitSleep(8000);
         //todo get value of kptn locator and post it to yaml file
         String  kptnText = getText(sendOutPageObjects.kptnText());
         List<String> kptnValues = Collections.singletonList(kptnText);

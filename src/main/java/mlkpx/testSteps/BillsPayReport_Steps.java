@@ -25,9 +25,12 @@ public class BillsPayReport_Steps extends Base_Steps{
 
     public void BP_BTR_TC_01() throws Exception {
         navigationForBillspayBranchTransactionReport();
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Month Dropdown Button", propertyReader.getproperty("monthDaily"));
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Date Dropdown Button", propertyReader.getproperty("DateDaily"));
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Year Dropdown Button", propertyReader.getproperty("yearDaily"));
+        click(corporatePartnerReportPageObjects.timeFrameField(), "Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedTimeFrameMonthly(), "Monthly Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedMonthJune(), "Selected Month June");
+//        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Month Dropdown Button", propertyReader.getproperty("monthDaily"));
+//        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Date Dropdown Button", propertyReader.getproperty("DateDaily"));
+//        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Year Dropdown Button", propertyReader.getproperty("yearDaily"));
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
         if (isVisible(billsPayReportPageObjects.okButton(), getText(billsPayReportPageObjects.okButton()))) {
             ExtentReporter.logPass("navigationForBillspayBranchTransactionReport", "Successfully Navigate to Cancellation Report");
@@ -38,6 +41,8 @@ public class BillsPayReport_Steps extends Base_Steps{
     }
     public void BP_BTR_TC_02() throws Exception {
         navigationForBillspayBranchTransactionReport();
+        click(kpDomesticReportsPageObjects.timeFrame(),"TimeFrame Dropdown");
+        click(corporatePartnerReportPageObjects.dateRange(), "Date Range Timeframe Field");
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
         if (isVisible(billsPayReportPageObjects.invalidDateText(), getText(billsPayReportPageObjects.invalidDateText()))) {
@@ -50,9 +55,24 @@ public class BillsPayReport_Steps extends Base_Steps{
     }
     public void BP_BTR_TC_03() throws Exception {
         navigationForBillspayBranchTransactionReport();
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Month Dropdown Button", propertyReader.getproperty("monthFutureB"));
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Date Dropdown Button", propertyReader.getproperty("dateFutureB"));
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Year Dropdown Button", propertyReader.getproperty("yearFutureB"));
+        click(corporatePartnerReportPageObjects.dateRange(), "Date Range Timeframe Field");
+
+        type(kpDomesticReportsPageObjects.DateRangeFrom(), "Year - Date From Dropdown Button", propertyReader.getproperty("yearFrom"));
+        kpDomesticReportsPageObjects.DateRangeFrom().sendKeys(Keys.ARROW_LEFT);
+        type(kpDomesticReportsPageObjects.DateRangeFrom(), "Month - Date From Dropdown Button", propertyReader.getproperty("dateFrom"));
+        kpDomesticReportsPageObjects.DateRangeFrom().sendKeys(Keys.ARROW_LEFT);
+        kpDomesticReportsPageObjects.DateRangeFrom().sendKeys(Keys.ARROW_LEFT);
+        type(kpDomesticReportsPageObjects.DateRangeFrom(), "Date - Date From Dropdown Button", propertyReader.getproperty("monthFrom"));
+        click(kpDomesticReportsPageObjects.DateRangeTo(),"Date To Dropdown Button");
+        type(kpDomesticReportsPageObjects.DateRangeTo(), "", propertyReader.getproperty("yearFuture"));
+        kpDomesticReportsPageObjects.DateRangeTo().sendKeys(Keys.ARROW_LEFT);
+        type(kpDomesticReportsPageObjects.DateRangeTo(), "Date - Date To Dropdown Button", propertyReader.getproperty("dateFuture"));
+        kpDomesticReportsPageObjects.DateRangeTo().sendKeys(Keys.ARROW_LEFT);
+        kpDomesticReportsPageObjects.DateRangeTo().sendKeys(Keys.ARROW_LEFT);
+        type(kpDomesticReportsPageObjects.DateRangeTo(), "Month - Date To Dropdown Button", propertyReader.getproperty("monthFuture"));
+//        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Month Dropdown Button", propertyReader.getproperty("monthFutureB"));
+//        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Date Dropdown Button", propertyReader.getproperty("dateFutureB"));
+//        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Year Dropdown Button", propertyReader.getproperty("yearFutureB"));
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
         if (isVisible(billsPayReportPageObjects.futureDateTExt(), getText(billsPayReportPageObjects.futureDateTExt()))) {
             ExtentReporter.logPass("BP_BTR_TC_03", "Successfully verify generating BillsPay Branch Transaction Report with future date");
@@ -63,9 +83,14 @@ public class BillsPayReport_Steps extends Base_Steps{
     }
     public void BP_BTR_TC_04() throws Exception {
         navigationForBillspayBranchTransactionReport();
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Month Dropdown Button", propertyReader.getproperty("monthNoReports"));
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Date Dropdown Button", propertyReader.getproperty("dayNoReports"));
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Year Dropdown Button", propertyReader.getproperty("yearNoReports"));
+        click(corporatePartnerReportPageObjects.timeFrameField(), "Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedTimeFrameDaily(), "Daily Timeframe Field");
+        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporateNo"));
+        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporateNo"));
+        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporateNo"));
+//        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Month Dropdown Button", propertyReader.getproperty("monthNoReports"));
+//        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Date Dropdown Button", propertyReader.getproperty("dayNoReports"));
+//        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Year Dropdown Button", propertyReader.getproperty("yearNoReports"));
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
         if (isVisible(billsPayReportPageObjects.noReportsGenerate(), getText(billsPayReportPageObjects.noReportsGenerate()))) {
             ExtentReporter.logPass("BP_BTR_TC_04", "Successfully verify no reports generated");
@@ -77,9 +102,11 @@ public class BillsPayReport_Steps extends Base_Steps{
     }
     public void BP_BTR_TC_05() throws Exception {
         navigationForBillspayBranchTransactionReport();
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Month Dropdown Button", propertyReader.getproperty("monthNoReports"));
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Date Dropdown Button", propertyReader.getproperty("dayNoReports"));
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Year Dropdown Button", propertyReader.getproperty("yearNoReports"));
+        click(corporatePartnerReportPageObjects.timeFrameField(), "Timeframe Field");
+        click(corporatePartnerReportPageObjects.selectedTimeFrameDaily(), "Daily Timeframe Field");
+        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Month - Date Dropdown Button", propertyReader.getproperty("monthCorporateNo"));
+        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "day - Date Dropdown Button", propertyReader.getproperty("dayCorporateNo"));
+        type(corporatePartnerReportPageObjects.dateInCorporatePartner(), "Year - Date Dropdown Button", propertyReader.getproperty("yearCorporateNo"));
         click(billsPayReportPageObjects.clearButtonB(),"Clear button");
     }
 
@@ -103,20 +130,18 @@ public class BillsPayReport_Steps extends Base_Steps{
         click(billsPayReportPageObjects.billsPaymentCancellationTransactionType(), "Bills Payment Cancellation Transaction Type DropDown Button");
         waitSleep(3000);
         click(kpDomesticReportsPageObjects.timeFrame(), "TimeFrame Dropdown Button");
-        click(kpDomesticReportsPageObjects.selectedTimeFrameDaily(),"Daily TimeFrame Dropdown Button");
-        waitSleep(3000);
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Month Dropdown Button", propertyReader.getproperty("monthReportsC"));
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Date Dropdown Button", propertyReader.getproperty("dayReportsC"));
-        type(kpDomesticReportsPageObjects.selectedTimeFrameDailyDate(), "Year Dropdown Button", propertyReader.getproperty("yearReportsC"));
+        click(corporatePartnerReportPageObjects.selectedTimeFrameMonthly(), "Monthly Timeframe Field");
+        click(kpDomesticReportsPageObjects.selectedMonthJuly(),"July Month Selected");
         waitSleep(3000);
         click(billsPayReportPageObjects.filterDropdown(), "Filter Dropdown Button");
         click(billsPayReportPageObjects.selectedFilterBranch(), "Branch Filter Dropdown Button");
         waitSleep(3000);
         click(billsPayReportPageObjects.branchDropdown(), "Branch Dropdown Button");
-        click(billsPayReportPageObjects.misDivision(), "MIS Branch Dropdown Button");
+        waitSleep(3000);
+        click(billsPayReportPageObjects.mlTGBranch(), "mlTG Branch Dropdown Button");
         waitSleep(3000);
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
-        waitSleep(5000);
+        waitSleep(25000);
         if (isVisible(billsPayReportPageObjects.reportsGenerated(), getText(billsPayReportPageObjects.reportsGenerated()))) {
             ExtentReporter.logPass("BP-CR_TC_02", "Successfully Generate Billspay Cancellation Report Daily");
         } else {
@@ -142,10 +167,10 @@ public class BillsPayReport_Steps extends Base_Steps{
         click(billsPayReportPageObjects.selectedFilterBranch(), "Branch Filter Dropdown Button");
         waitSleep(2000);
         click(billsPayReportPageObjects.branchDropdown(), "Branch Dropdown Button");
-        click(billsPayReportPageObjects.misDivision(), "MIS Branch Dropdown Button");
+        click(billsPayReportPageObjects.mlTGBranch(), "mlTGBranch Dropdown Button");
         waitSleep(2000);
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
-        waitSleep(5000);
+        waitSleep(25000);
         if (isVisible(billsPayReportPageObjects.reportsGenerated(), getText(billsPayReportPageObjects.reportsGenerated()))) {
             ExtentReporter.logPass("BP-CR_TC_03", "Successfully Generate Billspay Change Details Report Daily");
         } else {
@@ -163,7 +188,7 @@ public class BillsPayReport_Steps extends Base_Steps{
         click(kpDomesticReportsPageObjects.selectedTimeFrameMonthly(),"Monthly TimeFrame Dropdown Button");
         waitSleep(2000);
         click(kpDomesticReportsPageObjects.monthDropDownButton(),"Month DropDown Button");
-        click(billsPayReportPageObjects.monthOfJune(),"Month of June");
+        click(kpDomesticReportsPageObjects.selectedMonthJuly(),"July Month Selected");
         waitSleep(2000);
         click(billsPayReportPageObjects.yearDropdown(),"Year Dropdown Button");
         click(billsPayReportPageObjects.year2024(),"Year 2024");
@@ -172,10 +197,10 @@ public class BillsPayReport_Steps extends Base_Steps{
         click(billsPayReportPageObjects.selectedFilterBranch(), "Branch Filter Dropdown Button");
         waitSleep(2000);
         click(billsPayReportPageObjects.branchDropdown(), "Branch Dropdown Button");
-        click(billsPayReportPageObjects.misDivision(), "MIS Branch Dropdown Button");
+        click(billsPayReportPageObjects.mlTGBranch(), "mlTG Branch Dropdown Button");
         waitSleep(2000);
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
-        waitSleep(5000);
+        waitSleep(25000);
         if (isVisible(billsPayReportPageObjects.reportsGenerated(), getText(billsPayReportPageObjects.reportsGenerated()))) {
             ExtentReporter.logPass("BP-CR_TC_04", "Successfully Generate Billspay Cancellation Report Monthly");
         } else {
@@ -194,7 +219,7 @@ public class BillsPayReport_Steps extends Base_Steps{
         click(kpDomesticReportsPageObjects.selectedTimeFrameMonthly(),"Monthly TimeFrame Dropdown Button");
         waitSleep(2000);
         click(kpDomesticReportsPageObjects.monthDropDownButton(),"Month DropDown Button");
-        click(billsPayReportPageObjects.monthOfJune(),"Month of June");
+        click(kpDomesticReportsPageObjects.selectedMonthJuly(),"July Month Selected");
         waitSleep(2000);
         click(billsPayReportPageObjects.yearDropdown(),"Year Dropdown Button");
         click(billsPayReportPageObjects.year2024(),"Year 2024");
@@ -203,10 +228,10 @@ public class BillsPayReport_Steps extends Base_Steps{
         click(billsPayReportPageObjects.selectedFilterBranch(), "Branch Filter Dropdown Button");
         waitSleep(2000);
         click(billsPayReportPageObjects.branchDropdown(), "Branch Dropdown Button");
-        click(billsPayReportPageObjects.misDivision(), "MIS Branch Dropdown Button");
+        click(billsPayReportPageObjects.mlTGBranch(), "mlTG Branch Dropdown Button");
         waitSleep(2000);
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
-        waitSleep(5000);
+        waitSleep(25000);
         if (isVisible(billsPayReportPageObjects.reportsGenerated(), getText(billsPayReportPageObjects.reportsGenerated()))) {
             ExtentReporter.logPass("BP-CR_TC_05", "Successfully Generate Billspay Change Details Report Monthly");
         } else {
@@ -222,31 +247,17 @@ public class BillsPayReport_Steps extends Base_Steps{
         click(billsPayReportPageObjects.billsPaymentCancellationTransactionType(), "Bills Payment Cancellation Transaction Type DropDown Button");
         waitSleep(2000);
         click(kpDomesticReportsPageObjects.timeFrame(), "TimeFrame Dropdown Button");
-        click(kpDomesticReportsPageObjects.DateRange(),"Date Range Dropdown Button");
+        click(kpDomesticReportsPageObjects.selectedTimeFrameMonthly(),"Month Dropdown Button");
+        click(kpDomesticReportsPageObjects.selectedMonthJuly(),"July Month Selected");
         waitSleep(3000);
-        click(kpDomesticReportsPageObjects.DateRangeFrom(),"Date From Dropdown Button");
-        type(kpDomesticReportsPageObjects.DateRangeFrom(), "Year - Date From Dropdown Button", propertyReader.getproperty("yearFrom"));
-        kpDomesticReportsPageObjects.DateRangeFrom().sendKeys(Keys.ARROW_LEFT);
-        type(kpDomesticReportsPageObjects.DateRangeFrom(), "Month - Date From Dropdown Button", propertyReader.getproperty("dateFrom"));
-        kpDomesticReportsPageObjects.DateRangeFrom().sendKeys(Keys.ARROW_LEFT);
-        kpDomesticReportsPageObjects.DateRangeFrom().sendKeys(Keys.ARROW_LEFT);
-        type(kpDomesticReportsPageObjects.DateRangeFrom(), "Date - Date From Dropdown Button", propertyReader.getproperty("monthFrom"));
-        click(kpDomesticReportsPageObjects.DateRangeTo(),"Date To Dropdown Button");
-        type(kpDomesticReportsPageObjects.DateRangeTo(), "", propertyReader.getproperty("yearTo"));
-        kpDomesticReportsPageObjects.DateRangeTo().sendKeys(Keys.ARROW_LEFT);
-        type(kpDomesticReportsPageObjects.DateRangeTo(), "Date - Date To Dropdown Button", propertyReader.getproperty("dateTo"));
-        kpDomesticReportsPageObjects.DateRangeTo().sendKeys(Keys.ARROW_LEFT);
-        kpDomesticReportsPageObjects.DateRangeTo().sendKeys(Keys.ARROW_LEFT);
-        type(kpDomesticReportsPageObjects.DateRangeTo(), "Month - Date To Dropdown Button", propertyReader.getproperty("monthTo"));
-        waitSleep(2000);
         click(billsPayReportPageObjects.filterDropdown(), "Filter Dropdown Button");
         click(billsPayReportPageObjects.selectedFilterBranch(), "Branch Filter Dropdown Button");
         waitSleep(2000);
         click(billsPayReportPageObjects.branchDropdown(), "Branch Dropdown Button");
-        click(billsPayReportPageObjects.misDivision(), "MIS Branch Dropdown Button");
+        click(billsPayReportPageObjects.mlTGBranch(), "mlTG Branch Dropdown Button");
         waitSleep(2000);
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
-        waitSleep(5000);
+        waitSleep(25000);
         if (isVisible(billsPayReportPageObjects.reportsGenerated(), getText(billsPayReportPageObjects.reportsGenerated()))) {
             ExtentReporter.logPass("BP-CR_TC_06", "Successfully Generate Billspay Cancellation Report Date Range");
         } else {
@@ -281,10 +292,10 @@ public class BillsPayReport_Steps extends Base_Steps{
         click(billsPayReportPageObjects.selectedFilterBranch(), "Branch Filter Dropdown Button");
         waitSleep(2000);
         click(billsPayReportPageObjects.branchDropdown(), "Branch Dropdown Button");
-        click(billsPayReportPageObjects.misDivision(), "MIS Branch Dropdown Button");
+        click(billsPayReportPageObjects.mlTGBranch(), "mlTG Branch Dropdown Button");
         waitSleep(2000);
         click(kpDomesticReportsPageObjects.generateReportButton(),"Generate Report Button");
-        waitSleep(5000);
+        waitSleep(25000);
         if (isVisible(billsPayReportPageObjects.reportsGenerated(), getText(billsPayReportPageObjects.reportsGenerated()))) {
             ExtentReporter.logPass("BP-CR_TC_05", "Successfully Generate Billspay Change Details Report Date Range");
         } else {
@@ -305,11 +316,11 @@ public class BillsPayReport_Steps extends Base_Steps{
         click(billsPayReportPageObjects.selectedFilterBranch(), "Branch Filter Dropdown Button");
         waitSleep(3000);
         click(billsPayReportPageObjects.branchDropdown(), "Branch Dropdown Button");
-        click(billsPayReportPageObjects.misDivision(), "MIS Branch Dropdown Button");
+        click(billsPayReportPageObjects.mlTGBranch(), "mlTG Branch Dropdown Button");
         waitSleep(3000);
         click(kpDomesticReportsPageObjects.generateReportButton(), "Generate Report Button");
         click(kpDomesticReportsPageObjects.generateReportButton(), "Generate Report Button");
-        waitSleep(2000);
+        waitSleep(3000);
         if (isVisible(billsPayReportPageObjects.invalidDateText(), getText(billsPayReportPageObjects.invalidDateText()))) {
             ExtentReporter.logPass("BP-CR_TC_08", "Successfully verify no date provided ");
         } else {
@@ -335,10 +346,10 @@ public class BillsPayReport_Steps extends Base_Steps{
         click(billsPayReportPageObjects.selectedFilterBranch(), "Branch Filter Dropdown Button");
         waitSleep(3000);
         click(billsPayReportPageObjects.branchDropdown(), "Branch Dropdown Button");
-        click(billsPayReportPageObjects.misDivision(), "MIS Branch Dropdown Button");
+        click(billsPayReportPageObjects.mlTGBranch(), "mlTG Branch Dropdown Button");
         waitSleep(3000);
         click(kpDomesticReportsPageObjects.generateReportButton(), "Generate Report Button");
-        waitSleep(2000);
+        waitSleep(3000);
         if (isVisible(billsPayReportPageObjects.futureDateTExt(), getText(billsPayReportPageObjects.futureDateTExt()))) {
             ExtentReporter.logPass("BP-CR_TC_09", "Successfully verify generating Report with future date");
         } else {
@@ -365,7 +376,7 @@ public class BillsPayReport_Steps extends Base_Steps{
         click(billsPayReportPageObjects.selectedFilterBranch(), "Branch Filter Dropdown Button");
         waitSleep(2000);
         click(billsPayReportPageObjects.branchDropdown(), "Branch Dropdown Button");
-        click(billsPayReportPageObjects.misDivision(), "MIS Branch Dropdown Button");
+        click(billsPayReportPageObjects.mlTGBranch(), "mlTG Branch Dropdown Button");
         waitSleep(3000);
         click(kpDomesticReportsPageObjects.clearButton(),"Clear Button");
 
