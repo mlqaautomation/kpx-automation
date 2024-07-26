@@ -21,8 +21,6 @@ public class Payout_Partners_Steps extends Base_Steps{
         }
     }
     public void validateSuccessfulPartnerPayout()throws Exception {
-        click(payoutPageObjects.PayoutTransaction(), "Payout Transaction");
-
         click(payoutPageObjects.PartnerTransaction(), "Partner Transaction");
         waitUntilLoadingGone(10000);
         reader.refreshTestData();

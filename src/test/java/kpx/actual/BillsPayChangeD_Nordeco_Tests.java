@@ -17,16 +17,16 @@ public class BillsPayChangeD_Nordeco_Tests extends BaseTest {
     @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To validate successful BillsPay Change Details Nordeco Partner")
     public void BPNordeco_ChangeDetails_TC_01()throws Exception{
         if(this.homeSteps.isInHomePage()){
-            this.billsPayCignalSteps.navigatePayoutPage();
-            this.billsPayCignalSteps.validateSuccessfulBillsPayCignal();
+            this.billsPayNordecoSteps.navigatePayoutPage();
+            this.billsPayNordecoSteps.validateSuccessfulBillsPayNORDECO();
             this.billsPayChangeDNordecoSteps.validateSuccessfulBillsPayNORDECOChangeDetails();
         }
     }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To validate successful remote BillsPay Change Details Nordeco Partner")
     public void BPNordeco_ChangeDetails_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
-            this.billsPayCignalSteps.navigatePayoutPage();
-            this.billsPayCignalSteps.validateSuccessfulRemoteBillsPayCignal();
+            this.billsPayNordecoSteps.navigatePayoutPage();
+            this.billsPayNordecoSteps.validateSuccessfulBillsPayNORDECO();
             this.billsPayChangeDNordecoSteps.validateSuccessfulBillsPayRemoteNORDECOChangeDetails();
         }
     }

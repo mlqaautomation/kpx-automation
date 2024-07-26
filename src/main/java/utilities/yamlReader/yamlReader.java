@@ -113,7 +113,24 @@ public class yamlReader {
 //        String lastName = (String) kycData.get("lastName");
 //        return new String[]{firstName, lastName};
 //    }
+    public String getSendOutKPTNCompliance() {
+        try {
+            List<String> sendOutKptnList = (List<String>) yamlData.get("sendOutKPTNCompliance");
+            if (sendOutKptnList == null || sendOutKptnList.isEmpty()) {
+                System.out.println("No send out KPTN Compliance values available.");
+                return null;
+            }
 
+            String selectedSendOutKptn = sendOutKptnList.get(sendOutKptnList.size() - 1); // Select the last stored send out KPTN
+            sendOutKptnList.remove(sendOutKptnList.size() - 1); // Remove the selected send out KPTN from the list
+            saveYamlData();
+            return selectedSendOutKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     public String getSendOutKPTN() {
         try {
@@ -127,6 +144,24 @@ public class yamlReader {
             sendOutKptnList.remove(sendOutKptnList.size() - 1); // Remove the selected send out KPTN from the list
             saveYamlData();
             return selectedSendOutKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getSendOutWatchlistPartnerNum() {
+        try {
+            List<String> sendOutReferenceList = (List<String>) yamlData.get("WesternUnionPartnerWatchlistKPTN");
+            if (sendOutReferenceList == null || sendOutReferenceList.isEmpty()) {
+                System.out.println("No Sendout Watchlist Reference values available.");
+                return null;
+            }
+
+            String selectedSendOutReference = sendOutReferenceList.get(sendOutReferenceList.size() - 1); // Select the last stored send out KPTN
+            sendOutReferenceList.remove(sendOutReferenceList.size() - 1); // Remove the selected send out KPTN from the list
+            saveYamlData();
+            return selectedSendOutReference;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -221,6 +256,78 @@ public class yamlReader {
             sendOutKptnList.remove(sendOutKptnList.size() - 1); // Remove the selected send out KPTN from the list
             saveYamlData();
             return selectedSendOutKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRandomLNames() {
+        try {
+            List<String> randomList = (List<String>) yamlData.get("WatchlistLName");
+            if (randomList == null || randomList.isEmpty()) {
+                System.out.println("No Random L Names available.");
+                return null;
+            }
+
+            String selectedRandom = randomList.get(randomList.size() - 1);
+            randomList.remove(randomList.size() - 1);
+            saveYamlData();
+            return selectedRandom;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRandomFNames() {
+        try {
+            List<String> randomList = (List<String>) yamlData.get("WatchlistFName");
+            if (randomList == null || randomList.isEmpty()) {
+                System.out.println("No Random F Names available.");
+                return null;
+            }
+
+            String selectedRandom = randomList.get(randomList.size() - 1);
+            randomList.remove(randomList.size() - 1);
+            saveYamlData();
+            return selectedRandom;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getCompanyName() {
+        try {
+            List<String> randomList = (List<String>) yamlData.get("WatchlistCompanyName");
+            if (randomList == null || randomList.isEmpty()) {
+                System.out.println("No Random Company Name available.");
+                return null;
+            }
+
+            String selectedRandom = randomList.get(randomList.size() - 1);
+            randomList.remove(randomList.size() - 1);
+            saveYamlData();
+            return selectedRandom;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getMobileNumber() {
+        try {
+            List<String> randomList = (List<String>) yamlData.get("WatchlistMobileNumber");
+            if (randomList == null || randomList.isEmpty()) {
+                System.out.println("No Random Mobile Numbers available.");
+                return null;
+            }
+
+            String selectedRandom = randomList.get(randomList.size() - 1);
+            randomList.remove(randomList.size() - 1);
+            saveYamlData();
+            return selectedRandom;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -841,7 +948,22 @@ public class yamlReader {
             e.printStackTrace();
         }
     }
+    public void writeReqNumData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            yamlData = yaml.load(fileInputStream); // Assign the loaded YAML data to the class member
 
+            yamlData.put("RequestNumber", values); // Overwrite the existing values with the new values
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void writeKptnData(List<String> values) {
         try {
             Yaml yaml = new Yaml();
@@ -858,6 +980,23 @@ public class yamlReader {
             e.printStackTrace();
         }
     }
+    public void writeKptnDataCompliance(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            yamlData = yaml.load(fileInputStream); // Assign the loaded YAML data to the class member
+
+            yamlData.put("sendOutKPTNCompliance", values); // Overwrite the existing values with the new values
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void writeReferenceNumData(List<String> values) {
         try {
             Yaml yaml = new Yaml();
@@ -870,6 +1009,22 @@ public class yamlReader {
             } else {
                 yamlData.put("WesternUnionPartner10MinuteRemote", values);
             }
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void MoneygramPartnerWatchlistKPTN(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            yamlData = yaml.load(fileInputStream); // Assign the loaded YAML data to the class member
+
+            yamlData.put("MoneygramPartnerWatchlistKPTN", values); // Overwrite the existing values with the new values
 
             FileWriter writer = new FileWriter(yamlFileName);
             yaml.dump(yamlData, writer);
@@ -902,6 +1057,22 @@ public class yamlReader {
             yamlData = yaml.load(fileInputStream); // Assign the loaded YAML data to the class member
 
             yamlData.put("MoneyGramPartner10MinuteRemote", values); // Overwrite the existing values with the new values
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void WesternUnionPartnerWatchlistKPTN(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            yamlData = yaml.load(fileInputStream); // Assign the loaded YAML data to the class member
+
+            yamlData.put("WesternUnionPartnerWatchlistKPTN", values); // Overwrite the existing values with the new values
 
             FileWriter writer = new FileWriter(yamlFileName);
             yaml.dump(yamlData, writer);

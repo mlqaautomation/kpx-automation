@@ -74,6 +74,10 @@ public class BaseTest {
     protected CorporatePartnerReport_Steps corporatePartnerReportSteps;
     protected BillsPayReport_Steps billsPayReportSteps;
 
+    protected Watchlist_Steps watchlistSteps;
+    protected WatchlistConfiguration_Steps watchlistConfigurationSteps;
+    protected WatchlistTransaction_Steps watchlistTransactionSteps;
+
     protected Login loginWalletSteps;
     protected Cash_In cashInSteps;
 
@@ -186,6 +190,10 @@ public class BaseTest {
         this.requestForChangePartnerSteps = new RequestForChangePartner_Steps();
         this.orReprintingPartnerSteps = new ORReprintingPartner_Steps();
         this.soReprintingPartnerSteps = new SOReprintingPartner_Steps();
+
+        this.watchlistSteps = new Watchlist_Steps();
+        this.watchlistConfigurationSteps = new WatchlistConfiguration_Steps();
+        this.watchlistTransactionSteps = new WatchlistTransaction_Steps();
 
         this.sendoutPartnersSteps = new Sendout_Partners_Steps();
         this.payoutPartnersSteps = new Payout_Partners_Steps();
