@@ -18,5 +18,29 @@ public class Home_Steps extends Base_Steps {
             return false;
         }
     }
+    public boolean logout(){
+        click(homePageObjects.logout(), "Logout Button");
+        waitSleep(15000);
+        if (isVisible(googlePageObjects.signInWithKPX(), "signIn with KPX")) {
+            LoggingUtils.info("Successfully logout");
+            return true;
+        } else {
+            LoggingUtils.error("Failed to logout");
+            ExtentReporter.logFail("!isInLogout", "Failed to logout");
+            return false;
+        }
+    }
+    public boolean okButton(){
+        click(usersPageObjects.okButton(), "OK Button");
+        if (isVisible(homePageObjects.logout(), "Log Out Button")) {
+            LoggingUtils.info("Success");
+            return true;
+        } else {
+            LoggingUtils.error("Failed");
+            ExtentReporter.logFail("!isInLogout", "Failed");
+            return false;
+        }
+
+    }
 }
 

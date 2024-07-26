@@ -34,7 +34,7 @@ public class SendOut_Steps extends Base_Steps {
     public void DS_TC_02() throws Exception { // Test Case for Sendout Transaction Option Invalid Branch Code
         navigationFOrSendOutDomestic();
         click(sendOutPageObjects.yesRadioButton(), "Yes Button ");
-        waitSleep(5000);
+        waitSleep(8000);
         type(sendOutPageObjects.branchField(), "Branch Code Field", propertyReader.getproperty("invalidBranch_code"));
         waitSleep(2000); //hard wait for 2 seconds
         isVisible(sendOutPageObjects.branchNotFoundText(), "Branch not found text");
@@ -259,12 +259,12 @@ public class SendOut_Steps extends Base_Steps {
         clearField(sendOutPageObjects.principalAmount());
 
         type(sendOutPageObjects.principalAmount(), "Valid Principal Amount field ", propertyReader.getproperty("firstAmount"));
-        waitSleep(3000);
+        waitSleep(8000);
         assertEqual(getText(sendOutPageObjects.chargeAmount()), propertyReader.getproperty("minCharge"));
         clearField(sendOutPageObjects.principalAmount());
 
         type(sendOutPageObjects.principalAmount(), "Valid Principal Amount field ", propertyReader.getproperty("lastAmount"));
-        waitSleep(5000);
+        waitSleep(10000);
         assertEqual(getText(sendOutPageObjects.chargeAmount()), propertyReader.getproperty("maxCharge"));
         waitSleep(5000);
 
@@ -459,7 +459,7 @@ public class SendOut_Steps extends Base_Steps {
         assertEqual(getValue(sendOutPageObjects.messageToReceiver()), propertyReader.getproperty("messagetoreceiver"));
         scrollToElement(sendOutPageObjects.principalAmount());
         type(sendOutPageObjects.principalAmount(), "Valid Principal Amount field ", propertyReader.getproperty("lastAmount"));
-        waitSleep(5000);
+        waitSleep(10000);
         assertEqual(getText(sendOutPageObjects.chargeAmount()), propertyReader.getproperty("maxCharge"));
         waitUntilLoadingGone(10000);
 
@@ -518,8 +518,8 @@ public class SendOut_Steps extends Base_Steps {
             waitUntilLoadingGone(10000);
             click(sendOutPageObjects.viewButton(), "View Button ");
             waitSleep(5000);
-            scrollToBottomOfPageWEB();
             scrollDown(100);
+            scrollToElement(sendOutPageObjects.selectKYC());
             click(sendOutPageObjects.selectKYC(), "Select KYC Button");
         }
 
