@@ -53,7 +53,7 @@ public class MLWalletServicesReportBranchReport_Steps extends Base_Steps{
             Assert.fail("Failed to Verify Transaction Type Dropdown Options Sendout - Monthly");
         }
         click(kpDomesticReportsPageObjects.monthDropDownButton(),"Month DropDown Button");
-        click(kpDomesticReportsPageObjects.selectedMonthMay(),"May Month Dropdown Button");
+        click(kpDomesticReportsPageObjects.selectedMonthJuly(),"July Month Dropdown Button");
         waitSleep(2000);
         click(kpDomesticReportsPageObjects.yearlyTimeFrame(),"Yearly TimeFrame Dropdown Button");
         click(kpDomesticReportsPageObjects.selectedYear2024(),"Year 2024 Button");
@@ -87,7 +87,7 @@ public class MLWalletServicesReportBranchReport_Steps extends Base_Steps{
 
         click(kpDomesticReportsPageObjects.monthDropDownButton(),"Month DropDown Button");
         waitSleep(1000);
-        click(kpDomesticReportsPageObjects.selectedMonthMay(),"May Month Dropdown Button");
+        click(kpDomesticReportsPageObjects.selectedMonthJuly(),"July Month Dropdown Button");
         waitSleep(1000);
         click(kpDomesticReportsPageObjects.yearlyTimeFrame(),"Yearly TimeFrame Dropdown Button");
         click(kpDomesticReportsPageObjects.selectedYear2024(),"Year 2024 Button");
@@ -137,7 +137,7 @@ public class MLWalletServicesReportBranchReport_Steps extends Base_Steps{
 
         click(kpDomesticReportsPageObjects.monthDropDownButton(),"Month DropDown Button");
         waitSleep(1000);
-        click(kpDomesticReportsPageObjects.selectedMonthMay(),"May Month Dropdown Button");
+        click(kpDomesticReportsPageObjects.selectedMonthJuly(),"July Month Dropdown Button");
         waitSleep(1000);
         click(kpDomesticReportsPageObjects.yearlyTimeFrame(),"Yearly TimeFrame Dropdown Button");
         click(kpDomesticReportsPageObjects.selectedYear2024(),"Year 2024 Button");
@@ -179,7 +179,7 @@ public class MLWalletServicesReportBranchReport_Steps extends Base_Steps{
 
         click(kpDomesticReportsPageObjects.monthDropDownButton(),"Month DropDown Button");
         waitSleep(1000);
-        click(kpDomesticReportsPageObjects.selectedMonthMay(),"May Month Dropdown Button");
+        click(kpDomesticReportsPageObjects.selectedMonthJuly(),"July Month Dropdown Button");
         waitSleep(1000);
         click(kpDomesticReportsPageObjects.yearlyTimeFrame(),"Yearly TimeFrame Dropdown Button");
         click(kpDomesticReportsPageObjects.selectedYear2024(),"Year 2024 Button");
