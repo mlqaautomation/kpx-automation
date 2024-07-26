@@ -53,8 +53,8 @@ public class BillsPayReport_PageObjects {
     public WebElement branchDropdown(){
         return getDriver().findElement(By.xpath("(//div[contains(@class, 'css-yk16xz-control')])[2]"));
     }
-    public WebElement misDivision(){
-        return getDriver().findElement(By.xpath("//*[text()='MIS DIVISION - 123301912']"));
+    public WebElement mlTGBranch(){
+        return getDriver().findElement(By.xpath("//*[text()='ML TG BRANCH - 123301091']"));
     }
     public WebElement reportsGenerated(){
         return getDriver().findElement(By.xpath("//*[text()='Reports Generated']"));

@@ -146,7 +146,7 @@ public class Users_Tests extends BaseTest {
         }
     }
 
-@Test(dependsOnMethods = "loginGoogle", priority = 21,description = "Logging in via gmail and kpx inactive account user")
+    @Test(dependsOnMethods = "loginGoogle", priority = 21,description = "Logging in via gmail and kpx inactive account user")
     public void inactiveAccount()throws Exception{
         if(this.homeSteps.isInHomePage()){
             this.homeSteps.logout();
