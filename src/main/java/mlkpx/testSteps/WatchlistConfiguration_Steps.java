@@ -38,11 +38,11 @@ public class WatchlistConfiguration_Steps extends Base_Steps{
         assertEqual(getText(watchlistPageObjects.ThresholdConfigurationsSaved()), "Threshold Configurations Saved!");
         click(watchlistPageObjects.SaveOK(), "OK");
         waitSleep(8000);
-        scrollToElement(watchlistPageObjects.Delete());
+        click(watchlistPageObjects.Delete(), "Delete");
         click(watchlistPageObjects.Delete(), "Delete");
         scrollToElement(watchlistPageObjects.SaveChangess());
         click(watchlistPageObjects.SaveChangess(), "Save Changes");
-        waitSleep(10000);
+        waitSleep(15000);
         assertEqual(getText(watchlistPageObjects.ThresholdConfigurationsSaved()), "Threshold Configurations Saved!");
         click(watchlistPageObjects.SaveOK(), "OK");
 
@@ -78,7 +78,7 @@ public class WatchlistConfiguration_Steps extends Base_Steps{
         scrollToElement(watchlistPageObjects.AddRowString());
         click(watchlistPageObjects.AddRowString(), "Add Row String");
         waitSleep(5000);
-        watchlistPageObjects.OriginalString1().clear();
+//        watchlistPageObjects.OriginalString1().clear();
         type(watchlistPageObjects.OriginalString1(), "Original String","Sia-rot");
 //        click(watchlistPageObjects.SelectString(), "Select String");
 //        click(watchlistPageObjects.String(), "String");
@@ -112,6 +112,7 @@ public class WatchlistConfiguration_Steps extends Base_Steps{
         scrollToElement(sendOutPageObjects.selectKYC());
         click(sendOutPageObjects.selectKYC(), "Select KYC Button");
         waitUntilLoadingGone(10000);
+        waitSleep(15000);
         scrollToElement(sendOutPageObjects.searchReceivers());
         click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
         waitUntilLoadingGone(10000);
@@ -176,6 +177,7 @@ public class WatchlistConfiguration_Steps extends Base_Steps{
         scrollToElement(sendOutPageObjects.searchReceivers());
         click(sendOutPageObjects.searchReceivers(), "Search Receivers Button ");
         waitUntilLoadingGone(10000);
+        waitSleep(15000);
         click(sendOutPageObjects.addNewReceivers(), "Add new Receiver ");
         waitUntilLoadingGone(10000);
         type(sendOutPageObjects.r_LastName(), "R_Lastname ", "De Silva");
@@ -212,6 +214,7 @@ public class WatchlistConfiguration_Steps extends Base_Steps{
         waitUntilLoadingGone(10000);
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
         waitUntilLoadingGone(10000);
+        waitSleep(15000);
         String kptnText = getText(sendOutPageObjects.kptnText());
         List<String> kptnValues = Collections.singletonList(kptnText);
         reader.writeKptnDataCompliance(kptnValues);

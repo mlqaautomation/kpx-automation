@@ -42,7 +42,7 @@ public class WatchlistTransaction_Steps extends Base_Steps{
         waitSleep(2000);
         click(watchlistPageObjects.SelectType(), "Select Type");
         click(watchlistPageObjects.DomesticTran(), "Domestic Transaction");
-        type(watchlistPageObjects.RNPHolder(), "Reference Number: ","RNSKNTGFQK");
+        type(watchlistPageObjects.RNPHolder(), "Reference Number: ","RNPLLDQIRE");
         click(watchlistPageObjects.SearchBu(), "Search Button");
         waitSleep(10000);
         LoggingUtils.info("The Record will display: KPTN, REQUEST NUMBER, DATE BLOCKED, SENDER, RECEIVER, BRANCH, OPERATOR PRINCIPAL, APPLIED TO and STATUS");

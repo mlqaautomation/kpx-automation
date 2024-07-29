@@ -204,13 +204,13 @@ public class Watchlist_PageObjects {
         return getDriver().findElement(By.xpath("(//input[@type='number'])[15]"));
     }
     public WebElement OriginalString(){
-        return getDriver().findElement(By.xpath("(//input[@name='originalString'])[53]"));
+        return getDriver().findElement(By.xpath("(//input[@name='originalString'])[52]"));
     }
     public WebElement OriginalString1(){
-        return getDriver().findElement(By.xpath("(//input[@name='originalString'])[79]"));
+        return getDriver().findElement(By.xpath("(//input[@name='originalString'])[77]"));
     }
     public WebElement NewString(){
-        return getDriver().findElement(By.xpath("(//input[@name='newString'])[53]"));
+        return getDriver().findElement(By.xpath("(//input[@name='newString'])[52]"));
     }
     public WebElement String(){
         return getDriver().findElement(By.xpath("//div[@class=' css-1uccc91-singleValue']"));
@@ -258,10 +258,10 @@ public class Watchlist_PageObjects {
         return getDriver().findElement(By.xpath("(//button[@aria-label='Remove'])[8]"));
     }
     public WebElement Delete1(){
-        return getDriver().findElement(By.xpath("(//button[@aria-label='Remove'])[60]"));
+        return getDriver().findElement(By.xpath("(//button[@aria-label='Remove'])[59]"));
     }
     public WebElement Delete2(){
-        return getDriver().findElement(By.xpath("(//button[@aria-label='Remove'])[86]"));
+        return getDriver().findElement(By.xpath("(//button[@aria-label='Remove'])[84]"));
     }
     public WebElement StayOnThisPage(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='No, Stay On This Page']"));
