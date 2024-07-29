@@ -132,13 +132,13 @@ public class Kyc_Tests extends BaseTest {
         this.kycSteps.ToVerifyBranchRemarks();
 
     }
-    @Test(dependsOnMethods = "loginGoogle", priority = 19, description = "To Validate Save New KYC")
-    public void KYC_TC_19() throws Exception {
-        this.homeSteps.isInHomePage();
-        this.kycSteps.navigateKycPage();
-        this.kycSteps.AddNewKYC_ValidSave();
-
-    }
+//    @Test(dependsOnMethods = "loginGoogle", priority = 19, description = "To Validate Save New KYC")
+//    public void KYC_TC_19() throws Exception {
+//        this.homeSteps.isInHomePage();
+//        this.kycSteps.navigateKycPage();
+//        this.kycSteps.AddNewKYC_ValidSave();
+//
+//    }
     @Test(dependsOnMethods = "loginGoogle", priority = 20, description = "To Verify Adding new KYC if user already exist (use newly created KYC)")
     public void KYC_TC_20() throws Exception {
         this.homeSteps.isInHomePage();

@@ -249,12 +249,13 @@ public class Watchlist_Steps extends Base_Steps{
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
         type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
         type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "100");
-        waitSleep(15000);
+        waitSleep(20000);
         scrollToElement(sendOutPageObjects.submitSendOut());
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
         waitUntilLoadingGone(10000);
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
         waitUntilLoadingGone(10000);
+        waitSleep(15000);
         assertEqual(getText(watchlistPageObjects.Compliance()), "For Compliance Assistance");
         String reqNumber = getText(sendOutPageObjects.reqNum());
         List<String> reqValues = Collections.singletonList(reqNumber);
@@ -322,6 +323,7 @@ public class Watchlist_Steps extends Base_Steps{
         waitUntilLoadingGone(10000);
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
         waitUntilLoadingGone(10000);
+        waitSleep(15000);
         assertEqual(getText(watchlistPageObjects.Compliance()), "For Compliance Assistance");
         String reqNumber = getText(sendOutPageObjects.reqNum());
         List<String> reqValues = Collections.singletonList(reqNumber);
@@ -388,6 +390,7 @@ public class Watchlist_Steps extends Base_Steps{
         waitUntilLoadingGone(10000);
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
         waitUntilLoadingGone(10000);
+        waitSleep(15000);
         assertEqual(getText(watchlistPageObjects.Compliance()), "For Compliance Assistance");
         String reqNumber = getText(sendOutPageObjects.reqNum());
         List<String> reqValues = Collections.singletonList(reqNumber);
@@ -511,6 +514,7 @@ public class Watchlist_Steps extends Base_Steps{
                 waitSleep(2000);
                 scrollToElement(payoutPageObjects.ConfirmPayout());
                 click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
+                waitSleep(15000);
                 assertEqual(getText(watchlistPageObjects.Compliance()), "For Compliance Assistance");
                 click(watchlistPageObjects.OK(), "OK");
 
@@ -633,6 +637,7 @@ public class Watchlist_Steps extends Base_Steps{
                 waitSleep(2000);
                 scrollToElement(payoutPageObjects.ConfirmPayout());
                 click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
+                waitSleep(15000);
                 assertEqual(getText(watchlistPageObjects.Compliance()), "For Compliance Assistance");
                 click(watchlistPageObjects.OK(), "OK");
 
@@ -753,6 +758,7 @@ public class Watchlist_Steps extends Base_Steps{
                 waitSleep(2000);
                 scrollToElement(payoutPageObjects.ConfirmPayout());
                 click(payoutPageObjects.ConfirmPayout(), "Click Confirm Payout");
+                waitSleep(15000);
                 assertEqual(getText(watchlistPageObjects.Compliance()), "For Compliance Assistance");
                 click(watchlistPageObjects.OK(), "OK");
 

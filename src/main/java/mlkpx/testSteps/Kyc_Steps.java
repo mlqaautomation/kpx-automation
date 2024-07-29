@@ -93,7 +93,6 @@ public class Kyc_Steps extends Base_Steps {
         if (isVisible(kycPageObjects.addKycPage(), getText(kycPageObjects.addKycPage()))) {
             LoggingUtils.info("Add KYC page will display, Inputted Last name will display and not editable");
         }
-
         type(kycPageObjects.AddMName(), "Middle name field", "Alferez");
         click(kycPageObjects.Checkbox(), "Check Button");
         click(kycPageObjects.AddSuffix(), "Select Suffix");

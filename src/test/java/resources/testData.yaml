@@ -19,10 +19,8 @@ Receivers:
 SenderForSendOutPartner:
 - kyc: {firstName: Rochelle, lastName: Balansag}
 - kyc: {firstName: The, lastName: Same}
-
 passWordNewBranchUser: '[17380958]'
 usernameNewBranchUser: BITA17380958
-
 sendOutKPTN: []
 sendoutReferenceNum: ['6080596293', '3460328068', '3722522815', '7671217051', '1102671838',
   '4232655383', '4001627983', '1350111221', '0530968121']
@@ -33,7 +31,6 @@ remoteSendoutKPTN: [KPNZYWXYGTP, KPNSGNUNLHM, KPNJYWTAGLI, KPNESICSRKF, KPNDDHTE
   KPNFPOTDXBP]
 payoutRemoteReference: ['7181350848', '2330414161', '3840186269', '0670950439', '7640488897',
   '8462382538']
-
 CignalBPKTPN: [KBPZUWHXCZQ, KBPYJAWTISL, KBPODRIJMIV, KBPOFNWIANH]
 CignalRemoteBPKTPN: [KBPMRVOSWZN, KBPWWZXNASI, KBPVJLRTUHK, KBPYCPFNBTS, KBPNCRGYXVR]
 payoutKPTN: [KPNVWZJFVVO, KPNMUGTUXCN, KPNVTYLTJRF, KPNBZNSYFYC, KPNLOATMWLV, KPNRGRCIANL]
@@ -41,8 +38,6 @@ remotePayoutKPTN: [KBPYJLKXNYU, KBPVURCAMQK, KBPLZYNWONT, KBPPRIYORQT, KBPMGZFAT
   KBPCSYYCKVE, KBPERWQEJMN, KPNKACNGKOB, KPNZGLARGPN]
 billsPayKTPN: [KBPPHXAAQYW, KBPEBSUZXVO, KBPFWRZLJYL, KBPNSSUXWBY, KBPMEUXDCNQ, KBPDNOHXQOW,
   KBPGRLTRCLY]
-
-
 remoteBillsPayKTPN: [KBPWGHMOMSK, KBPZCRTFYCB, KBPLUQJJLGA, KBPLHEJZAPF, KBPOUUSIZSK,
   KBPWKQMTKOW, KBPLRNVQKOQ, KBPUMBPTWNF, KBPOJSMHWNU, KBPFSQQDQEY, KBPLGHAGLNM, KBPZKVWMRUH,
   KBPHGTSOKQY]
@@ -88,10 +83,17 @@ MoneyGramPartner10MinuteRemote: ['19059067']
 MoneyGramPartnerAccountDeposit: ['25774302']
 WesternUnionPartner10Minute: []
 WesternUnionPartner10MinuteRemote: ['8610157751']
-WatchlistLName: [Smith, Johnson, Williams, Brown, Davis, Miller, Wilson, Anderson, Taylor, Thomas, Jackson, White, Harris, Martin, Thompson, Garcia, Martinez, Hernandez, Diaz, Reyes]
-WatchlistFName: [Emma, Liam, Olivia, Noah, Isabella, William, Sophia, James, Ava, Benjamin, Charlotte, Lucas, Mia, Henry, Harper, Alexander, Amelia, Jacob, Elizabeth, Michael]
-WatchlistMobileNumber: [2034201999, 2031102000, 2038761234, 2045559876, 2055554321, 2067778888, 2072223333, 2083334444, 2091115555, 2102226666, 2113337777, 2124448888, 2135559999, 2146660000, 2157771111, 2168882222, 2179993333, 2180001234, 2190002345, 2200003456]
-WatchlistCompanyName: [Zephyr Innovations, Lumin Technologies, Acme Corp, SkyTech Solutions, Emerald Enterprises, Riverview Industries, Azure Consulting, Onyx Dynamics, Sapphire Systems, Diamond Logistics, Ruby Innovations, Topaz Technologies, Amethyst Solutions, Jade Enterprises, Quartz Innovations, Citrine Solutions, Obsidian Dynamics, Jasper Consulting, Garnet Enterprises, Peridot Technologies]
-RequestNumber: [RNPGABPCOU]
+WatchlistLName: [Smiths, Johnsons, Williamss, Browns, Daviss, Millers, Wilsons, Andersons,
+  Taylors, Thomass, Jacksons, Whites, Harriss]
+WatchlistFName: [Emmas, Liams, Olivias, Noahs, Isabellas, Williams, Sophias, Jamess,
+  Avas, Benjamins, Charlottes, Lucass, Mias]
+WatchlistMobileNumber: ['2034201999', '2031102000', '2038761234', '2045559876', '2055554321',
+  '2067778888', '2072223333', '2083334444', '2091115555', '2102226666', '2113337777',
+  '2124448888', '2135559999', '2146660000', '2157771111', '2168882222']
+WatchlistCompanyName: [Zephyr Innovations, Lumin Technologies, Acme Corp, SkyTech
+    Solutions, Emerald Enterprises, Riverview Industries, Azure Consulting, Onyx Dynamics,
+  Sapphire Systems, Diamond Logistics, Ruby Innovations, Topaz Technologies, Amethyst
+    Solutions, Jade Enterprises, Quartz Innovations, Citrine Solutions]
+RequestNumber: [RNBGKYSETM]
 sendOutKPTNCompliance: []
 WesternUnionPartnerWatchlistKPTN: []

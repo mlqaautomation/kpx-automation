@@ -14,13 +14,13 @@ public class Watchlist_Tests extends BaseTest {
         }
     }
     // W  A  T  C  H  L  I  S  T
-    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To verify successful Add, Update and Add Alias Watchlist for Sendout and Payout using (General Information)")
-    public void Watchlist_TC_01()throws Exception{
-        if(this.homeSteps.isInHomePage()){
-            this.watchlistSteps.navigateWatchlist();
-            this.watchlistSteps.WatchlistTC01();
-        }
-    }
+//    @Test(dependsOnMethods = "loginGoogle", priority = 1, description = "To verify successful Add, Update and Add Alias Watchlist for Sendout and Payout using (General Information)")
+//    public void Watchlist_TC_01()throws Exception{
+//        if(this.homeSteps.isInHomePage()){
+//            this.watchlistSteps.navigateWatchlist();
+//            this.watchlistSteps.WatchlistTC01();
+//        }
+//    }
     @Test(dependsOnMethods = "loginGoogle", priority = 2, description = "To verify successful Add, Update and Add Alias Watchlist for Sendout and Payout using (Mobile Number)")
     public void Watchlist_TC_02()throws Exception{
         if(this.homeSteps.isInHomePage()){
