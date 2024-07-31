@@ -581,12 +581,607 @@ public class yamlReader {
             return null;
         }
     }
+    public String getBillsPayGentradeKPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("GentradeBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No Gentrade BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            BillsPayKptnList.remove(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayGentrade1KPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("GentradeBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No Gentrade BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            BillsPayKptnList.remove(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayIsabelKPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("IsabelWaterBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No Isabel Water BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            BillsPayKptnList.remove(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayIsabel1KPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("IsabelWaterBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No Isabel Water BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayLagunaKPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("LagunaWaterBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No Laguna Water BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            BillsPayKptnList.remove(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayPowerCycleKPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("PowerCycleBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No Power Cycle BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            BillsPayKptnList.remove(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayPowerCycle1KPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("PowerCycleBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No Power Cycle BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayBaviCTGKPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("BaviCTGBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No BAVI-CTG BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            BillsPayKptnList.remove(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayBaviCTG1KPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("BaviCTGBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No BAVI_CTG BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayCOTELCO1KPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("CotelcoBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No COTELCO BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayCOTELCOKPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("CotelcoBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No COTELCO BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            BillsPayKptnList.remove(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayMACROCEBUKPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("MacroCebuBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No MACRO CEBU BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            BillsPayKptnList.remove(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayHELPMATETALISAYKPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("HelpmateTalisayBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No HELPMATE TALISAY BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            BillsPayKptnList.remove(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayHELPMATETALISAY1KPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("HelpmateTalisayBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No HELPMATE TALISAY BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getBillsPayMACROCEBU1KPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("MacroCebuBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No MACRO CEBU BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String getBillsPayLaguna1KPTN() {
+        try {
+            List<String> BillsPayKptnList = (List<String>) yamlData.get("LagunaWaterBPKTPN");
+
+            if (BillsPayKptnList == null || BillsPayKptnList.isEmpty()) {
+                System.out.println("No Laguna Water BillsPay KPTN values available.");
+                return null;
+            }
+
+
+            String selectBillsPayKptn = BillsPayKptnList.get(BillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
     public String getRemoteBillsPayCignalKPTN() {
         try {
             List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("CignalRemoteBPKTPN");
 
             if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
                 System.out.println("No Remote Cignal BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            RemoteBillsPayKptnList.remove(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayGentradeKPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("GentradeRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote Gentrade BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            RemoteBillsPayKptnList.remove(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayGentrade1KPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("GentradeRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote Gentrade BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayIsabelKPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("IsabelWaterRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote Isabel Water BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            RemoteBillsPayKptnList.remove(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayIsabel1KPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("IsabelWaterRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote Isabel Water BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayLagunaKPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("LagunaWaterRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote Laguna Water BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            RemoteBillsPayKptnList.remove(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayPowerCycleKPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("PowerCycleRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote Laguna Water BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            RemoteBillsPayKptnList.remove(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayPowerCycle1KPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("PowerCycleRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote Laguna Water BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayBavi_CTG1KPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("BaviCTGRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote Bavi_CTG BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayCOTELCO1KPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("CotelcoRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote COTELCO BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayCOTELCOKPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("CotelcoRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote COTELCO BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            RemoteBillsPayKptnList.remove(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayMACROCEBUKPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("MacroCebuRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote MACRO CEBU BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            RemoteBillsPayKptnList.remove(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayHELPMATETALISAYKPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("HelpmateTalisayRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote HELPMATE TALISAY BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            RemoteBillsPayKptnList.remove(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayHELPMATETALISAY1KPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("HelpmateTalisayRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote HELPMATE TALISAY BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayMACROCEBU1KPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("MacroCebuRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote MACRO CEBU BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayBavi_CTGKPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("BaviCTGRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote Bavi_CTG BillsPay KPTN values available.");
+                return null;
+            }
+            String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
+            RemoteBillsPayKptnList.remove(RemoteBillsPayKptnList.size() - 1);
+            saveYamlData();
+            return selectBillsPayKptn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public String getRemoteBillsPayLaguna1KPTN() {
+        try {
+            List<String> RemoteBillsPayKptnList = (List<String>) yamlData.get("LagunaWaterRemoteBPKTPN");
+
+            if (RemoteBillsPayKptnList == null || RemoteBillsPayKptnList.isEmpty()) {
+                System.out.println("No Remote Laguna Water BillsPay KPTN values available.");
                 return null;
             }
             String selectBillsPayKptn = RemoteBillsPayKptnList.get(RemoteBillsPayKptnList.size() - 1);
@@ -1398,6 +1993,222 @@ public class yamlReader {
             e.printStackTrace();
         }
     }
+    public void writeBillsPayGentradeKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("GentradeBPKTPN")) {
+                List<String> existingValues = (List<String>) yamlData.get("GentradeBPKTPN");
+                for (String value : values) {
+                    existingValues.add(value.replace(" ", ""));
+                }
+            } else {
+                List<String> trimmedValues = new ArrayList<>();
+                for (String value : values) {
+                    trimmedValues.add(value.replace(" ", ""));
+                }
+                yamlData.put("GentradeBPKTPN", trimmedValues);
+            }
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayIsabelKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("IsabelWaterBPKTPN")) {
+                List<String> existingValues = (List<String>) yamlData.get("IsabelWaterBPKTPN");
+                for (String value : values) {
+                    existingValues.add(value.replace(" ", ""));
+                }
+            } else {
+                List<String> trimmedValues = new ArrayList<>();
+                for (String value : values) {
+                    trimmedValues.add(value.replace(" ", ""));
+                }
+                yamlData.put("IsabelWaterBPKTPN", trimmedValues);
+            }
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayLagunaKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("LagunaWaterBPKTPN")) {
+                List<String> existingValues = (List<String>) yamlData.get("LagunaWaterBPKTPN");
+                for (String value : values) {
+                    existingValues.add(value.replace(" ", ""));
+                }
+            } else {
+                List<String> trimmedValues = new ArrayList<>();
+                for (String value : values) {
+                    trimmedValues.add(value.replace(" ", ""));
+                }
+                yamlData.put("LagunaWaterBPKTPN", trimmedValues);
+            }
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayPowerCycleKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("PowerCycleBPKTPN")) {
+                List<String> existingValues = (List<String>) yamlData.get("PowerCycleBPKTPN");
+                for (String value : values) {
+                    existingValues.add(value.replace(" ", ""));
+                }
+            } else {
+                List<String> trimmedValues = new ArrayList<>();
+                for (String value : values) {
+                    trimmedValues.add(value.replace(" ", ""));
+                }
+                yamlData.put("PowerCycleBPKTPN", trimmedValues);
+            }
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayBaviCTGKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("BaviCTGBPKTPN")) {
+                List<String> existingValues = (List<String>) yamlData.get("BaviCTGBPKTPN");
+                for (String value : values) {
+                    existingValues.add(value.replace(" ", ""));
+                }
+            } else {
+                List<String> trimmedValues = new ArrayList<>();
+                for (String value : values) {
+                    trimmedValues.add(value.replace(" ", ""));
+                }
+                yamlData.put("BaviCTGBPKTPN", trimmedValues);
+            }
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayCOTELCOKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("CotelcoBPKTPN")) {
+                List<String> existingValues = (List<String>) yamlData.get("CotelcoBPKTPN");
+                for (String value : values) {
+                    existingValues.add(value.replace(" ", ""));
+                }
+            } else {
+                List<String> trimmedValues = new ArrayList<>();
+                for (String value : values) {
+                    trimmedValues.add(value.replace(" ", ""));
+                }
+                yamlData.put("CotelcoBPKTPN", trimmedValues);
+            }
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayMACROCEBUKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("MacroCebuBPKTPN")) {
+                List<String> existingValues = (List<String>) yamlData.get("MacroCebuBPKTPN");
+                for (String value : values) {
+                    existingValues.add(value.replace(" ", ""));
+                }
+            } else {
+                List<String> trimmedValues = new ArrayList<>();
+                for (String value : values) {
+                    trimmedValues.add(value.replace(" ", ""));
+                }
+                yamlData.put("MacroCebuBPKTPN", trimmedValues);
+            }
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayHELPMATETALISAYKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+
+            if (yamlData.containsKey("HelpmateTalisayBPKTPN")) {
+                List<String> existingValues = (List<String>) yamlData.get("HelpmateTalisayBPKTPN");
+                for (String value : values) {
+                    existingValues.add(value.replace(" ", ""));
+                }
+            } else {
+                List<String> trimmedValues = new ArrayList<>();
+                for (String value : values) {
+                    trimmedValues.add(value.replace(" ", ""));
+                }
+                yamlData.put("HelpmateTalisayBPKTPN", trimmedValues);
+            }
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void writeBillsPayPagibigKptnData(List<String> values) {
         try {
@@ -1621,6 +2432,283 @@ public class yamlReader {
             }
 
             yamlData.put("CignalRemoteBPKTPN", existingValues);
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayRemoteGentradeKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+            List<String> existingValues;
+            if (yamlData.containsKey("GentradeRemoteBPKTPN")) {
+                Object existingValuesObj = yamlData.get("GentradeRemoteBPKTPN");
+                if (existingValuesObj instanceof List) {
+                    // Cast the Object to List<String>
+                    @SuppressWarnings("unchecked")
+                    List<String> existingValuesTyped = (List<String>) existingValuesObj;
+                    existingValues = existingValuesTyped;
+                } else {
+                    // Handle the case where "CignalRemoteBPKTPN" is not a List
+                    existingValues = new ArrayList<>();
+                }
+            } else {
+                existingValues = new ArrayList<>();
+            }
+
+            for (String value : values) {
+                existingValues.add(value.replace(" ", ""));
+            }
+
+            yamlData.put("GentradeRemoteBPKTPN", existingValues);
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayRemoteIsabelKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+            List<String> existingValues;
+            if (yamlData.containsKey("IsabelWaterRemoteBPKTPN")) {
+                Object existingValuesObj = yamlData.get("IsabelWaterRemoteBPKTPN");
+                if (existingValuesObj instanceof List) {
+                    // Cast the Object to List<String>
+                    @SuppressWarnings("unchecked")
+                    List<String> existingValuesTyped = (List<String>) existingValuesObj;
+                    existingValues = existingValuesTyped;
+                } else {
+                    // Handle the case where "CignalRemoteBPKTPN" is not a List
+                    existingValues = new ArrayList<>();
+                }
+            } else {
+                existingValues = new ArrayList<>();
+            }
+
+            for (String value : values) {
+                existingValues.add(value.replace(" ", ""));
+            }
+
+            yamlData.put("IsabelWaterRemoteBPKTPN", existingValues);
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayRemoteLagunaKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+            List<String> existingValues;
+            if (yamlData.containsKey("LagunaWaterRemoteBPKTPN")) {
+                Object existingValuesObj = yamlData.get("LagunaWaterRemoteBPKTPN");
+                if (existingValuesObj instanceof List) {
+                    // Cast the Object to List<String>
+                    @SuppressWarnings("unchecked")
+                    List<String> existingValuesTyped = (List<String>) existingValuesObj;
+                    existingValues = existingValuesTyped;
+                } else {
+                    // Handle the case where "CignalRemoteBPKTPN" is not a List
+                    existingValues = new ArrayList<>();
+                }
+            } else {
+                existingValues = new ArrayList<>();
+            }
+
+            for (String value : values) {
+                existingValues.add(value.replace(" ", ""));
+            }
+
+            yamlData.put("LagunaWaterRemoteBPKTPN", existingValues);
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayRemotePowerCycleKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+            List<String> existingValues;
+            if (yamlData.containsKey("PowerCycleRemoteBPKTPN")) {
+                Object existingValuesObj = yamlData.get("PowerCycleRemoteBPKTPN");
+                if (existingValuesObj instanceof List) {
+                    // Cast the Object to List<String>
+                    @SuppressWarnings("unchecked")
+                    List<String> existingValuesTyped = (List<String>) existingValuesObj;
+                    existingValues = existingValuesTyped;
+                } else {
+                    // Handle the case where "CignalRemoteBPKTPN" is not a List
+                    existingValues = new ArrayList<>();
+                }
+            } else {
+                existingValues = new ArrayList<>();
+            }
+
+            for (String value : values) {
+                existingValues.add(value.replace(" ", ""));
+            }
+
+            yamlData.put("PowerCycleRemoteBPKTPN", existingValues);
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayRemoteBaviCTGKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+            List<String> existingValues;
+            if (yamlData.containsKey("BaviCTGRemoteBPKTPN")) {
+                Object existingValuesObj = yamlData.get("BaviCTGRemoteBPKTPN");
+                if (existingValuesObj instanceof List) {
+                    // Cast the Object to List<String>
+                    @SuppressWarnings("unchecked")
+                    List<String> existingValuesTyped = (List<String>) existingValuesObj;
+                    existingValues = existingValuesTyped;
+                } else {
+                    // Handle the case where "CignalRemoteBPKTPN" is not a List
+                    existingValues = new ArrayList<>();
+                }
+            } else {
+                existingValues = new ArrayList<>();
+            }
+
+            for (String value : values) {
+                existingValues.add(value.replace(" ", ""));
+            }
+
+            yamlData.put("BaviCTGRemoteBPKTPN", existingValues);
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayRemoteCOTELCOKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+            List<String> existingValues;
+            if (yamlData.containsKey("CotelcoRemoteBPKTPN")) {
+                Object existingValuesObj = yamlData.get("CotelcoRemoteBPKTPN");
+                if (existingValuesObj instanceof List) {
+                    // Cast the Object to List<String>
+                    @SuppressWarnings("unchecked")
+                    List<String> existingValuesTyped = (List<String>) existingValuesObj;
+                    existingValues = existingValuesTyped;
+                } else {
+                    // Handle the case where "CignalRemoteBPKTPN" is not a List
+                    existingValues = new ArrayList<>();
+                }
+            } else {
+                existingValues = new ArrayList<>();
+            }
+
+            for (String value : values) {
+                existingValues.add(value.replace(" ", ""));
+            }
+
+            yamlData.put("CotelcoRemoteBPKTPN", existingValues);
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayRemoteMACROCEBUKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+            List<String> existingValues;
+            if (yamlData.containsKey("MacroCebuRemoteBPKTPN")) {
+                Object existingValuesObj = yamlData.get("MacroCebuRemoteBPKTPN");
+                if (existingValuesObj instanceof List) {
+                    // Cast the Object to List<String>
+                    @SuppressWarnings("unchecked")
+                    List<String> existingValuesTyped = (List<String>) existingValuesObj;
+                    existingValues = existingValuesTyped;
+                } else {
+                    // Handle the case where "CignalRemoteBPKTPN" is not a List
+                    existingValues = new ArrayList<>();
+                }
+            } else {
+                existingValues = new ArrayList<>();
+            }
+
+            for (String value : values) {
+                existingValues.add(value.replace(" ", ""));
+            }
+
+            yamlData.put("MacroCebuRemoteBPKTPN", existingValues);
+
+            FileWriter writer = new FileWriter(yamlFileName);
+            yaml.dump(yamlData, writer);
+            LoggingUtils.info(values + " saved to file");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeBillsPayRemoteHELPMATETALISAYKptnData(List<String> values) {
+        try {
+            Yaml yaml = new Yaml();
+            FileInputStream fileInputStream = new FileInputStream(yamlFileName);
+            Map<String, Object> yamlData = yaml.load(fileInputStream);
+            List<String> existingValues;
+            if (yamlData.containsKey("HelpmateTalisayRemoteBPKTPN")) {
+                Object existingValuesObj = yamlData.get("HelpmateTalisayRemoteBPKTPN");
+                if (existingValuesObj instanceof List) {
+                    List<String> existingValuesTyped = (List<String>) existingValuesObj;
+                    existingValues = existingValuesTyped;
+                } else {
+                    existingValues = new ArrayList<>();
+                }
+            } else {
+                existingValues = new ArrayList<>();
+            }
+
+            for (String value : values) {
+                existingValues.add(value.replace(" ", ""));
+            }
+
+            yamlData.put("HelpmateTalisayRemoteBPKTPN", existingValues);
 
             FileWriter writer = new FileWriter(yamlFileName);
             yaml.dump(yamlData, writer);

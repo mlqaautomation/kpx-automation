@@ -993,7 +993,7 @@ public class Watchlist_Steps extends Base_Steps{
         type(watchlistPageObjects.middleNameW(), "Middlename ", "Lou");
         click(watchlistPageObjects.IsActive(), "Is Active?, Yes");
         type(watchlistPageObjects.RemarksWatch(), "Remarks :", "Testing");
-        scrollDown(100);
+        waitSleep(3000);
         scrollToElement(watchlistPageObjects.SaveWatchlist());
         click(watchlistPageObjects.SaveWatchlist(), "Save Watchlist");
         waitUntilLoadingGone(10000);
@@ -1009,7 +1009,7 @@ public class Watchlist_Steps extends Base_Steps{
         type(watchlistPageObjects.MobileNum(), "ML Money Mobile No.","653241259");
         click(watchlistPageObjects.IsActive(), "Is Active?, Yes");
         type(watchlistPageObjects.RemarksWatch(), "Remarks :", "Testing");
-        scrollDown(100);
+        waitSleep(3000);
         scrollToElement(watchlistPageObjects.SaveWatchlist());
         click(watchlistPageObjects.SaveWatchlist(), "Save Watchlist");
         waitUntilLoadingGone(10000);
@@ -1024,7 +1024,7 @@ public class Watchlist_Steps extends Base_Steps{
         type(watchlistPageObjects.CompanyName(), "Company/Employer Name","CCO TRADING");
         click(watchlistPageObjects.IsActive(), "Is Active?, Yes");
         type(watchlistPageObjects.RemarksWatch(), "Remarks :", "Testing");
-        scrollDown(100);
+        waitSleep(3000);
         scrollToElement(watchlistPageObjects.SaveWatchlist());
         click(watchlistPageObjects.SaveWatchlist(), "Save Watchlist");
         waitUntilLoadingGone(10000);

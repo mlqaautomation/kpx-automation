@@ -42,6 +42,7 @@ public class BillsPayCancellation_CEBECO_Steps extends Base_Steps{
             click(billsPayPageObjects.CancelPayment(), "Cancel Payment");
             click(billsPayPageObjects.YesCancelPayment(), "Yes, Cancel Payment");
             waitSleep(10000);
+            assertEqual(getText(billsPayPageObjects.SuccessCancelled()), "Bills Pay Cancelled");
             LoggingUtils.info("Bills Pay Cancelled" +
                     "Payment has been successfully cancelled.");
 
@@ -82,6 +83,7 @@ public class BillsPayCancellation_CEBECO_Steps extends Base_Steps{
             scrollToElement(billsPayPageObjects.CancelPayment());
             click(billsPayPageObjects.CancelPayment(), "Cancel Payment");
             click(billsPayPageObjects.YesCancelPayment(), "Yes, Cancel Payment");
+            assertEqual(getText(billsPayPageObjects.SuccessCancelled()), "Bills Pay Cancelled");
             LoggingUtils.info("Bills Pay Cancelled" +
                     "Payment has been successfully cancelled.");
         }

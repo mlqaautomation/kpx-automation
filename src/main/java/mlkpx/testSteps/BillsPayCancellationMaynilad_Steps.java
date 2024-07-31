@@ -41,6 +41,7 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
             scrollToElement(billsPayPageObjects.CancelPayment());
             click(billsPayPageObjects.CancelPayment(), "Cancel Payment");
             click(billsPayPageObjects.YesCancelPayment(), "Yes, Cancel Payment");
+            assertEqual(getText(billsPayPageObjects.SuccessCancelled()), "Bills Pay Cancelled");
             LoggingUtils.info("Bills Pay Cancelled" +
                     "Payment has been successfully cancelled.");
 
@@ -81,6 +82,7 @@ public class BillsPayCancellationMaynilad_Steps extends Base_Steps{
             scrollToElement(billsPayPageObjects.CancelPayment());
             click(billsPayPageObjects.CancelPayment(), "Cancel Payment");
             click(billsPayPageObjects.YesCancelPayment(), "Yes, Cancel Payment");
+            assertEqual(getText(billsPayPageObjects.SuccessCancelled()), "Bills Pay Cancelled");
             LoggingUtils.info("Bills Pay Cancelled" +
                     "Payment has been successfully cancelled.");
         }

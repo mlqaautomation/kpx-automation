@@ -242,6 +242,14 @@ public class BillsPay_PageObjects {
     }
     public WebElement cancelButtoninReceipt() {
         return getDriver().findElement(By.xpath("//button[normalize-space()='Cancel']"));}
+    public WebElement CustomerServices() {
+        return getDriver().findElement(By.xpath("//a[.='Customer Service']"));}
+    public WebElement BPTransactions() {
+        return getDriver().findElement(By.xpath("//a[.='BP Partners Transactions']"));}
+    public WebElement BPreferenceNumber() {
+        return getDriver().findElement(By.xpath("//input[@name='referenceNumber']"));}
+    public WebElement SearchTransactions() {
+        return getDriver().findElement(By.xpath("//button[normalize-space()='Search Transaction']"));}
 
     public WebElement RepKTPN(){
         return getDriver().findElement(By.xpath("//input[@name='refNo']"));
@@ -340,6 +348,10 @@ public class BillsPay_PageObjects {
             return getDriver().findElement(By.xpath("//h5[contains(text(),'Bills Pay Details Updated')]"));
 
         }
+    public WebElement SuccessCancelled () {
+        return getDriver().findElement(By.xpath("//h5[contains(text(),'Bills Pay Cancelled')]"));
+
+    }
     public WebElement OKTransaction(){
         return getDriver().findElement(By.xpath("//button[normalize-space()='OK']"));
     }
@@ -391,6 +403,30 @@ public class BillsPay_PageObjects {
     }
     public WebElement ChooseOptionCebeco() {
         return getDriver().findElement(By.xpath("//div[contains(text(), 'CEBU III ELECTRIC COOPERATIVE (CEBECO III)')]"));
+    }
+    public WebElement ChooseOptionGentrade() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'GENTRADE INTERNATIONAL PHILS. INC.')]"));
+    }
+    public WebElement ChooseOptionIsabelWater() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'ISABEL WATER DISTRICT')]"));
+    }
+    public WebElement ChooseOptionLagunaWater() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'LAGUNA WATER CORPORATION')]"));
+    }
+    public WebElement ChooseOptionPowerCycle() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'POWERCYCLE INC.')]"));
+    }
+    public WebElement ChooseOptionBavi_CTG() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'BAVI-CTG')]"));
+    }
+    public WebElement ChooseOptionCOTELCO() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'COTELCO (COTABATO ELECTRIC COOPERATIVE, INC.)')]"));
+    }
+    public WebElement ChooseOptionMACROCEBU() {
+        return getDriver().findElement(By.xpath("(//div[contains(text(), 'MACRO DISTRIBUTORS INC. - CEBU')])[3]"));
+    }
+    public WebElement ChooseOptionHELPMATETALISAY() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'HELPMATE INC. - TALISAY')]"));
     }
     public WebElement OtherBillerspagibig() {
         return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div/div/div[@id=\"react-select-2-group-5-heading\"]"));
