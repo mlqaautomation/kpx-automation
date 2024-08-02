@@ -428,6 +428,21 @@ public class BillsPay_PageObjects {
     public WebElement ChooseOptionHELPMATETALISAY() {
         return getDriver().findElement(By.xpath("//div[contains(text(), 'HELPMATE INC. - TALISAY')]"));
     }
+    public WebElement ChooseOptionMLJEWELLERS() {
+        return getDriver().findElement(By.xpath("//div[@id='react-select-2-option-16-117']"));
+    }
+    public WebElement ChooseOptionEIGHTCHAMP() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'EIGHTCHAMP DISTRIBUTION - BUTUAN')]"));
+    }
+    public WebElement ChooseOptionGOLDENBRIA() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'GOLDEN BRIA HOLDINGS INC')]"));
+    }
+    public WebElement ChooseOptionSAMELCO1() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'SAMELCO 1 (SAMAR 1 ELECTRIC COOPERATIVE, INC.)')]"));
+    }
+    public WebElement ChooseOptionSOCOTECOII() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'SOCOTECO II (SOUTH COTABATO II ELECTRIC COOPERATIVE INC)')]"));
+    }
     public WebElement OtherBillerspagibig() {
         return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div/div/div[@id=\"react-select-2-group-5-heading\"]"));
     }

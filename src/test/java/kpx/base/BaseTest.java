@@ -3,6 +3,9 @@ package kpx.base;
 
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
+import kpx.actual.BillsPayEIGHTCHAMP_Tests;
+import kpx.actual.BillsPayGOLDENBRIA_Tests;
+import kpx.actual.BillsPaySOCOTECO_Tests;
 import mlkpx.testSteps.*;
 import mlkpx.testSteps.Home_Steps;
 import mlkpx.testSteps.Kyc_Steps;
@@ -46,6 +49,11 @@ public class BaseTest {
     protected BillsPayCOTELCO_Steps billsPayCOTELCOSteps;
     protected BillsPayMACROCEBU_Steps billsPayMACROCEBUSteps;
     protected BillsPayHELPMATETALISAY_Steps billsPayHELPMATETALISAYSteps;
+    protected BillsPayMLJEWELLERS_Steps billsPayMLJEWELLERSSteps;
+    protected BillsPayEIGHTCHAMP_Steps billsPayEIGHTCHAMPSteps;
+    protected BillsPayGOLDENBRIA_Steps billsPayGOLDENBRIASteps;
+    protected BillsPaySAMELCO1_Steps billsPaySAMELCO1Steps;
+    protected BillsPaySOCOTECO_Steps billsPaySOCOTECOSteps;
     protected BillsPayCancellationMaynilad_Steps billsPayCancellationSteps;
     protected BillsPayCancellation_Nordeco_Steps billsPayCancellationNordecoSteps;
     protected BillsPayCancellation_Cignal_Steps billsPayCancellationCignalTests;
@@ -183,6 +191,11 @@ public class BaseTest {
         this.billsPayCOTELCOSteps = new BillsPayCOTELCO_Steps();
         this.billsPayMACROCEBUSteps = new BillsPayMACROCEBU_Steps();
         this.billsPayHELPMATETALISAYSteps = new BillsPayHELPMATETALISAY_Steps();
+        this.billsPayMLJEWELLERSSteps = new BillsPayMLJEWELLERS_Steps();
+        this.billsPayEIGHTCHAMPSteps = new BillsPayEIGHTCHAMP_Steps();
+        this.billsPayGOLDENBRIASteps = new BillsPayGOLDENBRIA_Steps();
+        this.billsPaySAMELCO1Steps = new BillsPaySAMELCO1_Steps();
+        this.billsPaySOCOTECOSteps = new BillsPaySOCOTECO_Steps();
         this.billsPayCancellationSteps = new BillsPayCancellationMaynilad_Steps();
         this.billsPayCancellationCignalTests = new BillsPayCancellation_Cignal_Steps();
         this.billsPayCancellationNordecoSteps = new BillsPayCancellation_Nordeco_Steps();
