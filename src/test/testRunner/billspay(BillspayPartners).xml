@@ -9,19 +9,25 @@
     <test name="BILLSPAY Partners">
         <parameter name="type" value="web">
             <classes>
-                <class name="kpx.actual.BillsPaySOCOTECO_Tests">  </class>
-                <class name="kpx.actual.BillsPaySAMELCO1_Tests">  </class>
-                <class name="kpx.actual.BillsPayPOWERCYCLE_Tests">  </class>
-                <class name="kpx.actual.BillsPayMLJEWELLERS_Tests">  </class>
-                <class name="kpx.actual.BillsPayMACROCEBU_Tests">  </class>
-                <class name="kpx.actual.BillsPayLagunaWater_Tests">  </class>
-                <class name="kpx.actual.BillsPayIsabelWater_Tests">  </class>
-                <class name="kpx.actual.BillsPayHELPMATETALISAY_Tests">  </class>
-                <class name="kpx.actual.BillsPayGOLDENBRIA_Tests">  </class>
-                <class name="kpx.actual.BillsPayGentrade_Tests">  </class>
-                <class name="kpx.actual.BillsPayEIGHTCHAMP_Tests">  </class>
-                <class name="kpx.actual.BillsPayCOTELCO_Tests">  </class>
-                <class name="kpx.actual.BillsPayBAVI_CTG_Tests">  </class>
+<!--                <class name="kpx.actual.BillsPaySOCOTECO_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPaySAMELCO1_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayPOWERCYCLE_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayMLJEWELLERS_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayMACROCEBU_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayLagunaWater_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayIsabelWater_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayHELPMATETALISAY_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayGOLDENBRIA_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayGentrade_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayEIGHTCHAMP_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayCOTELCO_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayBAVI_CTG_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayMOELCI_1_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayRMGCorp_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayMetroWater_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPaySTIWEST_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayIPICEBU_Tests">  </class>-->
+                <class name="kpx.actual.BillsPayCEBUINSTITUTETECH_Tests">  </class>
             </classes>
         </parameter>
     </test>

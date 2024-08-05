@@ -3,6 +3,7 @@ package kpx.base;
 
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
+import kpx.actual.BillsPayCEBUINSTITUTETECH_Tests;
 import kpx.actual.BillsPayEIGHTCHAMP_Tests;
 import kpx.actual.BillsPayGOLDENBRIA_Tests;
 import kpx.actual.BillsPaySOCOTECO_Tests;
@@ -54,6 +55,12 @@ public class BaseTest {
     protected BillsPayGOLDENBRIA_Steps billsPayGOLDENBRIASteps;
     protected BillsPaySAMELCO1_Steps billsPaySAMELCO1Steps;
     protected BillsPaySOCOTECO_Steps billsPaySOCOTECOSteps;
+    protected BillsPayMOELCI_1_Steps billsPayMOELCI1Steps;
+    protected BillsPayRMGCORP_Steps billsPayRMGCORPSteps;
+    protected BillsPayMETROWATER_Steps billsPayMETROWATERSteps;
+    protected BillsPaySTIWEST_Steps billsPaySTIWESTSteps;
+    protected BillsPayIPICEBU_Steps billsPayIPICEBUSteps;
+    protected BillsPayCEBUINSTITUTETECH_Steps billsPayCEBUINSTITUTETECHSteps;
     protected BillsPayCancellationMaynilad_Steps billsPayCancellationSteps;
     protected BillsPayCancellation_Nordeco_Steps billsPayCancellationNordecoSteps;
     protected BillsPayCancellation_Cignal_Steps billsPayCancellationCignalTests;
@@ -196,6 +203,12 @@ public class BaseTest {
         this.billsPayGOLDENBRIASteps = new BillsPayGOLDENBRIA_Steps();
         this.billsPaySAMELCO1Steps = new BillsPaySAMELCO1_Steps();
         this.billsPaySOCOTECOSteps = new BillsPaySOCOTECO_Steps();
+        this.billsPayMOELCI1Steps = new BillsPayMOELCI_1_Steps();
+        this.billsPayRMGCORPSteps = new BillsPayRMGCORP_Steps();
+        this.billsPayMETROWATERSteps = new BillsPayMETROWATER_Steps();
+        this.billsPaySTIWESTSteps = new BillsPaySTIWEST_Steps();
+        this.billsPayIPICEBUSteps = new BillsPayIPICEBU_Steps();
+        this.billsPayCEBUINSTITUTETECHSteps = new BillsPayCEBUINSTITUTETECH_Steps();
         this.billsPayCancellationSteps = new BillsPayCancellationMaynilad_Steps();
         this.billsPayCancellationCignalTests = new BillsPayCancellation_Cignal_Steps();
         this.billsPayCancellationNordecoSteps = new BillsPayCancellation_Nordeco_Steps();

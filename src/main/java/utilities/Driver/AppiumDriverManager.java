@@ -18,7 +18,7 @@ public class AppiumDriverManager {
     public static final String APP_ID = "com.mlhuillier.mlwallet";
     public static final String APP_Activity = "MainActivity";
     private static final String nodePath = "C:\\Program Files\\nodejs\\node.exe";
-    private static final String appiumPath = "C:\\Users\\MONC20248261\\AppData\\Roaming\\npm\\node_modules\\appium";
+    private static final String appiumPath = "C:\\Users\\SIAR20248207\\AppData\\Roaming\\npm\\node_modules\\appium";
 
     public static void setupServer(){
         service = new AppiumServiceBuilder()

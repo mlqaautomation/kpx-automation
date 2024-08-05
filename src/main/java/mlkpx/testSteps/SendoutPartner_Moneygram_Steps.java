@@ -17,6 +17,7 @@ public class SendoutPartner_Moneygram_Steps extends Base_Steps {
 
     public void PS_TC_01() throws Exception {
         click(sendOutPageObjects.sendOutLink(), "SendOut Page ");
+        waitSleep(5000);
         click(sendoutPartnerMoneygramPageObjects.sendoutTransactionLink(), "Sendout Transaction");
         click(sendoutPartnerMoneygramPageObjects.partnerSendout(), "Partner Sendout Dropdown Button");
         waitSleep(5000);

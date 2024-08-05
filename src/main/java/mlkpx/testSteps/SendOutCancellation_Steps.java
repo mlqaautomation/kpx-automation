@@ -21,7 +21,7 @@ public class SendOutCancellation_Steps extends Base_Steps{
         type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
         type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
-        type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "200");
+        type(sendOutPageObjects.principalAmount(), "Principal Amount field ", "100");
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
         waitSleep(3000);
@@ -41,6 +41,8 @@ public class SendOutCancellation_Steps extends Base_Steps{
     }
     public void SOC_TC_01()throws Exception{
         click(sendOutPageObjects.sendOutLink(), "SendOut Page ");
+        waitSleep(10000);
+        scrollToElement(sendOutCancellationPageObjects.sendOutCancellationLink());
         click(sendOutCancellationPageObjects.sendOutCancellationLink(), "SendOut Cancellation Page ");
         click(sendOutCancellationPageObjects.cancelDropdown(), "Cancel Dropdown");
         waitSleep(1000);
@@ -104,7 +106,7 @@ public class SendOutCancellation_Steps extends Base_Steps{
         type(sendOutPageObjects.purpose(), "Purpose field ", propertyReader.getproperty("purpose"));
         type(sendOutPageObjects.relationToReceiver(), "Relation to Receiver field ", propertyReader.getproperty("relationshiptoreceiver"));
         type(sendOutPageObjects.messageToReceiver(), "Message to Receiver field ", propertyReader.getproperty("messagetoreceiver"));
-        type(sendOutPageObjects.principalAmount(), "Principal Amount field ","300");
+        type(sendOutPageObjects.principalAmount(), "Principal Amount field ","100");
         waitUntilLoadingGone(10000);
         click(sendOutPageObjects.submitSendOut(), "Submit SendOut Button");
         click(sendOutPageObjects.confirmSendOutButton(), "Confirm SendOut Button");
