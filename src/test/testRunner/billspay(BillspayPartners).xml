@@ -27,7 +27,19 @@
 <!--                <class name="kpx.actual.BillsPayMetroWater_Tests">  </class>-->
 <!--                <class name="kpx.actual.BillsPaySTIWEST_Tests">  </class>-->
 <!--                <class name="kpx.actual.BillsPayIPICEBU_Tests">  </class>-->
-                <class name="kpx.actual.BillsPayCEBUINSTITUTETECH_Tests">  </class>
+<!--                <class name="kpx.actual.BillsPayCEBUINSTITUTETECH_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPaySEMIGIRECORP_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayHONDAMOTOR_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayVECO_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayZCWATERDISTRICT_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayCENTROESCOLAR_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPaySANTAPHARMA_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayCARMONA_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayBBROTHERSPHINC_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayMETROBANKVISAYAN_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPayJOHNFOUNDATION_Tests">  </class>-->
+<!--                <class name="kpx.actual.BillsPay123LENDING_Tests">  </class>-->
+                <class name="kpx.actual.BillsPayBREADANDMORE_Tests">  </class>
             </classes>
         </parameter>
     </test>

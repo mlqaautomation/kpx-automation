@@ -458,6 +458,39 @@ public class BillsPay_PageObjects {
     public WebElement ChooseOptionCEBUINSTITUTETECH() {
         return getDriver().findElement(By.xpath("//div[contains(text(), 'CEBU INSTITUTE OF TECHNOLOGY')]"));
     }
+    public WebElement ChooseOptionSEMIGIRECORP() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'SEMIGIRE CORPORATION-ORIENTAL')]"));
+    }
+    public WebElement ChooseOptionHONDAMOTOR() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'HONDA MOTOR WORLD, INC.')]"));
+    }
+    public WebElement ChooseOptionVECO() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'VECO')]"));
+    }
+    public WebElement ChooseOptionZCWATERDISTRICT() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'ZCWD (ZAMBOANGA CITY WATER DISTRICT)')]"));
+    }
+    public WebElement ChooseOptionSANTAPHARMA() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'SANTAPHARMA CEBU INC')]"));
+    }
+    public WebElement ChooseOptionCARMONA() {
+        return getDriver().findElement(By.xpath("//div[contains(text(), 'CARMONA WATER DISTRICT')]"));
+    }
+    public WebElement ChooseOptionBBBROTHERSPHINC() {
+        return getDriver().findElement(By.xpath("(//div[contains(text(), 'PHILIPPINES INC 001')])[1]"));
+    }
+    public WebElement ChooseOptionMETROBANKVISAYAN() {
+        return getDriver().findElement(By.xpath("(//div[contains(text(), 'METROBANK VISAYAN KHARIS')])[1]"));
+    }
+    public WebElement ChooseOptionJOHNFOUNDATION() {
+        return getDriver().findElement(By.xpath("(//div[contains(text(), 'JOHN B. LACSON FOUNDATION MARITIME UNIVERSITY-AREVALO(API)')])[1]"));
+    }
+    public WebElement ChooseOption123LENDING() {
+        return getDriver().findElement(By.xpath("(//div[contains(text(), '123 LENDING CORPORATION')])[1]"));
+    }
+    public WebElement ChooseOptionBREADANDMORE() {
+        return getDriver().findElement(By.xpath("(//div[contains(text(), 'BREAD AND MORE INC.')])[1]"));
+    }
     public WebElement OtherBillerspagibig() {
         return getDriver().findElement(By.xpath("//*[@class=\" css-26l3qy-menu\"]/div/div/div[@id=\"react-select-2-group-5-heading\"]"));
     }

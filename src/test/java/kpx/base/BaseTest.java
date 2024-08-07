@@ -60,7 +60,22 @@ public class BaseTest {
     protected BillsPayMETROWATER_Steps billsPayMETROWATERSteps;
     protected BillsPaySTIWEST_Steps billsPaySTIWESTSteps;
     protected BillsPayIPICEBU_Steps billsPayIPICEBUSteps;
+    protected BillsPaySEMIGIRECORP_Steps billsPaySEMIGIRECORPSteps;
+    protected BillsPayHONDAMOTOR_Steps billsPayHONDAMOTORSteps;
     protected BillsPayCEBUINSTITUTETECH_Steps billsPayCEBUINSTITUTETECHSteps;
+    protected BillsPayVECO_Steps billsPayVECOSteps;
+    protected BillsPayZCWATERDISTRICT_Steps billsPayZCWATERDISTRICTSteps;
+    protected BillsPayCENTROESCOLAR_Steps billsPayCENTROESCOLARSteps;
+    protected BillsPaySANTAPHARMA_Steps billsPaySANTAPHARMASteps;
+    protected BillsPayCARMONA_Steps billsPayCARMONASteps;
+    protected BillsPayBBBROTHERSPHINC_Steps billsPayBBBROTHERSPHINCSteps;
+    protected BillsPayMETROBANKVISAYAN_Steps billsPayMETROBANKVISAYANSteps;
+    protected BillsPayJOHNFOUNDATION_Steps billsPayJOHNFOUNDATIONSteps;
+    protected BillsPay123LENDING_Steps billsPay123LENDINGSteps;
+    protected BillsPayBREADANDMORE_Steps billsPayBREADANDMORESteps;
+
+
+
     protected BillsPayCancellationMaynilad_Steps billsPayCancellationSteps;
     protected BillsPayCancellation_Nordeco_Steps billsPayCancellationNordecoSteps;
     protected BillsPayCancellation_Cignal_Steps billsPayCancellationCignalTests;
@@ -208,7 +223,22 @@ public class BaseTest {
         this.billsPayMETROWATERSteps = new BillsPayMETROWATER_Steps();
         this.billsPaySTIWESTSteps = new BillsPaySTIWEST_Steps();
         this.billsPayIPICEBUSteps = new BillsPayIPICEBU_Steps();
+        this.billsPaySEMIGIRECORPSteps = new BillsPaySEMIGIRECORP_Steps();
         this.billsPayCEBUINSTITUTETECHSteps = new BillsPayCEBUINSTITUTETECH_Steps();
+        this.billsPayHONDAMOTORSteps = new BillsPayHONDAMOTOR_Steps();
+        this.billsPayVECOSteps = new BillsPayVECO_Steps();
+        this.billsPayZCWATERDISTRICTSteps = new BillsPayZCWATERDISTRICT_Steps();
+        this.billsPayCENTROESCOLARSteps = new BillsPayCENTROESCOLAR_Steps();
+        this.billsPaySANTAPHARMASteps = new BillsPaySANTAPHARMA_Steps();
+        this.billsPayCARMONASteps = new BillsPayCARMONA_Steps();
+        this.billsPayBBBROTHERSPHINCSteps = new BillsPayBBBROTHERSPHINC_Steps();
+        this.billsPayMETROBANKVISAYANSteps = new BillsPayMETROBANKVISAYAN_Steps();
+        this.billsPayJOHNFOUNDATIONSteps = new BillsPayJOHNFOUNDATION_Steps();
+        this.billsPay123LENDINGSteps = new BillsPay123LENDING_Steps();
+        this.billsPayBREADANDMORESteps = new BillsPayBREADANDMORE_Steps();
+
+
+
         this.billsPayCancellationSteps = new BillsPayCancellationMaynilad_Steps();
         this.billsPayCancellationCignalTests = new BillsPayCancellation_Cignal_Steps();
         this.billsPayCancellationNordecoSteps = new BillsPayCancellation_Nordeco_Steps();
